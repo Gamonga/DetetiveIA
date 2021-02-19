@@ -1,0 +1,2 @@
+# DetetiveIA
+Jogo do detetive
