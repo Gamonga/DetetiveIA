@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8556092802916419585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8556092802916419587}
+  - component: {fileID: 8556092802916419584}
+  m_Layer: 0
+  m_Name: ObjectController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8556092802916419587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556092802916419585}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7783024, y: -7.1389284, z: -0.09067713}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8556092802916419584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556092802916419585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c62becc5d936124d8df77bf9a5afd03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  FacaNormal: {fileID: 3161087300882211810, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+    type: 3}
+  Policial: {fileID: 8800109111586741658, guid: ddc830686bd892d40a8a8b84a4f72bab,
+    type: 3}
+  PolicialEvidence: {fileID: 1177345839194850765, guid: ddc830686bd892d40a8a8b84a4f72bab,
+    type: 3}
+  Laudo: {fileID: 8245881131841892994, guid: a52ebad55fe01554fb6eeb533d15591d, type: 3}
+  LaudoEvidence: {fileID: 1736630659771280085, guid: a52ebad55fe01554fb6eeb533d15591d,
+    type: 3}
+  Prato: {fileID: 2472320568872923000, guid: 371b134dec6ed8c45adcf8250f6c67d1, type: 3}
+  PratoEvidence: {fileID: 291768143331581247, guid: 371b134dec6ed8c45adcf8250f6c67d1,
+    type: 3}
+  FacaNormalEvidence: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+    type: 3}
+  FacaNormalSemSangue: {fileID: 4238844764896290096, guid: f726eb72792111d428265b6fbc46ecb3,
+    type: 3}
+  FacaNormalSemSangueEvidence: {fileID: 1371104623085383067, guid: f726eb72792111d428265b6fbc46ecb3,
+    type: 3}
+  JanelaQuebradaPedraExterior: {fileID: 5297520430323827992, guid: 09dea3d16135997488150832f33a7f70,
+    type: 3}
+  JanelaQuebradaPedraExteriorEvidence: {fileID: 7639423668514200721, guid: 09dea3d16135997488150832f33a7f70,
+    type: 3}
+  JanelaQuebradaPedraInterior: {fileID: 8128279005835639240, guid: 626ad1761ee3d3c47966d555fc590115,
+    type: 3}
+  JanelaQuebradaPedraInteriorEvidence: {fileID: 6002540923773952065, guid: 626ad1761ee3d3c47966d555fc590115,
+    type: 3}
+  FacaCozinha: {fileID: 655974488826392887, guid: 1a1a1380f791d544fbece524c3b3ccb3,
+    type: 3}
+  FacaCozinhaEvidence: {fileID: 2409151257708413677, guid: 1a1a1380f791d544fbece524c3b3ccb3,
+    type: 3}
+  CorpoMorto1: {fileID: 9144299685166121754, guid: 988ad19f14359ea4992207401d6e5e5e,
+    type: 3}
+  CorpoMorto1Evidence: {fileID: 6387502836250915165, guid: 988ad19f14359ea4992207401d6e5e5e,
+    type: 3}
+  CorpoMorto2Evidence: {fileID: 205655532348074763, guid: 760fbb22d90a8e147bf864e9ebf22d74,
+    type: 3}
+  CorpoMorto2: {fileID: 2637211058526312780, guid: 760fbb22d90a8e147bf864e9ebf22d74,
+    type: 3}
+  BilheteCulposo: {fileID: 3969198194643481438, guid: 31f0f4b84ceee6742a8592a89353a5ca,
+    type: 3}
+  BilheteCulposoEvidence: {fileID: 6729483863219284745, guid: 31f0f4b84ceee6742a8592a89353a5ca,
+    type: 3}
+  dialogueText: {fileID: 0}
+  PortaDaCena: 0
