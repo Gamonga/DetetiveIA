@@ -358,6 +358,7 @@ Temp/
 UserSettings/
 .vs/
 .vscode/
-Assembly-CSharp.csproj
 Detective IA.sln
 DetectiveIA.sln
+
+*.csproj
