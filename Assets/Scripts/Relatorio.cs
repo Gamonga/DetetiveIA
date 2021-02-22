@@ -57,7 +57,7 @@ public class Relatorio : MonoBehaviour
                 sentence.Enqueue("Sabendo que ele morreu ali");
                 sentence.Enqueue("Ainda é necessário saber outra coisa");
                 sentence.Enqueue("Qual arma ele utilizou no crime?");
-                sentence.Enqueue("Após o assassinato ter cometido o assasinato");
+                sentence.Enqueue("Após ter cometido o assasinato");
                 sentence.Enqueue("Ele deve ter tido algum plano para fugir");
                 sentence.Enqueue("De que forma o assasino saiu do local?");
                 sentence.Enqueue("Tudo esta começando a se encaixar");

@@ -13,8 +13,10 @@ public class Testemunha : MonoBehaviour
     public GameObject DuvidaB;
     public GameObject VistoB;
     public GameObject OuviuB;
+    public GameObject SimEcolheu;
+    public Caderno cadernoObjeto;
     public string NomeDaTestemunha;
-    private string evidenciaUsada;
+    private static string evidenciaUsada;
     private string NomeEvidenciaDiscordaOuviu;
     private string NomeEvidenciaDiscordaViu;
     private string NomeEvidenciaDiscordaRelacao;
@@ -23,9 +25,9 @@ public class Testemunha : MonoBehaviour
     public Text texto;
     public Text Nome;
     private bool isInRange;
-    private bool relacaoPergunta;
-    private bool ouviuPergunta;
-    private bool vistoPergunta;
+    public static bool relacaoPergunta;
+    public static bool ouviuPergunta;
+    public static bool vistoPergunta;
     private string VistoVerdade;
     private string OuviuVerdade;
     private string RelaçãoVerdade;
@@ -38,9 +40,13 @@ public class Testemunha : MonoBehaviour
     private static bool escrevendo;
     private string respostaTexto;
     private static bool perguntando;
+    private static bool FinalizouTestemunha;
+    private static bool TerminouPerguntas;
     // Start is called before the first frame update
     void Start()
     {   
+        TerminouPerguntas = false;
+        FinalizouTestemunha = false;
         entrouPreencher = false;
         escrevendo = false;
         sentence = new Queue<string>();   
@@ -48,23 +54,40 @@ public class Testemunha : MonoBehaviour
         ouviuPergunta = true;
         perguntando = false;
         vistoPergunta = true;
+        if(MainMenu.NewGame == false){     
+            PlayerData data = SaveSystem.LoadPlayer();
+            relacaoPergunta = data.relacaoPergunta;
+            ouviuPergunta = data.ouviuPergunta;
+            vistoPergunta = data.vistoPergunta;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if(isInRange){            
-            if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false){
-                Caderno.PermissaoAbrirCaderno = false;
-                DecideVerdades();
-                sentence.Enqueue("Prazer me chamo " + NomeDaTestemunha);
-                sentence.Enqueue("O que deseja saber detetive?");
-                dialogo.SetBool("isOpen", true);           
-                entrouPreencher = true;     
-                fraseAtual = sentence.Dequeue();
-                StartCoroutine(typeSentence(fraseAtual));
+            if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false && FinalizouTestemunha == false){
+                if(!vistoPergunta && !ouviuPergunta && !relacaoPergunta){
+                        Nome.text = NomeDaTestemunha;
+                        Debug.Log("entrou1");
+                        dialogo.SetBool("isOpen", true);
+                        fraseAtual = "Espero que eu tenha ajudado detetive";
+                        StartCoroutine(typeSentence(fraseAtual));
+                        FinalizouTestemunha = true;
+                        TerminouPerguntas = true;
+                }
+                else{
+                    Caderno.PermissaoAbrirCaderno = false;
+                    DecideVerdades();
+                    sentence.Enqueue("Prazer me chamo " + NomeDaTestemunha);
+                    sentence.Enqueue("O que deseja saber detetive?");
+                    dialogo.SetBool("isOpen", true);           
+                    entrouPreencher = true;     
+                    fraseAtual = sentence.Dequeue();
+                    StartCoroutine(typeSentence(fraseAtual));
+                }
             }
-            else if(Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == false && perguntando == false){                          
+            else if(Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == false && perguntando == false && FinalizouTestemunha == false){                          
                 fraseAtual = sentence.Dequeue();
                 if(fraseAtual != "Pergunta" && fraseAtual != "Terminou"){
                     StartCoroutine(typeSentence(fraseAtual));
@@ -75,8 +98,18 @@ public class Testemunha : MonoBehaviour
                     DuvidaB.SetActive(true); 
                     perguntando = true;
                 }
-                else if(fraseAtual == "Terminou"){
-                    fraseAtual = "O que deseja saber detetive?";
+                else if(fraseAtual == "Terminou"){       
+                    if(!vistoPergunta && !ouviuPergunta && !relacaoPergunta){
+                        Debug.Log("entrou2");
+                        fraseAtual = "Espero que eu tenha ajudado detetive";
+                        FinalizouTestemunha = true;
+                        TerminouPerguntas = true;
+                    }             
+                    else{
+                        Debug.Log("entrou3");
+                        fraseAtual = "O que deseja saber detetive?";
+                        perguntando = true;
+                    }
                     StartCoroutine(typeSentence(fraseAtual));
                     if(vistoPergunta){
                         VistoB.SetActive(true);
@@ -86,8 +119,7 @@ public class Testemunha : MonoBehaviour
                     }
                     if(relacaoPergunta){
                         RelaçãoComVitimaB.SetActive(true);
-                    }                   
-                    perguntando = true;
+                    }
                 }
                 if(fraseAtual == "O que deseja saber detetive?"){
                     if(vistoPergunta){
@@ -102,11 +134,31 @@ public class Testemunha : MonoBehaviour
                     perguntando = true;
                 }
             }
-            else if(Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == true && perguntando == false){                
+            else if(Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == true && perguntando == false && FinalizouTestemunha == false){                
                 StopAllCoroutines();
                 texto.text = fraseAtual;
                 escrevendo = false;
             }            
+            else if(Input.GetKeyDown(KeyCode.E) && FinalizouTestemunha == true){
+                if(TerminouPerguntas == true){
+                    SimEcolheu.SetActive(false);
+                    sentence.Clear();
+                    Nome.text = "";
+                    dialogo.SetBool("isOpen", false);
+                    Caderno.PermissaoAbrirCaderno = true;
+                    caderno.SetBool("Rela",false);
+                    ConcordaB.SetActive(false);
+                    DiscordaB.SetActive(false);
+                    DuvidaB.SetActive(false);
+                    VistoB.SetActive(false);
+                    OuviuB.SetActive(false);
+                    RelaçãoComVitimaB.SetActive(false); 
+                    isInRange = false;
+                    perguntando = false;
+                    entrouPreencher = false;
+                    FinalizouTestemunha = false;
+                }
+            }
         }
         else{
         } 
@@ -158,10 +210,9 @@ public class Testemunha : MonoBehaviour
         fraseAtual = sentence.Dequeue();
         StartCoroutine(typeSentence(fraseAtual));
     }
-    public void escolheuEvidencia(Text evidencia){
+    public void escolheuEvidenciaSim(){
         sentence.Clear();
         if(isInRange){
-            evidenciaUsada = evidencia.text;
             switch(PerguntaFeita){
                 case "visto":
                     if(VistoVerdade == "false"){
@@ -209,6 +260,7 @@ public class Testemunha : MonoBehaviour
                     relacaoPergunta = false;
                 break;           
             }
+            SimEcolheu.SetActive(false);
             caderno.SetBool("Rela",false);
             dialogo.SetBool("isOpen", true);
             perguntando = false;
@@ -216,15 +268,23 @@ public class Testemunha : MonoBehaviour
             StartCoroutine(typeSentence(fraseAtual));
         }
     }
+    public void escolheuEvidencia(Text evidencia){
+        sentence.Clear();
+        if(isInRange){
+            texto.text = "Essa evidência contrária o que foi dito?";
+            evidenciaUsada = evidencia.text;
+            SimEcolheu.SetActive(true);
+        }
+    }
     public void Discorda(){
         sentence.Enqueue("Você teria alguma prova para discorda do que eu disse?");
         CadernoLimpo.SetActive(false);
         Evidencias.SetActive(true);
         caderno.SetBool("Rela",true);
-        dialogo.SetBool("isOpen", false);
         ConcordaB.SetActive(false);
         DiscordaB.SetActive(false);
         DuvidaB.SetActive(false);        
+        cadernoObjeto.EscreverEvidencias();
         fraseAtual = sentence.Dequeue();
         StartCoroutine(typeSentence(fraseAtual));
     }
@@ -272,7 +332,7 @@ public class Testemunha : MonoBehaviour
     public void Visto(){
         PerguntaFeita = "visto";
         sentence.Enqueue("Estava bem tarde, e eu assustado consegui só ver pela fresta da porta");
-        sentence.Enqueue("Eu vi um homem saindo pela no meio do escuro");
+        sentence.Enqueue("Eu vi um homem saindo pela porta no meio do escuro");
         sentence.Enqueue("Pergunta");
         VistoB.SetActive(false);
         OuviuB.SetActive(false);
@@ -312,14 +372,22 @@ public class Testemunha : MonoBehaviour
             isInRange = true;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            FinalizouTestemunha = false;
+            isInRange = true;
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            SimEcolheu.SetActive(false);
             sentence.Clear();
             Nome.text = "";
-            texto.text = "Deseja voltar a cena do crime?";
             dialogo.SetBool("isOpen", false);
             Caderno.PermissaoAbrirCaderno = true;
             caderno.SetBool("Rela",false);
@@ -332,6 +400,7 @@ public class Testemunha : MonoBehaviour
             isInRange = false;
             perguntando = false;
             entrouPreencher = false;
+            FinalizouTestemunha = false;
         }
     }
 

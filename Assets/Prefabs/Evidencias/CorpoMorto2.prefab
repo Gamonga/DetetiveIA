@@ -200,7 +200,7 @@ MonoBehaviour:
   weapon: 0
   description: Corpo encontrado no quarto com roupas rasgadas e manchas rochas no
     corpo
-  descriptionUpdate: Corpo encontrado no quarto com roupas rasgadas e manchas rochas
+  descriptionUpdate: Corpo encontrado no quarto com roupas rasgadas e manchas roxas
     no corpo. Sujeito morava sozinho.
   tamanho: grande
   ImagemObjeto: {fileID: 21300000, guid: 0c312195909520047ab45006ea08207b, type: 3}

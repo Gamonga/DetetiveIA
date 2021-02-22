@@ -29,6 +29,10 @@ public class PlayerData
     public bool Jhony;
     public bool Sanefuji;
     public bool Devi;
+    public bool relacaoPergunta;
+    public bool ouviuPergunta;
+    public bool vistoPergunta;
+    public int contadorAnalise;
     public PlayerData(movimento movimento){
         level = SceneManager.GetActiveScene().buildIndex;
         actualCrimeScene = ScenesManager.ActualScene;
@@ -38,6 +42,10 @@ public class PlayerData
         position[2] = movimento.transform.position.z;      
         NumeroDeEvidencias = Caderno.posiçãoEvidencias;
         NumeroDeObjetos = SpawnObjects.NumeroDeObjetos;
+        relacaoPergunta = Testemunha.relacaoPergunta;
+        ouviuPergunta = Testemunha.ouviuPergunta;
+        vistoPergunta = Testemunha.vistoPergunta;
+        contadorAnalise= Analise.contador;
         salvapessoas();
         for(i=0;i<NumeroDeEvidencias;i++){
             SalvaCaderno(i);

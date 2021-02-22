@@ -203,9 +203,9 @@ public class SpawnObjects : MonoBehaviour
             Roubo = false;
         }
         ContinuaNoLoop = true;
+        SpawnCofre = false;
         while(ContinuaNoLoop){
             selecionadorint = Random.Range(0,5);
-            SpawnCofre = false;
             switch(selecionadorint){
                 case 0:
                     if(Roubo){
@@ -1396,22 +1396,22 @@ public class SpawnObjects : MonoBehaviour
             case 1:
                 switch(ScenesManager.ActualScene){
                     case 2:
-                        CorpoMorto3Evidence.description= "Corpo encontrado no quarto com hematomas pelo corpo.";
-                        CorpoMorto3Evidence.descriptionUpdate= "Corpo encontrado no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
+                        CorpoMorto2Evidence.description= "Corpo encontrado no quarto com hematomas pelo corpo.";
+                        CorpoMorto2Evidence.descriptionUpdate= "Corpo encontrado no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
                         break;
                     case 3:
-                        CorpoMorto3Evidence.description= "Corpo encontrado no banheiro com hematomas pelo corpo.";
-                        CorpoMorto3Evidence.descriptionUpdate= "Corpo encontrado no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
+                        CorpoMorto2Evidence.description= "Corpo encontrado no banheiro com hematomas pelo corpo.";
+                        CorpoMorto2Evidence.descriptionUpdate= "Corpo encontrado no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
                         break;
                     }
                 break;
             case 2:
-                CorpoMorto3Evidence.description= "Corpo encontrado no quarto com hematomas pelo corpo.";
-                CorpoMorto3Evidence.descriptionUpdate= "Corpo encontrado no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
+                CorpoMorto2Evidence.description= "Corpo encontrado no quarto com hematomas pelo corpo.";
+                CorpoMorto2Evidence.descriptionUpdate= "Corpo encontrado no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
                 break;
             case 3:
-                CorpoMorto3Evidence.description= "Corpo encontrado no banheiro com hematomas pelo corpo.";
-                CorpoMorto3Evidence.descriptionUpdate= "Corpo encontrado no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
+                CorpoMorto2Evidence.description= "Corpo encontrado no banheiro com hematomas pelo corpo.";
+                CorpoMorto2Evidence.descriptionUpdate= "Corpo encontrado no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
                 break;
         }
         GameObject CorpoMorto2Clone = Instantiate(CorpoMorto2) as GameObject;

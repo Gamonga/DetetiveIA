@@ -24,7 +24,7 @@ public class Analise : MonoBehaviour
     public bool alterouTexto;
     public bool EntrouNtemMaisAnalise;
     public static string tagDaEvidencia;
-    public int contador;
+    public static int contador;
     private bool PoderDarResposta ;
     public Text texto;
     // Start is called before the first frame update
@@ -37,6 +37,10 @@ public class Analise : MonoBehaviour
         terminouConversa = false;
         isInRange = false;    
         EntrouNtemMaisAnalise = false;
+        if(MainMenu.NewGame == false){     
+            PlayerData data = SaveSystem.LoadPlayer();
+            contador = data.contadorAnalise;
+        }
     }
 
     public void Resposta(Text resposta){
@@ -150,6 +154,7 @@ public class Analise : MonoBehaviour
                 AnaliseAnimator.SetBool("Rela",true);
                 CadernoLimpo.SetActive(false);
                 Evidencias.SetActive(true);
+                caderno.EscreverEvidencias();
                 textBox.SetActive(false);
                 PoderDarResposta = true;
             } 
@@ -170,6 +175,7 @@ public class Analise : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = true;
+            EntrouAnalisando = false;
             terminouConversa = false;
         }
     }
@@ -177,7 +183,7 @@ public class Analise : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {            
+        {
             dialogue.SetActive(true);
             noOriginal.SetActive(true);
             trocarCenaSimOriginal.SetActive(true);
