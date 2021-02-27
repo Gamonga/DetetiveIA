@@ -10,8 +10,11 @@ public class Caderno : MonoBehaviour
     static public Pessoa[] pessoas = new Pessoa[20];
     public static int posiçãoPessoa;
     public Animator caderno;
+    public Animator Transition;
+    public Text textoPensamentos;
     private int repetidor;
     private bool open;
+    public static bool PrecisaFecharTransition;
     public static bool kyle;
     public static bool Steve;
     public static bool Jessie;
@@ -24,9 +27,12 @@ public class Caderno : MonoBehaviour
     private Pessoa TesteDevi;
     private Pessoa TesteKyle;
     private Pessoa TesteSteve;
+    public GameObject SelecionarOutraPista;
+    public GameObject JuntarPistas;
     public GameObject CadernoLimpo;
     public GameObject evidenciasTextos;
     public GameObject pessoasTextos;
+    public GameObject Pensamentos;
     public Text description;
     public Text evidencia1;
     public Text evidencia2;
@@ -61,9 +67,17 @@ public class Caderno : MonoBehaviour
     static private bool entrou = false;
     static private bool entrouPessoa = false;
     static public bool PermissaoAbrirCaderno;
+    static public string Pensamento1;
+    static public string Pensamento2;
+    private static int numeroPensamento;
+    public static int contadorPensamentos;
+
     // Start is called before the first frame update
     void Start()
     {        
+        numeroPensamento = 1;
+        contadorPensamentos = 3;
+        PrecisaFecharTransition = false;
         PermissaoAbrirCaderno = true;
         entrouPessoa = false;
         entrou = false;
@@ -101,15 +115,30 @@ public class Caderno : MonoBehaviour
                 abrindoCaderno.Play();
                 evidenciasTextos.SetActive(false);
                 pessoasTextos.SetActive(false);
-                CadernoLimpo.SetActive(true);                
+                SelecionarOutraPista.SetActive(false);
+                JuntarPistas.SetActive(false);
+                Pensamentos.SetActive(false);
+                CadernoLimpo.SetActive(true);
+                Transition.SetBool("Abrir", false); 
+                textoPensamentos.text = "Deseja ir a cena do crime?";
                 open = true;
             }
             else
             {
+                SelecionarOutraPista.SetActive(false);
+                JuntarPistas.SetActive(false);
+                Pensamentos.SetActive(false);
+                Transition.SetBool("Abrir", false);
+                caderno.SetBool("Rela",false);
                 caderno.SetBool("abrir", false);
                 open = false;
             }
-        }
+        }       
+        if(PrecisaFecharTransition){
+            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||Input.GetKeyDown(KeyCode.D) ){
+                fechaTransition();
+            }
+        } 
     }
     public void atualizaDescricao(int tag)
     {
@@ -245,6 +274,132 @@ public class Caderno : MonoBehaviour
             description.text = evidencias[11].description;
             ImagemObjeto.sprite = evidencias[11].ImagemObjeto;
         }
+    }
+    public void JuntarPensamentos(){
+        if(Pensamento1 == "Destroços" && Pensamento2 == "Vítima"){
+            adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
+            textoPensamentos.text = "Pensamento adicionado ao caderno";
+        }
+        else if(Pensamento2 == "Destroços" && Pensamento1 == "Vítima"){
+            adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
+            textoPensamentos.text = "Pensamento adicionado ao caderno";
+        }
+        else{
+            textoPensamentos.text = "Não vejo correlação entre essas 2 evidências";
+        }
+        contadorPensamentos--;
+        Transition.SetBool("Abrir", true);
+        caderno.SetBool("Rela",false);
+        caderno.SetBool("abrir", false);
+        SelecionarOutraPista.SetActive(false);
+        JuntarPistas.SetActive(false);
+        PrecisaFecharTransition = true;
+        open = false;
+        numeroPensamento = 1;
+        Pensamento2 = "";
+        Pensamento1 = "";
+    }
+    public void SelecionarOutraPistaBotao(){
+        numeroPensamento = 1;
+        SelecionarOutraPista.SetActive(false);
+        JuntarPistas.SetActive(false);
+        Pensamento2 = "";
+    }
+    public void SelecionaPensamentos(Text Text){
+        Transition.SetBool("Abrir", true);   
+        if(numeroPensamento == 1){
+            Pensamento1 = Text.text;
+            textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ")" ;
+            numeroPensamento++;
+            SelecionarOutraPista.SetActive(true);
+        }
+        if(numeroPensamento == 2){
+            if(Pensamento1 == Text.text || Pensamento2 == Text.text){
+
+            }
+            else{
+                JuntarPistas.SetActive(true);
+                Pensamento2 = Text.text;
+                textoPensamentos.text = "Faz sentido eu juntar " + Pensamento1 + " e " + Pensamento2 + "? (Tentativas Restantes: " + contadorPensamentos + ")";
+            }
+        }
+    }
+    public void EscreverPensamentos(){
+        if(contadorPensamentos > 0){
+            numeroPensamento = 1;
+            Pensamento2 = "";
+            Pensamento1 = "";
+            CadernoLimpo.SetActive(false);
+            Pensamentos.SetActive(true);
+            caderno.SetBool("Rela",true);
+            description = GameObject.Find("Description").GetComponent<Text>();
+            ImagemObjeto = GameObject.Find("Image").GetComponent<Image>();
+            for(i=0;i<posiçãoEvidencias;i++){
+                switch(i){
+                    case 0:
+                        evidencia1 = GameObject.Find("Text0").GetComponent<Text>();
+                        evidencia1.text = evidencias[0].nome;  
+                    break;
+                    case 1:
+                        evidencia2 = GameObject.Find("Text1").GetComponent<Text>();
+                        evidencia2.text = evidencias[1].nome;  
+                    break;
+                    case 2:
+                        evidencia3 = GameObject.Find("Text2").GetComponent<Text>();
+                        evidencia3.text = evidencias[2].nome;  
+                    break;
+                    case 3:
+                        evidencia4 = GameObject.Find("Text3").GetComponent<Text>();
+                        evidencia4.text = evidencias[3].nome;  
+                    break;
+                    case 4:
+                        evidencia4 = GameObject.Find("Text4").GetComponent<Text>();
+                        evidencia4.text = evidencias[4].nome;  
+                    break;
+                    case 5:
+                        evidencia6 = GameObject.Find("Text5").GetComponent<Text>();
+                        evidencia6.text = evidencias[5].nome;  
+                    break;
+                    case 6:
+                        evidencia7 = GameObject.Find("Text6").GetComponent<Text>();
+                        evidencia7.text = evidencias[6].nome;  
+                    break;
+                    case 7:
+                        evidencia8 = GameObject.Find("Text7").GetComponent<Text>();
+                        evidencia8.text = evidencias[7].nome;  
+                    break;
+                    case 8:
+                        evidencia9 = GameObject.Find("Text8").GetComponent<Text>();
+                        evidencia9.text = evidencias[8].nome;  
+                    break;
+                    case 9:
+                        evidencia10 = GameObject.Find("Text9").GetComponent<Text>();
+                        evidencia10.text = evidencias[9].nome;  
+                    break;
+                    case 10:
+                        evidencia11 = GameObject.Find("Text10").GetComponent<Text>();
+                        evidencia11.text = evidencias[10].nome;  
+                    break;
+                    case 11:
+                        evidencia12 = GameObject.Find("Text11").GetComponent<Text>();
+                        evidencia12.text = evidencias[11].nome;  
+                    break;
+                }
+            }
+        }
+        else{
+            Transition.SetBool("Abrir", true);
+            textoPensamentos.text = "Estou cansado demais para conseguir pensar agora";
+            caderno.SetBool("Rela",false);
+            caderno.SetBool("abrir", false);
+            PrecisaFecharTransition = true;
+            open = false;
+        }
+    }
+    public void fechaTransition(){
+        Transition.SetBool("Abrir", false);
+        textoPensamentos.text = "Deseja ir a cena do crime?";
+        PrecisaFecharTransition = false;
     }
     public void EscreverEvidencias(){
         CadernoLimpo.SetActive(false);
@@ -653,7 +808,7 @@ public class Caderno : MonoBehaviour
     }
     public void Destroy_Object(){
         PlayerData data = SaveSystem.LoadPlayer();
-        posiçãoEvidencias = data.NumeroDeEvidencias;
+        posiçãoEvidencias = data.NumeroDeEvidencias;        
         for(j=0;j<data.NumeroDeObjetos;j++){
             Destroy(GameObject.Find(data.NomeDosObjetos[j]));
         }                
@@ -664,6 +819,7 @@ public class Caderno : MonoBehaviour
         } 
         PlayerData data = SaveSystem.LoadPlayer();
         LoadPessoas(data);
+        contadorPensamentos = data.contadorPensamento;
         posiçãoEvidencias = 0;
         for(j=0;j<data.NumeroDeEvidencias;j++){
             adicionar(GameObject.Find(data.nomeObjetoEvidencias[j]).GetComponent<Evidence>());
@@ -694,7 +850,7 @@ public class Caderno : MonoBehaviour
         }
         if(kyle == true){
             TesteKyle.nome = "kyle";
-            TesteKyle.description = "Perito digital da delgacia";
+            TesteKyle.description = "Perito digital da delegacia";
             adicionarPessoas(TesteKyle);
         }
         if(Steve == true){

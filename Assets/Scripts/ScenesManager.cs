@@ -34,11 +34,13 @@ public class ScenesManager : MonoBehaviour
     void Update()
     {        
         if(isInRange){            
-            if(SceneManager.GetActiveScene().buildIndex == 1){
-                texto.text = "Deseja ir a cena do crime?";
-            }
-            if (Input.GetKeyDown(KeyCode.E)){    
-                texto.text = "Deseja ir a delegacia?";
+            if (Input.GetKeyDown(KeyCode.E)){ 
+                if(SceneManager.GetActiveScene().buildIndex == 1){
+                    texto.text = "Deseja ir a cena do crime?";
+                }   
+                else{
+                    texto.text = "Deseja ir a delegacia?";
+                }
                 Transition.SetBool("Abrir", true);
                 botaoSim.SetActive(true);
                 botaoNao.SetActive(true);
@@ -59,6 +61,7 @@ public class ScenesManager : MonoBehaviour
 
     public void Voltar(){
         if(Relatorio.perguntando == false){
+            SavePlayer();
             SceneManager.LoadScene(CrimeScene);
         }
     }

@@ -22,6 +22,7 @@ public class Relatorio : MonoBehaviour
     private Queue<string> sentence;
     public Text texto;
     public bool isInRange;
+    public Animator PixelArt;
     public Animator Transition;
     public Animator caderno;
     public movimento movimento;
@@ -235,7 +236,10 @@ public class Relatorio : MonoBehaviour
         }
     }
     public void PreencherORelatorio(){
+        movimento.ParaPersonagem = true;
+        Caderno.PermissaoAbrirCaderno = false;
         entrouPreencher = true;
+        PixelArt.SetBool("On",true);
         preencher.SetActive(false); 
         no.SetActive(false);
         fraseAtual = sentence.Dequeue();
@@ -249,6 +253,8 @@ public class Relatorio : MonoBehaviour
         caderno.SetBool("Rela",false);
         entrouPreencher = false;
         sentence.Clear();
+        PixelArt.SetBool("On",false);
+        Caderno.PermissaoAbrirCaderno = true;
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

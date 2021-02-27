@@ -12,6 +12,10 @@ public class SpawnObjects : MonoBehaviour
     public Caderno caderno;
     public static string[] NomeDosObjetos = new string[20];
     public static int NumeroDeObjetos;
+    public GameObject Punhos;
+    public Evidence PunhosEvidence;
+    public GameObject Destrocos;
+    public Evidence DestrocosEvidence;
     public GameObject ManchaSangue;
     public Evidence ManchaSangueEvidence;
     public GameObject Revolver;
@@ -83,11 +87,11 @@ public class SpawnObjects : MonoBehaviour
     public static bool depoimentoTestemunhaOuviu;
     public static string PrimeiraResposta;
     public static string SegundaResposta;
-    public static string VistoVerdade;
-    public static string OuviuVerdade;
     public static string TerceiraResposta;
     public static string QuartaResposta;
     public static string QuintaResposta;
+    public static string VistoVerdade;
+    public static string OuviuVerdade;
     public static bool weaponInstantDeath;
     public static bool TemPlanejamento;
     public static bool NTemPlanejamento;
@@ -107,6 +111,7 @@ public class SpawnObjects : MonoBehaviour
     static private int selecionadorint = 0;
     static private int numeroSelecionadoParaResposta = 0;
     private int NumeroArmas;
+    public static int contador;
     // Start is called before the first frame update
     void Start()
     {       
@@ -116,6 +121,8 @@ public class SpawnObjects : MonoBehaviour
         PortaDaCena = carregaPortaDaCena();
         if(MainMenu.NewGame == false){     
             PlayerData data = SaveSystem.LoadPlayer(); 
+            contador = data.contadorAnalise;
+            LoadRespostas(data);
             for(i=0; i<data.NumeroDeObjetos;i++){
                 LoadPlayer(data, i);
             }
@@ -123,7 +130,8 @@ public class SpawnObjects : MonoBehaviour
                 GameObject.Find("Porta"+(i+PortaDaCena)).GetComponent<PortaController>().isOpen = data.isOpen[i+PortaDaCena];
             }
         }
-        else{            
+        else{       
+            contador = 3;
             if(SceneManager.GetActiveScene().buildIndex == 3){
                 InstantiatePortaSaida();
             }
@@ -143,41 +151,15 @@ public class SpawnObjects : MonoBehaviour
                         break;
                 }
             }
-            /*NumeroDeObjetos = 0;
-            TerceiraResposta = "Vítima";            
-            selecionador = Random.Range(0.0f,1.0f);
-            if (selecionador <= 0.3)
-            {
-                QuintaResposta = "Justica";
-                InstantiateCorpoMorto1();
-                InstantiateBilheteCulposo();    
-                InstantiateJanelaQuebradaPedraInterior();
-                PrimeiraResposta = "Vidro Quebrado";
-                InstantiateFacaNormalSemSangue();
-                InstantiateFacaCozinha();                
-                SegundaResposta = "Vidro Quebrado";
-                QuartaResposta = "Faca Cozinha";
-            }
-            else if(selecionador <= 0.6 && selecionador >0.3){
-                QuintaResposta = "Justica";
-                InstantiateCorpoMorto1();
-                InstantiateBilheteCulposo();    
-                InstantiateJanelaQuebradaPedraInterior();
-                PrimeiraResposta = "Vidro Quebrado";
-                InstantiateFacaNormal();
-                SegundaResposta = "Informações do policial";
-                QuartaResposta = "Faca Serrada com Sangue";
-            }
-            else if(selecionador >0.6){
-                GameObject.Find("Legista").GetComponent<Evidence>().description = "Morreu de forma brutapor volta das 14:00, devido a traumatismo craniano e costelas quebradas";
-                InstantiatePratos();
-                InstantiateCorpoMorto2();
-                PrimeiraResposta = "Prato";
-                SegundaResposta = "Informações do policial";
-                QuartaResposta = "Laudo";
-                QuintaResposta = "Raiva";
-            }*/
         }
+    }
+    public void LoadRespostas(PlayerData data){
+        PrimeiraResposta = data.PrimeiraResposta;
+        SegundaResposta = data.SegundaResposta;
+        TerceiraResposta = data.TerceiraResposta;
+        QuartaResposta = data.QuartaResposta;
+        QuintaResposta = data.QuintaResposta;
+        Debug.Log(PrimeiraResposta +"aaa"+ SegundaResposta +"aaa"+ TerceiraResposta +"aaa"+ QuartaResposta +"aaa"+ QuintaResposta);
     }
     public void SelecionaMotivo(){
         Roubo = false;
@@ -216,7 +198,7 @@ public class SpawnObjects : MonoBehaviour
                         else{
                             InstantiateCofreVazio();
                         }
-                        QuintaResposta = "roubo";
+                        QuintaResposta = "Roubo";
                     }
                     else if(!SpawnCofre){
                         SpawnCofre = true;
@@ -233,28 +215,28 @@ public class SpawnObjects : MonoBehaviour
                         ContinuaNoLoop = false;
                         LaudoEvidence.descriptionUpdate =  LaudoEvidence.descriptionUpdate + ". Morreu de Forma Lenta";
                         InstantiateManchaSangue();
-                        QuintaResposta = "tortura";
+                        QuintaResposta = "Prazer";
                     }
                     break;
                 case 2:
                     if(Vinganca){
                         ContinuaNoLoop = false;
                         InstantiateBilheteCulposo();
-                        QuintaResposta = "vinganca";
+                        QuintaResposta = "Desavenca";
                     }
                     break;
                 case 3:
                     if(Justica){
                         ContinuaNoLoop = false;
                         InstantiateBilheteCulposo();
-                        QuintaResposta = "justica";
+                        QuintaResposta = "Justica";
                     }
                     break;
                 case 4:
                     if(Raiva && FoiConvidado){
                         ContinuaNoLoop = false;
                         InstantiateBilheteCulposo();
-                        QuintaResposta = "raiva";
+                        QuintaResposta = "Raiva";
                     }
                     break;
             }
@@ -426,7 +408,7 @@ public class SpawnObjects : MonoBehaviour
                 }           
             }
         }
-        if(!PortaQuebrada){
+        if(!PortaQuebrada || !JanelaQuebrada){
             PrecisaDeAuxilioEntradaSaida = true;
             ajudaSaida = true;
             ajudaEntrada = true;
@@ -451,6 +433,7 @@ public class SpawnObjects : MonoBehaviour
         if(ajudaSaida){
             CelularEvidence.description = "Celular pertencente a vítima.";
             CelularEvidence.descriptionUpdate = "Celular pertencente a vítima. Anotação encontrada no celular 'Comprar materias para consertar a quebradiça da porta'";
+            QuartaResposta = "Informações do policial";
         }
         InstantiateCelular();
     }
@@ -510,8 +493,9 @@ public class SpawnObjects : MonoBehaviour
         Armas[4] = BastaoDeBeisebolEvidence;
         Armas[5] = RevolverEvidence;
         Armas[6] = CaixaDeRemedioEvidence;
+        Armas[7] = PunhosEvidence;
         if(PlayerData.DificuldadeAtual <= 0){
-            NumeroArmas = 1;            
+            NumeroArmas = 2;            
         }       
         else if(PlayerData.DificuldadeAtual <= 2 && PlayerData.DificuldadeAtual >= 1){
             NumeroArmas = 2;
@@ -519,7 +503,10 @@ public class SpawnObjects : MonoBehaviour
         else if(PlayerData.DificuldadeAtual <= 6 && PlayerData.DificuldadeAtual >= 3){
             NumeroArmas = 3;
         }
-        selecionadorint = Random.Range(0,7);
+        selecionadorint = Random.Range(0,8);
+        if(selecionadorint == 7){
+            InstantiateDestrocos();
+        }
         for(j=0;j<NumeroArmas;j++){
             if(j == 0){
                 carregaObjetos(Armas[selecionadorint].NomeObjeto);
@@ -543,10 +530,10 @@ public class SpawnObjects : MonoBehaviour
                 SelecionaLaudo(Armas[numeroSelecionadoParaResposta].weaponDescription);
             }
             else{
-                while(selecionadorint == numeroSelecionadoParaResposta){
-                    selecionadorint = Random.Range(0,2);
-                }    
-                carregaObjetos(Armas[selecionadorint].NomeObjeto);            
+                while(selecionadorint == numeroSelecionadoParaResposta || Armas[numeroSelecionadoParaResposta].tierArma < Armas[selecionadorint].tierArma){
+                    selecionadorint = Random.Range(0,8);
+                }
+                carregaObjetos(Armas[selecionadorint].NomeObjeto);      
             }
         }
     }
@@ -656,6 +643,12 @@ public class SpawnObjects : MonoBehaviour
             case "Porta de saida(Clone)":
                 InstantiatePortaSaida();
                 break;
+            case "Destrocos(Clone)":
+                InstantiateDestrocos();
+                break;
+            case "Punhos(Clone)":
+                InstantiatePunhos();
+                break;
         }
     }
     public void LoadPlayer(PlayerData data, int i){
@@ -732,8 +725,28 @@ public class SpawnObjects : MonoBehaviour
             case "Porta de saida(Clone)":
                 InstantiatePortaSaida();
                 break;
+            case "Destrocos(Clone)":
+                InstantiateDestrocos();
+                break;
+            case "Punhos(Clone)":
+                InstantiatePunhos();
+                break;
         }
     }
+    public void DestrocosNome(){
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if(!entrouNoTexto){            
+            animator.SetBool("Abrir",true);
+            dialogueText.text = "Destroços foram adicionadas ao caderno";
+            entrouNoTexto = true;
+        }
+        else{
+            animator.SetBool("Abrir",false);
+            entrouNoTexto = false;
+        }
+    }
+    
     public void CorpoMortoNome(){
         animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
         dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
@@ -964,6 +977,24 @@ public class SpawnObjects : MonoBehaviour
         ImagemClone.transform.position = new Vector3(50f, 50f, -5);  
         caderno.adicionar(ImagemEvidence);
         NomeDosObjetos[NumeroDeObjetos] = "Imagem(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateDestrocos(){
+        GameObject DestrocosClone = Instantiate(Destrocos) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                DestrocosClone.transform.position = new Vector3(9.28f,0.12f, -5);
+                break;
+            case 2:
+                DestrocosClone.transform.position = new Vector3(9.28f,-4.03f, -5);
+                break;
+            case 3:
+                DestrocosClone.transform.position = new Vector3(-9.9f,-9.13f, -5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "Destrocos(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiateManchaSangue(){
@@ -1332,16 +1363,32 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 1:
                 PortaDeSaidaClone.transform.position = new Vector3(9.836f,-16.8f,-5);
-                PosicaoCorpoMorto = PortaDeSaidaClone.transform.position;
                 break;
             case 2:
                 break;
             case 3:
                 PortaDeSaidaClone.transform.position = new Vector3(9.836f,-16.8f,-5);
-                PosicaoCorpoMorto = PortaDeSaidaClone.transform.position;
                 break;
         }        
         NomeDosObjetos[NumeroDeObjetos] = "Porta de saida(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiatePunhos(){
+        GameObject PunhosClone = Instantiate(Punhos) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                PunhosClone.transform.position = new Vector3(40f,40f,-5);
+                break;
+            case 2:
+                PunhosClone.transform.position = new Vector3(40f,40f,-5);
+                break;
+            case 3:
+                PunhosClone.transform.position = new Vector3(40f,40f,-5);
+                break;
+        }        
+        NomeDosObjetos[NumeroDeObjetos] = "Punhos(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiateCorpoMorto1(){

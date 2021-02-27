@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3769161884679566057
+--- !u!1001 &7249390284342839314
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: nome
-      value: "Bast\xE3o de beisebol"
+      value: "Destro\xE7os"
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -19,24 +19,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
-      propertyPath: tierArma
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
-        type: 3}
       propertyPath: NomeObjeto
-      value: BastaoDeBeisebol(Clone)
+      value: Destrocos(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: description
-      value: "Bast\xE3o de beisebol."
+      value: "Garrafa quebrada no ch\xE3o."
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: weaponRuido
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: ImagemObjeto
       value: 
-      objectReference: {fileID: 21300000, guid: a717756f53a1f0d4b903b81afd99bcb9,
+      objectReference: {fileID: 21300000, guid: f177adc6eaa914f48af0b4b14e8a4549,
         type: 3}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -46,17 +46,33 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: descriptionUpdate
-      value: "Bast\xE3o de beisebol."
+      value: "Garrafa quebrada no ch\xE3o. Possivelmente quebrado em algum objeto,
+        n\xE3o foi tuilizado em alguem."
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: weaponDescription
-      value: contundente
+      value: armaDeFogo
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: weaponInstantDeath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: FechaJanela.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FechaJanela
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: BastaoDeBeisebolNome
+      value: DestrocosNome
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: FechaJanela.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SpawnObjects, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -67,27 +83,47 @@ PrefabInstance:
         type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3910516854776256928}
+      objectReference: {fileID: 7390741866917258075}
     - target: {fileID: 3032199358882690515, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a717756f53a1f0d4b903b81afd99bcb9,
+      objectReference: {fileID: 21300000, guid: f177adc6eaa914f48af0b4b14e8a4549,
         type: 3}
     - target: {fileID: 3161087300882211810, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_Name
-      value: BastaoDeBeisebol
+      value: Destrocos
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.8003682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8003688
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.020951688
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.046093702
       objectReference: {fileID: 0}
     - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2.56
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.56
+      value: 1.65
       objectReference: {fileID: 0}
     - target: {fileID: 8480484922263570548, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -146,11 +182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d92f1bd8ec3214bb433f5e12db03f7, type: 3}
---- !u!114 &3910516854776256928 stripped
+--- !u!114 &7390741866917258075 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
     type: 3}
-  m_PrefabInstance: {fileID: 3769161884679566057}
+  m_PrefabInstance: {fileID: 7249390284342839314}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

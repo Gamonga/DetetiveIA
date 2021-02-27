@@ -20,4 +20,5 @@ public class Evidence : MonoBehaviour
     public bool NTemPlanejamento;
     public string weaponDescription;  
     public int Dificuldade;     
+    public int tierArma;    
 }

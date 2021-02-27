@@ -99,9 +99,9 @@ MonoBehaviour:
   weapon: 1
   description: "O assassino pode ter matado a v\xEDtima usando os punhos"
   descriptionUpdate: "O assassino pode ter matado a v\xEDtima usando os punhos. Indica
-    sinias de briga com a v~itima."
+    sinias de briga com a v\xEDtima."
   tamanho: pequeno
-  ImagemObjeto: {fileID: 0}
+  ImagemObjeto: {fileID: 21300000, guid: 2a253443ca1681148976fb4bd503d168, type: 3}
   NomeObjeto: Punhos(Clone)
   NumeroCaderno: 0
   weaponRuido: 0
@@ -110,3 +110,4 @@ MonoBehaviour:
   NTemPlanejamento: 0
   weaponDescription: contundente
   Dificuldade: 0
+  tierArma: 1

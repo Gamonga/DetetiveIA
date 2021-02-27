@@ -35,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (!open)
             {
+                Caderno.PermissaoAbrirCaderno = false;
                 Menu.SetBool("Abrir", true);
                 open = true;
                 Options.SetActive(false);
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
+                Caderno.PermissaoAbrirCaderno = true;
                 Menu.SetBool("Abrir", false);
                 open = false;
                 Options.SetActive(false);

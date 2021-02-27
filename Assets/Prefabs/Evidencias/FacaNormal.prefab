@@ -111,6 +111,7 @@ MonoBehaviour:
   NTemPlanejamento: 0
   weaponDescription: corte
   Dificuldade: 0
+  tierArma: 2
 --- !u!114 &3006260498401048977
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,11 +7,13 @@ public class movimento : MonoBehaviour
 {    
     public Rigidbody2D rb;
     public Animator animator;
+    public static bool ParaPersonagem;
     public float limitadorVelocidade = 10;
     int contador = 0;
     // Start is called before the first frame update
     void Start()
     {
+        ParaPersonagem = false;
         contador = 0;
         if(MainMenu.NewGame == false){        
             LoadPlayer();
@@ -131,7 +133,9 @@ public class movimento : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate ()
     {
-        contador = Animation(contador);
+        if(!ParaPersonagem){
+            contador = Animation(contador);
+        }
     }
 
     public void LoadPlayer(){

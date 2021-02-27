@@ -77,7 +77,8 @@ public class Analise : MonoBehaviour
         if(contador > 0){
             Analisando();
         } 
-        contador--;        
+        contador--;
+        SpawnObjects.contador--;   
         switch(tagDaEvidencia){
             case "0":
                 caderno.atualizaDescricao(0);
@@ -184,6 +185,8 @@ public class Analise : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            no.SetActive(false);
+            trocarCenaSim.SetActive(false);  
             dialogue.SetActive(true);
             noOriginal.SetActive(true);
             trocarCenaSimOriginal.SetActive(true);

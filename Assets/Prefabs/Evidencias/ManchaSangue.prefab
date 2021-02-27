@@ -36,7 +36,8 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: descriptionUpdate
-      value: "Mancha de sangue no ch\xE3o. Sangue da v\xEDtima."
+      value: "Mancha de sangue no ch\xE3o. Sangue da v\xEDtima, precede muito a data
+        da morte."
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -76,13 +77,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: m_Size.x
+      value: 1.7619641
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.6205344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.16098201
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.2195208
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.28
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.28
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 8480484922263570548, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

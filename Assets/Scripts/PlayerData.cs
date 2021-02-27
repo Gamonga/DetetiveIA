@@ -33,6 +33,12 @@ public class PlayerData
     public bool ouviuPergunta;
     public bool vistoPergunta;
     public int contadorAnalise;
+    public int contadorPensamento;
+    public string PrimeiraResposta;
+    public string SegundaResposta;
+    public string TerceiraResposta;
+    public string QuartaResposta;
+    public string QuintaResposta;
     public PlayerData(movimento movimento){
         level = SceneManager.GetActiveScene().buildIndex;
         actualCrimeScene = ScenesManager.ActualScene;
@@ -45,7 +51,9 @@ public class PlayerData
         relacaoPergunta = Testemunha.relacaoPergunta;
         ouviuPergunta = Testemunha.ouviuPergunta;
         vistoPergunta = Testemunha.vistoPergunta;
-        contadorAnalise= Analise.contador;
+        contadorAnalise= SpawnObjects.contador;
+        contadorPensamento = Caderno.contadorPensamentos;
+        SalvaRespostas();
         salvapessoas();
         for(i=0;i<NumeroDeEvidencias;i++){
             SalvaCaderno(i);
@@ -59,6 +67,13 @@ public class PlayerData
             isOpen[PortaDaCena+i] = GameObject.Find("Porta"+(i+PortaDaCena)).GetComponent<PortaController>().isOpen;
         }
         AndarAtual = TrocaDeAndares.AndarAtual;
+    }
+    public void SalvaRespostas(){
+        PrimeiraResposta = SpawnObjects.PrimeiraResposta;
+        SegundaResposta = SpawnObjects.SegundaResposta;
+        TerceiraResposta = SpawnObjects.TerceiraResposta;
+        QuartaResposta = SpawnObjects.QuartaResposta;
+        QuintaResposta = SpawnObjects.QuintaResposta;
     }
     public PlayerData(){
         volumeMusica = MainMenu.volumeMusica;

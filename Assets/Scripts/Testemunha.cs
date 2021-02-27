@@ -67,6 +67,7 @@ public class Testemunha : MonoBehaviour
     {
         if(isInRange){            
             if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false && FinalizouTestemunha == false){
+                texto.text = "";
                 if(!vistoPergunta && !ouviuPergunta && !relacaoPergunta){
                         Nome.text = NomeDaTestemunha;
                         Debug.Log("entrou1");
