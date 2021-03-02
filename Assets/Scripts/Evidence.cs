@@ -7,8 +7,10 @@ public class Evidence : MonoBehaviour
 {
 
     public string nome;
-    public bool weapon;
+    public bool sangue;
+    [TextArea(3,10)]
     public string description;
+    [TextArea(3,10)]
     public string descriptionUpdate;
     public string tamanho;
     public Sprite ImagemObjeto;

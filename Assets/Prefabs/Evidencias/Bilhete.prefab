@@ -125,12 +125,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Bilhete
   weapon: 0
-  description: "Bilhete com a seguinte mensagem: \"Quero ficar sozinho essas semanas,
-    depois do que eu fiz deveria me entregar para pol\xEDcia. N\xE3o, ficarei aqui
-    at\xE9 o fogo abaixar."
-  descriptionUpdate: "Bilhete com a seguinte mensagem: \"Quero ficar sozinho essas
-    semanas, depois do que eu fiz deveria me entregar para pol\xEDcia. N\xE3o, ficarei
-    aqui at\xE9 o fogo abaixar. Bilhete escrito a pelo menos 1 semana, letra da v\xEDitima"
+  description: "Bilhete com a mensagem: \"Quero ficar sozinho essas semanas. Depois
+    do que eu fiz deveria me entregar para pol\xEDcia. N\xE3o, ficarei aqui at\xE9
+    o fogo baixar.\"\n"
+  descriptionUpdate: "Bilhete com a mensagem: \"Quero ficar sozinho essas semanas.
+    Depois do que eu fiz deveria me entregar para pol\xEDcia. N\xE3o, ficarei aqui
+    at\xE9 o fogo baixar.\" Bilhete escrito a pelo menos 1 semana. Letra da v\xEDitima.\n"
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: c56d5a02e053f52469e1c57e6812b86d, type: 3}
   NomeObjeto: Bilhete(Clone)
@@ -141,6 +141,7 @@ MonoBehaviour:
   NTemPlanejamento: 0
   weaponDescription: 
   Dificuldade: 0
+  tierArma: 0
 --- !u!114 &6101016612613423583
 MonoBehaviour:
   m_ObjectHideFlags: 0

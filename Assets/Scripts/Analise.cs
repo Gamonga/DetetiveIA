@@ -120,7 +120,7 @@ public class Analise : MonoBehaviour
     }
     void AntesAnalise(){
         tiDialogo.senteceloop = new string[3];
-        tiDialogo.senteceloop[0] = "Gostaria que eu analisasse algo a mais detetive?";
+        tiDialogo.senteceloop[0] = "Gostaria que eu analisasse algo a mais, detetive?";
         tiDialogo.senteceloop[1] = "troca";
         tiDialogo.senteceloop[2] = "Se for possível.";
         alterouTexto = true;
@@ -128,19 +128,19 @@ public class Analise : MonoBehaviour
 
     void Analisando(){
         tiDialogo.senteceloop = new string[4];
-        tiDialogo.senteceloop[0] = "Vou verficar isso para você detetive";
-        tiDialogo.senteceloop[1] = "Espero que ajude no seu caso";
+        tiDialogo.senteceloop[0] = "Vou verficar isso para você, detetive.";
+        tiDialogo.senteceloop[1] = "Espero que ajude no seu caso.";
         tiDialogo.senteceloop[2] = "troca";
-        tiDialogo.senteceloop[3] = "Qualquer informação já é de grande ajuda";
+        tiDialogo.senteceloop[3] = "Qualquer informação já é de grande ajuda.";
         tiDialogoControl.StartDialogue(tiDialogo);
         alterouTexto = false;
     }
     void NtemMaisAnalises(){
         tiDialogo.senteceloop = new string[4];
-        tiDialogo.senteceloop[0] = "Não estou com tempo para ver isso agora detetive";
-        tiDialogo.senteceloop[1] = "Se estivesse com mais tempo poderia ver melhor";
+        tiDialogo.senteceloop[0] = "Não estou com tempo para ver isso agora, detetive.";
+        tiDialogo.senteceloop[1] = "Se estivesse com mais tempo, poderia ver melhor.";
         tiDialogo.senteceloop[2] = "troca";
-        tiDialogo.senteceloop[3] = "Tudo bem Kyle, você já foi de grande ajuda";
+        tiDialogo.senteceloop[3] = "Tudo bem, você já foi de grande ajuda.";
         EntrouNtemMaisAnalise = true;
     }
     // Update is called once per frame

@@ -7508,10 +7508,13 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Quadro de uma montanha nevada
+  - Quadro de uma montanha nevada.
   sentences2: []
   senteceloop:
-  - Quadro de uma montanha nevada
+  - Quadro de uma montanha nevada.
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -10865,6 +10868,9 @@ MonoBehaviour:
   - Saudades de comer uma fraldinha
   senteceloop:
   - Estou com fome
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 1
@@ -17782,37 +17788,40 @@ MonoBehaviour:
   nameperson1: Steve
   nameperson2: Detetive
   sentences:
-  - "Ol\xE1 detetive"
+  - "Ol\xE1 detetive."
   - troca
-  - "O que voc\xEA esta fazendo Steve"
+  - "O que voc\xEA esta fazendo Steve?"
   - troca
-  - Estou vendo se encontro alguma pista
+  - Estou vendo se encontro alguma pista.
   - troca
-  - No predio da frente?
+  - "No pr\xE9dio da frente?"
   - troca
-  - O assassino pode estar em qualquer lugar
+  - O assassino pode estar em qualquer lugar.
   sentences2:
   - troca
-  - "Steve voc\xEA esta na varanda?"
+  - "Steve voc\xEA est\xE1 na varanda?"
   - troca
-  - Sim
+  - Sim.
   - troca
-  - "E a maioria das evid\xEAncias est\xE3o l\xE1 dentro"
+  - "E a maioria das evid\xEAncias est\xE1 l\xE1 dentro."
   - troca
-  - Sim
+  - Sim.
   - troca
   - "Ent\xE3o faz sentido voc\xEA entrar agora, certo?"
   - troca
-  - Faz sentido para mim
+  - Faz sentido para mim.
   - troca
-  - Ent!ao vamos entrar Steve
+  - "Ent\xE3o vamos entrar, Steve."
   - troca
-  - "N\xE3o, pode ter pistas aqui fora"
+  - "N\xE3o, pode ter pistas aqui fora."
   senteceloop:
-  - precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa, detetive?
   - troca
-  - estou bem obrigado!
-  - (acho melhor investigar o apartamento)
+  - Estou bem, obrigado!
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: efae99dbdf1401e4d8a8e75cddad50ec, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 1
@@ -20177,49 +20186,52 @@ MonoBehaviour:
   nameperson1: Devi
   nameperson2: Detetive
   sentences:
-  - "ol\xE1 detetive"
+  - "Ol\xE1 detetive."
   - troca
-  - "ol\xE1"
+  - "Ol\xE1."
   - troca
-  - mais um pobre coitado morto
+  - Mais um pobre coitado morto.
   - troca
-  - "nem todos s\xE3o coitados"
-  - "mas com certeza n\xE3o merecem morrer assim"
+  - "Nem todos s\xE3o coitados."
+  - "Mas com certeza n\xE3o merecem morrer assim."
   - troca
-  - "opini\xE3o forte"
-  - mas n irei dizer que esta errada
-  - aqui esta o laudo
+  - "Opini\xE3o forte"
+  - "Mas n\xE3o irei dizer que est\xE1 errada."
+  - "Aqui est\xE1 o laudo."
   - troca
   - (Laudo adicionado ao caderno)
-  - obrigado Devi
+  - Obrigado Devi.
   - troca
-  - tenha um bom trabalho detetive
+  - Tenha um bom trabalho, detetive.
   sentences2:
   - troca
-  - "ol\xE1 Devi"
+  - "Ol\xE1 Devi."
   - troca
-  - como vai detetive?
+  - Como vai, detetive?
   - troca
-  - podia estar melhor
-  - o que temos hoje?
+  - Poderia estar melhor.
+  - O que temos hoje?
   - troca
-  - o sujeito acabou tendo uma morte horrivel
-  - nada podia ser feito para ajuda-lo
+  - "O sujeito acabou tendo uma morte horr\xEDvel."
+  - "Nada podia ser feito para ajud\xE1-lo."
   - troca
-  - "n\xE3o deve ter sido algo bonito de se ver"
+  - "N\xE3o deve ter sido algo bonito de se ver."
   - troca
-  - "n\xE3o mesmo"
-  - "aqui est\xE1 o meu laudo"
+  - "N\xE3o mesmo."
+  - "Aqui est\xE1 o meu laudo."
   - troca
   - (Laudo adicionado ao caderno)
-  - obrigado Devi
+  - Obrigado Devi.
   - troca
-  - disponha detetive
+  - Disponha, detetive.
   senteceloop:
-  - precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa, detetive?
   - troca
-  - estou bem obrigado!
-  - (acho melhor investigar a casa)
+  - Estou bem obrigado!
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: ed9c2234c7a71c749b18170153240d0e, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 1
@@ -24116,7 +24128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5a17f5eb4e6b45ba7de4cdfe3fb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Johny
+  nome: Johnny
   description: 'Poilical '
 --- !u!50 &1401230336
 Rigidbody2D:
@@ -24221,51 +24233,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameperson1: Johny
+  nameperson1: Johnny
   nameperson2: Detetive
   sentences:
-  - Como vai detetive?
+  - "Ol\xE1 detetive.\n"
   - troca
-  - "ol\xE1 policial"
+  - "Ol\xE1 policial."
   - troca
-  - "cheguei o mais r\xE1pido que pude"
-  - "mas n\xE3o consegui ver nada de \xFAtil"
+  - Sabe uma coisa que me incomoda muito, detetive?
   - troca
-  - "conte-me o que voc\xEA presenciou hoje"
-  - "(bom eu ir anotando as informa\xE7\xF5es que ele me passar)"
+  - "(L\xE1 vem)"
+  - O que?
   - troca
-  - 'Bom, estava eu em mais um dia tranquilo '
-  - "at\xE9 que uma mulher desesperada me liga"
-  - "eu tento entender mas ela s\xF3 grita e fala comigo de forma r\xE1pida demais"
-  - eu fico todo confuso achando que estava acontecendo uma chacina
-  - "mas eu reparei que era s\xF3 minha m\xE3e me ligando reclamando sobre eu ter
-    deixa.."
+  - As pessoas vivem confundindo meu nome.
+  - Me chamam de "Jhony", "Johny", "Joni"...
+  - E isso sempre me incomoda.
   - troca
-  - 'polical porfavor fale do caso '
-  - "n\xE3o do seu dia como um todo"
+  - "A vida \xE9 assim, Johnny."
   - troca
-  - "perd\xE3o detetive"
-  - mas como ia dizendo
-  - "ap\xF3s toda essa confus\xE3o com a liga\xE7\xE3o"
-  - "eu fui tomar um copo de caf\xE9 pois estava com muito sono"
+  - "Detetive, como voc\xEA sabe que meu nome \xE9 Johnny e n\xE3o qualquer varia\xE7\xE3o?"
   - troca
-  - "policial s\xF3 me diga o que foi visto no caso..."
+  - "Est\xE1 no seu cracha."
   - troca
-  - calma calma
-  - "enquanto estava indo pegar um copo de caf\xE9"
-  - "recebi uma chamada do r\xE1dio dizendo para ir para rua luciano gualberto"
-  - "que \xE9 essa rua no caso"
-  - chegando aqui
+  - ...
+  - "Aqui est\xE3o as informa\xE7\xF5es do caso."
   - troca
-  - "(agora eu posso come\xE7ar a anotar)"
-  - troca
-  - a porta da frente estava destrancada
-  - janela quebrada
-  - e nenhum sinal de movimento na rua
-  - troca
-  - "\xF3timo polical, muito obrigado pelas informa\xE7\xF5es"
-  - troca
-  - disponha, mas caso queira saber do resto do meu dia eu te conto em outro momento
+  - Obrigado, Jhoni.
   sentences2:
   - troca
   - "ol\xE1 Devi"
@@ -24288,10 +24281,13 @@ MonoBehaviour:
   - troca
   - disponha detetive
   senteceloop:
-  - precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa detetive?
   - troca
-  - estou bem obrigado!
-  - (acho melhor investigar a casa)
+  - Estou bem obrigado!
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: 126c3f240b05cea4b9a3ed9b27ae0f18, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 0
@@ -24686,10 +24682,13 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Porta de saida
+  - "Porta de sa\xEDda."
   sentences2: []
   senteceloop:
-  - Porta de saida
+  - "Porta de sa\xEDda."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -32371,13 +32370,16 @@ MonoBehaviour:
   - Quadro de ...
   - De uma ...
   - Talvez seja ...
-  - "N\xE3o consigo entender arte moderna"
+  - "N\xE3o consigo entender arte moderna."
   sentences2: []
   senteceloop:
   - Quadro de ...
   - De uma ...
   - Talvez seja ...
   - "N\xE3o consigo entender arte moderna"
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -34434,7 +34436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097695716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.52, y: -21.12, z: -20}
+  m_LocalPosition: {x: 11.11, y: -20.94, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 519420032}
@@ -35102,6 +35104,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: Convite
+      value: 
+      objectReference: {fileID: 3881051416228767763, guid: 6677c43f8e7c768478455df90a5f1cd0,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: caderno
       value: 
       objectReference: {fileID: 1117420781}
@@ -35221,6 +35229,12 @@ PrefabInstance:
       propertyPath: CelularEvidence
       value: 
       objectReference: {fileID: 1214451250904688982, guid: cc99e64cd73d0c74495c131199dd69e8,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: ConviteEvidence
+      value: 
+      objectReference: {fileID: 6893536457397874756, guid: 6677c43f8e7c768478455df90a5f1cd0,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

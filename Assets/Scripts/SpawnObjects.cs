@@ -12,6 +12,8 @@ public class SpawnObjects : MonoBehaviour
     public Caderno caderno;
     public static string[] NomeDosObjetos = new string[20];
     public static int NumeroDeObjetos;
+    public GameObject Convite;
+    public Evidence ConviteEvidence;
     public GameObject Punhos;
     public Evidence PunhosEvidence;
     public GameObject Destrocos;
@@ -85,6 +87,7 @@ public class SpawnObjects : MonoBehaviour
     private static int QuantidadeCorposDisponiveis; 
     public static bool depoimentoTestemunhaVisto;
     public static bool depoimentoTestemunhaOuviu;
+    public static string policialUpdateSalvar;
     public static string PrimeiraResposta;
     public static string SegundaResposta;
     public static string TerceiraResposta;
@@ -122,6 +125,7 @@ public class SpawnObjects : MonoBehaviour
         if(MainMenu.NewGame == false){     
             PlayerData data = SaveSystem.LoadPlayer(); 
             contador = data.contadorAnalise;
+            policialUpdateSalvar = data.policialUpdate;
             LoadRespostas(data);
             for(i=0; i<data.NumeroDeObjetos;i++){
                 LoadPlayer(data, i);
@@ -213,7 +217,7 @@ public class SpawnObjects : MonoBehaviour
                 case 1:
                     if(Tortura){
                         ContinuaNoLoop = false;
-                        LaudoEvidence.descriptionUpdate =  LaudoEvidence.descriptionUpdate + ". Morreu de Forma Lenta";
+                        LaudoEvidence.descriptionUpdate =  LaudoEvidence.descriptionUpdate + ". Morreu de Forma Lenta.";
                         InstantiateManchaSangue();
                         QuintaResposta = "Prazer";
                     }
@@ -301,21 +305,25 @@ public class SpawnObjects : MonoBehaviour
         if(TemConvite && FoiConvidado == true){
             InstantiatePratos();
         }
+        if(TemConvite){
+            InstantiateConvite();
+        }
         if(TemPorta && PortaQuebrada && PortaArrombadaDentro){
-            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei porta estava quebrada";
-            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei porta estava quebrada.De fora para dentro";
+            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada.";
+            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada. De fora para dentro.";
             InstantiatePolicial();
         }
         if(TemPorta && PortaQuebrada && !PortaArrombadaDentro){
-            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei porta estava quebrada";
-            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei porta estava quebrada.De dentro para fora";
+            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada.";
+            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada. De dentro para fora.";
             InstantiatePolicial();
         }
         if(TemPorta && !PortaQuebrada){
-            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei porta estava destrancada";
-            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei porta estava destrancada";
+            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estava destrancada.";
+            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estava destrancada.";
             InstantiatePolicial();
         }
+        policialUpdateSalvar = PolicialEvidence.descriptionUpdate;
         if(PortaQuebrada && JanelaQuebrada){
             /*1 depoimentou testemunha = true, quer dizer que entrou*/
             if(PedraInteriorJanela && PortaArrombadaDentro && depoimentoTestemunhaVisto){
@@ -344,7 +352,7 @@ public class SpawnObjects : MonoBehaviour
             /*3*/
             if(!PedraInteriorJanela && !PortaArrombadaDentro && depoimentoTestemunhaVisto){
                 VistoVerdade = "false";            
-                PrimeiraResposta = "convite";
+                PrimeiraResposta = "Convite";
                 QuartaResposta = "Informações do policial";            
             }
             /*4*/
@@ -400,10 +408,10 @@ public class SpawnObjects : MonoBehaviour
                 VistoVerdade = "duvida";            
                 if(SceneManager.GetActiveScene().buildIndex == 2){
                     QuartaResposta = "Vidro Quebrado";
-                    PrimeiraResposta = "convite";
+                    PrimeiraResposta = "Convite";
                 }
                 if(SceneManager.GetActiveScene().buildIndex == 3){
-                    PrimeiraResposta = "convite";
+                    PrimeiraResposta = "Convite";
                     QuartaResposta = "Porta de saida";
                 }           
             }
@@ -414,28 +422,8 @@ public class SpawnObjects : MonoBehaviour
             ajudaEntrada = true;
         }
         if(PrecisaDeAuxilioEntradaSaida){
-            AuxiliaresEntradaSaida();
+            InstantiateCelular();
         }
-    }
-    public void AuxiliaresEntradaSaida(){
-        if(ajudaEntrada){
-            if(!PortaQuebrada){
-                CelularEvidence.description = "Celular pertencente a vítima.";
-                CelularEvidence.descriptionUpdate = "Celular pertencente a vítima. Mensagem salva no celular 'Combinado! estarei te aguardando aqui em casa, até mais tarde.', mensagem enviada para um numero anônimo.";
-                PrimeiraResposta = "convite";
-            }
-            else{
-                CelularEvidence.description = "Celular pertencente a vítima.";
-                CelularEvidence.descriptionUpdate = "Celular pertencente a vítima. Agenda do celular marcando que na data de hoje não teria nada marcado.";
-                PrimeiraResposta = "Informações do policial";  
-            }
-        }
-        if(ajudaSaida){
-            CelularEvidence.description = "Celular pertencente a vítima.";
-            CelularEvidence.descriptionUpdate = "Celular pertencente a vítima. Anotação encontrada no celular 'Comprar materias para consertar a quebradiça da porta'";
-            QuartaResposta = "Informações do policial";
-        }
-        InstantiateCelular();
     }
     public void SelecionaLocal(){
         QuantidadeCorposDisponiveis = 0;
@@ -462,20 +450,20 @@ public class SpawnObjects : MonoBehaviour
     public void SelecionaLaudo(string Nome){
         switch(Nome){
             case "corte":
-                LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de corte";
-                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de corte";
+                LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de corte.";
+                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de corte.";
             break;
             case "contundente":
-                LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de contusão";
-                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de contusão";
+                LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de contusão.";
+                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de contusão.";
             break;
             case "veneno":
-                LaudoEvidence.description = "Morreu por volta das 10:00. Não foram encontrados sinais de ferimentos no corpo";
-                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Não foram encontrados sinais de ferimentos no corpo";
+                LaudoEvidence.description = "Morreu por volta das 10:00. Não foram encontrados sinais de ferimentos no corpo.";
+                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Não foram encontrados sinais de ferimentos no corpo.";
             break;
             case "armaDeFogo":
-                LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de perfuração";
-                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de perfuração";
+                LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de perfuração.";
+                LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de perfuração.";
             break;
         }
         InstantiateLaudo();
@@ -532,6 +520,12 @@ public class SpawnObjects : MonoBehaviour
             else{
                 while(selecionadorint == numeroSelecionadoParaResposta || Armas[numeroSelecionadoParaResposta].tierArma < Armas[selecionadorint].tierArma){
                     selecionadorint = Random.Range(0,8);
+                }
+                if(selecionadorint == 7){
+                    InstantiateDestrocos();
+                }
+                if(Armas[selecionadorint].sangue){
+                    Armas[selecionadorint].descriptionUpdate = Armas[selecionadorint].description + "Sangue falso."; 
                 }
                 carregaObjetos(Armas[selecionadorint].NomeObjeto);      
             }
@@ -649,6 +643,9 @@ public class SpawnObjects : MonoBehaviour
             case "Punhos(Clone)":
                 InstantiatePunhos();
                 break;
+            case "Convite(Clone)":
+                InstantiateConvite();
+                break;
         }
     }
     public void LoadPlayer(PlayerData data, int i){
@@ -730,6 +727,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case "Punhos(Clone)":
                 InstantiatePunhos();
+                break;
+            case "Convite(Clone)":
+                InstantiateConvite();
                 break;
         }
     }
@@ -1016,6 +1016,25 @@ public class SpawnObjects : MonoBehaviour
         NumeroDeObjetos++;
     }
     public void InstantiateCelular(){
+        if(PrecisaDeAuxilioEntradaSaida){
+            if(ajudaEntrada){
+                if(!PortaQuebrada){
+                    CelularEvidence.description = "Celular pertencente à vítima.";
+                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Mensagem salva no celular 'Combinado! estarei te aguardando aqui em casa, até mais tarde.', mensagem enviada para um numero anônimo.";
+                    PrimeiraResposta = "Convite";
+                }
+                else{
+                    CelularEvidence.description = "Celular pertencente à vítima.";
+                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Anotação encontrada no celular 'Comprar materiais para consertar a dobradiça da porta'";
+                    PrimeiraResposta = "Informações do policial";  
+                }
+            }
+            if(ajudaSaida){
+                CelularEvidence.description = "Celular pertencente à vítima.";
+                CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Agenda do celular não mostra nada marcado na data de hoje.";
+                QuartaResposta = "Informações do policial";
+            }
+        }
         GameObject CelularClone = Instantiate(Celular) as GameObject;
         switch(SceneManager.GetActiveScene().buildIndex){
             case 0:
@@ -1123,7 +1142,7 @@ public class SpawnObjects : MonoBehaviour
         NumeroDeObjetos++;
     }
     public void InstantiateCofreDinheiroHonesto(){
-        CofreDinheiroEvidence.descriptionUpdate = "Cofre com uma grande quantidade de valor guardado. A vítima declarou a posse de tamanha quantidade de dinheiro";
+        CofreDinheiroEvidence.descriptionUpdate = "Cofre com uma grande quantidade de valor guardado. A vítima declarou a posse do dinheiro.";
         GameObject CofreDinheiroClone = Instantiate(CofreDinheiro) as GameObject;
         switch(SceneManager.GetActiveScene().buildIndex){
             case 0:
@@ -1231,6 +1250,26 @@ public class SpawnObjects : MonoBehaviour
         NumeroDeObjetos++;
     }
     public void InstantiateLaudo(){
+        if(MainMenu.NewGame == false){
+            switch(TerceiraResposta){
+                case "corte":
+                    LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de corte.";
+                    LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de corte.";
+                break;
+                case "contundente":
+                    LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de contusão.";
+                    LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de contusão.";
+                break;
+                case "veneno":
+                    LaudoEvidence.description = "Morreu por volta das 10:00. Não foram encontrados sinais de ferimentos no corpo.";
+                    LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Não foram encontrados sinais de ferimentos no corpo.";
+                break;
+                case "armaDeFogo":
+                    LaudoEvidence.description = "Morreu por volta das 10:00. Foram encontrados sinais de perfuração.";
+                    LaudoEvidence.descriptionUpdate = "Morreu por volta das 10:00. Foram encontrados sinais de perfuração.";
+                break;
+            }
+        }
         GameObject LaudoClone = Instantiate(Laudo) as GameObject;
         switch(SceneManager.GetActiveScene().buildIndex){
             case 0:
@@ -1249,6 +1288,9 @@ public class SpawnObjects : MonoBehaviour
         NumeroDeObjetos++;
     }
     public void InstantiatePolicial(){
+        if(MainMenu.NewGame == false){
+            PolicialEvidence.descriptionUpdate = policialUpdateSalvar;
+        }
         GameObject PolicialClone = Instantiate(Policial) as GameObject;
         switch(SceneManager.GetActiveScene().buildIndex){
             case 0:
@@ -1314,7 +1356,7 @@ public class SpawnObjects : MonoBehaviour
                 RevolverClone.transform.position = new Vector3(0, -8,-5);
                 break;
             case 3:
-                RevolverClone.transform.position = new Vector3(-4.64f, -1.99f,-5);
+                RevolverClone.transform.position = new Vector3(0.9f, -2.34f,-5);
                 break;
         }        
         NomeDosObjetos[NumeroDeObjetos] = "Revolver(Clone)";
@@ -1389,6 +1431,24 @@ public class SpawnObjects : MonoBehaviour
                 break;
         }        
         NomeDosObjetos[NumeroDeObjetos] = "Punhos(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateConvite(){
+        GameObject ConviteClone = Instantiate(Convite) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                ConviteClone.transform.position = new Vector3(41f,41f,-5);
+                break;
+            case 2:
+                ConviteClone.transform.position = new Vector3(41f,41f,-5);
+                break;
+            case 3:
+                ConviteClone.transform.position = new Vector3(41f,41f,-5);
+                break;
+        }        
+        NomeDosObjetos[NumeroDeObjetos] = "Convite(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiateCorpoMorto1(){

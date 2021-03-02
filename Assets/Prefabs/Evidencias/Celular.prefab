@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: description
-      value: Faca serrada
+      value: "Celular pertencente \xE0 v\xEDtima."
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

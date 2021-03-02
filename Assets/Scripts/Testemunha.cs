@@ -72,7 +72,7 @@ public class Testemunha : MonoBehaviour
                         Nome.text = NomeDaTestemunha;
                         Debug.Log("entrou1");
                         dialogo.SetBool("isOpen", true);
-                        fraseAtual = "Espero que eu tenha ajudado detetive";
+                        fraseAtual = "Espero que eu tenha ajudado, detetive.";
                         StartCoroutine(typeSentence(fraseAtual));
                         FinalizouTestemunha = true;
                         TerminouPerguntas = true;
@@ -80,8 +80,8 @@ public class Testemunha : MonoBehaviour
                 else{
                     Caderno.PermissaoAbrirCaderno = false;
                     DecideVerdades();
-                    sentence.Enqueue("Prazer me chamo " + NomeDaTestemunha);
-                    sentence.Enqueue("O que deseja saber detetive?");
+                    sentence.Enqueue("Prazer, me chamo " + NomeDaTestemunha);
+                    sentence.Enqueue("O que deseja saber, detetive?");
                     dialogo.SetBool("isOpen", true);           
                     entrouPreencher = true;     
                     fraseAtual = sentence.Dequeue();
@@ -102,13 +102,13 @@ public class Testemunha : MonoBehaviour
                 else if(fraseAtual == "Terminou"){       
                     if(!vistoPergunta && !ouviuPergunta && !relacaoPergunta){
                         Debug.Log("entrou2");
-                        fraseAtual = "Espero que eu tenha ajudado detetive";
+                        fraseAtual = "Espero que eu tenha ajudado, detetive";
                         FinalizouTestemunha = true;
                         TerminouPerguntas = true;
                     }             
                     else{
                         Debug.Log("entrou3");
-                        fraseAtual = "O que deseja saber detetive?";
+                        fraseAtual = "O que deseja saber, detetive?";
                         perguntando = true;
                     }
                     StartCoroutine(typeSentence(fraseAtual));
@@ -122,7 +122,7 @@ public class Testemunha : MonoBehaviour
                         RelaçãoComVitimaB.SetActive(true);
                     }
                 }
-                if(fraseAtual == "O que deseja saber detetive?"){
+                if(fraseAtual == "O que deseja saber, detetive?"){
                     if(vistoPergunta){
                         VistoB.SetActive(true);
                     }
@@ -175,30 +175,30 @@ public class Testemunha : MonoBehaviour
         switch(PerguntaFeita){
             case "visto":
                 if(VistoVerdade == "true"){
-                    sentence.Enqueue("Acredito que ele tenha entrado por lá tbm");
+                    sentence.Enqueue("Acredito que ele tenha entrado por lá tambêm.");
                 }
                 else{
-                    sentence.Enqueue("Isso é tudo que eu sei detetive");
+                    sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                 }
                 sentence.Enqueue("Terminou");
                 vistoPergunta = false;
             break;
             case "ouviu":
                 if(OuviuVerdade == "true"){
-                    sentence.Enqueue("Ouvi um disparo de arma para falar a verdade");
+                    sentence.Enqueue("Ouvi um disparo de arma para falar a verdade.");
                 }
                 else{
-                    sentence.Enqueue("Isso é tudo que eu sei detetive");
+                    sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                 }
                 sentence.Enqueue("Terminou");
                 ouviuPergunta = false;
             break;
             case "relacao":
                 if(RelaçãoVerdade == "true"){
-                    sentence.Enqueue("Só sei que ele gostava de ficar sozinho");
+                    sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
                 }
                 else{
-                    sentence.Enqueue("Isso é tudo que eu sei detetive");
+                    sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                 }
                 sentence.Enqueue("Terminou");
                 relacaoPergunta = false;
@@ -218,14 +218,14 @@ public class Testemunha : MonoBehaviour
                 case "visto":
                     if(VistoVerdade == "false"){
                         if(evidenciaUsada == NomeEvidenciaDiscordaViu){
-                            sentence.Enqueue("Acredito que ele tenha entrado por lá tbm");
+                            sentence.Enqueue("Acredito que ele tenha entrado por lá tambêm.");
                         }
                         else{
-                            sentence.Enqueue("Fazer acusações falsas é algo grave detetive");
+                            sentence.Enqueue("Fazer acusações falsas é algo grave, detetive.");
                         }
                     }
                     else{
-                        sentence.Enqueue("Isso é tudo que eu sei detetive");
+                        sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                     }
                     sentence.Enqueue("Terminou");
                     vistoPergunta = false;
@@ -233,14 +233,14 @@ public class Testemunha : MonoBehaviour
                 case "ouviu":
                     if(OuviuVerdade == "false"){
                         if(evidenciaUsada == NomeEvidenciaDiscordaOuviu){
-                            sentence.Enqueue("Ouvi um disparo de arma para falar a verdade");
+                            sentence.Enqueue("Ouvi um disparo de arma para falar a verdade.");
                         }
                         else{
-                            sentence.Enqueue("Fazer acusações falsas é algo grave detetive");
+                            sentence.Enqueue("Fazer acusações falsas é algo grave, detetive.");
                         }
                     }
                     else{
-                        sentence.Enqueue("Isso é tudo que eu sei detetive");
+                        sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                     }
                     sentence.Enqueue("Terminou");
                     ouviuPergunta = false;
@@ -248,14 +248,14 @@ public class Testemunha : MonoBehaviour
                 case "relacao":
                     if(RelaçãoVerdade == "false"){
                         if(evidenciaUsada == NomeEvidenciaDiscordaRelacao){
-                            sentence.Enqueue("Só sei que ele gostava de ficar sozinho");
+                            sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
                         }
                         else{
-                            sentence.Enqueue("Fazer acusações falsas é algo grave detetive");
+                            sentence.Enqueue("Fazer acusações falsas é algo grave, detetive.");
                         }                    
                     }
                     else{
-                        sentence.Enqueue("Isso é tudo que eu sei detetive");
+                        sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                     }
                     sentence.Enqueue("Terminou");
                     relacaoPergunta = false;
@@ -272,13 +272,13 @@ public class Testemunha : MonoBehaviour
     public void escolheuEvidencia(Text evidencia){
         sentence.Clear();
         if(isInRange){
-            texto.text = "Essa evidência contrária o que foi dito?";
+            texto.text = "Essa evidência contraria o que foi dito?";
             evidenciaUsada = evidencia.text;
             SimEcolheu.SetActive(true);
         }
     }
     public void Discorda(){
-        sentence.Enqueue("Você teria alguma prova para discorda do que eu disse?");
+        sentence.Enqueue("Você teria alguma prova para discordar do que eu disse?");
         CadernoLimpo.SetActive(false);
         Evidencias.SetActive(true);
         caderno.SetBool("Rela",true);
@@ -294,30 +294,30 @@ public class Testemunha : MonoBehaviour
         switch(PerguntaFeita){
             case "visto":
                 if(VistoVerdade == "duvida"){
-                    sentence.Enqueue("Acredito que ele tenha entrado por lá tbm");
+                    sentence.Enqueue("Acredito que ele tenha entrado por lá tambêm.");
                 }
                 else{
-                    sentence.Enqueue("Isso é tudo que eu sei detetive");
+                    sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                 }
                 sentence.Enqueue("Terminou");
                 vistoPergunta = false;
             break;
             case "ouviu":
                 if(OuviuVerdade == "duvida"){
-                    sentence.Enqueue("Ouvi um disparo de arma para falar a verdade");
+                    sentence.Enqueue("Ouvi um disparo de arma para falar a verdade.");
                 }
                 else{
-                    sentence.Enqueue("Isso é tudo que eu sei detetive");
+                    sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                 }
                 sentence.Enqueue("Terminou");
                 ouviuPergunta = false;
             break;
             case "relacao":
                 if(RelaçãoVerdade == "duvida"){
-                    sentence.Enqueue("Só sei que ele gostava de ficar sozinho");
+                    sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
                 }
                 else{
-                    sentence.Enqueue("Isso é tudo que eu sei detetive");
+                    sentence.Enqueue("Isso é tudo que eu sei, detetive.");
                 }
                 sentence.Enqueue("Terminou");
                 relacaoPergunta = false;
@@ -332,8 +332,9 @@ public class Testemunha : MonoBehaviour
     }
     public void Visto(){
         PerguntaFeita = "visto";
-        sentence.Enqueue("Estava bem tarde, e eu assustado consegui só ver pela fresta da porta");
-        sentence.Enqueue("Eu vi um homem saindo pela porta no meio do escuro");
+        sentence.Clear();
+        sentence.Enqueue("Estava bem tarde e eu, assustado, só consegui ver pela fresta da porta.");
+        sentence.Enqueue("Eu vi um homem saindo pela porta no meio do escuro.");
         sentence.Enqueue("Pergunta");
         VistoB.SetActive(false);
         OuviuB.SetActive(false);
@@ -344,8 +345,9 @@ public class Testemunha : MonoBehaviour
     }
     public void Ouviu(){
         PerguntaFeita = "ouviu";
-        sentence.Enqueue("Eu não consegui ouvir muita coisa");
-        sentence.Enqueue("Acredito que nesse quesito não tenha muito para te falar");
+        sentence.Clear();
+        sentence.Enqueue("Eu não consegui ouvir muita coisa.");
+        sentence.Enqueue("Acredito que nesse quesito não tenha muito para te falar.");
         sentence.Enqueue("Pergunta");
         VistoB.SetActive(false);
         OuviuB.SetActive(false);
@@ -356,8 +358,9 @@ public class Testemunha : MonoBehaviour
     }
     public void RelaçãoComVitima(){
         PerguntaFeita = "relacao";
-        sentence.Enqueue("Eu o conhecia só de vista");
-        sentence.Enqueue("Sempre achei ele um homem tranquilo com todos");
+        sentence.Clear();
+        sentence.Enqueue("Eu o conhecia só de vista.");
+        sentence.Enqueue("Sempre achei ele um homem tranquilo com todos.");
         sentence.Enqueue("Pergunta");
         VistoB.SetActive(false);
         OuviuB.SetActive(false);

@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Faca Serrada com Sangue
-  weapon: 1
-  description: Faca serrada com manchas de sangue
+  sangue: 1
+  description: Faca serrada com manchas de sangue.
   descriptionUpdate: "Faca serrada com manchas de sangue. Sangue da vit\xEDma."
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: 824c3946fe884054591c82af57f2a01f, type: 3}

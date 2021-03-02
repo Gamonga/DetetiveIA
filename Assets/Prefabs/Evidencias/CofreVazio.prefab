@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: description
-      value: Cofre Vazio.
+      value: Cofre vazio.
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -46,7 +46,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: descriptionUpdate
-      value: Cofre Vazio.
+      value: Cofre vazio.
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -72,7 +72,7 @@ PrefabInstance:
     - target: {fileID: 3161087300882211810, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_Name
-      value: Cofre Vazio
+      value: CofreVazio
       objectReference: {fileID: 0}
     - target: {fileID: 4368879110366545431, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

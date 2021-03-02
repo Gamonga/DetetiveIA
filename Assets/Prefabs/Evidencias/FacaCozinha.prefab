@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Faca Cozinha
-  weapon: 1
-  description: Faca de cozinha com manchas de sangue
-  descriptionUpdate: "Faca de cozinha com manchas de sangue. Sangue da vit\xEDma."
+  sangue: 1
+  description: Faca de cozinha com manchas de sangue.
+  descriptionUpdate: "Faca de cozinha com manchas de sangue.Sangue da v\xEDtima."
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: c48458bf02fd62c4ba71f1a86c8d2797, type: 3}
   NomeObjeto: FacaCozinha(Clone)

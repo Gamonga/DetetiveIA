@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: description
-      value: Cofre com uma grande quantidade de valor guardado
+      value: Cofre com uma grande quantidade de valor guardado.
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -37,7 +37,7 @@ PrefabInstance:
         type: 3}
       propertyPath: descriptionUpdate
       value: "Cofre com uma grande quantidade de valor guardado. A v\xEDtima n\xE3o
-        declarou a posse de tamanha quantidade de dinheiro"
+        declarou a posse de tamanha quantidade de dinheiro."
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

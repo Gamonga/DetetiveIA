@@ -53,7 +53,7 @@ PrefabInstance:
         type: 3}
       propertyPath: descriptionUpdate
       value: "Caixa de rem\xE9dio (paracetamal). Tarja preta, venda sob prescri\xE7\xE3o
-        m\xE9dica. Se ingerido de forma n\xE3o acompanhada pode levar a ataque cardiaco."
+        m\xE9dica. Se ingerido de forma n\xE3o acompanhada pode levar a ataque card\xEDaco.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

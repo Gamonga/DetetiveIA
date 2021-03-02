@@ -14,6 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: sangue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: tierArma
       value: 1
       objectReference: {fileID: 0}
@@ -25,7 +30,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: description
-      value: Faca serrada
+      value: Faca serrada.
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -37,6 +42,11 @@ PrefabInstance:
         type: 3}
       propertyPath: CaminhoImagem
       value: Sprites Objetos/FacaSerrada
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: descriptionUpdate
+      value: 'Faca serrada. '
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

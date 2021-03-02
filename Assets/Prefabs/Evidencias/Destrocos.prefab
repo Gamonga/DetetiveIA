@@ -46,8 +46,8 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: descriptionUpdate
-      value: "Garrafa quebrada no ch\xE3o. Possivelmente quebrado em algum objeto,
-        n\xE3o foi tuilizado em alguem."
+      value: "Garrafa quebrada no ch\xE3o. Possivelmente quebrada em algum objeto.
+        N\xE3o foi utilizada em algu\xEAm.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

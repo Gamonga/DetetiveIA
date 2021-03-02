@@ -45,6 +45,10 @@ public class ScenesManager : MonoBehaviour
                 botaoSim.SetActive(true);
                 botaoNao.SetActive(true);
             }
+            if (Input.GetKeyDown(KeyCode.Tab)){ 
+                botaoSim.SetActive(false);
+                botaoNao.SetActive(false);
+            }
         }
         else{
         }
@@ -67,8 +71,10 @@ public class ScenesManager : MonoBehaviour
     }
 
     public void No(){
-        isInRange = false;
-        Transition.SetBool("Abrir", false);
+        if(isInRange){
+            isInRange = false;
+            Transition.SetBool("Abrir", false);
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

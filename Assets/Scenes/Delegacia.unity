@@ -1934,14 +1934,17 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Celas
+  - Celas.
   - "(No momento esta fechado pois n\xE3o tem ninhuem sendo detido aqui)"
   - (Trancado)
   sentences2: []
   senteceloop:
-  - Celas
+  - Celas.
   - "(No momento esta fechado pois n\xE3o tem ninhuem sendo detido aqui)"
   - (Trancado)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -4845,14 +4848,17 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Sala do interrogat\xF3rio"
-  - "Quem sabe um dia eu \xE1 utilize"
+  - "Sala do interrogat\xF3rio."
+  - "Quem sabe um dia eu \xE1 utilize."
   - (Trancado)
   sentences2: []
   senteceloop:
-  - "Sala do interrogat\xF3rio"
-  - "Quem sabe um dia eu \xE1 utilize"
+  - "Sala do interrogat\xF3rio."
+  - Quem sabe um dia eu a utilize.
   - (Trancado)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -5505,6 +5511,9 @@ MonoBehaviour:
   sentences2: []
   senteceloop:
   - "Porque as minhas caixas est\xE3o aqui?"
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -5679,20 +5688,23 @@ MonoBehaviour:
   sentences:
   - "Diga-me onde voc\xEA esta guardando a tampa?"
   - troca
-  - "Eu n\xE3o sei do que vc esta falando"
+  - "Eu n\xE3o sei do que voc\xEA esta falando."
   - troca
-  - "N\xE3o me venha com papinho"
-  - Onde esta a tampa?
+  - "N\xE3o me venha com papinho."
+  - "Onde est\xE1 a tampa?"
   - Diga-me agora!
   - troca
-  - "Que tampa voc\xEA esta falando?"
+  - "De que tampa voc\xEA est\xE1 falando?"
   - troca
-  - A tampa do seu CU
-  - TROSLEI
+  - A tampa do seu CU.
+  - TROSLEI.
   - troca
   - ...
   sentences2: []
   senteceloop: []
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -8423,14 +8435,17 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Todos os diplomas e gradua\xE7\xF5es do delegado"
-  - "Tem at\xE9 um trof\xE9u"
-  - '"Primeiro lugar em tiro ao alvo"'
+  - "Todos os diplomas e gradua\xE7\xF5es do delegado."
+  - "Tem at\xE9 um trof\xE9u."
+  - '"Primeiro lugar em tiro ao alvo".'
   sentences2: []
   senteceloop:
-  - "Todos os diplomas e gradua\xE7\xF5es do delegado"
-  - "Tem at\xE9 um trof\xE9u"
-  - '"Primeiro lugar em tiro ao alvo"'
+  - "Todos os diplomas e gradua\xE7\xF5es do delegado."
+  - "Tem at\xE9 um trof\xE9u."
+  - '"Primeiro lugar em tiro ao alvo".'
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -9932,12 +9947,15 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Sala de dep\xF3sito"
+  - "Sala de dep\xF3sito."
   - (Trancado)
   sentences2: []
   senteceloop:
   - "Sala de dep\xF3sito"
   - (Trancado)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -10197,10 +10215,13 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Um caf\xE9zinho sempre vai bem"
+  - "Um caf\xE9zinho sempre vai bem."
   sentences2: []
   senteceloop:
-  - "Um caf\xE9zinho sempre vai bem"
+  - "Um caf\xE9zinho sempre vai bem."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -14515,16 +14536,19 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Poster do filme C.O.P
-  - "Aposto que Steve \xE9 um grande f\xE3"
+  - Poster do filme C.O.P.
+  - "Aposto que Steve \xE9 um grande f\xE3."
   - ...
-  - O poster esta torto
+  - O poster esta torto.
   sentences2: []
   senteceloop:
-  - Poster do filme C.O.P
-  - "Aposto que Steve \xE9 um grande f\xE3"
+  - Poster do filme C.O.P.
+  - "Aposto que Steve \xE9 um grande f\xE3."
   - ...
-  - O poster esta torto
+  - O poster esta torto.
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -20120,26 +20144,29 @@ MonoBehaviour:
   nameperson1: Steve
   nameperson2: Detetive
   sentences:
-  - Cara tem um maluco do TI muito chato
+  - Cara tem um maluco do TI muito chato.
   - troca
-  - De quem vc esta falando?
+  - "De quem voc\xEA esta falando?"
   - troca
-  - O Boris, eu n o suporto mais
+  - "O Boris, eu n\xE3o o suporto mais."
   - troca
-  - Sad
+  - Sad.
   sentences2:
-  - "Vc ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
+  - "Voc\xEA ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
   - troca
   - Quem?
   - troca
-  - Uma Vtuber que eu adoro
+  - Uma Vtuber que eu adoro.
   - troca
-  - "(que deus tenha d\xF3 desse rapaz)"
+  - "(Que deus tenha d\xF3 desse rapaz)"
   senteceloop:
-  - "Caso queira voltar para a cena do crime s\xF3 me chamar que irei at\xE9 o carro"
+  - "Caso queira voltar para a cena do crime, me chame e eu irei at\xE9 o carro."
   - troca
-  - OK
+  - OK.
   - troca
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: efae99dbdf1401e4d8a8e75cddad50ec, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 1
@@ -21592,18 +21619,21 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Parece uma mulher nua nas nuvens
-  - Uma imagem meio estranha para se ter no escritorio
-  - Tem algo escrito embaixo
-  - '"Auto retrato: Steve"'
+  - Parece uma mulher nua nas nuvens.
+  - Uma imagem meio estranha para se ter no escritorio.
+  - Tem algo escrito embaixo.
+  - '"Auto retrato: Steve".'
   - ...
   sentences2: []
   senteceloop:
-  - Parece uma mulher nua nas nuvens
-  - Uma imagem meio estranha para se ter no escritorio
-  - Tem algo escrito embaixo
-  - '"Auto retrato: Steve"'
+  - Parece uma mulher nua nas nuvens.
+  - Uma imagem meio estranha para se ter no escritorio.
+  - Tem algo escrito embaixo.
+  - '"Auto retrato: Steve".'
   - ...
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -23118,19 +23148,22 @@ MonoBehaviour:
   nameperson1: Lydia
   nameperson2: Detetive
   sentences:
-  - Seja bem vindo de volta Detetive
+  - Seja bem vindo de volta, detetive.
   - troca
-  - "Ol\xE1 Lydia como tem estado a delegacia?"
+  - "Ol\xE1 Lydia, como tem estado a delegacia?"
   - troca
-  - Tem estado bem tranquila
-  - "N\xE3o tem tido muitas chamadas recentemente"
+  - Tem estado bem tranquila.
+  - "N\xE3o tem tido muitas chamadas recentemente."
   - troca
-  - "Isso \xE9 um bom sinal"
-  - "Caso alguem me procure s\xF3 me avisar"
+  - "Isso \xE9 um bom sinal."
+  - "Caso algu\xEAm me procure, s\xF3 me avisar."
   - troca
-  - Tudo bem Detetive
+  - Tudo bem, detetive.
   sentences2: []
   senteceloop: []
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -28736,14 +28769,17 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Essa \xE9 uma bela \xE1rvore"
-  - "De fato uam bela \xE1rvore"
-  - "Talvez a \xE1rvore mais bonita e bem feita que eu j\xE1 tenha visto"
+  - "Essa \xE9 uma bela \xE1rvore."
+  - "De fato uam bela \xE1rvore."
+  - "Talvez a \xE1rvore mais bonita e bem feita que eu j\xE1 tenha visto."
   sentences2: []
   senteceloop:
-  - "Essa \xE9 uma bela \xE1rvore"
-  - "De fato uam bela \xE1rvore"
-  - "Talvez a \xE1rvore mais bonita e bem feita que eu j\xE1 tenha visto"
+  - "Essa \xE9 uma bela \xE1rvore."
+  - "De fato uma bela \xE1rvore."
+  - "Talvez a \xE1rvore mais bonita e bem feita que eu j\xE1 tenha visto."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -29186,12 +29222,15 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Minhas caixas de mudan\xE7a"
-  - Ainda tenho que terminar de arrumar as coisas
+  - "Minhas caixas de mudan\xE7a."
+  - Ainda tenho que terminar de arrumar as coisas.
   sentences2: []
   senteceloop:
-  - "Minhas caixas de mudan\xE7a"
-  - Ainda tenho que terminar de arrumar as coisas
+  - "Minhas caixas de mudan\xE7a."
+  - Ainda tenho que terminar de arrumar as coisas.
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -30920,14 +30959,17 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "\xC9 de fato um belo aqu\xE1rio"
+  - "\xC9 de fato um belo aqu\xE1rio."
   - ...
-  - "Tenho a estranha sensa\xE7\xE3o de que os peixes n\xE3o se mexem"
+  - "Tenho a estranha sensa\xE7\xE3o de que os peixes n\xE3o se mexem."
   sentences2: []
   senteceloop:
-  - "\xC9 de fato um belo aqu\xE1rio"
+  - "\xC9 de fato um belo aqu\xE1rio."
   - ...
-  - "Tenho a estranha sensa\xE7\xE3o de que os peixes n\xE3o se mexem"
+  - "Tenho a estranha sensa\xE7\xE3o de que os peixes n\xE3o se mexem."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -30991,8 +31033,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285.79, y: 58.3}
-  m_SizeDelta: {x: 1549.0254, y: 351.8979}
+  m_AnchoredPosition: {x: -284.6, y: 57.8}
+  m_SizeDelta: {x: 1566.1226, y: 373.27142}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!222 &1687097053
 CanvasRenderer:
@@ -32524,12 +32566,15 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Mesa do delegado
-  - "Esta cheia de pap\xE9is e bem bagun\xE7ada"
+  - Mesa do delegado.
+  - "Esta cheia de pap\xE9is e bem bagun\xE7ada."
   sentences2: []
   senteceloop:
-  - Mesa do delegado
-  - "Esta cheia de pap\xE9is e bem bagun\xE7ada"
+  - Mesa do delegado.
+  - "Esta cheia de pap\xE9is e bem bagun\xE7ada."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -34529,12 +34574,15 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - "Dep\xF3sito de armas"
+  - "Dep\xF3sito de armas."
   - (Trancado)
   sentences2: []
   senteceloop:
-  - "Dep\xF3sito de armas"
+  - "Dep\xF3sito de armas."
   - (Trancado)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -34852,16 +34900,19 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Um grande e esbelto
-  - Bebedouro
+  - Um grande e esbelto...
+  - Bebedouro.
   - ...
-  - "Quero um caf\xE9"
+  - "Quero um caf\xE9."
   sentences2: []
   senteceloop:
-  - Um grande e esbelto
-  - Bebedouro
+  - Um grande e esbelto...
+  - Bebedouro.
   - ...
-  - "Quero um caf\xE9"
+  - "Quero um caf\xE9."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -35315,13 +35366,13 @@ MonoBehaviour:
   nameperson1: Kyle
   nameperson2: Detetive
   sentences:
-  - Como vai detetive?
+  - Como vai, detetive?
   - troca
-  - "ol\xE1 Kyle"
+  - "Ol\xE1 Kyle."
   - troca
-  - Veio pedir para eu analisar algo?
+  - Veio me pedir para analisar algo?
   - troca
-  - Gostaria que desse uma olhada nisso
+  - Gostaria que desse uma olhada nisso.
   sentences2:
   - troca
   - "ol\xE1 Devi"
@@ -35344,9 +35395,12 @@ MonoBehaviour:
   - troca
   - disponha detetive
   senteceloop:
-  - Gostaria que eu analisasse algo a mais detetive?
+  - Gostaria que eu analisasse algo a mais, detetive?
   - troca
   - "Se for poss\xEDvel."
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: 28649f2e323054340b1c4f256af9876d, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 0
@@ -35827,12 +35881,15 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Sala do Tim Habey
+  - Sala do Tim Habey.
   - (Trancado)
   sentences2: []
   senteceloop:
   - Sala do Tim Habey
   - (Trancado)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -37235,12 +37292,12 @@ PrefabInstance:
     - target: {fileID: 7595040160246149417, guid: 773ffd33c8efd184eae7f21620df9088,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 280.6277
+      value: 225.8
       objectReference: {fileID: 0}
     - target: {fileID: 7595040160246149417, guid: 773ffd33c8efd184eae7f21620df9088,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -441.66553
+      value: -206
       objectReference: {fileID: 0}
     - target: {fileID: 7595040160246149417, guid: 773ffd33c8efd184eae7f21620df9088,
         type: 3}
@@ -37516,12 +37573,15 @@ MonoBehaviour:
   nameperson1: Detetive
   nameperson2: 
   sentences:
-  - Carro do delegado
-  - Parece ser caro de mais para eu ter um desse algum dia
+  - Carro do delegado.
+  - Parece ser caro de mais para eu ter um desse algum dia.
   sentences2: []
   senteceloop:
-  - Carro do delegado
-  - Parece ser caro de mais para eu ter um desse algum dia
+  - Carro do delegado.
+  - Parece ser caro de mais para eu ter um desse algum dia.
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 0}
   sprite2: {fileID: 0}
   random: 0
@@ -39270,6 +39330,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1172401202}
+        m_TargetAssemblyTypeName: Relatorio, Assembly-CSharp
+        m_MethodName: No
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2070321130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40174,6 +40246,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: Convite
+      value: 
+      objectReference: {fileID: 3881051416228767763, guid: 6677c43f8e7c768478455df90a5f1cd0,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: caderno
       value: 
       objectReference: {fileID: 1494596743}
@@ -40281,6 +40359,12 @@ PrefabInstance:
       propertyPath: CelularEvidence
       value: 
       objectReference: {fileID: 1214451250904688982, guid: cc99e64cd73d0c74495c131199dd69e8,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: ConviteEvidence
+      value: 
+      objectReference: {fileID: 6893536457397874756, guid: 6677c43f8e7c768478455df90a5f1cd0,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

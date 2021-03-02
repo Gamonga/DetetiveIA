@@ -49,22 +49,22 @@ public class Relatorio : MonoBehaviour
     {
         if(isInRange){            
             if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false){
-                sentence.Enqueue("Preciso entender o que aconteceu nesse caso");
-                sentence.Enqueue("Primeiro preciso reformular a cena do crime");
-                sentence.Enqueue("De que forma o assasino entrou no local?");
-                sentence.Enqueue("Faz sentido ele entrar dessa forma");
-                sentence.Enqueue("Mas após ele entrar algo aconteceu lá dentro");
+                sentence.Enqueue("Preciso entender o que aconteceu nesse caso.");
+                sentence.Enqueue("Primeiro preciso reformular a cena do crime.");
+                sentence.Enqueue("De que forma o assassino entrou no local?");
+                sentence.Enqueue("Faz sentido ele entrar dessa forma.");
+                sentence.Enqueue("Mas após ele entrar, algo aconteceu lá dentro.");
                 sentence.Enqueue("Em que local será que ocorreu o assassinato?");
-                sentence.Enqueue("Sabendo que ele morreu ali");
-                sentence.Enqueue("Ainda é necessário saber outra coisa");
+                sentence.Enqueue("Sabendo que ele morreu ali.");
+                sentence.Enqueue("Ainda é necessário saber outra coisa.");
                 sentence.Enqueue("Qual arma ele utilizou no crime?");
-                sentence.Enqueue("Após ter cometido o assasinato");
-                sentence.Enqueue("Ele deve ter tido algum plano para fugir");
-                sentence.Enqueue("De que forma o assasino saiu do local?");
-                sentence.Enqueue("Tudo esta começando a se encaixar");
-                sentence.Enqueue("Tendo agora pensado em como ele entrou");
-                sentence.Enqueue("Onde ele assassinou, a arma utilizada e como ele saiu");
-                sentence.Enqueue("É preciso saber o motivo por traz");
+                sentence.Enqueue("Após ter cometido o assassinato.");
+                sentence.Enqueue("Ele deve ter tido algum plano para fugir.");
+                sentence.Enqueue("De que forma o assassino saiu do local?");
+                sentence.Enqueue("Tudo está começando a se encaixar.");
+                sentence.Enqueue("Tendo agora pensado em como ele entrou.");
+                sentence.Enqueue("Onde ele assassinou, a arma utilizada e como ele saiu.");
+                sentence.Enqueue("É preciso saber o motivo por trás.");
                 sentence.Enqueue("Qual a razão do assassinato?");
                 sentence.Enqueue("Devo entregar o relatório assim?");
                 texto.text = "Escrever o relatório?";    
@@ -81,8 +81,8 @@ public class Relatorio : MonoBehaviour
             else if(Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == false && perguntando == false){                
                 fraseAtual = sentence.Dequeue();
                 StartCoroutine(typeSentence(fraseAtual));
-                if(fraseAtual == "De que forma o assasino entrou no local?" || 
-                fraseAtual == "De que forma o assasino saiu do local?"|| 
+                if(fraseAtual == "De que forma o assassino entrou no local?" || 
+                fraseAtual == "De que forma o assassino saiu do local?"|| 
                 fraseAtual == "Em que local será que ocorreu o assassinato?"|| 
                 fraseAtual == "Qual arma ele utilizou no crime?"){
                 CadernoLimpo.SetActive(false);
@@ -246,15 +246,17 @@ public class Relatorio : MonoBehaviour
         StartCoroutine(typeSentence(fraseAtual));
     }
     public void No(){
-        isInRange = false;
-        Transition.SetBool("Abrir", false);
-        CadernoLimpo.SetActive(true);
-        Evidencias.SetActive(false);
-        caderno.SetBool("Rela",false);
-        entrouPreencher = false;
-        sentence.Clear();
-        PixelArt.SetBool("On",false);
-        Caderno.PermissaoAbrirCaderno = true;
+        if(isInRange){
+            isInRange = false;
+            Transition.SetBool("Abrir", false);
+            CadernoLimpo.SetActive(true);
+            Evidencias.SetActive(false);
+            caderno.SetBool("Rela",false);
+            entrouPreencher = false;
+            sentence.Clear();
+            PixelArt.SetBool("On",false);
+            Caderno.PermissaoAbrirCaderno = true;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

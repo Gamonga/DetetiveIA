@@ -7201,7 +7201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &423635442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16723,28 +16723,31 @@ MonoBehaviour:
   nameperson1: Steve
   nameperson2: Detetive
   sentences:
-  - "ol\xE1 detetive"
+  - "Ol\xE1 detetive."
   - troca
-  - "ol\xE1"
+  - "Ol\xE1."
   - troca
-  - pronto para mais um dia de trabalho?
+  - Pronto para mais um dia de trabalho?
   - troca
-  - sempre pronto
+  - Sempre pronto.
   sentences2:
-  - eae man
+  - eae man.
   - troca
-  - beleza?
+  - Beleza?
   - troca
-  - "ta sol hj n\xE9?"
+  - "Ta sol hj, n\xE9?"
   - troca
-  - n sei, ta?
+  - "N\xE3o sei, est\xE1?"
   - troca
-  - "vivemos em um mundo 2d n\xE3o consigo ver o sol"
+  - "Vivemos em um mundo 2D. N\xE3o consigo ver o sol."
   senteceloop:
-  - precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa detetive?
   - troca
-  - estou bem obrigado!
-  - (acho melhor investigar a casa)
+  - Estou bem obrigado!
+  - (Acho melhor investigar a casa)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: efae99dbdf1401e4d8a8e75cddad50ec, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 1
@@ -25058,7 +25061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f5a17f5eb4e6b45ba7de4cdfe3fb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nome: Johny
+  nome: Johnny
   description: 'Poilical '
 --- !u!50 &1673566699
 Rigidbody2D:
@@ -25163,51 +25166,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameperson1: Johny
+  nameperson1: Johnny
   nameperson2: Detetive
   sentences:
-  - Como vai detetive?
+  - Como vai, detetive?
   - troca
-  - "ol\xE1 policial"
+  - "Ol\xE1 policial."
   - troca
-  - "cheguei o mais r\xE1pido que pude"
-  - "mas n\xE3o consegui ver nada de \xFAtil"
+  - "Cheguei o mais r\xE1pido que pude."
+  - "Mas n\xE3o consegui ver nada de \xFAtil."
   - troca
-  - "conte-me o que voc\xEA presenciou hoje"
+  - "Conte-me o que voc\xEA presenciou hoje."
   - "(bom eu ir anotando as informa\xE7\xF5es que ele me passar)"
   - troca
-  - 'Bom, estava eu em mais um dia tranquilo '
-  - "at\xE9 que uma mulher desesperada me liga"
-  - "eu tento entender mas ela s\xF3 grita e fala comigo de forma r\xE1pida demais"
-  - eu fico todo confuso achando que estava acontecendo uma chacina
-  - "mas eu reparei que era s\xF3 minha m\xE3e me ligando reclamando sobre eu ter
-    deixa.."
+  - Bom, estava eu em mais um dia tranquilo.
+  - "At\xE9 que uma mulher desesperada me liga."
+  - "Eu tento entender mas ela s\xF3 grita e fala comigo de forma r\xE1pida demais."
+  - Eu fico todo confuso achando que estava acontecendo uma chacina.
+  - "Mas eu reparei que era s\xF3 minha m\xE3e me ligando reclamando sobre eu ter
+    deixa..."
   - troca
-  - 'polical porfavor fale do caso '
-  - "n\xE3o do seu dia como um todo"
+  - Polical, por favor, fale do caso.
+  - "N\xE3o do seu dia como um todo."
   - troca
-  - "perd\xE3o detetive"
-  - mas como ia dizendo
-  - "ap\xF3s toda essa confus\xE3o com a liga\xE7\xE3o"
-  - "eu fui tomar um copo de caf\xE9 pois estava com muito sono"
+  - "Perd\xE3o, detetive."
+  - Mas como ia dizendo.
+  - "Ap\xF3s toda essa confus\xE3o com a liga\xE7\xE3o."
+  - "Eu fui tomar um copo de caf\xE9 pois estava com muito sono."
   - troca
-  - "policial s\xF3 me diga o que foi visto no caso..."
+  - "Policial s\xF3 me diga o que foi visto no caso..."
   - troca
-  - calma calma
-  - "enquanto estava indo pegar um copo de caf\xE9"
-  - "recebi uma chamada do r\xE1dio dizendo para ir para rua luciano gualberto"
-  - "que \xE9 essa rua no caso"
-  - chegando aqui
+  - Calma! Calma!
+  - "Enquanto estava indo pegar um copo de caf\xE9."
+  - "Recebi uma chamada do r\xE1dio dizendo para ir para rua Luciano Gualberto."
+  - "Que \xE9 essa rua no caso."
+  - "Aqui est\xE1. As anota\xE7\xF5es que eu fiz."
   - troca
-  - "(agora eu posso come\xE7ar a anotar)"
+  - (Agora eu posso anotar)
+  - "\xD3timo, polical, muito obrigado pelas informa\xE7\xF5es."
   - troca
-  - a porta da frente estava destrancada
-  - janela quebrada
-  - e nenhum sinal de movimento na rua
-  - troca
-  - "\xF3timo polical, muito obrigado pelas informa\xE7\xF5es"
-  - troca
-  - disponha, mas caso queira saber do resto do meu dia eu te conto em outro momento
+  - Disponha, mas caso queira saber do resto do meu dia eu te conto em outro momento.
   sentences2:
   - troca
   - "ol\xE1 Devi"
@@ -25230,10 +25228,13 @@ MonoBehaviour:
   - troca
   - disponha detetive
   senteceloop:
-  - precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa, detetive?
   - troca
-  - estou bem obrigado!
-  - (acho melhor investigar a casa)
+  - Estou bem, obrigado!
+  - (Acho melhor investigar a casa)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: 126c3f240b05cea4b9a3ed9b27ae0f18, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 0
@@ -32464,49 +32465,52 @@ MonoBehaviour:
   nameperson1: Devi
   nameperson2: Detetive
   sentences:
-  - "ol\xE1 detetive"
+  - "Ol\xE1, detetive."
   - troca
-  - "ol\xE1"
+  - "Ol\xE1."
   - troca
-  - mais um pobre coitado morto
+  - Mais um pobre coitado morto.
   - troca
-  - "nem todos s\xE3o coitados"
-  - "mas com certeza n\xE3o merecem morrer assim"
+  - "Nem todos s\xE3o coitados."
+  - "Mas com certeza n\xE3o merecem morrer assim."
   - troca
-  - "opini\xE3o forte"
-  - mas n irei dizer que esta errada
-  - aqui esta o laudo
+  - "Opini\xE3o forte."
+  - "Mas n\xE3o irei dizer que est\xE1 errada."
+  - "Aqui est\xE1 o laudo."
   - troca
   - (Laudo adicionado ao caderno)
-  - obrigado Devi
+  - Obrigado Devi.
   - troca
-  - tenha um bom trabalho detetive
+  - Tenha um bom trabalho, detetive.
   sentences2:
   - troca
-  - "ol\xE1 Devi"
+  - "Ol\xE1 Devi."
   - troca
-  - como vai detetive?
+  - Como vai, detetive?
   - troca
-  - podia estar melhor
-  - o que temos hoje?
+  - Poderia estar melhor.
+  - O que temos hoje?
   - troca
-  - o sujeito acabou tendo uma morte horrivel
-  - nada podia ser feito para ajuda-lo
+  - "O sujeito acabou tendo uma morte horr\xEDvel."
+  - "Nada podia ser feito para ajud\xE1-lo."
   - troca
-  - "n\xE3o deve ter sido algo bonito de se ver"
+  - "N\xE3o deve ter sido algo bonito de se ver."
   - troca
-  - "n\xE3o mesmo"
-  - "aqui est\xE1 o meu laudo"
+  - "N\xE3o mesmo."
+  - "Aqui est\xE1 o meu laudo."
   - troca
   - (Laudo adicionado ao caderno)
-  - obrigado Devi
+  - Obrigado Devi
   - troca
-  - disponha detetive
+  - Disponha, detetive.
   senteceloop:
-  - precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa detetive?
   - troca
-  - estou bem obrigado!
-  - (acho melhor investigar a casa)
+  - Estou bem obrigado!
+  - (Acho melhor investigar a casa)
+  sentencesIngles: []
+  sentences2Ingles: []
+  senteceloopIngles: []
   sprite1: {fileID: 21300000, guid: ed9c2234c7a71c749b18170153240d0e, type: 3}
   sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
   random: 1
@@ -32824,6 +32828,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: Convite
+      value: 
+      objectReference: {fileID: 3881051416228767763, guid: 6677c43f8e7c768478455df90a5f1cd0,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: caderno
       value: 
       objectReference: {fileID: 614524126}
@@ -32953,6 +32963,12 @@ PrefabInstance:
       propertyPath: CelularEvidence
       value: 
       objectReference: {fileID: 1214451250904688982, guid: cc99e64cd73d0c74495c131199dd69e8,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: ConviteEvidence
+      value: 
+      objectReference: {fileID: 6893536457397874756, guid: 6677c43f8e7c768478455df90a5f1cd0,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

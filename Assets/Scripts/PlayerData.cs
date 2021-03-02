@@ -10,6 +10,7 @@ public class PlayerData
     public int level;    
     public bool horas;
     public string[] NomeDosObjetos = new string[30];
+    public bool[] update = new bool[30];
     public int NumeroDeObjetos;    
     public bool[] isOpen= new bool[25];
     public float volumeMusica;
@@ -21,6 +22,7 @@ public class PlayerData
     public int PortaDaCena = 0;
     public int NumeroDeportas;
     public int actualCrimeScene;
+    public string policialUpdate;
     public int i = 0;
     public static int DificuldadeAtual;
     public bool kyle;
@@ -53,6 +55,7 @@ public class PlayerData
         vistoPergunta = Testemunha.vistoPergunta;
         contadorAnalise= SpawnObjects.contador;
         contadorPensamento = Caderno.contadorPensamentos;
+        policialUpdate = SpawnObjects.policialUpdateSalvar;
         SalvaRespostas();
         salvapessoas();
         for(i=0;i<NumeroDeEvidencias;i++){
@@ -122,6 +125,7 @@ public class PlayerData
 
     public void SalvaCaderno(int i){            
         nomeObjetoEvidencias[i] = Caderno.evidencias[i].NomeObjeto;
+        update[i] = Caderno.update[i];
     }
     public void SalvaObjetos(int i){     
         NomeDosObjetos[i] = SpawnObjects.NomeDosObjetos[i];

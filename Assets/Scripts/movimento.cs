@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System;
 
 public class movimento : MonoBehaviour
@@ -145,7 +146,21 @@ public class movimento : MonoBehaviour
         position.x = data.position[0];
         position.y = data.position[1];
         position.z = data.position[2];
-        transform.position = position;        
+        transform.position = position;      
+        if(data.level == 1){
+            switch(SceneManager.GetActiveScene().buildIndex){
+                case 2:
+                position.x = -0.7f;
+                position.y = -18.9f;
+                position.z = -20f;
+                break;
+                case 3:
+                position.x = 11.11f;
+                position.y = -20.94f;
+                position.z = -20f;
+                break;
+            }
+        }
     }
     
 }

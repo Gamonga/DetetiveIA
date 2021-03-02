@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8128279005835639240
+--- !u!1 &3881051416228767763
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 696459684413213559}
-  - component: {fileID: 150644154453695740}
-  - component: {fileID: 4568236957088603950}
-  - component: {fileID: 8571556410562499599}
-  - component: {fileID: 6002540923773952065}
+  - component: {fileID: 5763051055783353570}
+  - component: {fileID: 2144545600751911524}
+  - component: {fileID: 8562405027067658585}
+  - component: {fileID: 6893536457397874756}
+  - component: {fileID: 6224543415503919762}
   m_Layer: 0
-  m_Name: pedra_dentro
+  m_Name: Convite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &696459684413213559
+--- !u!4 &5763051055783353570
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128279005835639240}
+  m_GameObject: {fileID: 3881051416228767763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3348, y: 6.18, z: -10}
-  m_LocalScale: {x: 1.0040336, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &150644154453695740
+--- !u!212 &2144545600751911524
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128279005835639240}
+  m_GameObject: {fileID: 3881051416228767763}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,24 +74,82 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bef66ce35850a5d429931f255f220df2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5049a223a305df4fa4677a1b03b0eea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.4, y: 3.6}
+  m_Size: {x: 1.32, y: 1.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4568236957088603950
+--- !u!61 &8562405027067658585
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881051416228767763}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.76, y: 1.76}
+    newSize: {x: 1.32, y: 1.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.32, y: 1.32}
+  m_EdgeRadius: 0
+--- !u!114 &6893536457397874756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128279005835639240}
+  m_GameObject: {fileID: 3881051416228767763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57d58e4a0ab23243933dc04cbb81a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nome: Convite
+  sangue: 0
+  description: 'Pensamento: O assassino pode ter sido convidado a entrar.
+
+'
+  descriptionUpdate: 'Pensamento: O assassino pode ter sido convidado a entrar.
+
+
+'
+  tamanho: pequeno
+  ImagemObjeto: {fileID: 21300000, guid: f5049a223a305df4fa4677a1b03b0eea, type: 3}
+  NomeObjeto: Convite(Clone)
+  NumeroCaderno: 0
+  weaponRuido: 0
+  weaponInstantDeath: 0
+  TemPlanejamento: 0
+  NTemPlanejamento: 0
+  weaponDescription: 
+  Dificuldade: 0
+  tierArma: 0
+--- !u!114 &6224543415503919762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881051416228767763}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11478b5b910f1ae4eae1f4f15c37cd58, type: 3}
@@ -108,7 +166,7 @@ MonoBehaviour:
         m_MethodName: adicionar
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 6002540923773952065}
+          m_ObjectArgument: {fileID: 6893536457397874756}
           m_ObjectArgumentAssemblyTypeName: Evidence, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -118,7 +176,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
           type: 3}
         m_TargetAssemblyTypeName: 
-        m_MethodName: JanelaQuebradaPedraInteriorEvidenceNome
+        m_MethodName: BilheteCulposoEvidenceNome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -144,61 +202,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!61 &8571556410562499599
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128279005835639240}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.01048851, y: -0.05265665}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.3733332, y: 4.0133333}
-    newSize: {x: 2.4, y: 3.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.046198, y: 4.0206757}
-  m_EdgeRadius: 0
---- !u!114 &6002540923773952065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8128279005835639240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a57d58e4a0ab23243933dc04cbb81a45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nome: Vidro Quebrado
-  weapon: 0
-  description: 'Vidro quebrado e pedra do lado interno do ambiente.
-
-'
-  descriptionUpdate: 'Vidro quebrado e pedra do lado interno do ambiente. Tamanho
-    grande o suficiente para passar uma pessoa.
-
-'
-  tamanho: medio
-  ImagemObjeto: {fileID: 21300000, guid: bef66ce35850a5d429931f255f220df2, type: 3}
-  NomeObjeto: pedra_dentro(Clone)
-  NumeroCaderno: 0
-  weaponRuido: 0
-  weaponInstantDeath: 0
-  TemPlanejamento: 0
-  NTemPlanejamento: 0
-  weaponDescription: 
-  Dificuldade: 0
-  tierArma: 0

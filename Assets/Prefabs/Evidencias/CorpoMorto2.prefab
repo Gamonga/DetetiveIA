@@ -198,8 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: "V\xEDtima"
   weapon: 0
-  description: Corpo encontrado no quarto com roupas rasgadas e manchas rochas no
-    corpo
+  description: Corpo encontrado no quarto com roupas rasgadas e manchas roxas no
+    corpo.
   descriptionUpdate: Corpo encontrado no quarto com roupas rasgadas e manchas roxas
     no corpo. Sujeito morava sozinho.
   tamanho: grande
@@ -212,6 +212,7 @@ MonoBehaviour:
   NTemPlanejamento: 1
   weaponDescription: contundente
   Dificuldade: 0
+  tierArma: 0
 --- !u!61 &8280460178899130615
 BoxCollider2D:
   m_ObjectHideFlags: 0

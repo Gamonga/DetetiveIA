@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Caderno : MonoBehaviour
 {
     static public Evidence[] evidencias = new Evidence[20];
+    static public bool[] update = new bool[20];
     static public Pessoa[] pessoas = new Pessoa[20];
     public static int posiçãoPessoa;
     public Animator caderno;
@@ -91,6 +92,11 @@ public class Caderno : MonoBehaviour
         posiçãoEvidencias = 0;    
         posiçãoPessoa = 0; 
         repetidor = 0;
+        if(MainMenu.NewGame == true){
+            for(i=0;i<20;i++){
+                update[i] = false;
+            }
+        }
     }    
 
     private void Awake()
@@ -125,6 +131,8 @@ public class Caderno : MonoBehaviour
             }
             else
             {
+                evidenciasTextos.SetActive(false);
+                pessoasTextos.SetActive(false);
                 SelecionarOutraPista.SetActive(false);
                 JuntarPistas.SetActive(false);
                 Pensamentos.SetActive(false);
@@ -149,61 +157,73 @@ public class Caderno : MonoBehaviour
         {
             evidencias[0].description = evidencias[0].descriptionUpdate;
             description.text = evidencias[0].description;
+            update[0] = true;
         }
         if (tag == 1)
         {
             evidencias[1].description = evidencias[1].descriptionUpdate;
             description.text = evidencias[1].description;
+            update[1] = true;
         }
         if (tag == 2)
         {
             evidencias[2].description = evidencias[2].descriptionUpdate;
             description.text = evidencias[2].description;
+            update[2] = true;
         }
         if (tag == 3)
         {
             evidencias[3].description = evidencias[3].descriptionUpdate;
             description.text = evidencias[3].description;
+            update[3] = true;
         }
         if (tag == 4)
         {
             evidencias[4].description = evidencias[4].descriptionUpdate;
             description.text = evidencias[4].description;
+            update[4] = true;
         }
         if (tag == 5)
         {
             evidencias[5].description = evidencias[5].descriptionUpdate;
             description.text = evidencias[5].description;
+            update[5] = true;
         }
         if (tag == 6)
         {
             evidencias[6].description = evidencias[6].descriptionUpdate;
             description.text = evidencias[6].description;
+            update[6] = true;
         }
         if (tag == 7)
         {
             evidencias[7].description = evidencias[7].descriptionUpdate;
             description.text = evidencias[7].description;
+            update[7] = true;
         }
         if (tag == 8)
         {
             evidencias[8].description = evidencias[8].descriptionUpdate;
             description.text = evidencias[8].description;
+            update[8] = true;
         }
         if (tag == 9)
         {
             evidencias[9].description = evidencias[9].descriptionUpdate;
             description.text = evidencias[9].description;
+            update[9] = true;
         }
         if (tag == 10)
         {
             evidencias[10].description = evidencias[10].descriptionUpdate;
             description.text = evidencias[10].description;
+            update[10] = true;
         }
         if (tag == 11)
         {
             evidencias[11].description = evidencias[11].descriptionUpdate;
             description.text = evidencias[11].description;
+            update[11] = true;
         }
         evidenciasTextos.SetActive(false);
     }
@@ -278,14 +298,30 @@ public class Caderno : MonoBehaviour
     public void JuntarPensamentos(){
         if(Pensamento1 == "Destroços" && Pensamento2 == "Vítima"){
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno";
+            textoPensamentos.text = "Pensamento adicionado ao caderno.";
         }
         else if(Pensamento2 == "Destroços" && Pensamento1 == "Vítima"){
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno";
+            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+        }
+        else if(Pensamento1 == "Prato" && Pensamento2 == "Vítima"){
+            adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
+            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+        }
+        else if(Pensamento2 == "Prato" && Pensamento1 == "Vítima"){
+            adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
+            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+        }
+        else if(Pensamento1 == "Prato" && Pensamento2 == "Informações do policial"){
+            adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
+            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+        }
+        else if(Pensamento2 == "Prato" && Pensamento1 == "Informações do policial"){
+            adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
+            textoPensamentos.text = "Pensamento adicionado ao caderno.";
         }
         else{
-            textoPensamentos.text = "Não vejo correlação entre essas 2 evidências";
+            textoPensamentos.text = "Não vejo correlação entre essas 2 evidências.";
         }
         contadorPensamentos--;
         Transition.SetBool("Abrir", true);
@@ -309,7 +345,7 @@ public class Caderno : MonoBehaviour
         Transition.SetBool("Abrir", true);   
         if(numeroPensamento == 1){
             Pensamento1 = Text.text;
-            textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ")" ;
+            textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ")." ;
             numeroPensamento++;
             SelecionarOutraPista.SetActive(true);
         }
@@ -320,7 +356,7 @@ public class Caderno : MonoBehaviour
             else{
                 JuntarPistas.SetActive(true);
                 Pensamento2 = Text.text;
-                textoPensamentos.text = "Faz sentido eu juntar " + Pensamento1 + " e " + Pensamento2 + "? (Tentativas Restantes: " + contadorPensamentos + ")";
+                textoPensamentos.text = "Faz sentido eu juntar " + Pensamento1 + " e " + Pensamento2 + "? (Tentativas Restantes: " + contadorPensamentos + ").";
             }
         }
     }
@@ -389,7 +425,7 @@ public class Caderno : MonoBehaviour
         }
         else{
             Transition.SetBool("Abrir", true);
-            textoPensamentos.text = "Estou cansado demais para conseguir pensar agora";
+            textoPensamentos.text = "Estou cansado demais para conseguir pensar agora.";
             caderno.SetBool("Rela",false);
             caderno.SetBool("abrir", false);
             PrecisaFecharTransition = true;
@@ -622,7 +658,7 @@ public class Caderno : MonoBehaviour
                 case "Steve":
                     Steve = true;
                 break;
-                case "Johny":
+                case "Johnny":
                     Jhony = true;
                 break;
                 case "Devi":
@@ -823,6 +859,10 @@ public class Caderno : MonoBehaviour
         posiçãoEvidencias = 0;
         for(j=0;j<data.NumeroDeEvidencias;j++){
             adicionar(GameObject.Find(data.nomeObjetoEvidencias[j]).GetComponent<Evidence>());
+            update[j] = data.update[j];
+            if(update[j] == true){
+                atualizaDescricao(j);
+            }
         }
     }
     public void LoadPessoas(PlayerData data){
@@ -840,32 +880,32 @@ public class Caderno : MonoBehaviour
         TesteKyle = new Pessoa();
         if(Sanefuji == true){
             TesteSanefuji.nome = "Sanefuji";
-            TesteSanefuji.description = "Empresário da alta classe, só pensa em business";
+            TesteSanefuji.description = "Empresário da alta classe, só pensa em business.";
             adicionarPessoas(TesteSanefuji);
         }
         if(Jessie == true){
             TesteJessie.nome = "Jessie";
-            TesteJessie.description = "Jornalista investigativa ";
+            TesteJessie.description = "Jornalista investigativa.";
             adicionarPessoas(TesteJessie);
         }
         if(kyle == true){
             TesteKyle.nome = "kyle";
-            TesteKyle.description = "Perito digital da delegacia";
+            TesteKyle.description = "Perito digital da delegacia.";
             adicionarPessoas(TesteKyle);
         }
         if(Steve == true){
             TesteSteve.nome = "Steve";
-            TesteSteve.description = "Parceiro do detetive";
+            TesteSteve.description = "Parceiro do detetive.";
             adicionarPessoas(TesteSteve);
         }
         if(Jhony == true){
-            TesteJohny.nome = "Jhony";
-            TesteJohny.description = "Policial";
+            TesteJohny.nome = "Johnny";
+            TesteJohny.description = "Policial.";
             adicionarPessoas(TesteJohny);
         }
         if(Devi == true){
             TesteDevi.nome = "Devi";
-            TesteDevi.description = "Legista";
+            TesteDevi.description = "Legista.";
             adicionarPessoas(TesteDevi);
         }
     }
