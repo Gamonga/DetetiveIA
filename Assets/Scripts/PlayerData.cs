@@ -41,15 +41,25 @@ public class PlayerData
     public string TerceiraResposta;
     public string QuartaResposta;
     public string QuintaResposta;
+    public static string Idioma;
+    public bool PrecisaDeAuxilioEntradaSaida;
+    public bool ajudaEntrada;
+    public bool ajudaSaida;
+    public bool PanoSangue;
     public PlayerData(movimento movimento){
         level = SceneManager.GetActiveScene().buildIndex;
         actualCrimeScene = ScenesManager.ActualScene;
         horas = horario.Horario;
+        Idioma = MainMenu.idioma;
         position[0] = movimento.transform.position.x;
         position[1] = movimento.transform.position.y;
         position[2] = movimento.transform.position.z;      
         NumeroDeEvidencias = Caderno.posiçãoEvidencias;
         NumeroDeObjetos = SpawnObjects.NumeroDeObjetos;
+        PrecisaDeAuxilioEntradaSaida = SpawnObjects.PrecisaDeAuxilioEntradaSaida;
+        ajudaEntrada = SpawnObjects.ajudaEntrada;
+        ajudaSaida = SpawnObjects.ajudaSaida;
+        PanoSangue = SpawnObjects.PanoSangue;
         relacaoPergunta = Testemunha.relacaoPergunta;
         ouviuPergunta = Testemunha.ouviuPergunta;
         vistoPergunta = Testemunha.vistoPergunta;

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2144545600751911524}
   - component: {fileID: 8562405027067658585}
   - component: {fileID: 6893536457397874756}
-  - component: {fileID: 6224543415503919762}
   m_Layer: 0
   m_Name: Convite
   m_TagString: Untagged
@@ -124,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Convite
+  nomeIngles: Invitation
   sangue: 0
   description: 'Pensamento: O assassino pode ter sido convidado a entrar.
 
@@ -132,6 +132,10 @@ MonoBehaviour:
 
 
 '
+  descriptionIngles: 'Thought: The murderer might have been invited to enter the
+    house.'
+  descriptionUpdateIngles: 'Thought: The murderer might have been invited to enter
+    the house.'
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: f5049a223a305df4fa4677a1b03b0eea, type: 3}
   NomeObjeto: Convite(Clone)
@@ -143,62 +147,3 @@ MonoBehaviour:
   weaponDescription: 
   Dificuldade: 0
   tierArma: 0
---- !u!114 &6224543415503919762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3881051416228767763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11478b5b910f1ae4eae1f4f15c37cd58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
-  interactKey: 101
-  interactAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: adicionar
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6893536457397874756}
-          m_ObjectArgumentAssemblyTypeName: Evidence, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: BilheteCulposoEvidenceNome
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  FechaJanela:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
-          type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: FechaJanela
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2

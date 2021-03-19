@@ -197,11 +197,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "V\xEDtima"
-  weapon: 0
+  nomeIngles: Victim
+  sangue: 0
   description: Corpo encontrado no quarto com roupas rasgadas e manchas roxas no
     corpo.
   descriptionUpdate: Corpo encontrado no quarto com roupas rasgadas e manchas roxas
     no corpo. Sujeito morava sozinho.
+  descriptionIngles: 
+  descriptionUpdateIngles: 
   tamanho: grande
   ImagemObjeto: {fileID: 21300000, guid: 0c312195909520047ab45006ea08207b, type: 3}
   NomeObjeto: CorpoMorto2(Clone)

@@ -49,26 +49,48 @@ public class Relatorio : MonoBehaviour
     {
         if(isInRange){            
             if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false){
-                sentence.Enqueue("Preciso entender o que aconteceu nesse caso.");
-                sentence.Enqueue("Primeiro preciso reformular a cena do crime.");
-                sentence.Enqueue("De que forma o assassino entrou no local?");
-                sentence.Enqueue("Faz sentido ele entrar dessa forma.");
-                sentence.Enqueue("Mas após ele entrar, algo aconteceu lá dentro.");
-                sentence.Enqueue("Em que local será que ocorreu o assassinato?");
-                sentence.Enqueue("Sabendo que ele morreu ali.");
-                sentence.Enqueue("Ainda é necessário saber outra coisa.");
-                sentence.Enqueue("Qual arma ele utilizou no crime?");
-                sentence.Enqueue("Após ter cometido o assassinato.");
-                sentence.Enqueue("Ele deve ter tido algum plano para fugir.");
-                sentence.Enqueue("De que forma o assassino saiu do local?");
-                sentence.Enqueue("Tudo está começando a se encaixar.");
-                sentence.Enqueue("Tendo agora pensado em como ele entrou.");
-                sentence.Enqueue("Onde ele assassinou, a arma utilizada e como ele saiu.");
-                sentence.Enqueue("É preciso saber o motivo por trás.");
-                sentence.Enqueue("Qual a razão do assassinato?");
-                sentence.Enqueue("Devo entregar o relatório assim?");
-                texto.text = "Escrever o relatório?";    
-                trocarCenaSim.SetActive(false);     
+                if(PlayerData.Idioma == "ingles"){
+                    sentence.Enqueue("I need to understand what happened in this case.");
+                    sentence.Enqueue("First I need to reformulate the crime scene.");
+                    sentence.Enqueue("How did the murderer enter the place?");
+                    sentence.Enqueue("It makes sense for them to enter like this.");
+                    sentence.Enqueue("But after entering, something happened inside there.");
+                    sentence.Enqueue("Where did the murder take place?");
+                    sentence.Enqueue("Knowing the victim died there.");
+                    sentence.Enqueue("I still need to find out more.");
+                    sentence.Enqueue("What weapon did they use?");
+                    sentence.Enqueue("After commiting the murder.");
+                    sentence.Enqueue("They must have had a escape plan.");
+                    sentence.Enqueue("How did the murderer leave the place?");
+                    sentence.Enqueue("It's all coming together.");
+                    sentence.Enqueue("Having figured out how they entered.");
+                    sentence.Enqueue("Where the murder happened, the weapon used and how they left.");
+                    sentence.Enqueue("It's time to figure out the motive.");
+                    sentence.Enqueue("What is the reason of the murder?");
+                    sentence.Enqueue("Should I turn in the Report like this?");
+                    texto.text = "Write the Report?";    
+                }  
+                else{
+                    sentence.Enqueue("Preciso entender o que aconteceu nesse caso.");
+                    sentence.Enqueue("Primeiro preciso reformular a cena do crime.");
+                    sentence.Enqueue("De que forma o assassino entrou no local?");
+                    sentence.Enqueue("Faz sentido ele entrar dessa forma.");
+                    sentence.Enqueue("Mas após ele entrar, algo aconteceu lá dentro.");
+                    sentence.Enqueue("Em que local será que ocorreu o assassinato?");
+                    sentence.Enqueue("Sabendo que ele morreu ali.");
+                    sentence.Enqueue("Ainda é necessário saber outra coisa.");
+                    sentence.Enqueue("Qual arma ele utilizou no crime?");
+                    sentence.Enqueue("Após ter cometido o assassinato.");
+                    sentence.Enqueue("Ele deve ter tido algum plano para fugir.");
+                    sentence.Enqueue("De que forma o assassino saiu do local?");
+                    sentence.Enqueue("Tudo está começando a se encaixar.");
+                    sentence.Enqueue("Tendo agora pensado em como ele entrou.");
+                    sentence.Enqueue("Onde ele assassinou, a arma utilizada e como ele saiu.");
+                    sentence.Enqueue("É preciso saber o motivo por trás.");
+                    sentence.Enqueue("Qual a razão do assassinato?");
+                    sentence.Enqueue("Devo entregar o relatório assim?");
+                    texto.text = "Escrever o relatório?";    
+                }
                 preencher.SetActive(true);   
                 no.SetActive(true);    
                 Transition.SetBool("Abrir", true);                
@@ -84,14 +106,20 @@ public class Relatorio : MonoBehaviour
                 if(fraseAtual == "De que forma o assassino entrou no local?" || 
                 fraseAtual == "De que forma o assassino saiu do local?"|| 
                 fraseAtual == "Em que local será que ocorreu o assassinato?"|| 
-                fraseAtual == "Qual arma ele utilizou no crime?"){
+                fraseAtual == "Qual arma ele utilizou no crime?"||
+
+                fraseAtual == "How did the murderer enter the place?"|| 
+                fraseAtual == "Where did the murder take place?"|| 
+                fraseAtual == "Knowing the victim died there."|| 
+                fraseAtual == "How did the murderer leave the place?"){
                 CadernoLimpo.SetActive(false);
                 Evidencias.SetActive(true);
                 caderno.SetBool("Rela",true);
                 SemEvidencia.SetActive(true);
                 perguntando = true;
                 }
-                else if(fraseAtual == "Qual a razão do assassinato?"){
+                else if(fraseAtual == "Qual a razão do assassinato?"||
+                fraseAtual == "What is the reason of the murder?"){
                     CadernoLimpo.SetActive(true);
                     Evidencias.SetActive(false);
                     caderno.SetBool("Rela",false);
@@ -151,7 +179,12 @@ public class Relatorio : MonoBehaviour
             respostaTexto = resposta.text;
             trocarCenaSim.SetActive(true);
             SemEvidencia.SetActive(true);
-            texto.text = "Sera que é isso?";   
+            if(PlayerData.Idioma == "ingles"){
+                texto.text = "Could this be it?"; 
+            }  
+            else{
+                texto.text = "Sera que é isso?"; 
+            }
         }              
     }
     public void NoEvidencias(){
@@ -270,7 +303,12 @@ public class Relatorio : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            texto.text = "Deseja voltar a cena do crime?";
+            if(PlayerData.Idioma == "ingles"){
+                texto.text = "Do you wish to return to the crime scene?"; 
+            }  
+            else{
+                texto.text = "Deseja voltar a cena do crime?";
+            }
             Transition.SetBool("Abrir", false);
             CadernoLimpo.SetActive(true);
             Evidencias.SetActive(false);

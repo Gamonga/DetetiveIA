@@ -24,6 +24,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: nomeIngles
+      value: Wreckage
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: description
       value: "Garrafa quebrada no ch\xE3o."
       objectReference: {fileID: 0}
@@ -45,6 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: descriptionIngles
+      value: 'Broken bottle on the floor. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: descriptionUpdate
       value: "Garrafa quebrada no ch\xE3o. Possivelmente quebrada em algum objeto.
         N\xE3o foi utilizada em algu\xEAm.\n"
@@ -58,6 +68,12 @@ PrefabInstance:
         type: 3}
       propertyPath: weaponInstantDeath
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: descriptionUpdateIngles
+      value: Broken bottle on the floor. Possibly broken into some object. It was
+        not used on anyone.
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

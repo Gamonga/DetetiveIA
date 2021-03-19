@@ -14,8 +14,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: sangue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: NomeObjeto
       value: Cofre com dinheiro(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: nomeIngles
+      value: Safe with money
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -35,6 +45,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: descriptionIngles
+      value: Safe with a large amount of money.
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: descriptionUpdate
       value: "Cofre com uma grande quantidade de valor guardado. A v\xEDtima n\xE3o
         declarou a posse de tamanha quantidade de dinheiro."
@@ -43,6 +58,12 @@ PrefabInstance:
         type: 3}
       propertyPath: weaponInstantDeath
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: descriptionUpdateIngles
+      value: Safe with a large amount of money. Victim hadn't declared ownership
+        of such amount.
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

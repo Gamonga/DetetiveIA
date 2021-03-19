@@ -12,8 +12,20 @@ public class SpawnObjects : MonoBehaviour
     public Caderno caderno;
     public static string[] NomeDosObjetos = new string[20];
     public static int NumeroDeObjetos;
+    public GameObject Pano;
+    public Evidence PanoEvidence;
     public GameObject Convite;
     public Evidence ConviteEvidence;
+    public GameObject CanoContundente;
+    public Evidence CanoContundenteEvidence;
+    public GameObject CanoContundenteSangue;
+    public Evidence CanoContundenteSangueEvidence;
+    public GameObject CanoPerfuração;
+    public Evidence CanoPerfuraçãoEvidence;
+    public GameObject CanoPerfuraçãoSangue;
+    public Evidence CanoPerfuraçãoSangueEvidence;
+    public GameObject Sufocamento;
+    public Evidence SufocamentoEvidence;
     public GameObject Punhos;
     public Evidence PunhosEvidence;
     public GameObject Destrocos;
@@ -78,7 +90,7 @@ public class SpawnObjects : MonoBehaviour
     private static bool TemPorta; 
     private static bool TemJanela;
     private static bool JanelaQuebrada;
-    private static bool PrecisaDeAuxilioEntradaSaida;
+    public static bool PrecisaDeAuxilioEntradaSaida;
     public static bool PortaQuebrada;
     public static bool PortaArrombadaDentro;
     private static bool FoiConvidado;
@@ -104,8 +116,8 @@ public class SpawnObjects : MonoBehaviour
     public static bool Vinganca;
     public static bool Roubo;
     public static bool ContinuaNoLoop;
-    private static bool ajudaEntrada;
-    private static bool ajudaSaida;
+    public static bool ajudaEntrada;
+    public static bool ajudaSaida;
     private static Vector3 PosicaoCorpoMorto;
     private int i = 0;
     private int j = 0;
@@ -115,9 +127,11 @@ public class SpawnObjects : MonoBehaviour
     static private int numeroSelecionadoParaResposta = 0;
     private int NumeroArmas;
     public static int contador;
+    public static bool PanoSangue;
     // Start is called before the first frame update
     void Start()
     {       
+        PanoSangue = false;
         PlayerData.DificuldadeAtual = 0;    
         NumeroDeObjetos = 0;
         NumeroDeportas = carregaNumeroDePortas();
@@ -125,7 +139,11 @@ public class SpawnObjects : MonoBehaviour
         if(MainMenu.NewGame == false){     
             PlayerData data = SaveSystem.LoadPlayer(); 
             contador = data.contadorAnalise;
+            PanoSangue = data.PanoSangue;
             policialUpdateSalvar = data.policialUpdate;
+            PrecisaDeAuxilioEntradaSaida = data.PrecisaDeAuxilioEntradaSaida;
+            ajudaEntrada = data.ajudaEntrada;
+            ajudaSaida = data.ajudaSaida;
             LoadRespostas(data);
             for(i=0; i<data.NumeroDeObjetos;i++){
                 LoadPlayer(data, i);
@@ -309,18 +327,18 @@ public class SpawnObjects : MonoBehaviour
             InstantiateConvite();
         }
         if(TemPorta && PortaQuebrada && PortaArrombadaDentro){
-            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada.";
-            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada. De fora para dentro.";
+            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada.";
+            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada. De fora para dentro.";
             InstantiatePolicial();
         }
         if(TemPorta && PortaQuebrada && !PortaArrombadaDentro){
-            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada.";
-            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estava quebrada. De dentro para fora.";
+            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada.";
+            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada. De dentro para fora.";
             InstantiatePolicial();
         }
         if(TemPorta && !PortaQuebrada){
-            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estava destrancada.";
-            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estava destrancada.";
+            PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estáva destrancada.";
+            PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estáva destrancada.";
             InstantiatePolicial();
         }
         policialUpdateSalvar = PolicialEvidence.descriptionUpdate;
@@ -473,7 +491,7 @@ public class SpawnObjects : MonoBehaviour
         if(Random.value > 0.5f){
             depoimentoTestemunhaOuviu = true;
         }
-        Armas = new Evidence[10];
+        Armas = new Evidence[15];
         Armas[0] = FacaNormalEvidence; 
         Armas[1] = FacaNormalSemSangueEvidence; 
         Armas[2] = FacaCozinhaEvidence; 
@@ -482,6 +500,11 @@ public class SpawnObjects : MonoBehaviour
         Armas[5] = RevolverEvidence;
         Armas[6] = CaixaDeRemedioEvidence;
         Armas[7] = PunhosEvidence;
+        Armas[8] = CanoContundenteEvidence;
+        Armas[9] = CanoPerfuraçãoEvidence;
+        Armas[10] = CanoPerfuraçãoSangueEvidence;
+        Armas[11] = CanoContundenteSangueEvidence;
+        Armas[12] = SufocamentoEvidence;
         if(PlayerData.DificuldadeAtual <= 0){
             NumeroArmas = 2;            
         }       
@@ -516,19 +539,27 @@ public class SpawnObjects : MonoBehaviour
                     OuviuVerdade = "false";
                 }
                 SelecionaLaudo(Armas[numeroSelecionadoParaResposta].weaponDescription);
+                if(selecionadorint == 1 ||  selecionadorint == 4 || selecionadorint == 8 || selecionadorint == 9){
+                    InstantiatePanoSangue();
+                    PanoSangue = true;
+                }
             }
             else{
-                while(selecionadorint == numeroSelecionadoParaResposta || Armas[numeroSelecionadoParaResposta].tierArma < Armas[selecionadorint].tierArma){
+                while(selecionadorint == numeroSelecionadoParaResposta){
                     selecionadorint = Random.Range(0,8);
                 }
                 if(selecionadorint == 7){
                     InstantiateDestrocos();
                 }
                 if(Armas[selecionadorint].sangue){
-                    Armas[selecionadorint].descriptionUpdate = Armas[selecionadorint].description + "Sangue falso."; 
+                    Armas[selecionadorint].descriptionUpdate = Armas[selecionadorint].description + " Sangue falso."; 
                 }
                 carregaObjetos(Armas[selecionadorint].NomeObjeto);      
             }
+        }
+        if(Random.value > 0.5f && PanoSangue == false){
+            InstantiatePano();
+            PanoSangue = true;
         }
     }
     public int carregaNumeroDePortas(){
@@ -646,6 +677,24 @@ public class SpawnObjects : MonoBehaviour
             case "Convite(Clone)":
                 InstantiateConvite();
                 break;
+            case "CanoNormalContundente(Clone)":
+                InstantiateConvite();
+                break;
+            case "CanoNormalPerfurante(Clone)":
+                InstantiateConvite();
+                break;
+            case "CanoSangueContundente(Clone)":
+                InstantiateConvite();
+                break;
+            case "CanoSanguePerfurante(Clone)":
+                InstantiateConvite();
+                break;
+            case "Sufocamento(Clone)":
+                InstantiateConvite();
+                break;
+            case "Pano(Clone)":
+                InstantiateConvite();
+                break;
         }
     }
     public void LoadPlayer(PlayerData data, int i){
@@ -731,6 +780,50 @@ public class SpawnObjects : MonoBehaviour
             case "Convite(Clone)":
                 InstantiateConvite();
                 break;
+            case "CanoNormalContundente(Clone)":
+                InstantiateConvite();
+                break;
+            case "CanoNormalPerfurante(Clone)":
+                InstantiateConvite();
+                break;
+            case "CanoSangueContundente(Clone)":
+                InstantiateConvite();
+                break;
+            case "CanoSanguePerfurante(Clone)":
+                InstantiateConvite();
+                break;
+            case "Sufocamento(Clone)":
+                InstantiateConvite();
+                break;
+            case "Pano(Clone)":
+                InstantiateConvite();
+                break;
+        }
+    }
+    public void PanoNome(){
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if(!entrouNoTexto){            
+            animator.SetBool("Abrir",true);
+            dialogueText.text = "Pedaço de pano foi adicionado ao caderno";
+            entrouNoTexto = true;
+        }
+        else{
+            animator.SetBool("Abrir",false);
+            entrouNoTexto = false;
+        }
+    }
+    public void CanoNome(){
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if(!entrouNoTexto){            
+            animator.SetBool("Abrir",true);
+            dialogueText.text = "Pedaço de cano foi adicionado ao caderno";
+            entrouNoTexto = true;
+        }
+        else{
+            animator.SetBool("Abrir",false);
+            entrouNoTexto = false;
         }
     }
     public void DestrocosNome(){
@@ -1020,7 +1113,7 @@ public class SpawnObjects : MonoBehaviour
             if(ajudaEntrada){
                 if(!PortaQuebrada){
                     CelularEvidence.description = "Celular pertencente à vítima.";
-                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Mensagem salva no celular 'Combinado! estarei te aguardando aqui em casa, até mais tarde.', mensagem enviada para um numero anônimo.";
+                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Mensagem salva no celular 'Combinado! estárei te aguardando aqui em casa, até mais tarde.', mensagem enviada para um numero anônimo.";
                     PrimeiraResposta = "Convite";
                 }
                 else{
@@ -1032,7 +1125,7 @@ public class SpawnObjects : MonoBehaviour
             if(ajudaSaida){
                 CelularEvidence.description = "Celular pertencente à vítima.";
                 CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Agenda do celular não mostra nada marcado na data de hoje.";
-                QuartaResposta = "Informações do policial";
+                QuartaResposta = "Informações do policial"; 
             }
         }
         GameObject CelularClone = Instantiate(Celular) as GameObject;
@@ -1396,6 +1489,100 @@ public class SpawnObjects : MonoBehaviour
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "FacaCozinha(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCano(){
+        GameObject CanoContundenteClone = Instantiate(CanoContundente) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                CanoContundenteClone.transform.position = new Vector3(-13.39f,9.82f,-5);
+                break;
+            case 2:
+                CanoContundenteClone.transform.position = new Vector3(12.56f,-18.26f,-5);
+                break;
+            case 3:
+                CanoContundenteClone.transform.position = new Vector3(-13.3f,17.47f,-5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CanoNormalContundente(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCanoSangue(){
+        GameObject CanoContundenteSangueClone = Instantiate(CanoContundenteSangue) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                CanoContundenteSangueClone.transform.position = new Vector3(-13.39f,9.82f,-5);
+                break;
+            case 2:
+                CanoContundenteSangueClone.transform.position = new Vector3(12.56f,-18.26f,-5);
+                break;
+            case 3:
+                CanoContundenteSangueClone.transform.position = new Vector3(-13.3f,17.47f,-5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CanoSangueContundente(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateSufocamento(){
+        GameObject SufocamentoClone = Instantiate(Sufocamento) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                SufocamentoClone.transform.position = new Vector3(40f,40f,-5);
+                break;
+            case 2:
+                SufocamentoClone.transform.position = new Vector3(40f,40f,-5);
+                break;
+            case 3:
+                SufocamentoClone.transform.position = new Vector3(40f,40f,-5);
+                break;
+        }        
+        NomeDosObjetos[NumeroDeObjetos] = "Sufocamento(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiatePano(){
+        if(PanoSangue){
+            PanoEvidence.descriptionUpdate = "Um pedaço de pano. Pano está sujo de sangue da vítima.";
+        }
+        GameObject PanoClone = Instantiate(Pano) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                PanoClone.transform.position = new Vector3(-13.39f,9.82f,-5);
+                break;
+            case 2:
+                PanoClone.transform.position = new Vector3(-2.43f,-2.82f,-5);
+                break;
+            case 3:
+                PanoClone.transform.position = new Vector3(-4.67f,7.19f,-5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "Pano(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiatePanoSangue(){
+        PanoEvidence.descriptionUpdate = "Um pedaço de pano. Pano está sujo de sangue da vítima.";
+        GameObject PanoClone = Instantiate(Pano) as GameObject;
+        switch(SceneManager.GetActiveScene().buildIndex){
+            case 0:
+                break;
+            case 1:
+                PanoClone.transform.position = new Vector3(-13.39f,9.82f,-5);
+                break;
+            case 2:
+                PanoClone.transform.position = new Vector3(-2.43f,-2.82f,-5);
+                break;
+            case 3:
+                PanoClone.transform.position = new Vector3(-4.67f,7.19f,-5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "Pano(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiatePortaSaida(){

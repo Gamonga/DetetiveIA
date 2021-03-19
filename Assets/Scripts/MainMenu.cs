@@ -14,15 +14,49 @@ public class MainMenu : MonoBehaviour
     public movimento movimento;
     public Slider MusicSlider;
     public Slider SoundEffectSlider;
+    public static string idioma = "portugues";
     public static float volumeMusica = 0;
     public static float volumeSoundEffects = 0;
+    public Text NovoJogo;
+    public Text Options;
+    public Text Options2;
+    public Text Back;
+    public Text Back2;
+    public Text Back3;
+    public Text Save;
+    public Text Save2;
+    public Text Audio;
+    public Text Audio2;
+    public Text Music;
+    public Text SoundEffects;
+    public Text Language;
+    public Text Language2;    
+    public Text CarregaGame;
+    public Text Quit;
+    public GameObject acentos;
+    public GameObject acentos2;
     void Start()
     {
         CarregaMusicas();
         SetSoundEffectSlider();
-        SetMusicSlider();             
+        SetMusicSlider();        
+        CarregaIdioma();
     }
 
+    public void CarregaIdioma(){
+        if (File.Exists(Application.persistentDataPath + "/player.fun")){
+            idioma = PlayerData.Idioma;
+            if(idioma == "portugues"){
+                EscolheuPortugues();
+            }
+            else{
+                EscolheuIngles();
+            }
+        }
+        else{
+            EscolheuIngles();
+        }
+    }
     public void CarregaMusicas(){
         if (File.Exists(Application.persistentDataPath + "/music.fun")){
             PlayerData datamusica = SaveSystem.LoadMusica();
@@ -53,6 +87,50 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    public void EscolheuIngles(){
+        acentos.SetActive(false);
+        acentos2.SetActive(false);
+        idioma = "ingles";
+        NovoJogo.text = "New Game";
+        Options.text = "Options";
+        CarregaGame.text = "Load Game";
+        Quit.text = "Quit";
+        Options2.text = "Options";
+        Back.text = "Back";
+        Back2.text = "Back";
+        Back3.text = "Back";
+        Save.text = "Save";
+        Save2.text = "Save";
+        Audio.text = "Audio";
+        Audio2.text = "Audio";
+        SoundEffects.text = "Sound Effects";
+        Music.text = "Music";
+        Language.text = "Language";
+        Language2.text = "Language";    
+
+
+    }
+    public void EscolheuPortugues(){
+        acentos.SetActive(true);
+        acentos2.SetActive(true);
+        idioma = "portugues";
+        NovoJogo.text = "Novo Jogo";
+        Options.text = "Opcoes";
+        CarregaGame.text = "Carregar Jogo";
+        Quit.text = "Sair";
+        Options2.text = "Opcoes";
+        Back.text = "Voltar";
+        Back2.text = "Voltar";
+        Back3.text = "Voltar";
+        Save.text = "Salvar";
+        Save2.text = "Salvar";
+        Audio.text = "Som";
+        Audio2.text = "Som";
+        SoundEffects.text = "Efeitos Sonoros";
+        Music.text = "Música";
+        Language.text = "Idioma";
+        Language2.text = "Idioma";    
+    }
     public void SavePlayer(){
         SaveSystem.SavePlayer(movimento);
         SaveSystem.SaveMusic();

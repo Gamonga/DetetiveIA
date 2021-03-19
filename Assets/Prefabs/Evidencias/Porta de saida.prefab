@@ -24,6 +24,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: nomeIngles
+      value: Building exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: description
       value: "Porta de sa\xEDda do pr\xE9dio."
       objectReference: {fileID: 0}
@@ -40,8 +45,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
+      propertyPath: descriptionIngles
+      value: Building exit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
       propertyPath: descriptionUpdate
       value: "Porta de sa\xEDda do pr\xE9dio."
+      objectReference: {fileID: 0}
+    - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
+        type: 3}
+      propertyPath: descriptionUpdateIngles
+      value: Building exit.
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

@@ -96,10 +96,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Punhos
+  nomeIngles: Fists
   sangue: 0
   description: "Pensamento: O assassino pode ter matado a v\xEDtima usando os punhos."
   descriptionUpdate: "Pensamento: O assassino pode ter matado a v\xEDtima usando
     os punhos. Indica sinais de briga com a v\xEDtima."
+  descriptionIngles: 'Thought: The murderer might have killed the victim with their
+    fists.'
+  descriptionUpdateIngles: 'Thought: The murderer might have killed the victim with
+    their fists. Signs of fight with the victim.'
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: 2a253443ca1681148976fb4bd503d168, type: 3}
   NomeObjeto: Punhos(Clone)

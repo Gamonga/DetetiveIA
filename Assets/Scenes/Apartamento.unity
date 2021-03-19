@@ -3372,7 +3372,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.5213213, y: 1.2909708}
+  m_Offset: {x: 2.5213213, y: 1.0056953}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3383,7 +3383,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.9901485, y: 4.718458}
+  m_Size: {x: 7.9901485, y: 5.289009}
   m_EdgeRadius: 0
 --- !u!1001 &266385224
 PrefabInstance:
@@ -7488,8 +7488,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -7515,8 +7523,16 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   random: 0
 --- !u!61 &433542582
 BoxCollider2D:
@@ -10843,8 +10859,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -10871,8 +10895,16 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   random: 1
 --- !u!61 &671272503
 BoxCollider2D:
@@ -17768,8 +17800,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteDetetivePensando: {fileID: 1161651281}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
+  spriteDetetiveDesgosto: {fileID: 1161651281}
+  spriteDetetiveCaderno: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  spriteSecundarioPensando: {fileID: 1118739515}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
+  spriteSecundarioDesgosto: {fileID: 1118739515}
+  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -17822,8 +17862,26 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 21300000, guid: efae99dbdf1401e4d8a8e75cddad50ec, type: 3}
-  sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: af4d535e786c0af4a8fcbd6cb9266e71,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 3f00924df14c5344daf7360cd95d71c5,
+    type: 3}
   random: 1
 --- !u!61 &1032071862
 BoxCollider2D:
@@ -18589,6 +18647,7 @@ GameObject:
   - component: {fileID: 1106623594}
   - component: {fileID: 1106623593}
   - component: {fileID: 1106623595}
+  - component: {fileID: 1106623596}
   m_Layer: 0
   m_Name: CarroTransicao
   m_TagString: Untagged
@@ -18654,6 +18713,26 @@ MonoBehaviour:
   isInRange: 0
   Transition: {fileID: 1914434864}
   movimento: {fileID: 2097695721}
+--- !u!114 &1106623596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106623592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11478b5b910f1ae4eae1f4f15c37cd58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInRange: 0
+  interactKey: 0
+  interactAction:
+    m_PersistentCalls:
+      m_Calls: []
+  FechaJanela:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1117420779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20166,8 +20245,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteDetetivePensando: {fileID: 1161651281}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
+  spriteDetetiveDesgosto: {fileID: 1161651281}
+  spriteDetetiveCaderno: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  spriteSecundarioPensando: {fileID: 1118739515}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
+  spriteSecundarioDesgosto: {fileID: 1118739515}
+  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -20232,8 +20319,26 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 21300000, guid: ed9c2234c7a71c749b18170153240d0e, type: 3}
-  sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: ce35ab983d87c50498e73bdd585ac1e8,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+    type: 3}
   random: 1
 --- !u!114 &1163162213
 MonoBehaviour:
@@ -24216,8 +24321,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteDetetivePensando: {fileID: 1161651281}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
+  spriteDetetiveDesgosto: {fileID: 1161651281}
+  spriteDetetiveCaderno: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  spriteSecundarioPensando: {fileID: 1118739515}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
+  spriteSecundarioDesgosto: {fileID: 1118739515}
+  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -24288,8 +24401,26 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 21300000, guid: 126c3f240b05cea4b9a3ed9b27ae0f18, type: 3}
-  sprite2: {fileID: 21300000, guid: 2e3d223b6fba76b45b2b4c285f9a6e83, type: 3}
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: cb108a3d317a988419183ebe51a6898c,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
   random: 0
 --- !u!114 &1401230341
 MonoBehaviour:
@@ -24662,8 +24793,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -24689,8 +24828,16 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   random: 0
 --- !u!61 &1470600711
 BoxCollider2D:
@@ -30123,8 +30270,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 0}
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 0}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -32347,8 +32502,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
-  sprite1: {fileID: 1118739515}
-  sprite2: {fileID: 1161651281}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -32380,8 +32543,16 @@ MonoBehaviour:
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
+  spriteDetetivePaisagem: {fileID: 0}
+  spriteDetetivePensando: {fileID: 0}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
+  spriteDetetiveDesgosto: {fileID: 0}
+  spriteDetetiveCaderno: {fileID: 0}
+  spriteSecundarioPaisagem: {fileID: 0}
+  spriteSecundarioPensando: {fileID: 0}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
+  spriteSecundarioDesgosto: {fileID: 0}
+  spriteSecundarioCaderno: {fileID: 0}
   random: 0
 --- !u!61 &1932909472
 BoxCollider2D:
@@ -34436,7 +34607,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097695716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.11, y: -20.94, z: -20}
+  m_LocalPosition: {x: 10.88, y: -21.19, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 519420032}
@@ -35069,6 +35240,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: Pano
+      value: 
+      objectReference: {fileID: 6456365857046805751, guid: 5cfe967cd815b254e91173d8155e5dac,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: Corpo
       value: 
       objectReference: {fileID: 0}
@@ -35161,6 +35338,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: Sufocamento
+      value: 
+      objectReference: {fileID: 2538757825990894668, guid: 0e486812c5501934999c95d1fe5a846b,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: BalaEvidence
       value: 
       objectReference: {fileID: 6144525213565618207, guid: f2be1adb7831e7f48aebeb28237694f2,
@@ -35176,6 +35359,12 @@ PrefabInstance:
       propertyPath: ManchaSangue
       value: 
       objectReference: {fileID: 5689862355987363187, guid: 6e9c5789e7699994f9d22b83556d6050,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: PanoEvidence
+      value: 
+      objectReference: {fileID: 8092366217935893596, guid: 5cfe967cd815b254e91173d8155e5dac,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -35226,6 +35415,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: CanoContundente
+      value: 
+      objectReference: {fileID: 7575682214011077193, guid: 8ec522ba0a48f3e41bfee2e1fe247da4,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: CelularEvidence
       value: 
       objectReference: {fileID: 1214451250904688982, guid: cc99e64cd73d0c74495c131199dd69e8,
@@ -35241,6 +35436,12 @@ PrefabInstance:
       propertyPath: BastaoDeBeisebol
       value: 
       objectReference: {fileID: 2274512310696497419, guid: 77ffd56b8a092fe45b52a99fe96d95bf,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: "CanoPerfura\xE7\xE3o"
+      value: 
+      objectReference: {fileID: 3671134876148935211, guid: 490a181c1e9a72347b309dae3cf1fb8b,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -35274,6 +35475,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: SufocamentoEvidence
+      value: 
+      objectReference: {fileID: 787910529231531239, guid: 0e486812c5501934999c95d1fe5a846b,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: CofreFechadoEvidence
       value: 
       objectReference: {fileID: 7784851377435229148, guid: 7a65fb5144e075f42ae6ee5b2aff43c5,
@@ -35289,6 +35496,12 @@ PrefabInstance:
       propertyPath: PortaDeSaidaEvidence
       value: 
       objectReference: {fileID: 5498987164605184297, guid: dabe87c0748da2d4ca79e0173c1bf138,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CanoContundenteSangue
+      value: 
+      objectReference: {fileID: 5861951170173384373, guid: 11e5d12d0b7c66744b5fceafdb8341f5,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -35310,15 +35523,45 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: "CanoPerfura\xE7\xE3oSangue"
+      value: 
+      objectReference: {fileID: 4891826232022838883, guid: f7099def245c58948b998d23691d8a89,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CanoContundenteEvidence
+      value: 
+      objectReference: {fileID: 4681061281307593442, guid: 8ec522ba0a48f3e41bfee2e1fe247da4,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: BastaoDeBeisebolEvidence
       value: 
       objectReference: {fileID: 3910516854776256928, guid: 77ffd56b8a092fe45b52a99fe96d95bf,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: "CanoPerfura\xE7\xE3oEvidence"
+      value: 
+      objectReference: {fileID: 1956320362642481792, guid: 490a181c1e9a72347b309dae3cf1fb8b,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CanoContundenteSangueEvidence
+      value: 
+      objectReference: {fileID: 8686765493405761054, guid: 11e5d12d0b7c66744b5fceafdb8341f5,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: BastaoDeBeisebolSangueEvidence
       value: 
       objectReference: {fileID: 6187253232210201840, guid: f1837d36355670540a304ef24c492f20,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: "CanoPerfura\xE7\xE3oSangueEvidence"
+      value: 
+      objectReference: {fileID: 7653586861140747976, guid: f7099def245c58948b998d23691d8a89,
         type: 3}
     - target: {fileID: 8556092802916419585, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

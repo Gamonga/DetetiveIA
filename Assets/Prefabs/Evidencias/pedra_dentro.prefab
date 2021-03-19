@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Vidro Quebrado
-  weapon: 0
+  nomeIngles: Broken glass
+  sangue: 0
   description: 'Vidro quebrado e pedra do lado interno do ambiente.
 
 '
@@ -191,6 +192,9 @@ MonoBehaviour:
     grande o suficiente para passar uma pessoa.
 
 '
+  descriptionIngles: Broken glass and stone inside the room.
+  descriptionUpdateIngles: Broken glass and stone inside the room. Hole is big enough
+    for a person to go through.
   tamanho: medio
   ImagemObjeto: {fileID: 21300000, guid: bef66ce35850a5d429931f255f220df2, type: 3}
   NomeObjeto: pedra_dentro(Clone)

@@ -50,8 +50,13 @@ public class Analise : MonoBehaviour
             trocarCenaSimOriginal.SetActive(false); 
             TextoConfirma.SetBool("Abrir", true);
             no.SetActive(true);
-            trocarCenaSim.SetActive(true);            
-            texto.text = "Entregar para a análise? (Tentativas restantes: " + contador + " )";
+            trocarCenaSim.SetActive(true);          
+            if(PlayerData.Idioma == "ingles"){
+                texto.text = "Turn in for analysis? (Remaining attempts: " + contador + " )";
+            }  
+            else{
+                texto.text = "Entregar para a análise? (Tentativas restantes: " + contador + " )";
+            }
         }              
     }
     public void No(){
@@ -120,27 +125,50 @@ public class Analise : MonoBehaviour
     }
     void AntesAnalise(){
         tiDialogo.senteceloop = new string[3];
-        tiDialogo.senteceloop[0] = "Gostaria que eu analisasse algo a mais, detetive?";
-        tiDialogo.senteceloop[1] = "troca";
-        tiDialogo.senteceloop[2] = "Se for possível.";
+        if(PlayerData.Idioma == "ingles"){
+            tiDialogo.senteceloop[0] = "Would you like me to analyze anything else, detective?";
+            tiDialogo.senteceloop[1] = "troca";
+            tiDialogo.senteceloop[2] = "If I may.";
+        }  
+        else{
+            tiDialogo.senteceloop[0] = "Gostaria que eu analisasse algo a mais, detetive?";
+            tiDialogo.senteceloop[1] = "troca";
+            tiDialogo.senteceloop[2] = "Se for possível.";
+        }
         alterouTexto = true;
     }
 
     void Analisando(){
         tiDialogo.senteceloop = new string[4];
-        tiDialogo.senteceloop[0] = "Vou verficar isso para você, detetive.";
-        tiDialogo.senteceloop[1] = "Espero que ajude no seu caso.";
-        tiDialogo.senteceloop[2] = "troca";
-        tiDialogo.senteceloop[3] = "Qualquer informação já é de grande ajuda.";
+        if(PlayerData.Idioma == "ingles"){
+            tiDialogo.senteceloop[0] = "I'll check it for you, detective.";
+            tiDialogo.senteceloop[1] = "I hope it helps your case.";
+            tiDialogo.senteceloop[2] = "troca";
+            tiDialogo.senteceloop[3] = "Any information would be of great help.";
+        }  
+        else{
+            tiDialogo.senteceloop[0] = "Vou verficar isso para você, detetive.";
+            tiDialogo.senteceloop[1] = "Espero que ajude no seu caso.";
+            tiDialogo.senteceloop[2] = "troca";
+            tiDialogo.senteceloop[3] = "Qualquer informação já é de grande ajuda.";
+        }
         tiDialogoControl.StartDialogue(tiDialogo);
         alterouTexto = false;
     }
     void NtemMaisAnalises(){
         tiDialogo.senteceloop = new string[4];
-        tiDialogo.senteceloop[0] = "Não estou com tempo para ver isso agora, detetive.";
-        tiDialogo.senteceloop[1] = "Se estivesse com mais tempo, poderia ver melhor.";
-        tiDialogo.senteceloop[2] = "troca";
-        tiDialogo.senteceloop[3] = "Tudo bem, você já foi de grande ajuda.";
+        if(PlayerData.Idioma == "ingles"){
+            tiDialogo.senteceloop[0] = "I don't have time to look into it right now, detective.";
+            tiDialogo.senteceloop[1] = "If I had more time, I would take a better look.";
+            tiDialogo.senteceloop[2] = "troca";
+            tiDialogo.senteceloop[3] = "Alright, you've been of great help.";
+        }  
+        else{
+            tiDialogo.senteceloop[0] = "Não estou com tempo para ver isso agora, detetive.";
+            tiDialogo.senteceloop[1] = "Se estivesse com mais tempo, poderia ver melhor.";
+            tiDialogo.senteceloop[2] = "troca";
+            tiDialogo.senteceloop[3] = "Tudo bem, você já foi de grande ajuda.";
+        }
         EntrouNtemMaisAnalise = true;
     }
     // Update is called once per frame

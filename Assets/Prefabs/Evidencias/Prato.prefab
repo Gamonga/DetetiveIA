@@ -196,10 +196,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Prato
-  weapon: 0
-  description: "2 pratos com comida. Ainda tem uma boa quantidade de comida bem bagun\xE7ada."
+  nomeIngles: Plate
+  sangue: 0
+  description: 2 pratos com comida.
   descriptionUpdate: "2 pratos com comida. Ainda tem uma boa quantidade de comida
     bem bagun\xE7ada."
+  descriptionIngles: 2 plates with food.
+  descriptionUpdateIngles: 2 plates with food. Still has a lot of food.
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: 974b8d933865c1b45a8959a671d97a23, type: 3}
   NomeObjeto: Prato(Clone)

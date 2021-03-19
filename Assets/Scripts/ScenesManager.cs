@@ -22,12 +22,12 @@ public class ScenesManager : MonoBehaviour
         botaoSim.SetActive(false);
         botaoNao.SetActive(false);
         E = GameObject.Find("E").GetComponent<Text>();
-        PlayerData data = SaveSystem.LoadPlayer(); 
-        ActualScene = data.actualCrimeScene;
-        if((SceneManager.GetActiveScene().buildIndex!=1) && (SceneManager.GetActiveScene().buildIndex!=0)){
-            ActualScene = SceneManager.GetActiveScene().buildIndex;
-            CrimeScene = ActualScene;
+        ActualScene = SceneManager.GetActiveScene().buildIndex;
+        if((SceneManager.GetActiveScene().buildIndex==1)){
+            PlayerData data = SaveSystem.LoadPlayer(); 
+            ActualScene = data.actualCrimeScene;
         }
+         CrimeScene = ActualScene;
     }
 
     // Update is called once per frame
@@ -36,10 +36,20 @@ public class ScenesManager : MonoBehaviour
         if(isInRange){            
             if (Input.GetKeyDown(KeyCode.E)){ 
                 if(SceneManager.GetActiveScene().buildIndex == 1){
-                    texto.text = "Deseja ir a cena do crime?";
+                    if(PlayerData.Idioma == "ingles"){
+                        texto.text = "Do you want to go to the crime scene?";
+                    }  
+                    else{
+                        texto.text = "Deseja ir a cena do crime?";
+                    }
                 }   
                 else{
-                    texto.text = "Deseja ir a delegacia?";
+                    if(PlayerData.Idioma == "ingles"){
+                        texto.text = "Do you want to go to the police station?";
+                    }  
+                    else{
+                        texto.text = "Deseja ir a delegacia";
+                    }
                 }
                 Transition.SetBool("Abrir", true);
                 botaoSim.SetActive(true);

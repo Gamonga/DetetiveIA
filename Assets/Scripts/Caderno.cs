@@ -298,30 +298,65 @@ public class Caderno : MonoBehaviour
     public void JuntarPensamentos(){
         if(Pensamento1 == "Destroços" && Pensamento2 == "Vítima"){
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Thought added to the notebook.";
+            }  
+            else{
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
         }
         else if(Pensamento2 == "Destroços" && Pensamento1 == "Vítima"){
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Thought added to the notebook.";
+            }  
+            else{
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
         }
         else if(Pensamento1 == "Prato" && Pensamento2 == "Vítima"){
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Thought added to the notebook.";
+            }  
+            else{
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
         }
         else if(Pensamento2 == "Prato" && Pensamento1 == "Vítima"){
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Thought added to the notebook.";
+            }  
+            else{
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
         }
         else if(Pensamento1 == "Prato" && Pensamento2 == "Informações do policial"){
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Thought added to the notebook.";
+            }  
+            else{
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
         }
         else if(Pensamento2 == "Prato" && Pensamento1 == "Informações do policial"){
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Thought added to the notebook.";
+            }  
+            else{
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
         }
         else{
-            textoPensamentos.text = "Não vejo correlação entre essas 2 evidências.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "I don't see correlation between these 2 pieces of evidence.";
+            }  
+            else{
+                textoPensamentos.text = "Não vejo correlação entre essas 2 evidências.";
+            }
         }
         contadorPensamentos--;
         Transition.SetBool("Abrir", true);
@@ -345,7 +380,12 @@ public class Caderno : MonoBehaviour
         Transition.SetBool("Abrir", true);   
         if(numeroPensamento == 1){
             Pensamento1 = Text.text;
-            textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ")." ;
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "Should I join " + Pensamento1 + " with which other clue? (Remaining attempts: " + contadorPensamentos + ").";
+            }  
+            else{
+                textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ")." ;
+            }
             numeroPensamento++;
             SelecionarOutraPista.SetActive(true);
         }
@@ -356,7 +396,12 @@ public class Caderno : MonoBehaviour
             else{
                 JuntarPistas.SetActive(true);
                 Pensamento2 = Text.text;
-                textoPensamentos.text = "Faz sentido eu juntar " + Pensamento1 + " e " + Pensamento2 + "? (Tentativas Restantes: " + contadorPensamentos + ").";
+                if(PlayerData.Idioma == "ingles"){
+                    textoPensamentos.text = "Does it make sense for me to join " + Pensamento1 + " and " + Pensamento2 + "? (Remaining attempts: " + contadorPensamentos + ").";
+                }  
+                else{
+                    textoPensamentos.text = "Faz sentido eu juntar " + Pensamento1 + " e " + Pensamento2 + "? (Tentativas Restantes: " + contadorPensamentos + ").";
+                }
             }
         }
     }
@@ -425,7 +470,12 @@ public class Caderno : MonoBehaviour
         }
         else{
             Transition.SetBool("Abrir", true);
-            textoPensamentos.text = "Estou cansado demais para conseguir pensar agora.";
+            if(PlayerData.Idioma == "ingles"){
+                textoPensamentos.text = "I'm too tired to be able to think now.";
+            }  
+            else{
+                textoPensamentos.text = "Estou cansado demais para conseguir pensar agora.";
+            }
             caderno.SetBool("Rela",false);
             caderno.SetBool("abrir", false);
             PrecisaFecharTransition = true;
@@ -434,7 +484,12 @@ public class Caderno : MonoBehaviour
     }
     public void fechaTransition(){
         Transition.SetBool("Abrir", false);
-        textoPensamentos.text = "Deseja ir a cena do crime?";
+        if(PlayerData.Idioma == "ingles"){
+            textoPensamentos.text = "Do you want to go to the crime scene?";
+        }  
+        else{
+            textoPensamentos.text = "Deseja ir a cena do crime?";
+        }
         PrecisaFecharTransition = false;
     }
     public void EscreverEvidencias(){

@@ -6,8 +6,16 @@ using UnityEngine.UI;
 public class DialogueControl : MonoBehaviour
 {
     public Text nameText;
-    public Image sprite1;
-    public Image sprite2;    
+    public Image spriteDetetivePaisagem;
+    public Image spriteDetetivePensando;
+    public Image spriteDetetiveEmbaraçado;
+    public Image spriteDetetiveDesgosto;
+    public Image spriteDetetiveCaderno;
+    public Image spriteSecundarioPaisagem;
+    public Image spriteSecundarioPensando;
+    public Image spriteSecundarioEmbaraçado;
+    public Image spriteSecundarioDesgosto;
+    public Image spriteSecundarioCaderno;   
     public Text dialogueText;
     private bool primeiraVez = true;
     private bool primeirodialogo = true;
@@ -27,8 +35,8 @@ public class DialogueControl : MonoBehaviour
     }
     
     public void FechaJanela(){
-        sprite1.color = new Color(255f, 255f, 255f, 0.0f);
-        sprite2.color = new Color(255f, 255f, 255f, 0.0f);
+        spriteDetetivePaisagem.color = new Color(255f, 255f, 255f, 0.0f);
+        spriteSecundarioPaisagem.color = new Color(255f, 255f, 255f, 0.0f);
         animator.SetBool("isOpen",false);
         sentences.Clear();
         nameText.text = " ";
@@ -43,11 +51,11 @@ public class DialogueControl : MonoBehaviour
             {                
                 personAtual = 1;
                 animator.SetBool("isOpen",true);
-                sprite1.sprite = dialogue.sprite1;
+                spriteSecundarioPaisagem.sprite = dialogue.spriteSecundarioPaisagem;
                 if(!SemImagem){
-                    sprite1.color = new Color(255f, 255f, 255f, 1.0f);
+                    spriteSecundarioPaisagem.color = new Color(255f, 255f, 255f, 1.0f);
                 }
-                sprite2.color = new Color(255f, 255f, 255f, 0.0f);
+                spriteDetetivePaisagem.color = new Color(255f, 255f, 255f, 0.0f);
                 nameText.text = dialogue.nameperson1;
                 foreach (string sentence in dialogue.sentences)
                 {                
@@ -64,11 +72,11 @@ public class DialogueControl : MonoBehaviour
             {
                 personAtual = 1;
                 animator.SetBool("isOpen",true);
-                sprite1.sprite = dialogue.sprite1;
+                spriteSecundarioPaisagem.sprite = dialogue.spriteSecundarioPaisagem;
                 if(!SemImagem){
-                    sprite1.color = new Color(255f, 255f, 255f, 1.0f);
+                    spriteSecundarioPaisagem.color = new Color(255f, 255f, 255f, 1.0f);
                 }
-                sprite2.color = new Color(255f, 255f, 255f, 0.0f);
+                spriteDetetivePaisagem.color = new Color(255f, 255f, 255f, 0.0f);
                 nameText.text = dialogue.nameperson1;
                 foreach (string sentence in dialogue.senteceloop)
                 {                
@@ -103,33 +111,139 @@ public class DialogueControl : MonoBehaviour
         }
         sentence = sentences.Dequeue();
         StopAllCoroutines();
-        if (sentence == "troca")
+        if (sentence == "trocaPaisagem")
         {
             if (personAtual == 1)
             {
                 nameText.text = dialogue.nameperson2;
-                sprite2.sprite = dialogue.sprite2;
+                spriteDetetivePaisagem.sprite = dialogue.spriteDetetivePaisagem;
                 if(!SemImagem){
-                    sprite2.color = new Color(255f, 255f, 255f, 1.0f);
+                    spriteDetetivePaisagem.color = new Color(255f, 255f, 255f, 1.0f);
                 }
-                sprite1.color = new Color(255f, 255f, 255f, 0.0f);
+                spriteSecundarioPaisagem.color = new Color(255f, 255f, 255f, 0.0f);
                 personAtual = 2;
             }
             else
             {
                 nameText.text = dialogue.nameperson1;
-                sprite1.sprite = dialogue.sprite1;
+                spriteSecundarioPaisagem.sprite = dialogue.spriteSecundarioPaisagem;
                 if(!SemImagem){
-                    sprite1.color = new Color(255f, 255f, 255f, 1.0f);
+                    spriteSecundarioPaisagem.color = new Color(255f, 255f, 255f, 1.0f);
                 }
-                sprite2.color = new Color(255f, 255f, 255f, 0.0f);
+                spriteDetetivePaisagem.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 1;
+            }
+            sentence = sentences.Dequeue();
+        }
+        if (sentence == "trocaPensando")
+        {
+            if (personAtual == 1)
+            {
+                nameText.text = dialogue.nameperson2;
+                spriteDetetivePensando.sprite = dialogue.spriteDetetivePensando;
+                if(!SemImagem){
+                    spriteDetetivePensando.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteDetetivePensando.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 2;
+            }
+            else
+            {
+                nameText.text = dialogue.nameperson1;
+                spriteSecundarioPensando.sprite = dialogue.spriteSecundarioPensando;
+                if(!SemImagem){
+                    spriteSecundarioPensando.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteSecundarioPensando.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 1;
+            }
+            sentence = sentences.Dequeue();
+        }
+        if (sentence == "trocaEmbaracado")
+        {
+            if (personAtual == 1)
+            {
+                nameText.text = dialogue.nameperson2;
+                spriteDetetiveEmbaraçado.sprite = dialogue.spriteDetetiveEmbaraçado;
+                if(!SemImagem){
+                    spriteDetetiveEmbaraçado.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteDetetiveEmbaraçado.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 2;
+            }
+            else
+            {
+                nameText.text = dialogue.nameperson1;
+                spriteSecundarioEmbaraçado.sprite = dialogue.spriteSecundarioEmbaraçado;
+                if(!SemImagem){
+                    spriteSecundarioEmbaraçado.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteSecundarioEmbaraçado.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 1;
+            }
+            sentence = sentences.Dequeue();
+        }
+        if (sentence == "trocaDesgosto")
+        {
+            if (personAtual == 1)
+            {
+                nameText.text = dialogue.nameperson2;
+                spriteDetetiveDesgosto.sprite = dialogue.spriteDetetiveDesgosto;
+                if(!SemImagem){
+                    spriteDetetiveDesgosto.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteDetetiveDesgosto.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 2;
+            }
+            else
+            {
+                nameText.text = dialogue.nameperson1;
+                spriteSecundarioDesgosto.sprite = dialogue.spriteSecundarioDesgosto;
+                if(!SemImagem){
+                    spriteSecundarioDesgosto.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteSecundarioDesgosto.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 1;
+            }
+            sentence = sentences.Dequeue();
+        }
+        if (sentence == "trocaCaderno")
+        {
+            if (personAtual == 1)
+            {
+                nameText.text = dialogue.nameperson2;
+                spriteDetetiveCaderno.sprite = dialogue.spriteDetetiveCaderno;
+                if(!SemImagem){
+                    spriteDetetiveCaderno.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteDetetiveCaderno.color = new Color(255f, 255f, 255f, 0.0f);
+                personAtual = 2;
+            }
+            else
+            {
+                nameText.text = dialogue.nameperson1;
+                spriteSecundarioCaderno.sprite = dialogue.spriteSecundarioCaderno;
+                if(!SemImagem){
+                    spriteSecundarioCaderno.color = new Color(255f, 255f, 255f, 1.0f);
+                }
+                spriteSecundarioCaderno.color = new Color(255f, 255f, 255f, 0.0f);
                 personAtual = 1;
             }
             sentence = sentences.Dequeue();
         }
         if (sentence == "evidencia"){
-            sprite1.color = new Color(255f, 255f, 255f, 0.0f);
-            sprite2.color = new Color(255f, 255f, 255f, 0.0f);
+            spriteSecundarioPaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteDetetivePaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteDetetivePaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteDetetivePensando.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteDetetiveEmbaraçado.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteDetetiveDesgosto.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteDetetiveCaderno.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteSecundarioPaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteSecundarioPensando.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteSecundarioEmbaraçado.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteSecundarioDesgosto.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            spriteSecundarioCaderno.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
             sentence = sentences.Dequeue();
         }
         StartCoroutine(typeSentence(sentence));
@@ -150,8 +264,18 @@ public class DialogueControl : MonoBehaviour
     void EndDialogue()
     {
         nameText.text = " ";
-        sprite1.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
-        sprite2.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteSecundarioPaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteDetetivePaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteDetetivePaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteDetetivePensando.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteDetetiveEmbaraçado.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteDetetiveDesgosto.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteDetetiveCaderno.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteSecundarioPaisagem.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteSecundarioPensando.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteSecundarioEmbaraçado.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteSecundarioDesgosto.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        spriteSecundarioCaderno.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         animator.SetBool("isOpen", false);
         Caderno.PermissaoAbrirCaderno = true;
     }

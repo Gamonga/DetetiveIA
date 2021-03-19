@@ -19,8 +19,16 @@ public class Dialogue:MonoBehaviour
     public string[] sentences2Ingles;
     [TextArea(3,20)]
     public string[] senteceloopIngles;
-    public Sprite sprite1;
-    public Sprite sprite2;
+    public Sprite spriteDetetivePaisagem;
+    public Sprite spriteDetetivePensando;
+    public Sprite spriteDetetiveEmbaraçado;
+    public Sprite spriteDetetiveDesgosto;
+    public Sprite spriteDetetiveCaderno;
+    public Sprite spriteSecundarioPaisagem;
+    public Sprite spriteSecundarioPensando;
+    public Sprite spriteSecundarioEmbaraçado;
+    public Sprite spriteSecundarioDesgosto;
+    public Sprite spriteSecundarioCaderno;
     private float selecionador = 0;
 
     public bool random = true;

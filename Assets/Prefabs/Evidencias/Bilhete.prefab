@@ -124,13 +124,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Bilhete
-  weapon: 0
+  nomeIngles: Note
+  sangue: 0
   description: "Bilhete com a mensagem: \"Quero ficar sozinho essas semanas. Depois
     do que eu fiz deveria me entregar para pol\xEDcia. N\xE3o, ficarei aqui at\xE9
     o fogo baixar.\"\n"
   descriptionUpdate: "Bilhete com a mensagem: \"Quero ficar sozinho essas semanas.
     Depois do que eu fiz deveria me entregar para pol\xEDcia. N\xE3o, ficarei aqui
     at\xE9 o fogo baixar.\" Bilhete escrito a pelo menos 1 semana. Letra da v\xEDitima.\n"
+  descriptionIngles: 'Letter with the message: "I wanna be alone these weeks. After
+    what I''ve done I should turn myself in to the police. No, I''ll stay here until
+    the situation settles down."'
+  descriptionUpdateIngles: 'Letter with the message: "I wanna be alone these weeks.
+    After what I''ve done I should turn myself in to the police. No, I''ll stay here
+    until the situation settles down." Letter has been written at least a week ago.
+    Victim''s handwriting.
+
+'
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: c56d5a02e053f52469e1c57e6812b86d, type: 3}
   NomeObjeto: Bilhete(Clone)

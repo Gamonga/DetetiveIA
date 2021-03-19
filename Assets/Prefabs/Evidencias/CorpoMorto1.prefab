@@ -184,10 +184,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: "V\xEDtima"
-  weapon: 0
+  nomeIngles: Victim
+  sangue: 0
   description: Corpo encontrado na sala com um corte nas costas.
   descriptionUpdate: Corpo encontrado na sala com um corte nas costas. Sujeito morava
     sozinho.
+  descriptionIngles: 
+  descriptionUpdateIngles: 
   tamanho: grande
   ImagemObjeto: {fileID: 21300000, guid: 89b6f6d471931824daa13ea8262899a7, type: 3}
   NomeObjeto: CorpoMorto1(Clone)
@@ -198,6 +201,7 @@ MonoBehaviour:
   NTemPlanejamento: 0
   weaponDescription: corte
   Dificuldade: 0
+  tierArma: 0
 --- !u!61 &2924049780482409121
 BoxCollider2D:
   m_ObjectHideFlags: 0

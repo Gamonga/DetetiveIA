@@ -98,9 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Faca Cozinha
+  nomeIngles: Kitchen knife
   sangue: 1
   description: Faca de cozinha com manchas de sangue.
   descriptionUpdate: "Faca de cozinha com manchas de sangue.Sangue da v\xEDtima."
+  descriptionIngles: Kitchen knife with bloodstains.
+  descriptionUpdateIngles: Kitchen knife with bloodstains. Victim's blood.
   tamanho: pequeno
   ImagemObjeto: {fileID: 21300000, guid: c48458bf02fd62c4ba71f1a86c8d2797, type: 3}
   NomeObjeto: FacaCozinha(Clone)
