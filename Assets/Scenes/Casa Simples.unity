@@ -1707,6 +1707,25 @@ MonoBehaviour:
   movimento: {fileID: 2097695721}
   MusicSlider: {fileID: 368422473}
   SoundEffectSlider: {fileID: 304278483}
+  NovoJogo: {fileID: 0}
+  Options: {fileID: 0}
+  Options2: {fileID: 0}
+  Back: {fileID: 0}
+  Back2: {fileID: 0}
+  Back3: {fileID: 0}
+  Save: {fileID: 0}
+  Save2: {fileID: 0}
+  Audio: {fileID: 0}
+  Audio2: {fileID: 0}
+  Music: {fileID: 0}
+  SoundEffects: {fileID: 0}
+  Language: {fileID: 0}
+  Language2: {fileID: 0}
+  CarregaGame: {fileID: 0}
+  Quit: {fileID: 0}
+  acentos: {fileID: 0}
+  acentos2: {fileID: 0}
+  Painel: {fileID: 0}
 --- !u!1001 &140345988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16753,9 +16772,29 @@ MonoBehaviour:
   - troca
   - Estou bem obrigado!
   - (Acho melhor investigar a casa)
-  sentencesIngles: []
-  sentences2Ingles: []
-  senteceloopIngles: []
+  sentencesIngles:
+  - Hello detective.
+  - troca
+  - Hello.
+  - troca
+  - Ready for another workday?
+  - troca
+  - Always ready.
+  sentences2Ingles:
+  - Sup'
+  - troca
+  - Aight.
+  - troca
+  - Sunny, isn't it?
+  - troca
+  - Dunno, is it?
+  - troca
+  - We live in a 2D world. I can't see the sun.
+  senteceloopIngles:
+  - Do you need anything else, detective?
+  - troca
+  - I'm fine. Thank you!
+  - (I should investigate the house)
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
   spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
@@ -25287,9 +25326,51 @@ MonoBehaviour:
   - troca
   - Estou bem, obrigado!
   - (Acho melhor investigar a casa)
-  sentencesIngles: []
+  sentencesIngles:
+  - How are you, detective?
+  - troca
+  - Hello officer.
+  - troca
+  - I got here as fast as I could.
+  - But didn't find anything useful.
+  - troca
+  - Tell me what you saw today.
+  - (I should take notes)
+  - troca
+  - Well, there I was in another fine day.
+  - When a desperate woman calls me.
+  - I try to understand what she's saying, but she is only screaming and talking
+    really fast.
+  - I'm confused, thinking some massacre must be happening.
+  - But finally I notice it's just my mom calling me to complain about me leav...
+  - troca
+  - Officer, please, tell me about the case.
+  - Not about your entire day.
+  - troca
+  - Sorry, detective.
+  - As I was saying.
+  - After all that drama with the phone call.
+  - I went to grab some coffee because I was really sleepy.
+  - troca
+  - Officer, just tell me what you saw here...
+  - troca
+  - Hold up! Hold up!
+  - While I was going to get the coffee.
+  - I got a notice on the radio telling me to go to Luciano Gualberto Street.
+  - That would be this street.
+  - Here. The notes I took.
+  - troca
+  - (I can now start doing something)
+  - Great, officer, thank you for the info.
+  - troca
+  - You're welcome, but in case you wanna know about the rest of my day I'll be glad
+    to tell you in another occasion.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Do you need anything else, detective?
+  - troca
+  - I'm fine. Thank you!
+  - (I should investigate the house)
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
   spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
@@ -32554,7 +32635,7 @@ MonoBehaviour:
   nameperson1: Devi
   nameperson2: Detetive
   sentences:
-  - "Ol\xE1, detetive."
+  - "Ol\xE1 detetive."
   - troca
   - "Ol\xE1."
   - troca
@@ -32563,7 +32644,7 @@ MonoBehaviour:
   - "Nem todos s\xE3o coitados."
   - "Mas com certeza n\xE3o merecem morrer assim."
   - troca
-  - "Opini\xE3o forte."
+  - "Opini\xE3o forte"
   - "Mas n\xE3o irei dizer que est\xE1 errada."
   - "Aqui est\xE1 o laudo."
   - troca
@@ -32589,17 +32670,58 @@ MonoBehaviour:
   - "Aqui est\xE1 o meu laudo."
   - troca
   - (Laudo adicionado ao caderno)
-  - Obrigado Devi
+  - Obrigado Devi.
   - troca
   - Disponha, detetive.
   senteceloop:
-  - Precisa de mais alguma coisa detetive?
+  - Precisa de mais alguma coisa, detetive?
   - troca
   - Estou bem obrigado!
-  - (Acho melhor investigar a casa)
-  sentencesIngles: []
-  sentences2Ingles: []
-  senteceloopIngles: []
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles:
+  - Hello, detective.
+  - troca
+  - Hello.
+  - troca
+  - Another lamentable dead body.
+  - troca
+  - They are not always lamentable.
+  - But surely they don't deserve to die like this.
+  - troca
+  - 'Strong opinion. '
+  - But I won't say it's wrong.
+  - Here is the medical report.
+  - troca
+  - (Medical report added to the notebook)
+  - Thank you, Devi.
+  - troca
+  - Good work, detective.
+  sentences2Ingles:
+  - troca
+  - Hello Devi.
+  - troca
+  - How are you, detective?
+  - troca
+  - Could be much better.
+  - What do we have today?
+  - troca
+  - He ended up having a horrible death.
+  - Nothing could be done to help him.
+  - troca
+  - Must not have been so pretty to look at.
+  - troca
+  - Not at all.
+  - Here is the medical report.
+  - troca
+  - (Medical report added to the notebook)
+  - Thank you, Devi
+  - troca
+  - Don't mention it, detective.
+  senteceloopIngles:
+  - Do you need anything else, detective?
+  - troca
+  - I'm fine. Thank you!
+  - (I should investigate the house)
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
   spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,

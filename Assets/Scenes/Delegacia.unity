@@ -1950,9 +1950,15 @@ MonoBehaviour:
   - Celas.
   - "(No momento esta fechado pois n\xE3o tem ninhuem sendo detido aqui)"
   - (Trancado)
-  sentencesIngles: []
+  sentencesIngles:
+  - Cells.
+  - (Currently closed since there isn't anyone being kept here)
+  - (Locked)
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Cells.
+  - (Currently closed since there isn't anyone being kept here)
+  - (Locked)
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -2918,6 +2924,24 @@ MonoBehaviour:
   movimento: {fileID: 2097695721}
   MusicSlider: {fileID: 368422473}
   SoundEffectSlider: {fileID: 304278483}
+  NovoJogo: {fileID: 0}
+  Options: {fileID: 0}
+  Options2: {fileID: 0}
+  Back: {fileID: 0}
+  Back2: {fileID: 0}
+  Back3: {fileID: 0}
+  Save: {fileID: 0}
+  Save2: {fileID: 0}
+  Audio: {fileID: 0}
+  Audio2: {fileID: 0}
+  Music: {fileID: 0}
+  SoundEffects: {fileID: 0}
+  Language: {fileID: 0}
+  Language2: {fileID: 0}
+  CarregaGame: {fileID: 0}
+  Quit: {fileID: 0}
+  acentos: {fileID: 0}
+  acentos2: {fileID: 0}
 --- !u!1 &135700773
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,9 +4904,15 @@ MonoBehaviour:
   - "Sala do interrogat\xF3rio."
   - Quem sabe um dia eu a utilize.
   - (Trancado)
-  sentencesIngles: []
+  sentencesIngles:
+  - Interrogation room.
+  - Maybe someday I'll use it.
+  - (Locked)
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Interrogation room.
+  - Maybe someday I'll use it.
+  - (Locked)
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -5551,9 +5581,11 @@ MonoBehaviour:
   sentences2: []
   senteceloop:
   - "Porque as minhas caixas est\xE3o aqui?"
-  sentencesIngles: []
+  sentencesIngles:
+  - Why are my boxes here?
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Why are my boxes here?
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -8515,9 +8547,15 @@ MonoBehaviour:
   - "Todos os diplomas e gradua\xE7\xF5es do delegado."
   - "Tem at\xE9 um trof\xE9u."
   - '"Primeiro lugar em tiro ao alvo".'
-  sentencesIngles: []
+  sentencesIngles:
+  - All of the deputy's diplomas and certificates.
+  - There's even a trophy.
+  - '"First place at Shooting".'
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - All of the deputy's diplomas and certificates.
+  - There's even a trophy.
+  - '"First place at Shooting".'
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -10033,9 +10071,13 @@ MonoBehaviour:
   senteceloop:
   - "Sala de dep\xF3sito"
   - (Trancado)
-  sentencesIngles: []
+  sentencesIngles:
+  - Storage.
+  - (Locked)
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Storage.
+  - (Locked)
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -10323,9 +10365,11 @@ MonoBehaviour:
   sentences2: []
   senteceloop:
   - "Um caf\xE9zinho sempre vai bem."
-  sentencesIngles: []
+  sentencesIngles:
+  - Some coffee is always good.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Some coffee is always good.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -14666,9 +14710,17 @@ MonoBehaviour:
   - "Aposto que Steve \xE9 um grande f\xE3."
   - ...
   - O poster esta torto.
-  sentencesIngles: []
+  sentencesIngles:
+  - Poster for the movie "C.O.P."
+  - I bet Steve is a big fan.
+  - ...
+  - The poster is crooked.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Poster for the movie "C.O.P."
+  - I bet Steve is a big fan.
+  - ...
+  - The poster is crooked.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -21793,9 +21845,19 @@ MonoBehaviour:
   - Tem algo escrito embaixo.
   - '"Auto retrato: Steve".'
   - ...
-  sentencesIngles: []
+  sentencesIngles:
+  - It looks like a naked woman on the clouds.
+  - An odd image for someone to have in an office.
+  - There is something written under it.
+  - '"Self-portrait: Steve".'
+  - ...
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - It looks like a naked woman on the clouds.
+  - An odd image for someone to have in an office.
+  - There is something written under it.
+  - '"Self-portrait: Steve".'
+  - ...
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -23352,7 +23414,18 @@ MonoBehaviour:
   - Tudo bem, detetive.
   sentences2: []
   senteceloop: []
-  sentencesIngles: []
+  sentencesIngles:
+  - Welcome back, detective.
+  - troca
+  - Hello Lydia, how has the station been?
+  - troca
+  - It's been peaceful.
+  - We haven't had many phone calls recently.
+  - troca
+  - That is a good sign.
+  - If anyone needs me, just say the word.
+  - troca
+  - Alright, detective.
   sentences2Ingles: []
   senteceloopIngles: []
   spriteDetetivePaisagem: {fileID: 0}
@@ -29013,9 +29086,15 @@ MonoBehaviour:
   - "Essa \xE9 uma bela \xE1rvore."
   - "De fato uma bela \xE1rvore."
   - "Talvez a \xE1rvore mais bonita e bem feita que eu j\xE1 tenha visto."
-  sentencesIngles: []
+  sentencesIngles:
+  - This is a beautiful tree.
+  - Indeed. A beautiful tree.
+  - Perhaps the most beautiful and well grown tree I have ever seen.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - This is a beautiful tree.
+  - Indeed. A beautiful tree.
+  - Perhaps the most beautiful and well grown tree I have ever seen.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -29480,9 +29559,13 @@ MonoBehaviour:
   senteceloop:
   - "Minhas caixas de mudan\xE7a."
   - Ainda tenho que terminar de arrumar as coisas.
-  sentencesIngles: []
+  sentencesIngles:
+  - My belongings.
+  - I still have to finish moving my stuff.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - My belongings.
+  - I still have to finish moving my stuff.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -31235,9 +31318,15 @@ MonoBehaviour:
   - "\xC9 de fato um belo aqu\xE1rio."
   - ...
   - "Tenho a estranha sensa\xE7\xE3o de que os peixes n\xE3o se mexem."
-  sentencesIngles: []
+  sentencesIngles:
+  - It is truly a beautiful fish tank.
+  - ...
+  - I have a feeling the fish are not moving.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - It is truly a beautiful fish tank.
+  - ...
+  - I have a feeling the fish are not moving.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -32856,9 +32945,13 @@ MonoBehaviour:
   senteceloop:
   - Mesa do delegado.
   - "Esta cheia de pap\xE9is e bem bagun\xE7ada."
-  sentencesIngles: []
+  sentencesIngles:
+  - Deputy's table.
+  - Full of papers. It's a mess.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Deputy's table.
+  - Full of papers. It's a mess.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -34888,9 +34981,13 @@ MonoBehaviour:
   senteceloop:
   - "Dep\xF3sito de armas."
   - (Trancado)
-  sentencesIngles: []
+  sentencesIngles:
+  - Weapons storage.
+  - (Locked)
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Weapons storage.
+  - (Locked)
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -35234,9 +35331,17 @@ MonoBehaviour:
   - Bebedouro.
   - ...
   - "Quero um caf\xE9."
-  sentencesIngles: []
+  sentencesIngles:
+  - A big and slender...
+  - Drinking fountain.
+  - ...
+  - I want a coffee.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - A big and slender...
+  - Drinking fountain.
+  - ...
+  - I want a coffee.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -35738,9 +35843,19 @@ MonoBehaviour:
   - Gostaria que eu analisasse algo a mais, detetive?
   - troca
   - "Se for poss\xEDvel."
-  sentencesIngles: []
+  sentencesIngles:
+  - How are you, detective?
+  - troca
+  - Hello Kyle.
+  - troca
+  - Come to ask me to analyze something?
+  - troca
+  - I would like you to analyze this.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Would you like me to analyze anything else, detective?
+  - troca
+  - If I may.
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
   spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
@@ -36253,9 +36368,13 @@ MonoBehaviour:
   senteceloop:
   - Sala do Tim Habey
   - (Trancado)
-  sentencesIngles: []
+  sentencesIngles:
+  - Tim Habey's room.
+  - (Locked)
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Tim Habey's room.
+  - (Locked)
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}
@@ -37961,9 +38080,13 @@ MonoBehaviour:
   senteceloop:
   - Carro do delegado.
   - Parece ser caro de mais para eu ter um desse algum dia.
-  sentencesIngles: []
+  sentencesIngles:
+  - Deputy's car.
+  - It looks way too expensive for me to have one of these someday.
   sentences2Ingles: []
-  senteceloopIngles: []
+  senteceloopIngles:
+  - Deputy's car.
+  - It looks way too expensive for me to have one of these someday.
   spriteDetetivePaisagem: {fileID: 0}
   spriteDetetivePensando: {fileID: 0}
   "spriteDetetiveEmbara\xE7ado": {fileID: 0}

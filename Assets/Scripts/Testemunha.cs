@@ -70,7 +70,6 @@ public class Testemunha : MonoBehaviour
                 texto.text = "";
                 if(!vistoPergunta && !ouviuPergunta && !relacaoPergunta){
                         Nome.text = NomeDaTestemunha;
-                        Debug.Log("entrou1");
                         dialogo.SetBool("isOpen", true);
                         if(PlayerData.Idioma == "ingles"){
                             fraseAtual = "I hope that I have helped you, detective.";
@@ -112,7 +111,6 @@ public class Testemunha : MonoBehaviour
                 }
                 else if(fraseAtual == "Terminou"){       
                     if(!vistoPergunta && !ouviuPergunta && !relacaoPergunta){
-                        Debug.Log("entrou2");
                         if(PlayerData.Idioma == "ingles"){
                             fraseAtual = "I hope that I have helped you, detective.";
                         }  
@@ -123,7 +121,6 @@ public class Testemunha : MonoBehaviour
                         TerminouPerguntas = true;
                     }             
                     else{
-                        Debug.Log("entrou3");
                         if(PlayerData.Idioma == "ingles"){
                             fraseAtual = "What do you want to know, detective?";
                         }  

@@ -35,6 +35,11 @@ public class Dialogue:MonoBehaviour
 
     void Start()
     {
+        if(PlayerData.Idioma == "ingles"){
+            sentences = sentencesIngles;
+            senteceloop = senteceloopIngles;
+            sentences2 = sentences2Ingles;
+        }
         selecionador = Random.Range(0.0f,1.0f);
         if (selecionador >= 0.5 && random)
         {

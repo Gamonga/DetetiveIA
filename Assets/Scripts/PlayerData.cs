@@ -51,9 +51,9 @@ public class PlayerData
         actualCrimeScene = ScenesManager.ActualScene;
         horas = horario.Horario;
         Idioma = MainMenu.idioma;
-        position[0] = movimento.transform.position.x;
-        position[1] = movimento.transform.position.y;
-        position[2] = movimento.transform.position.z;      
+        if(SceneManager.GetActiveScene().buildIndex != 0){
+            salvaMovimento(movimento);
+        }   
         NumeroDeEvidencias = Caderno.posiçãoEvidencias;
         NumeroDeObjetos = SpawnObjects.NumeroDeObjetos;
         PrecisaDeAuxilioEntradaSaida = SpawnObjects.PrecisaDeAuxilioEntradaSaida;
@@ -80,6 +80,12 @@ public class PlayerData
             isOpen[PortaDaCena+i] = GameObject.Find("Porta"+(i+PortaDaCena)).GetComponent<PortaController>().isOpen;
         }
         AndarAtual = TrocaDeAndares.AndarAtual;
+    }
+
+    public void salvaMovimento(movimento movimento){
+        position[0] = movimento.transform.position.x;
+        position[1] = movimento.transform.position.y;
+        position[2] = movimento.transform.position.z;      
     }
     public void SalvaRespostas(){
         PrimeiraResposta = SpawnObjects.PrimeiraResposta;

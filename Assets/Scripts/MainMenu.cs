@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     public movimento movimento;
     public Slider MusicSlider;
     public Slider SoundEffectSlider;
-    public static string idioma = "portugues";
+    public static string idioma;
     public static float volumeMusica = 0;
     public static float volumeSoundEffects = 0;
     public Text NovoJogo;
@@ -35,12 +35,23 @@ public class MainMenu : MonoBehaviour
     public Text Quit;
     public GameObject acentos;
     public GameObject acentos2;
+    public Image Painel;
+    private float contador;
     void Start()
     {
+        contador = 0;
         CarregaMusicas();
         SetSoundEffectSlider();
         SetMusicSlider();        
         CarregaIdioma();
+    }
+    void FixedUpdate ()
+    {
+        if(contador<= 257){
+            contador++;
+            Painel.color = new Color(contador/100,contador/100,contador/100, 1.0f);
+        }
+
     }
 
     public void CarregaIdioma(){
@@ -88,8 +99,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public void EscolheuIngles(){
-        acentos.SetActive(false);
-        acentos2.SetActive(false);
         idioma = "ingles";
         NovoJogo.text = "New Game";
         Options.text = "Options";
@@ -111,8 +120,6 @@ public class MainMenu : MonoBehaviour
 
     }
     public void EscolheuPortugues(){
-        acentos.SetActive(true);
-        acentos2.SetActive(true);
         idioma = "portugues";
         NovoJogo.text = "Novo Jogo";
         Options.text = "Opcoes";
