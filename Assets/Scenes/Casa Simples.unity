@@ -7220,7 +7220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &423635442
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16723,15 +16723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
   spriteDetetivePaisagem: {fileID: 1161651281}
-  spriteDetetivePensando: {fileID: 1161651281}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
-  spriteDetetiveDesgosto: {fileID: 1161651281}
-  spriteDetetiveCaderno: {fileID: 1161651281}
   spriteSecundarioPaisagem: {fileID: 1118739515}
-  spriteSecundarioPensando: {fileID: 1118739515}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
-  spriteSecundarioDesgosto: {fileID: 1118739515}
-  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -16751,53 +16743,55 @@ MonoBehaviour:
   nameperson2: Detetive
   sentences:
   - "Ol\xE1 detetive."
-  - troca
+  - troca paisagem
   - "Ol\xE1."
-  - troca
+  - troca paisagem
   - Pronto para mais um dia de trabalho?
-  - troca
+  - troca paisagem
   - Sempre pronto.
   sentences2:
   - eae man.
-  - troca
+  - troca paisagem
   - Beleza?
-  - troca
+  - troca paisagem
   - "Ta sol hj, n\xE9?"
-  - troca
+  - troca pensando
   - "N\xE3o sei, est\xE1?"
-  - troca
+  - troca paisagem
   - "Vivemos em um mundo 2D. N\xE3o consigo ver o sol."
   senteceloop:
   - Precisa de mais alguma coisa detetive?
-  - troca
+  - troca paisagem
   - Estou bem obrigado!
+  - pensando detetive
   - (Acho melhor investigar a casa)
   sentencesIngles:
   - Hello detective.
-  - troca
+  - troca paisagem
   - Hello.
-  - troca
+  - troca paisagem
   - Ready for another workday?
-  - troca
+  - troca paisagem
   - Always ready.
   sentences2Ingles:
   - Sup'
-  - troca
+  - troca paisagem
   - Aight.
-  - troca
+  - troca paisagem
   - Sunny, isn't it?
-  - troca
+  - troca pensando
   - Dunno, is it?
-  - troca
+  - troca paisagem
   - We live in a 2D world. I can't see the sun.
   senteceloopIngles:
   - Do you need anything else, detective?
-  - troca
+  - troca paisagem
   - I'm fine. Thank you!
+  - pensando detetive
   - (I should investigate the house)
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
-  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
     type: 3}
   "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
     type: 3}
@@ -16805,15 +16799,15 @@ MonoBehaviour:
     type: 3}
   spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
     type: 3}
-  spriteSecundarioPaisagem: {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
     type: 3}
-  spriteSecundarioPensando: {fileID: 21300000, guid: af4d535e786c0af4a8fcbd6cb9266e71,
+  spriteSecundarioPensando: {fileID: 21300000, guid: 22cd442a67ec5034480d38eb35066412,
     type: 3}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
     type: 3}
-  spriteSecundarioDesgosto: {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
     type: 3}
-  spriteSecundarioCaderno: {fileID: 21300000, guid: 3f00924df14c5344daf7360cd95d71c5,
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 03db266f71302ee43a52bf9f52c8ec99,
     type: 3}
   random: 1
 --- !u!61 &1032071862
@@ -17806,7 +17800,6 @@ GameObject:
   - component: {fileID: 1106623594}
   - component: {fileID: 1106623593}
   - component: {fileID: 1106623595}
-  - component: {fileID: 1106623596}
   m_Layer: 0
   m_Name: CarroTransicao
   m_TagString: Untagged
@@ -17872,26 +17865,6 @@ MonoBehaviour:
   isInRange: 0
   Transition: {fileID: 1914434864}
   movimento: {fileID: 2097695721}
---- !u!114 &1106623596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106623592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11478b5b910f1ae4eae1f4f15c37cd58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
-  interactKey: 0
-  interactAction:
-    m_PersistentCalls:
-      m_Calls: []
-  FechaJanela:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1115270712
 GameObject:
   m_ObjectHideFlags: 0
@@ -18057,8 +18030,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328.03, y: 267.43}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 259.1, y: 230.6}
+  m_SizeDelta: {x: 560, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118739515
 MonoBehaviour:
@@ -18525,8 +18498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 328.03, y: 267.43}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -270, y: 220}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.50000006, y: 0.5000001}
 --- !u!114 &1161651281
 MonoBehaviour:
@@ -25236,15 +25209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
   spriteDetetivePaisagem: {fileID: 1161651281}
-  spriteDetetivePensando: {fileID: 1161651281}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
-  spriteDetetiveDesgosto: {fileID: 1161651281}
-  spriteDetetiveCaderno: {fileID: 1161651281}
   spriteSecundarioPaisagem: {fileID: 1118739515}
-  spriteSecundarioPensando: {fileID: 1118739515}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
-  spriteSecundarioDesgosto: {fileID: 1118739515}
-  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -25264,41 +25229,41 @@ MonoBehaviour:
   nameperson2: Detetive
   sentences:
   - Como vai, detetive?
-  - troca
+  - troca paisagem
   - "Ol\xE1 policial."
-  - troca
+  - troca paisagem
   - "Cheguei o mais r\xE1pido que pude."
   - "Mas n\xE3o consegui ver nada de \xFAtil."
-  - troca
+  - troca paisagem
   - "Conte-me o que voc\xEA presenciou hoje."
   - "(bom eu ir anotando as informa\xE7\xF5es que ele me passar)"
-  - troca
+  - troca paisagem
   - Bom, estava eu em mais um dia tranquilo.
   - "At\xE9 que uma mulher desesperada me liga."
   - "Eu tento entender mas ela s\xF3 grita e fala comigo de forma r\xE1pida demais."
   - Eu fico todo confuso achando que estava acontecendo uma chacina.
   - "Mas eu reparei que era s\xF3 minha m\xE3e me ligando reclamando sobre eu ter
     deixa..."
-  - troca
+  - troca paisagem
   - Polical, por favor, fale do caso.
   - "N\xE3o do seu dia como um todo."
-  - troca
+  - troca paisagem
   - "Perd\xE3o, detetive."
   - Mas como ia dizendo.
   - "Ap\xF3s toda essa confus\xE3o com a liga\xE7\xE3o."
   - "Eu fui tomar um copo de caf\xE9 pois estava com muito sono."
-  - troca
+  - troca paisagem
   - "Policial s\xF3 me diga o que foi visto no caso..."
-  - troca
+  - troca paisagem
   - Calma! Calma!
   - "Enquanto estava indo pegar um copo de caf\xE9."
   - "Recebi uma chamada do r\xE1dio dizendo para ir para rua Luciano Gualberto."
   - "Que \xE9 essa rua no caso."
   - "Aqui est\xE1. As anota\xE7\xF5es que eu fiz."
-  - troca
+  - troca pensando
   - (Agora eu posso anotar)
   - "\xD3timo, polical, muito obrigado pelas informa\xE7\xF5es."
-  - troca
+  - troca pensando
   - Disponha, mas caso queira saber do resto do meu dia eu te conto em outro momento.
   sentences2:
   - troca
@@ -25323,57 +25288,59 @@ MonoBehaviour:
   - disponha detetive
   senteceloop:
   - Precisa de mais alguma coisa, detetive?
-  - troca
+  - troca paisagem
   - Estou bem, obrigado!
+  - pensando detetive
   - (Acho melhor investigar a casa)
   sentencesIngles:
   - How are you, detective?
-  - troca
+  - troca paisagem
   - Hello officer.
-  - troca
+  - troca paisagem
   - I got here as fast as I could.
   - But didn't find anything useful.
-  - troca
+  - troca paisagem
   - Tell me what you saw today.
   - (I should take notes)
-  - troca
+  - troca paisagem
   - Well, there I was in another fine day.
   - When a desperate woman calls me.
   - I try to understand what she's saying, but she is only screaming and talking
     really fast.
   - I'm confused, thinking some massacre must be happening.
   - But finally I notice it's just my mom calling me to complain about me leav...
-  - troca
+  - troca paisagem
   - Officer, please, tell me about the case.
   - Not about your entire day.
-  - troca
+  - troca paisagem
   - Sorry, detective.
   - As I was saying.
   - After all that drama with the phone call.
   - I went to grab some coffee because I was really sleepy.
-  - troca
+  - troca paisagem
   - Officer, just tell me what you saw here...
-  - troca
+  - troca paisagem
   - Hold up! Hold up!
   - While I was going to get the coffee.
   - I got a notice on the radio telling me to go to Luciano Gualberto Street.
   - That would be this street.
   - Here. The notes I took.
-  - troca
+  - troca pensando
   - (I can now start doing something)
   - Great, officer, thank you for the info.
-  - troca
+  - troca pensando
   - You're welcome, but in case you wanna know about the rest of my day I'll be glad
     to tell you in another occasion.
   sentences2Ingles: []
   senteceloopIngles:
   - Do you need anything else, detective?
-  - troca
+  - troca paisagem
   - I'm fine. Thank you!
+  - pensando detetive
   - (I should investigate the house)
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
-  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
     type: 3}
   "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
     type: 3}
@@ -27229,15 +27196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 0}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 0}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -32608,15 +32567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1573812821}
   spriteDetetivePaisagem: {fileID: 1161651281}
-  spriteDetetivePensando: {fileID: 1161651281}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
-  spriteDetetiveDesgosto: {fileID: 1161651281}
-  spriteDetetiveCaderno: {fileID: 1161651281}
   spriteSecundarioPaisagem: {fileID: 1118739515}
-  spriteSecundarioPensando: {fileID: 1118739515}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
-  spriteSecundarioDesgosto: {fileID: 1118739515}
-  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -32636,95 +32587,99 @@ MonoBehaviour:
   nameperson2: Detetive
   sentences:
   - "Ol\xE1 detetive."
-  - troca
+  - troca paisagem
   - "Ol\xE1."
-  - troca
+  - troca paisagem
   - Mais um pobre coitado morto.
-  - troca
+  - troca pensando
   - "Nem todos s\xE3o coitados."
   - "Mas com certeza n\xE3o merecem morrer assim."
-  - troca
+  - troca paisagem
   - "Opini\xE3o forte"
   - "Mas n\xE3o irei dizer que est\xE1 errada."
   - "Aqui est\xE1 o laudo."
-  - troca
+  - troca paisagem
   - (Laudo adicionado ao caderno)
   - Obrigado Devi.
-  - troca
+  - troca paisagem
   - Tenha um bom trabalho, detetive.
   sentences2:
-  - troca
+  - troca paisagem
   - "Ol\xE1 Devi."
-  - troca
+  - troca paisagem
   - Como vai, detetive?
-  - troca
+  - troca paisagem
   - Poderia estar melhor.
+  - pensando detetive
   - O que temos hoje?
-  - troca
+  - troca paisagem
   - "O sujeito acabou tendo uma morte horr\xEDvel."
   - "Nada podia ser feito para ajud\xE1-lo."
-  - troca
+  - troca desgosto
   - "N\xE3o deve ter sido algo bonito de se ver."
-  - troca
+  - troca paisagem
   - "N\xE3o mesmo."
   - "Aqui est\xE1 o meu laudo."
-  - troca
+  - troca paisagem
   - (Laudo adicionado ao caderno)
   - Obrigado Devi.
-  - troca
+  - troca paisagem
   - Disponha, detetive.
   senteceloop:
   - Precisa de mais alguma coisa, detetive?
-  - troca
+  - troca paisagem
   - Estou bem obrigado!
-  - (Acho melhor investigar o apartamento)
+  - pensando detetive
+  - (Acho melhor investigar a casa)
   sentencesIngles:
   - Hello, detective.
-  - troca
+  - troca paisagem
   - Hello.
-  - troca
+  - troca paisagem
   - Another lamentable dead body.
-  - troca
+  - troca pensando
   - They are not always lamentable.
   - But surely they don't deserve to die like this.
-  - troca
+  - troca paisagem
   - 'Strong opinion. '
   - But I won't say it's wrong.
   - Here is the medical report.
-  - troca
+  - troca paisagem
   - (Medical report added to the notebook)
   - Thank you, Devi.
-  - troca
+  - troca paisagem
   - Good work, detective.
   sentences2Ingles:
-  - troca
+  - troca paisagem
   - Hello Devi.
-  - troca
+  - troca paisagem
   - How are you, detective?
-  - troca
+  - troca paisagem
   - Could be much better.
+  - pensando detetive
   - What do we have today?
-  - troca
+  - troca paisagem
   - He ended up having a horrible death.
   - Nothing could be done to help him.
-  - troca
+  - troca desgosto
   - Must not have been so pretty to look at.
-  - troca
+  - troca paisagem
   - Not at all.
   - Here is the medical report.
-  - troca
+  - troca paisagem
   - (Medical report added to the notebook)
   - Thank you, Devi
-  - troca
+  - troca paisagem
   - Don't mention it, detective.
   senteceloopIngles:
   - Do you need anything else, detective?
-  - troca
+  - troca paisagem
   - I'm fine. Thank you!
+  - pensando detetive
   - (I should investigate the house)
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
-  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
     type: 3}
   "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
     type: 3}
@@ -32732,15 +32687,15 @@ MonoBehaviour:
     type: 3}
   spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
     type: 3}
-  spriteSecundarioPaisagem: {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
     type: 3}
-  spriteSecundarioPensando: {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+  spriteSecundarioPensando: {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
     type: 3}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
     type: 3}
-  spriteSecundarioDesgosto: {fileID: 21300000, guid: ce35ab983d87c50498e73bdd585ac1e8,
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 8380fb1950b3948499d700f750f7d273,
     type: 3}
-  spriteSecundarioCaderno: {fileID: 21300000, guid: d911f95e5e381174d9c129c85d8451af,
+  spriteSecundarioCaderno: {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
     type: 3}
   random: 1
 --- !u!114 &2134732197

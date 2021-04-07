@@ -23,6 +23,7 @@ public class PlayerData
     public int NumeroDeportas;
     public int actualCrimeScene;
     public string policialUpdate;
+    public string policial;
     public int i = 0;
     public static int DificuldadeAtual;
     public bool kyle;
@@ -66,6 +67,7 @@ public class PlayerData
         contadorAnalise= SpawnObjects.contador;
         contadorPensamento = Caderno.contadorPensamentos;
         policialUpdate = SpawnObjects.policialUpdateSalvar;
+        policial = SpawnObjects.policialSalvar;
         SalvaRespostas();
         salvapessoas();
         for(i=0;i<NumeroDeEvidencias;i++){

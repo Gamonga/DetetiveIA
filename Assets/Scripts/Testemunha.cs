@@ -474,8 +474,6 @@ public class Testemunha : MonoBehaviour
             sentence.Enqueue("Estava bem tarde e eu, assustado, só consegui ver pela fresta da porta.");
             sentence.Enqueue("Eu vi um homem saindo pela porta no meio do escuro.");
         }
-        sentence.Enqueue("Estava bem tarde e eu, assustado, só consegui ver pela fresta da porta.");
-        sentence.Enqueue("Eu vi um homem saindo pela porta no meio do escuro.");
         sentence.Enqueue("Pergunta");
         VistoB.SetActive(false);
         OuviuB.SetActive(false);

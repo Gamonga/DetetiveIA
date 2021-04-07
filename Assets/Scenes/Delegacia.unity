@@ -1915,15 +1915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -2942,6 +2934,7 @@ MonoBehaviour:
   Quit: {fileID: 0}
   acentos: {fileID: 0}
   acentos2: {fileID: 0}
+  Painel: {fileID: 0}
 --- !u!1 &135700773
 GameObject:
   m_ObjectHideFlags: 0
@@ -4869,15 +4862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -5550,15 +5535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -5674,15 +5651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -8512,15 +8481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -10173,15 +10134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -10334,15 +10287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -14673,15 +14618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -20305,15 +20242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 1161651281}
-  spriteDetetivePensando: {fileID: 1161651281}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
-  spriteDetetiveDesgosto: {fileID: 1161651281}
-  spriteDetetiveCaderno: {fileID: 1161651281}
   spriteSecundarioPaisagem: {fileID: 1118739515}
-  spriteSecundarioPensando: {fileID: 1118739515}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
-  spriteSecundarioDesgosto: {fileID: 1118739515}
-  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -20333,31 +20262,31 @@ MonoBehaviour:
   nameperson2: Detetive
   sentences:
   - Cara tem um maluco do TI muito chato.
-  - troca
+  - troca paisagem
   - "De quem voc\xEA esta falando?"
-  - troca
+  - troca paisagem
   - "O Boris, eu n\xE3o o suporto mais."
-  - troca
+  - troca paisagem
   - Sad.
   sentences2:
   - "Voc\xEA ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
-  - troca
+  - troca paisagem
   - Quem?
-  - troca
+  - troca paisagem
   - Uma Vtuber que eu adoro.
-  - troca
+  - troca paisagem
   - "(Que deus tenha d\xF3 desse rapaz)"
   senteceloop:
   - "Caso queira voltar para a cena do crime, me chame e eu irei at\xE9 o carro."
-  - troca
+  - troca paisagem
   - OK.
-  - troca
+  - troca paisagem
   sentencesIngles: []
   sentences2Ingles: []
   senteceloopIngles: []
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
-  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
     type: 3}
   "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
     type: 3}
@@ -20365,15 +20294,15 @@ MonoBehaviour:
     type: 3}
   spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
     type: 3}
-  spriteSecundarioPaisagem: {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
     type: 3}
-  spriteSecundarioPensando: {fileID: 21300000, guid: af4d535e786c0af4a8fcbd6cb9266e71,
+  spriteSecundarioPensando: {fileID: 21300000, guid: 22cd442a67ec5034480d38eb35066412,
     type: 3}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
     type: 3}
-  spriteSecundarioDesgosto: {fileID: 21300000, guid: 2b740702da89fc74d803d5dfb2e094f9,
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
     type: 3}
-  spriteSecundarioCaderno: {fileID: 21300000, guid: 3f00924df14c5344daf7360cd95d71c5,
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 03db266f71302ee43a52bf9f52c8ec99,
     type: 3}
   random: 1
 --- !u!61 &1032071862
@@ -21806,15 +21735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -21929,8 +21850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328.03, y: 263}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 259.1, y: 230.6}
+  m_SizeDelta: {x: 560, y: 560}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118739515
 MonoBehaviour:
@@ -22272,7 +22193,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161651279}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 364288593}
@@ -22280,9 +22201,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 328.03, y: 263}
-  m_SizeDelta: {x: 300, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -270, y: 220}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.50000006, y: 0.5000001}
 --- !u!114 &1161651281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23497,15 +23418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -23758,7 +23671,6 @@ GameObject:
   - component: {fileID: 1291378452}
   - component: {fileID: 1291378451}
   - component: {fileID: 1291378450}
-  - component: {fileID: 1291378453}
   m_Layer: 0
   m_Name: CarroTransicao
   m_TagString: Untagged
@@ -23824,26 +23736,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1291378453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291378449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11478b5b910f1ae4eae1f4f15c37cd58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
-  interactKey: 0
-  interactAction:
-    m_PersistentCalls:
-      m_Calls: []
-  FechaJanela:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1298749430
 GameObject:
   m_ObjectHideFlags: 0
@@ -29051,15 +28943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -29526,15 +29410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -31283,15 +31159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -32912,15 +32780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -33250,15 +33110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 0}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -34948,15 +34800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -35294,15 +35138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -35784,15 +35620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 1161651281}
-  spriteDetetivePensando: {fileID: 1161651281}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 1161651281}
-  spriteDetetiveDesgosto: {fileID: 1161651281}
-  spriteDetetiveCaderno: {fileID: 1161651281}
   spriteSecundarioPaisagem: {fileID: 1118739515}
-  spriteSecundarioPensando: {fileID: 1118739515}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 1118739515}
-  spriteSecundarioDesgosto: {fileID: 1118739515}
-  spriteSecundarioCaderno: {fileID: 1118739515}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
@@ -35812,14 +35640,14 @@ MonoBehaviour:
   nameperson2: Detetive
   sentences:
   - Como vai, detetive?
-  - troca
+  - troca paisagem
   - "Ol\xE1 Kyle."
-  - troca
+  - troca pensando
   - Veio me pedir para analisar algo?
-  - troca
+  - troca paisagem
   - Gostaria que desse uma olhada nisso.
   sentences2:
-  - troca
+  - troca paisagem
   - "ol\xE1 Devi"
   - troca
   - como vai detetive?
@@ -35841,24 +35669,24 @@ MonoBehaviour:
   - disponha detetive
   senteceloop:
   - Gostaria que eu analisasse algo a mais, detetive?
-  - troca
+  - troca paisagem
   - "Se for poss\xEDvel."
   sentencesIngles:
   - How are you, detective?
-  - troca
+  - troca paisagem
   - Hello Kyle.
-  - troca
+  - troca pensando
   - Come to ask me to analyze something?
-  - troca
+  - troca paisagem
   - I would like you to analyze this.
   sentences2Ingles: []
   senteceloopIngles:
   - Would you like me to analyze anything else, detective?
-  - troca
+  - troca paisagem
   - If I may.
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
     type: 3}
-  spriteDetetivePensando: {fileID: 21300000, guid: 090059fd22067a54d86dd54d497cd174,
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
     type: 3}
   "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
     type: 3}
@@ -35866,15 +35694,15 @@ MonoBehaviour:
     type: 3}
   spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
     type: 3}
-  spriteSecundarioPaisagem: {fileID: 21300000, guid: d951c80bbe6dcb54ca28dccd2692c3f6,
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: aa85f7fd4433f864687e7208a3786e20,
     type: 3}
-  spriteSecundarioPensando: {fileID: 21300000, guid: 13dae31c1f540b944a522f146f0accae,
+  spriteSecundarioPensando: {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
     type: 3}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: d951c80bbe6dcb54ca28dccd2692c3f6,
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
     type: 3}
-  spriteSecundarioDesgosto: {fileID: 21300000, guid: d951c80bbe6dcb54ca28dccd2692c3f6,
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
     type: 3}
-  spriteSecundarioCaderno: {fileID: 21300000, guid: d951c80bbe6dcb54ca28dccd2692c3f6,
+  spriteSecundarioCaderno: {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
     type: 3}
   random: 0
 --- !u!114 &1914893025
@@ -36335,15 +36163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1
@@ -38047,15 +37867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 1687097054}
   spriteDetetivePaisagem: {fileID: 0}
-  spriteDetetivePensando: {fileID: 0}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 0}
-  spriteDetetiveDesgosto: {fileID: 0}
-  spriteDetetiveCaderno: {fileID: 0}
   spriteSecundarioPaisagem: {fileID: 0}
-  spriteSecundarioPensando: {fileID: 0}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 0}
-  spriteSecundarioDesgosto: {fileID: 0}
-  spriteSecundarioCaderno: {fileID: 0}
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 1

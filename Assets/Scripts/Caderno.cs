@@ -75,7 +75,7 @@ public class Caderno : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {        
+    {
         numeroPensamento = 1;
         contadorPensamentos = 3;
         PrecisaFecharTransition = false;
@@ -89,29 +89,32 @@ public class Caderno : MonoBehaviour
         Jhony = false;
         Devi = false;
         open = false;
-        posiçãoEvidencias = 0;    
-        posiçãoPessoa = 0; 
+        posiçãoEvidencias = 0;
+        posiçãoPessoa = 0;
         repetidor = 0;
-        if(MainMenu.NewGame == true){
-            for(i=0;i<20;i++){
+        if (MainMenu.NewGame == true)
+        {
+            for (i = 0; i < 20; i++)
+            {
                 update[i] = false;
             }
         }
-    }    
+    }
 
     private void Awake()
     {
         entrouPessoa = false;
         entrou = false;
         posiçãoEvidencias = 0;
-        posiçãoPessoa = 0; 
+        posiçãoPessoa = 0;
     }
     void abrirCaderno()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             caderno.SetBool("abrir", false);
             open = false;
-        }       
+        }
         if (Input.GetKeyDown(KeyCode.Tab) && PermissaoAbrirCaderno)
         {
             if (!open)
@@ -125,7 +128,7 @@ public class Caderno : MonoBehaviour
                 JuntarPistas.SetActive(false);
                 Pensamentos.SetActive(false);
                 CadernoLimpo.SetActive(true);
-                Transition.SetBool("Abrir", false); 
+                Transition.SetBool("Abrir", false);
                 textoPensamentos.text = "Deseja ir a cena do crime?";
                 open = true;
             }
@@ -137,16 +140,18 @@ public class Caderno : MonoBehaviour
                 JuntarPistas.SetActive(false);
                 Pensamentos.SetActive(false);
                 Transition.SetBool("Abrir", false);
-                caderno.SetBool("Rela",false);
+                caderno.SetBool("Rela", false);
                 caderno.SetBool("abrir", false);
                 open = false;
             }
-        }       
-        if(PrecisaFecharTransition){
-            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) ||Input.GetKeyDown(KeyCode.D) ){
+        }
+        if (PrecisaFecharTransition)
+        {
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
+            {
                 fechaTransition();
             }
-        } 
+        }
     }
     public void atualizaDescricao(int tag)
     {
@@ -156,73 +161,169 @@ public class Caderno : MonoBehaviour
         if (tag == 0)
         {
             evidencias[0].description = evidencias[0].descriptionUpdate;
-            description.text = evidencias[0].description;
+            evidencias[0].descriptionIngles = evidencias[0].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[0].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[0].description;
+            }
             update[0] = true;
         }
         if (tag == 1)
         {
             evidencias[1].description = evidencias[1].descriptionUpdate;
-            description.text = evidencias[1].description;
+            evidencias[1].descriptionIngles = evidencias[1].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[1].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[1].description;
+            }
             update[1] = true;
         }
         if (tag == 2)
         {
             evidencias[2].description = evidencias[2].descriptionUpdate;
-            description.text = evidencias[2].description;
+            evidencias[2].descriptionIngles = evidencias[2].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[2].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[2].description;
+            }
             update[2] = true;
         }
         if (tag == 3)
         {
             evidencias[3].description = evidencias[3].descriptionUpdate;
-            description.text = evidencias[3].description;
+            evidencias[3].descriptionIngles = evidencias[3].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[3].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[3].description;
+            }
             update[3] = true;
         }
         if (tag == 4)
         {
             evidencias[4].description = evidencias[4].descriptionUpdate;
-            description.text = evidencias[4].description;
+            evidencias[4].descriptionIngles = evidencias[4].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[4].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[4].description;
+            }
             update[4] = true;
         }
         if (tag == 5)
         {
             evidencias[5].description = evidencias[5].descriptionUpdate;
-            description.text = evidencias[5].description;
+            evidencias[5].descriptionIngles = evidencias[5].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[5].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[5].description;
+            }
             update[5] = true;
         }
         if (tag == 6)
         {
             evidencias[6].description = evidencias[6].descriptionUpdate;
-            description.text = evidencias[6].description;
+            evidencias[6].descriptionIngles = evidencias[6].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[6].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[6].description;
+            }
             update[6] = true;
         }
         if (tag == 7)
         {
             evidencias[7].description = evidencias[7].descriptionUpdate;
-            description.text = evidencias[7].description;
+            evidencias[7].descriptionIngles = evidencias[7].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[7].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[7].description;
+            }
             update[7] = true;
         }
         if (tag == 8)
         {
             evidencias[8].description = evidencias[8].descriptionUpdate;
-            description.text = evidencias[8].description;
+            evidencias[8].descriptionIngles = evidencias[8].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[8].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[8].description;
+            }
             update[8] = true;
         }
         if (tag == 9)
         {
             evidencias[9].description = evidencias[9].descriptionUpdate;
-            description.text = evidencias[9].description;
+            evidencias[9].descriptionIngles = evidencias[9].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[9].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[9].description;
+            }
             update[9] = true;
         }
         if (tag == 10)
         {
             evidencias[10].description = evidencias[10].descriptionUpdate;
-            description.text = evidencias[10].description;
+            evidencias[10].descriptionIngles = evidencias[10].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[10].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[10].description;
+            }
             update[10] = true;
         }
         if (tag == 11)
         {
             evidencias[11].description = evidencias[11].descriptionUpdate;
-            description.text = evidencias[11].description;
+            evidencias[11].descriptionIngles = evidencias[11].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[11].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[11].description;
+            }
             update[11] = true;
         }
         evidenciasTextos.SetActive(false);
@@ -234,133 +335,263 @@ public class Caderno : MonoBehaviour
         if (Text.tag == "0")
         {
             description = GameObject.Find("Description").GetComponent<Text>();
-            description.text = evidencias[0].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[0].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[0].description;
+            }
             ImagemObjeto.sprite = evidencias[0].ImagemObjeto;
         }
         if (Text.tag == "1")
         {
             description = GameObject.Find("Description").GetComponent<Text>();
-            description.text = evidencias[1].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[1].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[1].description;
+            }
             ImagemObjeto.sprite = evidencias[1].ImagemObjeto;
         }
         if (Text.tag == "2")
         {
             description = GameObject.Find("Description").GetComponent<Text>();
-            description.text = evidencias[2].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[2].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[2].description;
+            }
             ImagemObjeto.sprite = evidencias[2].ImagemObjeto;
         }
         if (Text.tag == "3")
         {
-            description.text = evidencias[3].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[3].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[3].description;
+            }
             ImagemObjeto.sprite = evidencias[3].ImagemObjeto;
         }
         if (Text.tag == "4")
         {
-            description.text = evidencias[4].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[4].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[4].description;
+            }
             ImagemObjeto.sprite = evidencias[4].ImagemObjeto;
         }
         if (Text.tag == "5")
         {
-            description.text = evidencias[5].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[5].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[5].description;
+            }
             ImagemObjeto.sprite = evidencias[5].ImagemObjeto;
         }
         if (Text.tag == "6")
         {
-            description.text = evidencias[6].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[6].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[6].description;
+            }
             ImagemObjeto.sprite = evidencias[6].ImagemObjeto;
         }
         if (Text.tag == "7")
         {
-            description.text = evidencias[7].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[7].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[7].description;
+            }
             ImagemObjeto.sprite = evidencias[7].ImagemObjeto;
         }
         if (Text.tag == "8")
         {
-            description.text = evidencias[8].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[8].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[8].description;
+            }
             ImagemObjeto.sprite = evidencias[8].ImagemObjeto;
         }
         if (Text.tag == "9")
         {
-            description.text = evidencias[9].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[9].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[9].description;
+            }
             ImagemObjeto.sprite = evidencias[9].ImagemObjeto;
         }
         if (Text.tag == "10")
         {
-            description.text = evidencias[10].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[10].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[10].description;
+            }
             ImagemObjeto.sprite = evidencias[10].ImagemObjeto;
         }
         if (Text.tag == "11")
         {
-            description.text = evidencias[11].description;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[11].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[11].description;
+            }
             ImagemObjeto.sprite = evidencias[11].ImagemObjeto;
         }
     }
-    public void JuntarPensamentos(){
-        if(Pensamento1 == "Destroços" && Pensamento2 == "Vítima"){
+    public void JuntarPensamentos()
+    {
+        if (Pensamento1 == "Destroços" && Pensamento2 == "Vítima")
+        {
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Thought added to the notebook.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
-        else if(Pensamento2 == "Destroços" && Pensamento1 == "Vítima"){
+        else if (Pensamento2 == "Destroços" && Pensamento1 == "Vítima")
+        {
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Thought added to the notebook.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
-        else if(Pensamento1 == "Prato" && Pensamento2 == "Vítima"){
+        else if (Pensamento1 == "Prato" && Pensamento2 == "Vítima")
+        {
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Thought added to the notebook.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
-        else if(Pensamento2 == "Prato" && Pensamento1 == "Vítima"){
+        else if (Pensamento2 == "Prato" && Pensamento1 == "Vítima")
+        {
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Thought added to the notebook.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
-        else if(Pensamento1 == "Prato" && Pensamento2 == "Informações do policial"){
+        else if (Pensamento1 == "Prato" && Pensamento2 == "Informações do policial")
+        {
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Thought added to the notebook.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
-        else if(Pensamento2 == "Prato" && Pensamento1 == "Informações do policial"){
+        else if (Pensamento2 == "Prato" && Pensamento1 == "Informações do policial")
+        {
             adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Thought added to the notebook.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
-        else{
-            if(PlayerData.Idioma == "ingles"){
+        else if (Pensamento2 == "Laudo" && Pensamento1 == "Vítima")
+        {
+            adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
+            if (PlayerData.Idioma == "ingles")
+            {
+                textoPensamentos.text = "Thought added to the notebook.";
+            }
+            else
+            {
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
+        }
+        else if (Pensamento2 == "Vítima" && Pensamento1 == "Laudo")
+        {
+            adicionar(GameObject.Find("Sufocamento(Clone)").GetComponent<Evidence>());
+            if (PlayerData.Idioma == "ingles")
+            {
+                textoPensamentos.text = "Thought added to the notebook.";
+            }
+            else
+            {
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
+        }
+        else
+        {
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "I don't see correlation between these 2 pieces of evidence.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Não vejo correlação entre essas 2 evidências.";
             }
         }
         contadorPensamentos--;
         Transition.SetBool("Abrir", true);
-        caderno.SetBool("Rela",false);
+        caderno.SetBool("Rela", false);
         caderno.SetBool("abrir", false);
         SelecionarOutraPista.SetActive(false);
         JuntarPistas.SetActive(false);
@@ -370,183 +601,374 @@ public class Caderno : MonoBehaviour
         Pensamento2 = "";
         Pensamento1 = "";
     }
-    public void SelecionarOutraPistaBotao(){
+    public void SelecionarOutraPistaBotao()
+    {
         numeroPensamento = 1;
         SelecionarOutraPista.SetActive(false);
         JuntarPistas.SetActive(false);
         Pensamento2 = "";
     }
-    public void SelecionaPensamentos(Text Text){
-        Transition.SetBool("Abrir", true);   
-        if(numeroPensamento == 1){
+    public void SelecionaPensamentos(Text Text)
+    {
+        Transition.SetBool("Abrir", true);
+        if (numeroPensamento == 1)
+        {
             Pensamento1 = Text.text;
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "Should I join " + Pensamento1 + " with which other clue? (Remaining attempts: " + contadorPensamentos + ").";
-            }  
-            else{
-                textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ")." ;
+            }
+            else
+            {
+                textoPensamentos.text = "Devo juntar " + Pensamento1 + " com qual outra pista? (Tentativas Restantes: " + contadorPensamentos + ").";
             }
             numeroPensamento++;
             SelecionarOutraPista.SetActive(true);
         }
-        if(numeroPensamento == 2){
-            if(Pensamento1 == Text.text || Pensamento2 == Text.text){
+        if (numeroPensamento == 2)
+        {
+            if (Pensamento1 == Text.text || Pensamento2 == Text.text)
+            {
 
             }
-            else{
+            else
+            {
                 JuntarPistas.SetActive(true);
                 Pensamento2 = Text.text;
-                if(PlayerData.Idioma == "ingles"){
+                if (PlayerData.Idioma == "ingles")
+                {
                     textoPensamentos.text = "Does it make sense for me to join " + Pensamento1 + " and " + Pensamento2 + "? (Remaining attempts: " + contadorPensamentos + ").";
-                }  
-                else{
+                }
+                else
+                {
                     textoPensamentos.text = "Faz sentido eu juntar " + Pensamento1 + " e " + Pensamento2 + "? (Tentativas Restantes: " + contadorPensamentos + ").";
                 }
             }
         }
     }
-    public void EscreverPensamentos(){
-        if(contadorPensamentos > 0){
+    public void EscreverPensamentos()
+    {
+        if (contadorPensamentos > 0)
+        {
             numeroPensamento = 1;
             Pensamento2 = "";
             Pensamento1 = "";
             CadernoLimpo.SetActive(false);
             Pensamentos.SetActive(true);
-            caderno.SetBool("Rela",true);
+            caderno.SetBool("Rela", true);
             description = GameObject.Find("Description").GetComponent<Text>();
             ImagemObjeto = GameObject.Find("Image").GetComponent<Image>();
-            for(i=0;i<posiçãoEvidencias;i++){
-                switch(i){
+            for (i = 0; i < posiçãoEvidencias; i++)
+            {
+                switch (i)
+                {
                     case 0:
                         evidencia1 = GameObject.Find("Text0").GetComponent<Text>();
-                        evidencia1.text = evidencias[0].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia1.text = evidencias[0].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia1.text = evidencias[0].nome;
+                        }
+                        break;
                     case 1:
                         evidencia2 = GameObject.Find("Text1").GetComponent<Text>();
-                        evidencia2.text = evidencias[1].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia2.text = evidencias[1].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia2.text = evidencias[1].nome;
+                        }
+                        break;
                     case 2:
                         evidencia3 = GameObject.Find("Text2").GetComponent<Text>();
-                        evidencia3.text = evidencias[2].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia3.text = evidencias[2].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia3.text = evidencias[2].nome;
+                        }
+                        break;
                     case 3:
                         evidencia4 = GameObject.Find("Text3").GetComponent<Text>();
-                        evidencia4.text = evidencias[3].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia4.text = evidencias[3].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia4.text = evidencias[3].nome;
+                        }
+                        break;
                     case 4:
-                        evidencia4 = GameObject.Find("Text4").GetComponent<Text>();
-                        evidencia4.text = evidencias[4].nome;  
-                    break;
+                        evidencia5 = GameObject.Find("Text4").GetComponent<Text>();
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia5.text = evidencias[4].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia5.text = evidencias[4].nome;
+                        }
+                        break;
                     case 5:
                         evidencia6 = GameObject.Find("Text5").GetComponent<Text>();
-                        evidencia6.text = evidencias[5].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia6.text = evidencias[5].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia6.text = evidencias[5].nome;
+                        }
+                        break;
                     case 6:
                         evidencia7 = GameObject.Find("Text6").GetComponent<Text>();
-                        evidencia7.text = evidencias[6].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia7.text = evidencias[6].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia7.text = evidencias[6].nome;
+                        }
+                        break;
                     case 7:
                         evidencia8 = GameObject.Find("Text7").GetComponent<Text>();
-                        evidencia8.text = evidencias[7].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia8.text = evidencias[7].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia8.text = evidencias[7].nome;
+                        }
+                        break;
                     case 8:
                         evidencia9 = GameObject.Find("Text8").GetComponent<Text>();
-                        evidencia9.text = evidencias[8].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia9.text = evidencias[8].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia9.text = evidencias[8].nome;
+                        }
+                        break;
                     case 9:
                         evidencia10 = GameObject.Find("Text9").GetComponent<Text>();
-                        evidencia10.text = evidencias[9].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia10.text = evidencias[9].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia10.text = evidencias[9].nome;
+                        }
+                        break;
                     case 10:
                         evidencia11 = GameObject.Find("Text10").GetComponent<Text>();
-                        evidencia11.text = evidencias[10].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia11.text = evidencias[10].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia11.text = evidencias[10].nome;
+                        }
+                        break;
                     case 11:
                         evidencia12 = GameObject.Find("Text11").GetComponent<Text>();
-                        evidencia12.text = evidencias[11].nome;  
-                    break;
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia12.text = evidencias[11].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia12.text = evidencias[11].nome;
+                        }
+                        break;
                 }
             }
         }
-        else{
+        else
+        {
             Transition.SetBool("Abrir", true);
-            if(PlayerData.Idioma == "ingles"){
+            if (PlayerData.Idioma == "ingles")
+            {
                 textoPensamentos.text = "I'm too tired to be able to think now.";
-            }  
-            else{
+            }
+            else
+            {
                 textoPensamentos.text = "Estou cansado demais para conseguir pensar agora.";
             }
-            caderno.SetBool("Rela",false);
+            caderno.SetBool("Rela", false);
             caderno.SetBool("abrir", false);
             PrecisaFecharTransition = true;
             open = false;
         }
     }
-    public void fechaTransition(){
+    public void fechaTransition()
+    {
         Transition.SetBool("Abrir", false);
-        if(PlayerData.Idioma == "ingles"){
+        if (PlayerData.Idioma == "ingles")
+        {
             textoPensamentos.text = "Do you want to go to the crime scene?";
-        }  
-        else{
+        }
+        else
+        {
             textoPensamentos.text = "Deseja ir a cena do crime?";
         }
         PrecisaFecharTransition = false;
     }
-    public void EscreverEvidencias(){
+    public void EscreverEvidencias()
+    {
         CadernoLimpo.SetActive(false);
         evidenciasTextos.SetActive(true);
         description = GameObject.Find("Description").GetComponent<Text>();
         ImagemObjeto = GameObject.Find("Image").GetComponent<Image>();
-        for(i=0;i<posiçãoEvidencias;i++){
-            switch(i){
+        for (i = 0; i < posiçãoEvidencias; i++)
+        {
+            switch (i)
+            {
                 case 0:
                     evidencia1 = GameObject.Find("Text0").GetComponent<Text>();
-                    evidencia1.text = evidencias[0].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia1.text = evidencias[0].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia1.text = evidencias[0].nome;
+                    }
+                    break;
                 case 1:
                     evidencia2 = GameObject.Find("Text1").GetComponent<Text>();
-                    evidencia2.text = evidencias[1].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia2.text = evidencias[1].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia2.text = evidencias[1].nome;
+                    }
+                    break;
                 case 2:
                     evidencia3 = GameObject.Find("Text2").GetComponent<Text>();
-                    evidencia3.text = evidencias[2].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia3.text = evidencias[2].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia3.text = evidencias[2].nome;
+                    }
+                    break;
                 case 3:
                     evidencia4 = GameObject.Find("Text3").GetComponent<Text>();
-                    evidencia4.text = evidencias[3].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia4.text = evidencias[3].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia4.text = evidencias[3].nome;
+                    }
+                    break;
                 case 4:
-                    evidencia4 = GameObject.Find("Text4").GetComponent<Text>();
-                    evidencia4.text = evidencias[4].nome;  
-                break;
+                    evidencia5 = GameObject.Find("Text4").GetComponent<Text>();
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia5.text = evidencias[4].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia5.text = evidencias[4].nome;
+                    }
+                    break;
                 case 5:
                     evidencia6 = GameObject.Find("Text5").GetComponent<Text>();
-                    evidencia6.text = evidencias[5].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia6.text = evidencias[5].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia6.text = evidencias[5].nome;
+                    }
+                    break;
                 case 6:
                     evidencia7 = GameObject.Find("Text6").GetComponent<Text>();
-                    evidencia7.text = evidencias[6].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia7.text = evidencias[6].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia7.text = evidencias[6].nome;
+                    }
+                    break;
                 case 7:
                     evidencia8 = GameObject.Find("Text7").GetComponent<Text>();
-                    evidencia8.text = evidencias[7].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia8.text = evidencias[7].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia8.text = evidencias[7].nome;
+                    }
+                    break;
                 case 8:
                     evidencia9 = GameObject.Find("Text8").GetComponent<Text>();
-                    evidencia9.text = evidencias[8].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia9.text = evidencias[8].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia9.text = evidencias[8].nome;
+                    }
+                    break;
                 case 9:
                     evidencia10 = GameObject.Find("Text9").GetComponent<Text>();
-                    evidencia10.text = evidencias[9].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia10.text = evidencias[9].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia10.text = evidencias[9].nome;
+                    }
+                    break;
                 case 10:
                     evidencia11 = GameObject.Find("Text10").GetComponent<Text>();
-                    evidencia11.text = evidencias[10].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia11.text = evidencias[10].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia11.text = evidencias[10].nome;
+                    }
+                    break;
                 case 11:
                     evidencia12 = GameObject.Find("Text11").GetComponent<Text>();
-                    evidencia12.text = evidencias[11].nome;  
-                break;
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia12.text = evidencias[11].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia12.text = evidencias[11].nome;
+                    }
+                    break;
             }
         }
     }
@@ -602,61 +1024,64 @@ public class Caderno : MonoBehaviour
             description.text = pessoas[11].description;
         }
     }
-    public void Pessoas(){
+    public void Pessoas()
+    {
         CadernoLimpo.SetActive(false);
         pessoasTextos.SetActive(true);
         description = GameObject.Find("Description").GetComponent<Text>();
         ImagemObjeto = GameObject.Find("Image").GetComponent<Image>();
-        for(i=0;i<posiçãoPessoa;i++){
-            switch(i){
+        for (i = 0; i < posiçãoPessoa; i++)
+        {
+            switch (i)
+            {
                 case 0:
                     pessoa1 = GameObject.Find("Pessoa0").GetComponent<Text>();
-                    pessoa1.text = pessoas[0].nome;  
-                break;
+                    pessoa1.text = pessoas[0].nome;
+                    break;
                 case 1:
                     pessoa2 = GameObject.Find("Pessoa1").GetComponent<Text>();
-                    pessoa2.text = pessoas[1].nome;  
-                break;
+                    pessoa2.text = pessoas[1].nome;
+                    break;
                 case 2:
                     pessoa3 = GameObject.Find("Pessoa2").GetComponent<Text>();
-                    pessoa3.text = pessoas[2].nome;  
-                break;
+                    pessoa3.text = pessoas[2].nome;
+                    break;
                 case 3:
                     pessoa4 = GameObject.Find("Pessoa3").GetComponent<Text>();
-                    pessoa4.text = pessoas[3].nome;  
-                break;
+                    pessoa4.text = pessoas[3].nome;
+                    break;
                 case 4:
-                    pessoa4 = GameObject.Find("Pessoa4").GetComponent<Text>();
-                    pessoa4.text = pessoas[4].nome;  
-                break;
+                    pessoa5 = GameObject.Find("Pessoa4").GetComponent<Text>();
+                    pessoa5.text = pessoas[4].nome;
+                    break;
                 case 5:
                     pessoa6 = GameObject.Find("Pessoa5").GetComponent<Text>();
-                    pessoa6.text = pessoas[5].nome;  
-                break;
+                    pessoa6.text = pessoas[5].nome;
+                    break;
                 case 6:
                     pessoa7 = GameObject.Find("Pessoa6").GetComponent<Text>();
-                    pessoa7.text = pessoas[6].nome;  
-                break;
+                    pessoa7.text = pessoas[6].nome;
+                    break;
                 case 7:
                     pessoa8 = GameObject.Find("Pessoa7").GetComponent<Text>();
-                    pessoa8.text = pessoas[7].nome;  
-                break;
+                    pessoa8.text = pessoas[7].nome;
+                    break;
                 case 8:
                     pessoa9 = GameObject.Find("Pessoa8").GetComponent<Text>();
-                    pessoa9.text = pessoas[8].nome;  
-                break;
+                    pessoa9.text = pessoas[8].nome;
+                    break;
                 case 9:
                     pessoa10 = GameObject.Find("Pessoa9").GetComponent<Text>();
-                    pessoa10.text = pessoas[9].nome;  
-                break;
+                    pessoa10.text = pessoas[9].nome;
+                    break;
                 case 10:
                     pessoa11 = GameObject.Find("Pessoa10").GetComponent<Text>();
-                    pessoa11.text = pessoas[10].nome;  
-                break;
+                    pessoa11.text = pessoas[10].nome;
+                    break;
                 case 11:
                     pessoa12 = GameObject.Find("Pessoa11").GetComponent<Text>();
-                    pessoa12.text = pessoas[11].nome;  
-                break;
+                    pessoa12.text = pessoas[11].nome;
+                    break;
             }
         }
     }
@@ -666,7 +1091,7 @@ public class Caderno : MonoBehaviour
         {
             for (i = 0; i < pessoas.Length; i++)
             {
-                if (pessoas[i]!= null)
+                if (pessoas[i] != null)
                 {
                     if (pessoa.nome == pessoas[i].nome)
                     {
@@ -674,7 +1099,7 @@ public class Caderno : MonoBehaviour
                     }
                 }
             }
-        }        
+        }
         return false;
     }
     public bool verificaExistencia(Evidence evidence)
@@ -683,7 +1108,7 @@ public class Caderno : MonoBehaviour
         {
             for (i = 0; i < evidencias.Length; i++)
             {
-                if (evidencias[i]!= null)
+                if (evidencias[i] != null)
                 {
                     if (evidence.nome == evidencias[i].nome)
                     {
@@ -691,7 +1116,7 @@ public class Caderno : MonoBehaviour
                     }
                 }
             }
-        }        
+        }
         return false;
     }
     public void adicionarPessoas(Pessoa pessoa)
@@ -699,29 +1124,31 @@ public class Caderno : MonoBehaviour
         if (verificaExistenciaPessoa(pessoa))
         {
         }
-        else {            
-            switch(pessoa.nome){
+        else
+        {
+            switch (pessoa.nome)
+            {
                 case "Sanefuji":
                     Sanefuji = true;
-                break;
+                    break;
                 case "Jessie":
                     Jessie = true;
-                break;
+                    break;
                 case "Kyle":
                     kyle = true;
-                break;
+                    break;
                 case "Steve":
                     Steve = true;
-                break;
+                    break;
                 case "Johnny":
                     Jhony = true;
-                break;
+                    break;
                 case "Devi":
                     Devi = true;
-                break;
+                    break;
             }
             barulhoAnotando = GameObject.Find("escrita").GetComponent<AudioSource>();
-            barulhoAnotando.Play();            
+            barulhoAnotando.Play();
             if (entrouPessoa == false)
             {
                 pessoas[0] = pessoa;
@@ -797,16 +1224,17 @@ public class Caderno : MonoBehaviour
                 return;
             }
         }
-    }  
+    }
 
     public void adicionar(Evidence evidence)
     {
         if (verificaExistencia(evidence))
         {
         }
-        else {            
+        else
+        {
             barulhoAnotando = GameObject.Find("escrita").GetComponent<AudioSource>();
-            barulhoAnotando.Play();            
+            barulhoAnotando.Play();
             if (entrou == false)
             {
                 evidencias[0] = evidence;
@@ -881,46 +1309,57 @@ public class Caderno : MonoBehaviour
                 return;
             }
         }
-    }       
+    }
     // Update is called once per frame
     void Update()
     {
-        abrirCaderno();      
-        if(repetidor == 50 && MainMenu.NewGame == false){                       
+        abrirCaderno();
+        if (repetidor == 50 && MainMenu.NewGame == false)
+        {
             LoadPlayer();
             repetidor++;
-            if(SceneManager.GetActiveScene().buildIndex == 1){
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
                 Destroy_Object();
             }
         }
-        else if(repetidor<=60){
+        else if (repetidor <= 60)
+        {
             repetidor++;
         }
     }
-    public void Destroy_Object(){
+    public void Destroy_Object()
+    {
         PlayerData data = SaveSystem.LoadPlayer();
-        posiçãoEvidencias = data.NumeroDeEvidencias;        
-        for(j=0;j<data.NumeroDeObjetos;j++){
+        posiçãoEvidencias = data.NumeroDeEvidencias;
+        for (j = 0; j < data.NumeroDeObjetos; j++)
+        {
             Destroy(GameObject.Find(data.NomeDosObjetos[j]));
-        }                
+        }
     }
-    public void LoadPlayer(){
-        for(j=0;j<evidencias.Length;j++){
-                evidencias[j] = null;
-        } 
+    public void LoadPlayer()
+    {
+        for (j = 0; j < evidencias.Length; j++)
+        {
+            evidencias[j] = null;
+        }
         PlayerData data = SaveSystem.LoadPlayer();
         LoadPessoas(data);
         contadorPensamentos = data.contadorPensamento;
         posiçãoEvidencias = 0;
-        for(j=0;j<data.NumeroDeEvidencias;j++){
+        for (j = 0; j < data.NumeroDeEvidencias; j++)
+        {
+            Debug.Log(data.nomeObjetoEvidencias[j]);
             adicionar(GameObject.Find(data.nomeObjetoEvidencias[j]).GetComponent<Evidence>());
             update[j] = data.update[j];
-            if(update[j] == true){
+            if (update[j] == true)
+            {
                 atualizaDescricao(j);
             }
         }
     }
-    public void LoadPessoas(PlayerData data){
+    public void LoadPessoas(PlayerData data)
+    {
         Sanefuji = data.Sanefuji;
         Jessie = data.Jessie;
         kyle = data.kyle;
@@ -933,32 +1372,38 @@ public class Caderno : MonoBehaviour
         TesteDevi = new Pessoa();
         TesteSanefuji = new Pessoa();
         TesteKyle = new Pessoa();
-        if(Sanefuji == true){
+        if (Sanefuji == true)
+        {
             TesteSanefuji.nome = "Sanefuji";
             TesteSanefuji.description = "Empresário da alta classe, só pensa em business.";
             adicionarPessoas(TesteSanefuji);
         }
-        if(Jessie == true){
+        if (Jessie == true)
+        {
             TesteJessie.nome = "Jessie";
             TesteJessie.description = "Jornalista investigativa.";
             adicionarPessoas(TesteJessie);
         }
-        if(kyle == true){
+        if (kyle == true)
+        {
             TesteKyle.nome = "kyle";
             TesteKyle.description = "Perito digital da delegacia.";
             adicionarPessoas(TesteKyle);
         }
-        if(Steve == true){
+        if (Steve == true)
+        {
             TesteSteve.nome = "Steve";
             TesteSteve.description = "Parceiro do detetive.";
             adicionarPessoas(TesteSteve);
         }
-        if(Jhony == true){
+        if (Jhony == true)
+        {
             TesteJohny.nome = "Johnny";
             TesteJohny.description = "Policial.";
             adicionarPessoas(TesteJohny);
         }
-        if(Devi == true){
+        if (Devi == true)
+        {
             TesteDevi.nome = "Devi";
             TesteDevi.description = "Legista.";
             adicionarPessoas(TesteDevi);
