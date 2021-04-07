@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Relatorio : MonoBehaviour
 {
+    public Caderno cadernoOriginal;
     public GameObject Roubo;
     public GameObject CadernoLimpo;
     public GameObject Evidencias;
@@ -92,6 +93,7 @@ public class Relatorio : MonoBehaviour
                     texto.text = "Escrever o relatório?";    
                 }
                 preencher.SetActive(true);   
+                trocarCenaSim.SetActive(false);  
                 no.SetActive(true);    
                 Transition.SetBool("Abrir", true);                
             }
@@ -114,6 +116,7 @@ public class Relatorio : MonoBehaviour
                 fraseAtual == "How did the murderer leave the place?"){
                 CadernoLimpo.SetActive(false);
                 Evidencias.SetActive(true);
+                cadernoOriginal.EscreverEvidencias();
                 caderno.SetBool("Rela",true);
                 SemEvidencia.SetActive(true);
                 perguntando = true;

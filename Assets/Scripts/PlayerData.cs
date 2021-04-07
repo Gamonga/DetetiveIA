@@ -37,6 +37,7 @@ public class PlayerData
     public bool vistoPergunta;
     public int contadorAnalise;
     public int contadorPensamento;
+    public int selecionaArmaComSangueFalso;
     public string PrimeiraResposta;
     public string SegundaResposta;
     public string TerceiraResposta;
@@ -49,6 +50,7 @@ public class PlayerData
     public bool PanoSangue;
     public PlayerData(movimento movimento){
         level = SceneManager.GetActiveScene().buildIndex;
+        selecionaArmaComSangueFalso = SpawnObjects.selecionaArmaComSangueFalso;
         actualCrimeScene = ScenesManager.ActualScene;
         horas = horario.Horario;
         Idioma = MainMenu.idioma;

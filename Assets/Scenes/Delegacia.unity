@@ -22370,6 +22370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed2655a5dece0d479b4e95199fbec53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cadernoOriginal: {fileID: 1494596743}
   Roubo: {fileID: 650263541}
   CadernoLimpo: {fileID: 1408340920}
   Evidencias: {fileID: 2045707196}

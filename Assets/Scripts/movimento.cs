@@ -30,7 +30,7 @@ public class movimento : MonoBehaviour
         /*Esquerda e Baixo*/
         if (Input.GetAxisRaw("Vertical") == -1 && Input.GetAxisRaw("Horizontal") == -1)
         {
-            rb.velocity = new Vector2(-5.0f,-5.0f);
+            rb.velocity = new Vector2(-15.0f,-15.0f);
             animator.SetBool("Esquerda", true);
             return 0;
         }
@@ -42,7 +42,7 @@ public class movimento : MonoBehaviour
         /*Direita e Cima*/
         if (Input.GetAxisRaw("Vertical") == -1 && Input.GetAxisRaw("Horizontal") == 1)
         {
-            rb.velocity = new Vector2(5.0f,-5.0f);
+            rb.velocity = new Vector2(15.0f,-15.0f);
             animator.SetBool("Direita", true);
             return 0;
         }
@@ -54,7 +54,7 @@ public class movimento : MonoBehaviour
         /*Direita e Cima*/
         if (Input.GetAxisRaw("Vertical") == 1 && Input.GetAxisRaw("Horizontal") == 1)
         {
-            rb.velocity = new Vector2(5.0f,5.0f);
+            rb.velocity = new Vector2(15.0f,15.0f);
             animator.SetBool("Direita", true);
             return 0;
         }
@@ -66,7 +66,7 @@ public class movimento : MonoBehaviour
         /*Esquerda e Baixo*/
         if (Input.GetAxisRaw("Vertical") == 1 && Input.GetAxisRaw("Horizontal") == -1)
         {
-            rb.velocity = new Vector2(-5.0f,5.0f);
+            rb.velocity = new Vector2(-15.0f,15.0f);
             animator.SetBool("Esquerda", true);
             return 0;
         }
@@ -78,7 +78,7 @@ public class movimento : MonoBehaviour
         /*Direita*/
         if (Input.GetAxisRaw("Horizontal") == 1)
         {
-            rb.velocity = new Vector2(5.0f,0.0f);
+            rb.velocity = new Vector2(15.0f,0.0f);
             animator.SetBool("Direita", true);
             return 0;
         }
@@ -90,7 +90,7 @@ public class movimento : MonoBehaviour
         /*Esquerda*/
         if (Input.GetAxisRaw("Horizontal") == -1)
         {
-            rb.velocity = new Vector2(-5.0f,0.0f);
+            rb.velocity = new Vector2(-15.0f,0.0f);
             animator.SetBool("Esquerda", true);
             return 0;
         }
@@ -102,7 +102,7 @@ public class movimento : MonoBehaviour
         /*Cima*/
         if (Input.GetAxisRaw("Vertical") == 1)
         {
-            rb.velocity = new Vector2(0.0f,5.0f);
+            rb.velocity = new Vector2(0.0f,15.0f);
             animator.SetBool("Sobe", true);
             return 0;
         }
@@ -114,7 +114,7 @@ public class movimento : MonoBehaviour
         /*Baixo*/
         if (Input.GetAxisRaw("Vertical") == -1)
         {
-            rb.velocity = new Vector2(0.0f,-5.0f);
+            rb.velocity = new Vector2(0.0f,-15.0f);
             animator.SetBool("Desce", true);
             return 0;
         }

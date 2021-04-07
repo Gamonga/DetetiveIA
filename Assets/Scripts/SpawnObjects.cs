@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SpawnObjects : MonoBehaviour
 {
     public static int NumeroDeportas = 0;
+    public static int selecionaArmaComSangueFalso;
     static bool entrouNoTexto = false;
     public Animator animator;
     public Caderno caderno;
@@ -140,6 +141,8 @@ public class SpawnObjects : MonoBehaviour
         if (MainMenu.NewGame == false)
         {
             PlayerData data = SaveSystem.LoadPlayer();
+            selecionaArmaComSangueFalso = data.selecionaArmaComSangueFalso;
+            ColocaSangueFalso();
             contador = data.contadorAnalise;
             PanoSangue = data.PanoSangue;
             policialSalvar = data.policial;
@@ -183,6 +186,24 @@ public class SpawnObjects : MonoBehaviour
                 }
             }
         }
+    }
+    public void ColocaSangueFalso(){
+        Armas = new Evidence[15];
+        Armas[0] = FacaNormalEvidence;
+        Armas[1] = FacaNormalSemSangueEvidence;
+        Armas[2] = FacaCozinhaEvidence;
+        Armas[3] = BastaoDeBeisebolSangueEvidence;
+        Armas[4] = BastaoDeBeisebolEvidence;
+        Armas[5] = RevolverEvidence;
+        Armas[6] = CaixaDeRemedioEvidence;
+        Armas[7] = PunhosEvidence;
+        Armas[8] = CanoContundenteEvidence;
+        Armas[9] = CanoPerfuraçãoEvidence;
+        Armas[10] = CanoPerfuraçãoSangueEvidence;
+        Armas[11] = CanoContundenteSangueEvidence;
+        Armas[12] = SufocamentoEvidence;
+        Armas[selecionaArmaComSangueFalso].descriptionUpdate = Armas[selecionadorint].description + " Sangue falso.";
+        Armas[selecionaArmaComSangueFalso].descriptionUpdateIngles = Armas[selecionadorint].descriptionIngles + " False blood.";
     }
     public void LoadRespostas(PlayerData data)
     {
@@ -697,7 +718,9 @@ public class SpawnObjects : MonoBehaviour
                 }
                 if (Armas[selecionadorint].sangue)
                 {
+                    selecionaArmaComSangueFalso = selecionadorint;
                     Armas[selecionadorint].descriptionUpdate = Armas[selecionadorint].description + " Sangue falso.";
+                    Armas[selecionadorint].descriptionUpdateIngles = Armas[selecionadorint].descriptionIngles + " False blood.";
                 }
                 carregaObjetos(Armas[selecionadorint].NomeObjeto);
             }

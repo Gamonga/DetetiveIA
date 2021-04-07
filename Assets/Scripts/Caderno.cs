@@ -482,6 +482,42 @@ public class Caderno : MonoBehaviour
     }
     public void JuntarPensamentos()
     {
+        switch (Pensamento1)
+        {
+            case "Wreckage":
+                Pensamento1 = "Destroços";
+                break;
+            case "Victim":
+                Pensamento1 = "Vítima";
+                break;
+            case "Plate":
+                Pensamento1 = "Prato";
+                break;
+            case "Policeman's notes":
+                Pensamento1 = "Informações do policial";
+                break;
+            case "Report":
+                Pensamento1 = "Laudo";
+                break;
+        }
+        switch (Pensamento2)
+        {
+            case "Wreckage":
+                Pensamento2 = "Destroços";
+                break;
+            case "Victim":
+                Pensamento2 = "Vítima";
+                break;
+            case "Plate":
+                Pensamento2 = "Prato";
+                break;
+            case "Policeman's notes":
+                Pensamento2 = "Informações do policial";
+                break;
+            case "Report":
+                Pensamento2 = "Laudo";
+                break;
+        }
         if (Pensamento1 == "Destroços" && Pensamento2 == "Vítima")
         {
             adicionar(GameObject.Find("Punhos(Clone)").GetComponent<Evidence>());
@@ -826,6 +862,9 @@ public class Caderno : MonoBehaviour
             textoPensamentos.text = "Deseja ir a cena do crime?";
         }
         PrecisaFecharTransition = false;
+        SelecionarOutraPista.SetActive(false);
+        JuntarPistas.SetActive(false);
+        Pensamentos.SetActive(false);
     }
     public void EscreverEvidencias()
     {
