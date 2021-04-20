@@ -90,7 +90,9 @@ public class Interactable : MonoBehaviour
             ContornoE3.color = new Color(0,0,0,i);
             yield return new WaitForSeconds(0.03f);
         }
-        StartCoroutine(LigaE());
+        if(!Relatorio.entrouPreencher){
+            StartCoroutine(LigaE());
+        }
     }
     IEnumerator LigaE ()
     {

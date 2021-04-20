@@ -37,6 +37,7 @@ public class MainMenu : MonoBehaviour
     public GameObject acentos2;
     public Image Painel;
     private float contador;
+    public static bool PrimeiroCaso = false;
     void Start()
     {
         contador = 0;
@@ -77,6 +78,8 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame(){
         NewGame = true;
+        PlayerData.LevelsJogadosPeloPlayer = 0;
+        PrimeiroCaso = true;
         PlayerData.DificuldadeAtual = 3;        
         CarregaMusicas();
         if(Random.value >= 0.5){
@@ -89,6 +92,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame(){
         NewGame = false;
+        PrimeiroCaso = false;
         PlayerData data = SaveSystem.LoadPlayer();        
         CarregaMusicas();
         SceneManager.LoadScene(data.level);

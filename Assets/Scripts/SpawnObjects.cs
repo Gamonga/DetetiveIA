@@ -107,6 +107,10 @@ public class SpawnObjects : MonoBehaviour
     public static string TerceiraResposta;
     public static string QuartaResposta;
     public static string QuintaResposta;
+    public static string PrimeiraRespostaIngles;
+    public static string SegundaRespostaIngles;
+    public static string TerceiraRespostaIngles;
+    public static string QuartaRespostaIngles;
     public static string VistoVerdade;
     public static string OuviuVerdade;
     public static bool weaponInstantDeath;
@@ -130,6 +134,7 @@ public class SpawnObjects : MonoBehaviour
     private int NumeroArmas;
     public static int contador;
     public static bool PanoSangue;
+    public static int intProximoCaso;
     // Start is called before the first frame update
     void Start()
     {
@@ -162,32 +167,469 @@ public class SpawnObjects : MonoBehaviour
         }
         else
         {
-            contador = 3;
-            if (SceneManager.GetActiveScene().buildIndex == 3)
+            if (!MainMenu.PrimeiroCaso)
             {
-                InstantiatePortaSaida();
-            }
-            for (i = 0; i < 4; i++)
-            {
-                switch (i)
+                intProximoCaso = IA.geraProximoCaso();
+                if (intProximoCaso == -1)
                 {
-                    case 0:
-                        SelecionaArma();
-                        break;
-                    case 1:
-                        SelecionaLocal();
-                        break;
-                    case 2:
-                        SelecionaEntradaSaida();
-                        break;
-                    case 3:
-                        SelecionaMotivo();
-                        break;
+                    contador = 3;
+                    if (SceneManager.GetActiveScene().buildIndex == 3)
+                    {
+                        InstantiatePortaSaida();
+                    }
+                    for (i = 0; i < 4; i++)
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                SelecionaArma();
+                                break;
+                            case 1:
+                                SelecionaLocal();
+                                break;
+                            case 2:
+                                SelecionaEntradaSaida();
+                                break;
+                            case 3:
+                                SelecionaMotivo();
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    for(i = 0; i < 5; i++){
+                        if (IA.gabaritoMotivo[intProximoCaso % 3, i] == 1)
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    QuintaResposta = "Roubo";
+                                    break;
+                                case 1:
+                                    QuintaResposta = "Prazer";
+
+                                    break;
+                                case 2:
+                                    QuintaResposta = "Desavenca";
+
+                                    break;
+                                case 3:
+                                    QuintaResposta = "Justica";
+
+                                    break;
+                                case 4:
+                                    QuintaResposta = "Raiva";
+                                    break;
+
+                            }
+                        }
+                    }
+                    for (i = 0; i < 81; i++)
+                    {
+                        if (IA.gabaritoArma[intProximoCaso % 3, i] == 1)
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    TerceiraResposta = BastaoDeBeisebolEvidence.nome;
+                                    TerceiraRespostaIngles = BastaoDeBeisebolEvidence.nomeIngles;
+                                    break;
+                                case 1:
+                                    TerceiraResposta = BastaoDeBeisebolSangueEvidence.nome;
+                                    TerceiraRespostaIngles = BastaoDeBeisebolSangueEvidence.nomeIngles;
+                                    break;
+                                case 2:
+                                    TerceiraResposta = CaixaDeRemedioEvidence.nome;
+                                    TerceiraRespostaIngles = CaixaDeRemedioEvidence.nomeIngles;
+                                    break;
+                                case 3:
+                                    TerceiraResposta = FacaCozinhaEvidence.nome;
+                                    TerceiraRespostaIngles = FacaCozinhaEvidence.nomeIngles;
+                                    break;
+                                case 4:
+                                    TerceiraResposta = FacaNormalSemSangueEvidence.nome;
+                                    TerceiraRespostaIngles = FacaNormalSemSangueEvidence.nomeIngles;
+                                    break;
+                                case 5:
+                                    TerceiraResposta = FacaNormalEvidence.nome;
+                                    TerceiraRespostaIngles = FacaNormalEvidence.nomeIngles;
+                                    break;
+                                case 6:
+                                    TerceiraResposta = PunhosEvidence.nome;
+                                    TerceiraRespostaIngles = PunhosEvidence.nomeIngles;
+                                    break;
+                                case 7:
+                                    TerceiraResposta = RevolverEvidence.nome;
+                                    TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
+                                    break;
+                                case 8:
+                                    break;
+                                case 9:
+                                    TerceiraResposta = CanoPerfuraçãoEvidence.nome;
+                                    TerceiraRespostaIngles = CanoPerfuraçãoEvidence.nomeIngles;
+                                    break;
+                                case 10:
+                                    TerceiraResposta = SufocamentoEvidence.nome;
+                                    TerceiraRespostaIngles = SufocamentoEvidence.nomeIngles;
+                                    break;
+                                case 11:
+                                    TerceiraResposta = CanoPerfuraçãoSangueEvidence.nome;
+                                    TerceiraRespostaIngles = CanoPerfuraçãoSangueEvidence.nomeIngles;
+                                    break;
+                                case 12:
+                                    TerceiraResposta = CanoContundenteEvidence.nome;
+                                    TerceiraRespostaIngles = CanoContundenteEvidence.nomeIngles;
+                                    break;
+                                case 13:
+                                    TerceiraResposta = CanoContundenteSangueEvidence.nome;
+                                    TerceiraRespostaIngles = CanoContundenteSangueEvidence.nomeIngles;
+                                    break;
+                            }
+                        }
+                        if (IA.gabaritoLocal[intProximoCaso % 3, i] == 1)
+                        {
+                            switch (i)
+                            {
+                                case 43:
+                                    SegundaResposta = CorpoMorto1Evidence.nome;
+                                    SegundaRespostaIngles = CorpoMorto1Evidence.nomeIngles;
+                                    break;
+                                case 44:
+                                    SegundaResposta = CorpoMorto2Evidence.nome;
+                                    SegundaRespostaIngles = CorpoMorto2Evidence.nomeIngles;
+                                    break;
+                                case 45:
+                                    SegundaResposta = CorpoMorto3Evidence.nome;
+                                    SegundaRespostaIngles = CorpoMorto3Evidence.nomeIngles;
+                                    break;
+                                case 46:
+                                    SegundaResposta = CorpoMorto4Evidence.nome;
+                                    SegundaRespostaIngles = CorpoMorto4Evidence.nomeIngles;
+                                    break;
+                                case 58:
+                                    SegundaResposta = ManchaSangueEvidence.nome;
+                                    SegundaRespostaIngles = ManchaSangueEvidence.nomeIngles;
+                                    break;
+                            }
+                        }
+                        if (IA.gabaritoEntrada[intProximoCaso % 3, i] == 1)
+                        {
+                            switch (i)
+                            {
+                                case 29:
+                                    PrimeiraResposta = ConviteEvidence.nome;
+                                    PrimeiraRespostaIngles = ConviteEvidence.nomeIngles;
+                                    break;
+                                case 34:
+                                    PrimeiraResposta = PolicialEvidence.nome;
+                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 35:
+                                    PrimeiraResposta = PolicialEvidence.nome;
+                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 36:
+                                    PrimeiraResposta = PolicialEvidence.nome;
+                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 37:
+                                    PrimeiraResposta = PolicialEvidence.nome;
+                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 39:
+                                    PrimeiraResposta = PortaDeSaidaEvidence.nome;
+                                    PrimeiraRespostaIngles = PortaDeSaidaEvidence.nomeIngles;
+                                    break;
+                                case 40:
+                                    PrimeiraResposta = CelularEvidence.nome;
+                                    PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
+                                    break;
+                                case 41:
+                                    PrimeiraResposta = CelularEvidence.nome;
+                                    PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
+                                    break;
+                                case 42:
+                                    PrimeiraResposta = CelularEvidence.nome;
+                                    PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
+                                    break;
+                                case 79:
+                                    PrimeiraResposta = JanelaQuebradaPedraInteriorEvidence.nome;
+                                    PrimeiraRespostaIngles = JanelaQuebradaPedraInteriorEvidence.nomeIngles;
+                                    break;
+                                case 80:
+                                    PrimeiraResposta = JanelaQuebradaPedraExteriorEvidence.nome;
+                                    PrimeiraRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
+                                    break;                                
+                            }
+                        }
+                        if (IA.gabaritoSaida[intProximoCaso % 3, i] == 1)
+                        {
+                            switch (i)
+                            {
+                                case 29:
+                                    QuartaResposta = ConviteEvidence.nome;
+                                    QuartaRespostaIngles = ConviteEvidence.nomeIngles;
+                                    break;
+                                case 34:
+                                    QuartaResposta = PolicialEvidence.nome;
+                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 35:
+                                    QuartaResposta = PolicialEvidence.nome;
+                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 36:
+                                    QuartaResposta = PolicialEvidence.nome;
+                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 37:
+                                    QuartaResposta = PolicialEvidence.nome;
+                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                    break;
+                                case 39:
+                                    QuartaResposta = PortaDeSaidaEvidence.nome;
+                                    QuartaRespostaIngles = PortaDeSaidaEvidence.nomeIngles;
+                                    break;
+                                case 40:
+                                    QuartaResposta = CelularEvidence.nome;
+                                    QuartaRespostaIngles = CelularEvidence.nomeIngles;
+                                    break;
+                                case 41:
+                                    QuartaResposta = CelularEvidence.nome;
+                                    QuartaRespostaIngles = CelularEvidence.nomeIngles;
+                                    break;
+                                case 42:
+                                    QuartaResposta = CelularEvidence.nome;
+                                    QuartaRespostaIngles = CelularEvidence.nomeIngles;
+                                    break;
+                                case 79:
+                                    QuartaResposta = JanelaQuebradaPedraInteriorEvidence.nome;
+                                    QuartaRespostaIngles = JanelaQuebradaPedraInteriorEvidence.nomeIngles;
+                                    break;
+                                case 80:
+                                    QuartaResposta = JanelaQuebradaPedraExteriorEvidence.nome;
+                                    QuartaRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
+                                    break;                                
+                            }
+                        }
+                        if (IA.evidencias[intProximoCaso, i] == 1)
+                        {
+                            GeraCasoIA(i);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                contador = 3;
+                if (SceneManager.GetActiveScene().buildIndex == 3)
+                {
+                    InstantiatePortaSaida();
+                }
+                for (i = 0; i < 4; i++)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            SelecionaArma();
+                            break;
+                        case 1:
+                            SelecionaLocal();
+                            break;
+                        case 2:
+                            SelecionaEntradaSaida();
+                            break;
+                        case 3:
+                            SelecionaMotivo();
+                            break;
+                    }
                 }
             }
         }
     }
-    public void ColocaSangueFalso(){
+    public void GeraCasoIA(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                InstantiateBastao();
+                break;
+            case 1:
+                InstantiateBastaoSangue();
+                break;
+            case 2:
+                InstantiateCaixaRemedio();
+                break;
+            case 3:
+                InstantiateFacaCozinha();
+                break;
+            case 4:
+                InstantiateFacaNormalSemSangue();
+                break;
+            case 5:
+                InstantiateFacaNormal();
+                break;
+            case 6:
+                InstantiatePunhos();
+                break;
+            case 7:
+                InstantiateRevolver();
+                break;
+            case 8:
+                break;
+            case 9:
+                InstantiateCanoperfuracao();
+                break;
+            case 10:
+                InstantiateSufocamento();
+                break;
+            case 11:
+                InstantiateCanoPerfuracaoSangue();
+                break;
+            case 12:
+                InstantiateCanocontundente();
+                break;
+            case 13:
+                InstantiateCanoContundenteSangue();
+                break;
+            case 28:
+                InstantiatePratos();
+                break;
+            case 29:
+                InstantiateConvite();
+                break;
+            case 34:
+                policialSalvar = PolicialEvidence.description;
+                policialUpdateSalvar = PolicialEvidence.descriptionUpdate;
+                InstantiatePolicial();
+                break;
+            case 35:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    PolicialEvidence.description = "No signs of movement and when I got here the door was unlocked.";
+                    PolicialEvidence.descriptionUpdate = "No signs of movement and when I got here the door was unlocked.";
+                }
+                else
+                {
+                    PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estáva destrancada.";
+                    PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estáva destrancada.";
+                }
+                policialSalvar = PolicialEvidence.description;
+                policialUpdateSalvar = PolicialEvidence.descriptionUpdate;
+                InstantiatePolicial();
+                break;
+            case 36:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    PolicialEvidence.description = "No signs of movement and when I got here the door was broken.";
+                    PolicialEvidence.descriptionUpdate = "No signs of movement and when I got here the door was broken. From the inside.";
+                }
+                else
+                {
+                    PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada.";
+                    PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada. De fora para dentro.";
+                }
+                policialSalvar = PolicialEvidence.description;
+                policialUpdateSalvar = PolicialEvidence.descriptionUpdate;
+                InstantiatePolicial();
+                break;
+            case 37:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    PolicialEvidence.description = "No signs of movement and when I got here the door was broken.";
+                    PolicialEvidence.descriptionUpdate = "No signs of movement and when I got here the door was broken. From the outside.";
+                }
+                else
+                {
+                    PolicialEvidence.description = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada.";
+                    PolicialEvidence.descriptionUpdate = "Nenhum sinal de movimento e quando cheguei a porta estáva quebrada. De dentro para fora.";
+                }
+                policialSalvar = PolicialEvidence.description;
+                policialUpdateSalvar = PolicialEvidence.descriptionUpdate;
+                InstantiatePolicial();
+                break;
+            case 39:
+                InstantiatePortaSaida();
+                break;
+            case 40:
+                ajudaEntrada = true;
+                PortaQuebrada = false;
+                InstantiateCelular();
+                break;
+            case 41:
+                ajudaEntrada = true;
+                PortaQuebrada = true;
+                InstantiateCelular();
+                break;
+            case 42:
+                ajudaSaida = true;
+                InstantiateCelular();
+                break;
+            case 43:
+                InstantiateCorpoMorto1();
+                break;
+            case 44:
+                InstantiateCorpoMorto2();
+                break;
+            case 45:
+                InstantiateCorpoMorto3();
+                break;
+            case 46:
+                InstantiateCorpoMorto4();
+                break;
+            case 51:
+                break;
+            case 52:
+                break;
+            case 58:
+                InstantiateManchaSangue();
+                break;
+            case 59:
+                InstantiateCofreVazio();
+                break;
+            case 60:
+                InstantiateCofreFechado();
+                break;
+            case 61:
+                InstantiateCofreDinheiro();
+                break;
+            case 62:
+                InstantiateCofreDinheiroHonesto();
+                break;
+            case 63:
+                InstantiateBilheteCulposo();
+                break;
+            case 68:
+                InstantiatePanoSangue();
+                break;
+            case 70:
+                if (IA.evidencias[intProximoCaso, 68] == 0)
+                {
+                    InstantiatePano();
+                }
+                break;
+            case 74:
+                break;
+            case 76:
+                break;
+            case 77:
+                InstantiateLaudo();
+                break;
+            case 78:
+                InstantiateDestrocos();
+                break;
+            case 79:
+                InstantiateJanelaQuebradaPedraInterior();
+                break;
+            case 80:
+                InstantiateJanelaQuebradaPedraExterior();
+                break;
+
+        }
+    }
+    public void ColocaSangueFalso()
+    {
         Armas = new Evidence[15];
         Armas[0] = FacaNormalEvidence;
         Armas[1] = FacaNormalSemSangueEvidence;
@@ -212,6 +654,10 @@ public class SpawnObjects : MonoBehaviour
         TerceiraResposta = data.TerceiraResposta;
         QuartaResposta = data.QuartaResposta;
         QuintaResposta = data.QuintaResposta;
+        PrimeiraRespostaIngles = data.PrimeiraRespostaIngles;
+        SegundaRespostaIngles = data.SegundaRespostaIngles;
+        TerceiraRespostaIngles = data.TerceiraRespostaIngles;
+        QuartaRespostaIngles = data.QuartaRespostaIngles;
         Debug.Log(PrimeiraResposta + "aaa" + SegundaResposta + "aaa" + TerceiraResposta + "aaa" + QuartaResposta + "aaa" + QuintaResposta);
     }
     public void SelecionaMotivo()
@@ -437,10 +883,12 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     PrimeiraResposta = "Vidro Quebrado";
+                    PrimeiraRespostaIngles = "Broken glass";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     PrimeiraResposta = "Porta de saida";
+                    PrimeiraRespostaIngles = "Building exit";
                 }
                 PrecisaDeAuxilioEntradaSaida = true;
                 ajudaSaida = true;
@@ -452,12 +900,16 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     PrimeiraResposta = "Vidro Quebrado";
+                    PrimeiraRespostaIngles = "Broken glass";
+                    QuartaRespostaIngles = "Broken glass";
                     QuartaResposta = "Vidro Quebrado";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     PrimeiraResposta = "Porta de saida";
+                    PrimeiraRespostaIngles = "Building exit";
                     QuartaResposta = "Porta de saida";
+                    QuartaRespostaIngles = "Building exit";
                 }
             }
             /*3*/
@@ -465,7 +917,9 @@ public class SpawnObjects : MonoBehaviour
             {
                 VistoVerdade = "false";
                 PrimeiraResposta = "Convite";
+                PrimeiraRespostaIngles = "Invitation";
                 QuartaResposta = "Informações do policial";
+                QuartaRespostaIngles = "Policeman's notes";
             }
             /*4*/
             if (!PedraInteriorJanela && PortaArrombadaDentro && !depoimentoTestemunhaVisto)
@@ -474,12 +928,16 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     PrimeiraResposta = "Informações do policial";
+                    PrimeiraRespostaIngles = "Policeman's notes";
                     QuartaResposta = "Vidro Quebrado";
+                    QuartaRespostaIngles = "Broken glass";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     PrimeiraResposta = "Informações do policial";
+                    PrimeiraRespostaIngles = "Policeman's notes";
                     QuartaResposta = "Porta de saida";
+                    QuartaRespostaIngles = "Building exit";
                 }
             }
             /*5*/
@@ -489,12 +947,16 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     PrimeiraResposta = "Vidro Quebrado";
+                    PrimeiraRespostaIngles = "Broken glass";
                     QuartaResposta = "Informações do policial";
+                    QuartaRespostaIngles = "Policeman's notes";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     PrimeiraResposta = "Porta de saida";
+                    PrimeiraRespostaIngles = "Building exit";
                     QuartaResposta = "Informações do policial";
+                    QuartaRespostaIngles = "Policeman's notes";
                 }
             }
             /*6*/
@@ -504,10 +966,12 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     QuartaResposta = "Vidro Quebrado";
+                    QuartaRespostaIngles = "Broken glass";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     QuartaResposta = "Porta de saida";
+                    QuartaRespostaIngles = "Building exit";
                 }
                 PrecisaDeAuxilioEntradaSaida = true;
                 ajudaEntrada = true;
@@ -519,10 +983,12 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     PrimeiraResposta = "Informações do policial";
+                    PrimeiraRespostaIngles = "Policeman's notes";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     PrimeiraResposta = "Informações do policial";
+                    PrimeiraRespostaIngles = "Policeman's notes";
                 }
                 PrecisaDeAuxilioEntradaSaida = true;
                 ajudaSaida = true;
@@ -534,12 +1000,16 @@ public class SpawnObjects : MonoBehaviour
                 if (SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     QuartaResposta = "Vidro Quebrado";
+                    QuartaRespostaIngles = "Broken glass";
                     PrimeiraResposta = "Convite";
+                    PrimeiraRespostaIngles = "Invitation";
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
                     PrimeiraResposta = "Convite";
+                    PrimeiraRespostaIngles = "Invitation";
                     QuartaResposta = "Porta de saida";
+                    QuartaRespostaIngles = "Building exit";
                 }
             }
         }
@@ -578,6 +1048,7 @@ public class SpawnObjects : MonoBehaviour
         TemPlanejamento = CorposDisponiveis[selecionadorint].TemPlanejamento;
         numeroSelecionadoParaResposta = selecionadorint;
         SegundaResposta = CorposDisponiveis[selecionadorint].nome;
+        SegundaRespostaIngles = CorposDisponiveis[selecionadorint].nomeIngles;
     }
     public void SelecionaLaudo(string Nome)
     {
@@ -679,6 +1150,7 @@ public class SpawnObjects : MonoBehaviour
                 carregaObjetos(Armas[selecionadorint].NomeObjeto);
                 numeroSelecionadoParaResposta = selecionadorint;
                 TerceiraResposta = Armas[selecionadorint].nome;
+                TerceiraRespostaIngles = Armas[selecionadorint].nomeIngles;
                 if (Armas[selecionadorint].weaponRuido == 1)
                 {
                     OuviuVerdade = "duvida";
@@ -1514,6 +1986,7 @@ public class SpawnObjects : MonoBehaviour
                         CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Mensagem salva no celular 'Combinado! estárei te aguardando aqui em casa, até mais tarde.', mensagem enviada para um numero anônimo.";
                     }
                     PrimeiraResposta = "Convite";
+                    PrimeiraRespostaIngles = "Invitation";
                 }
                 else
                 {
@@ -1528,6 +2001,7 @@ public class SpawnObjects : MonoBehaviour
                         CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Anotação encontrada no celular 'Comprar materiais para consertar a dobradiça da porta'";
                     }
                     PrimeiraResposta = "Informações do policial";
+                    PrimeiraRespostaIngles = "Policeman's notes";
                 }
             }
             if (ajudaSaida)
@@ -1543,6 +2017,7 @@ public class SpawnObjects : MonoBehaviour
                     CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Agenda do celular não mostra nada marcado na data de hoje.";
                 }
                 QuartaResposta = "Informações do policial";
+                QuartaRespostaIngles = "Policeman's notes";
             }
         }
         GameObject CelularClone = Instantiate(Celular) as GameObject;
@@ -1945,7 +2420,7 @@ public class SpawnObjects : MonoBehaviour
                 RevolverClone.transform.position = new Vector3(0, -8, -5);
                 break;
             case 2:
-                RevolverClone.transform.position = new Vector3(0, -8, -5);
+                RevolverClone.transform.position = new Vector3(-6.95f, -21.66f, -5);
                 break;
             case 3:
                 RevolverClone.transform.position = new Vector3(0.9f, -2.34f, -5);

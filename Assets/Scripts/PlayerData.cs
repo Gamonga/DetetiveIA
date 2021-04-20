@@ -5,18 +5,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class PlayerData 
+public class PlayerData
 {
-    public int level;    
+    public int level;
     public bool horas;
     public string[] NomeDosObjetos = new string[30];
     public bool[] update = new bool[30];
-    public int NumeroDeObjetos;    
-    public bool[] isOpen= new bool[25];
+    public int NumeroDeObjetos;
+    public bool[] isOpen = new bool[25];
     public float volumeMusica;
     public float volumeSoundEffects;
-    public float[] position= new float[3];    
-    public string[] nomeObjetoEvidencias= new string[30];
+    public float[] position = new float[3];
+    public string[] nomeObjetoEvidencias = new string[30];
     public int NumeroDeEvidencias = 0;
     public int AndarAtual = 0;
     public int PortaDaCena = 0;
@@ -43,20 +43,28 @@ public class PlayerData
     public string TerceiraResposta;
     public string QuartaResposta;
     public string QuintaResposta;
+    public string PrimeiraRespostaIngles;
+    public string SegundaRespostaIngles;
+    public string TerceiraRespostaIngles;
+    public string QuartaRespostaIngles;
     public static string Idioma;
     public bool PrecisaDeAuxilioEntradaSaida;
     public bool ajudaEntrada;
     public bool ajudaSaida;
     public bool PanoSangue;
-    public PlayerData(movimento movimento){
+    public static int PontuacaoDoPlayer;
+    public static int LevelsJogadosPeloPlayer;
+    public PlayerData(movimento movimento)
+    {
         level = SceneManager.GetActiveScene().buildIndex;
         selecionaArmaComSangueFalso = SpawnObjects.selecionaArmaComSangueFalso;
         actualCrimeScene = ScenesManager.ActualScene;
         horas = horario.Horario;
         Idioma = MainMenu.idioma;
-        if(SceneManager.GetActiveScene().buildIndex != 0){
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
             salvaMovimento(movimento);
-        }   
+        }
         NumeroDeEvidencias = Caderno.posiçãoEvidencias;
         NumeroDeObjetos = SpawnObjects.NumeroDeObjetos;
         PrecisaDeAuxilioEntradaSaida = SpawnObjects.PrecisaDeAuxilioEntradaSaida;
@@ -66,43 +74,54 @@ public class PlayerData
         relacaoPergunta = Testemunha.relacaoPergunta;
         ouviuPergunta = Testemunha.ouviuPergunta;
         vistoPergunta = Testemunha.vistoPergunta;
-        contadorAnalise= SpawnObjects.contador;
+        contadorAnalise = SpawnObjects.contador;
         contadorPensamento = Caderno.contadorPensamentos;
         policialUpdate = SpawnObjects.policialUpdateSalvar;
         policial = SpawnObjects.policialSalvar;
         SalvaRespostas();
         salvapessoas();
-        for(i=0;i<NumeroDeEvidencias;i++){
+        for (i = 0; i < NumeroDeEvidencias; i++)
+        {
             SalvaCaderno(i);
         }
-        for(i=0;i<NumeroDeObjetos;i++){
+        for (i = 0; i < NumeroDeObjetos; i++)
+        {
             SalvaObjetos(i);
-        }        
+        }
         PortaDaCena = carregaPortaDaCena();
         NumeroDeportas = carregaNumeroDePortas();
-        for(i=0;i<NumeroDeportas;i++){
-            isOpen[PortaDaCena+i] = GameObject.Find("Porta"+(i+PortaDaCena)).GetComponent<PortaController>().isOpen;
+        for (i = 0; i < NumeroDeportas; i++)
+        {
+            isOpen[PortaDaCena + i] = GameObject.Find("Porta" + (i + PortaDaCena)).GetComponent<PortaController>().isOpen;
         }
         AndarAtual = TrocaDeAndares.AndarAtual;
     }
 
-    public void salvaMovimento(movimento movimento){
+    public void salvaMovimento(movimento movimento)
+    {
         position[0] = movimento.transform.position.x;
         position[1] = movimento.transform.position.y;
-        position[2] = movimento.transform.position.z;      
+        position[2] = movimento.transform.position.z;
     }
-    public void SalvaRespostas(){
+    public void SalvaRespostas()
+    {
         PrimeiraResposta = SpawnObjects.PrimeiraResposta;
         SegundaResposta = SpawnObjects.SegundaResposta;
         TerceiraResposta = SpawnObjects.TerceiraResposta;
         QuartaResposta = SpawnObjects.QuartaResposta;
         QuintaResposta = SpawnObjects.QuintaResposta;
+        PrimeiraRespostaIngles = SpawnObjects.PrimeiraRespostaIngles;
+        SegundaRespostaIngles = SpawnObjects.SegundaRespostaIngles;
+        TerceiraRespostaIngles = SpawnObjects.TerceiraRespostaIngles;
+        QuartaRespostaIngles = SpawnObjects.QuartaRespostaIngles;
     }
-    public PlayerData(){
+    public PlayerData()
+    {
         volumeMusica = MainMenu.volumeMusica;
         volumeSoundEffects = MainMenu.volumeSoundEffects;
     }
-    public void salvapessoas(){
+    public void salvapessoas()
+    {
         Sanefuji = Caderno.Sanefuji;
         Jessie = Caderno.Jessie;
         kyle = Caderno.kyle;
@@ -110,44 +129,52 @@ public class PlayerData
         Jhony = Caderno.Jhony;
         Devi = Caderno.Devi;
     }
-    public int carregaNumeroDePortas(){
-        switch(SceneManager.GetActiveScene().buildIndex){
+    public int carregaNumeroDePortas()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
             case 0:
-                return 0; 
+                return 0;
             case 1:
-                if(TrocaDeAndares.AndarAtual == 2){
+                if (TrocaDeAndares.AndarAtual == 2)
+                {
                     return 4;
                 }
-                return 5;    
+                return 5;
             case 2:
-                return 3;    
+                return 3;
             case 3:
-                return 6;  
+                return 6;
         }
         return 0;
     }
-    public int carregaPortaDaCena(){
-        switch(SceneManager.GetActiveScene().buildIndex){
+    public int carregaPortaDaCena()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
             case 0:
-                return 0; 
+                return 0;
             case 1:
-                if(TrocaDeAndares.AndarAtual == 2){
+                if (TrocaDeAndares.AndarAtual == 2)
+                {
                     return 6;
-                }  
-                return 1;  
+                }
+                return 1;
             case 2:
-                return 10;  
+                return 10;
             case 3:
-                return 15;   
+                return 15;
         }
         return 0;
     }
 
-    public void SalvaCaderno(int i){            
+    public void SalvaCaderno(int i)
+    {
         nomeObjetoEvidencias[i] = Caderno.evidencias[i].NomeObjeto;
         update[i] = Caderno.update[i];
     }
-    public void SalvaObjetos(int i){     
+    public void SalvaObjetos(int i)
+    {
         NomeDosObjetos[i] = SpawnObjects.NomeDosObjetos[i];
     }
 

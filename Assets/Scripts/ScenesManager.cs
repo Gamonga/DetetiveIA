@@ -69,6 +69,7 @@ public class ScenesManager : MonoBehaviour
     }
     public void Delegacia(){
         MainMenu.NewGame = false;
+        MainMenu.PrimeiroCaso = false;
         SavePlayer();
         SceneManager.LoadScene(1);
     }
