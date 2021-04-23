@@ -135,6 +135,9 @@ public class SpawnObjects : MonoBehaviour
     public static int contador;
     public static bool PanoSangue;
     public static int intProximoCaso;
+    public static int numeroAssassino;
+    public static int numeroAssassinoSegundo;
+    public static int numeroAssassinoTerceiro;
     // Start is called before the first frame update
     void Start()
     {
@@ -146,6 +149,9 @@ public class SpawnObjects : MonoBehaviour
         if (MainMenu.NewGame == false)
         {
             PlayerData data = SaveSystem.LoadPlayer();
+            numeroAssassino = data.numeroAssassino;
+            numeroAssassinoSegundo = data.numeroAssassinoSegundo;
+            numeroAssassinoTerceiro = data.numeroAssassinoTerceiro;
             selecionaArmaComSangueFalso = data.selecionaArmaComSangueFalso;
             ColocaSangueFalso();
             contador = data.contadorAnalise;
@@ -155,6 +161,7 @@ public class SpawnObjects : MonoBehaviour
             PrecisaDeAuxilioEntradaSaida = data.PrecisaDeAuxilioEntradaSaida;
             ajudaEntrada = data.ajudaEntrada;
             ajudaSaida = data.ajudaSaida;
+            PortaQuebrada = data.PortaQuebrada;
             LoadRespostas(data);
             for (i = 0; i < data.NumeroDeObjetos; i++)
             {
@@ -169,10 +176,10 @@ public class SpawnObjects : MonoBehaviour
         {
             if (!MainMenu.PrimeiroCaso)
             {
+                contador = 3;
                 intProximoCaso = IA.geraProximoCaso();
                 if (intProximoCaso == -1)
                 {
-                    contador = 3;
                     if (SceneManager.GetActiveScene().buildIndex == 3)
                     {
                         InstantiatePortaSaida();
@@ -198,7 +205,8 @@ public class SpawnObjects : MonoBehaviour
                 }
                 else
                 {
-                    for(i = 0; i < 5; i++){
+                    for (i = 0; i < 5; i++)
+                    {
                         if (IA.gabaritoMotivo[intProximoCaso % 3, i] == 1)
                         {
                             switch (i)
@@ -360,7 +368,7 @@ public class SpawnObjects : MonoBehaviour
                                 case 80:
                                     PrimeiraResposta = JanelaQuebradaPedraExteriorEvidence.nome;
                                     PrimeiraRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
-                                    break;                                
+                                    break;
                             }
                         }
                         if (IA.gabaritoSaida[intProximoCaso % 3, i] == 1)
@@ -410,7 +418,7 @@ public class SpawnObjects : MonoBehaviour
                                 case 80:
                                     QuartaResposta = JanelaQuebradaPedraExteriorEvidence.nome;
                                     QuartaRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
-                                    break;                                
+                                    break;
                             }
                         }
                         if (IA.evidencias[intProximoCaso, i] == 1)
@@ -422,6 +430,9 @@ public class SpawnObjects : MonoBehaviour
             }
             else
             {
+                numeroAssassino = Assassino.numeroAssassino;
+                numeroAssassinoSegundo = Assassino.numeroAssassinoSegundo;
+                numeroAssassinoTerceiro = Assassino.numeroAssassinoTerceiro;
                 contador = 3;
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
@@ -555,15 +566,48 @@ public class SpawnObjects : MonoBehaviour
             case 40:
                 ajudaEntrada = true;
                 PortaQuebrada = false;
+                PrecisaDeAuxilioEntradaSaida = true;
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CelularEvidence.description = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Message saved on the phone 'Agreed! I'll be waiting for you here, see you later.', unidentified number.";
+                }
+                else
+                {
+                    CelularEvidence.description = "Celular pertencente à vítima.";
+                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Mensagem salva no celular 'Combinado! estárei te aguardando aqui em casa, até mais tarde.', mensagem enviada para um numero anônimo.";
+                }
                 InstantiateCelular();
                 break;
             case 41:
                 ajudaEntrada = true;
+                PrecisaDeAuxilioEntradaSaida = true;
                 PortaQuebrada = true;
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CelularEvidence.description = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Note found on the phone 'To buy materials to fix the hinge'";
+                }
+                else
+                {
+                    CelularEvidence.description = "Celular pertencente à vítima.";
+                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Anotação encontrada no celular 'Comprar materiais para consertar a dobradiça da porta'";
+                }
                 InstantiateCelular();
                 break;
             case 42:
                 ajudaSaida = true;
+                PrecisaDeAuxilioEntradaSaida = true;
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CelularEvidence.description = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Phone's schedule doesn't show anything set for today.";
+                }
+                else
+                {
+                    CelularEvidence.description = "Celular pertencente à vítima.";
+                    CelularEvidence.descriptionUpdate = "Celular pertencente à vítima. Agenda do celular não mostra nada marcado na data de hoje.";
+                }
                 InstantiateCelular();
                 break;
             case 43:

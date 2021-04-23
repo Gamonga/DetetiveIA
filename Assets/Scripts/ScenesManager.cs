@@ -9,6 +9,10 @@ public class ScenesManager : MonoBehaviour
     public Text texto;
     public GameObject botaoSim;
     public GameObject botaoNao;
+    public static Animator animator;
+    public Dialogue dialogoParceiroDetetiveIndoParaDelegacia;
+    public Dialogue dialogoDelegadoExplicando;
+    public DialogueControl dialogueControl;
     public bool isInRange;
     public Animator Transition;
     public movimento movimento;
@@ -16,38 +20,80 @@ public class ScenesManager : MonoBehaviour
     public static int CrimeScene = 2;
     public static Text E;
     private float i;
+    public static bool DialogoTransicao;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GameObject.Find("CarroTransicaoGIF").GetComponent<Animator>();
+        DialogoTransicao = true;
+        animator.SetBool("CarroGif", true);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            dialogueControl.StartDialogue(dialogoParceiroDetetiveIndoParaDelegacia);
+        }
+        if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            dialogueControl.StartDialogue(dialogoDelegadoExplicando);
+        }
         botaoSim.SetActive(false);
         botaoNao.SetActive(false);
         E = GameObject.Find("E").GetComponent<Text>();
         ActualScene = SceneManager.GetActiveScene().buildIndex;
-        if((SceneManager.GetActiveScene().buildIndex==1)){
-            PlayerData data = SaveSystem.LoadPlayer(); 
+        if ((SceneManager.GetActiveScene().buildIndex == 1))
+        {
+            PlayerData data = SaveSystem.LoadPlayer();
             ActualScene = data.actualCrimeScene;
         }
-         CrimeScene = ActualScene;
+        CrimeScene = ActualScene;
+    }
+    public static void fechar()
+    {
+        animator.SetBool("CarroGif", false);
+        movimento.ParaPersonagem = false;
+        DialogoTransicao = false;
     }
 
     // Update is called once per frame
     void Update()
-    {        
-        if(isInRange){            
-            if (Input.GetKeyDown(KeyCode.E)){ 
-                if(SceneManager.GetActiveScene().buildIndex == 1){
-                    if(PlayerData.Idioma == "ingles"){
+    {
+        if (DialogoTransicao)
+        {
+            movimento.ParaPersonagem = true;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                    dialogueControl.DisplayNextSentence(dialogoParceiroDetetiveIndoParaDelegacia);
+                }
+                if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0)
+                {
+                    dialogueControl.DisplayNextSentence(dialogoDelegadoExplicando);
+                }
+            }
+        }
+        if (isInRange)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (SceneManager.GetActiveScene().buildIndex == 1)
+                {
+                    if (PlayerData.Idioma == "ingles")
+                    {
                         texto.text = "Do you want to go to the crime scene?";
-                    }  
-                    else{
+                    }
+                    else
+                    {
                         texto.text = "Deseja ir a cena do crime?";
                     }
-                }   
-                else{
-                    if(PlayerData.Idioma == "ingles"){
+                }
+                else
+                {
+                    if (PlayerData.Idioma == "ingles")
+                    {
                         texto.text = "Do you want to go to the police station?";
-                    }  
-                    else{
+                    }
+                    else
+                    {
                         texto.text = "Deseja ir a delegacia";
                     }
                 }
@@ -55,34 +101,42 @@ public class ScenesManager : MonoBehaviour
                 botaoSim.SetActive(true);
                 botaoNao.SetActive(true);
             }
-            if (Input.GetKeyDown(KeyCode.Tab)){ 
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
                 botaoSim.SetActive(false);
                 botaoNao.SetActive(false);
             }
         }
-        else{
+        else
+        {
         }
     }
-    public void SavePlayer(){
+    public void SavePlayer()
+    {
         SaveSystem.SavePlayer(movimento);
         SaveSystem.SaveMusic();
     }
-    public void Delegacia(){
+    public void Delegacia()
+    {
         MainMenu.NewGame = false;
         MainMenu.PrimeiroCaso = false;
         SavePlayer();
         SceneManager.LoadScene(1);
     }
 
-    public void Voltar(){
-        if(Relatorio.perguntando == false){
+    public void Voltar()
+    {
+        if (Relatorio.perguntando == false)
+        {
             SavePlayer();
             SceneManager.LoadScene(CrimeScene);
         }
     }
 
-    public void No(){
-        if(isInRange){
+    public void No()
+    {
+        if (isInRange)
+        {
             isInRange = false;
             Transition.SetBool("Abrir", false);
         }
@@ -93,7 +147,7 @@ public class ScenesManager : MonoBehaviour
         {
             isInRange = true;
             StopAllCoroutines();
-            StartCoroutine(LigaE());    
+            StartCoroutine(LigaE());
         }
     }
 
@@ -104,23 +158,25 @@ public class ScenesManager : MonoBehaviour
             Transition.SetBool("Abrir", false);
             isInRange = false;
             StopAllCoroutines();
-            E.color = new Color(255,255,255,0);
+            E.color = new Color(255, 255, 255, 0);
             botaoSim.SetActive(false);
             botaoNao.SetActive(false);
         }
     }
-    IEnumerator DesligaE ()
+    IEnumerator DesligaE()
     {
-        for(i=1;i>-0.5;i = i - 0.05f){
-            E.color = new Color(255,255,255,i);
+        for (i = 1; i > -0.5; i = i - 0.05f)
+        {
+            E.color = new Color(255, 255, 255, i);
             yield return new WaitForSeconds(0.03f);
         }
         StartCoroutine(LigaE());
     }
-    IEnumerator LigaE ()
+    IEnumerator LigaE()
     {
-        for(i=0;i<1.5;i = i + 0.05f){
-            E.color = new Color(255,255,255,i);
+        for (i = 0; i < 1.5; i = i + 0.05f)
+        {
+            E.color = new Color(255, 255, 255, i);
             yield return new WaitForSeconds(0.03f);
         }
         StartCoroutine(DesligaE());

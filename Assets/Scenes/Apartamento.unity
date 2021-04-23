@@ -3129,7 +3129,7 @@ RectTransform:
   - {fileID: 133286072}
   - {fileID: 2037583308}
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3208,6 +3208,7 @@ MonoBehaviour:
   Menu: {fileID: 206651927}
   Pause: {fileID: 2037583307}
   Options: {fileID: 133286071}
+  Painel: {fileID: 247637798}
 --- !u!1 &232573017
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,6 +3326,81 @@ MonoBehaviour:
   FechaJanela:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &247637796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 247637797}
+  - component: {fileID: 247637799}
+  - component: {fileID: 247637798}
+  m_Layer: 5
+  m_Name: Painel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &247637797
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247637796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2049014668}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.000091552734}
+  m_SizeDelta: {x: 1141.8125, y: 600}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &247637798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247637796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 3
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 1
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &247637799
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247637796}
+  m_CullTransparentMesh: 0
 --- !u!1 &259543957
 GameObject:
   m_ObjectHideFlags: 0
@@ -5070,7 +5146,7 @@ RectTransform:
   - {fileID: 992947313}
   - {fileID: 432932160}
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5946,7 +6022,7 @@ RectTransform:
   m_LocalScale: {x: 0.06999683, y: 0.06999683, z: 1}
   m_Children: []
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13741,6 +13817,208 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 847369937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &858552706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 858552707}
+  - component: {fileID: 858552712}
+  - component: {fileID: 858552711}
+  - component: {fileID: 858552710}
+  - component: {fileID: 858552709}
+  - component: {fileID: 858552708}
+  m_Layer: 0
+  m_Name: CarroTransicaoGIF
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &858552707
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858552706}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children: []
+  m_Father: {fileID: 2049014668}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3013, y: -1648}
+  m_SizeDelta: {x: 1141.9999, y: 600}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &858552708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858552706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1573812821}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
+--- !u!114 &858552709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858552706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Nolan
+  nameperson2: Detetive
+  sentences:
+  - "Bom, detetive, como voc\xEA \xE9 novo na cidade eu fa\xE7o quest\xE3o de te
+    acompanhar at\xE9 o seu primeiro caso."
+  - troca paisagem
+  - Obrigado senhor.
+  - troca paisagem
+  - "O que deve ser feito \xE9 simples, acredito que j\xE1 saiba como proceder."
+  - "Dado que j\xE1 tem uma certa experi\xEAncia na sua cidade natal."
+  - 'Mas eu gosto de deixar tudo acertado, detalhe  por detalhe. '
+  - troca paisagem
+  - Compreendo bem.
+  - troca paisagem
+  - "Voc\xEA deve entrar na cena do crime, juntar as evid\xEAncias que achar no local,
+    quando sentir que j\xE1 coletou todas as informa\xE7\xF5es, v\xE1 at\xE9 o carro
+    e volte para a delegacia."
+  - "Geralmente j\xE1 existir\xE1 uma equipe no local, como a nossa legista, algum
+    policial e o seu parceiro \xE9 claro."
+  - "\xC9 importante conversar com todo mundo, pois eles podem ter informa\xE7\xF5es
+    \xFAteis para o seu caso."
+  - "Retornando para a delegacia, v\xE1 at\xE9 a sua sala no segundo andar, e preencha
+    o seu relat\xF3rio sobre o caso."
+  - Entendido?
+  - troca paisagem
+  - Sim senhor.
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - "\rWell, detective, as you're new to the city,\r\nI insist to accompanying you,
+    in your first case."
+  - troca paisagem
+  - Thank you sir.
+  - troca paisagem
+  - What should be done is simple, I believe you already know how to proceed.
+  - Since you already have some experience in your hometown.
+  - "\rBut I like to make everything right, detail by detail."
+  - troca paisagem
+  - "\rI understand well."
+  - troca paisagem
+  - You must enter the crime scene, gather the evidence you find, when you feel you
+    have already collected all the information, go to the car and return to the police
+    station.
+  - "\rThere will usually already be a team on site, like our coroner, a police officer
+    and your partner of course."
+  - "\rIt is important to talk to everyone, as they may have useful information for
+    you."
+  - "\rReturning to the police station, go to your office on the second floor, and
+    complete your report on the case."
+  - "\rUnderstood?"
+  - troca paisagem
+  - Yes sir.
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  random: 0
+--- !u!95 &858552710
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858552706}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d7af4ae6d906aa43ae3ad130fc28fba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &858552711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858552706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 043c99ebe27ccd148b9b6cc47edb3d1a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &858552712
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858552706}
+  m_CullTransparentMesh: 0
 --- !u!1001 &874869469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15156,7 +15434,7 @@ RectTransform:
   m_LocalScale: {x: 0.06999683, y: 0.06999683, z: 1}
   m_Children: []
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18740,6 +19018,9 @@ MonoBehaviour:
   texto: {fileID: 512707328}
   botaoSim: {fileID: 4114674}
   botaoNao: {fileID: 1857987845}
+  dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 0}
+  dialogoDelegadoExplicando: {fileID: 858552709}
+  dialogueControl: {fileID: 858552708}
   isInRange: 0
   Transition: {fileID: 1914434864}
   movimento: {fileID: 2097695721}
@@ -18941,7 +19222,7 @@ PrefabInstance:
     - target: {fileID: 6639167164175835759, guid: 7e562d4fb6fbf5247afd4b693da37863,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6639167164175835759, guid: 7e562d4fb6fbf5247afd4b693da37863,
         type: 3}
@@ -21600,7 +21881,7 @@ RectTransform:
   m_LocalScale: {x: 0.06999683, y: 0.06999683, z: 1}
   m_Children: []
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21850,7 +22131,7 @@ RectTransform:
   m_LocalScale: {x: 0.06999683, y: 0.06999683, z: 1}
   m_Children: []
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24969,7 +25250,7 @@ RectTransform:
   m_LocalScale: {x: 0.06999683, y: 0.06999683, z: 1}
   m_Children: []
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31997,7 +32278,7 @@ RectTransform:
   - {fileID: 731215605}
   - {fileID: 1690640767}
   m_Father: {fileID: 2049014668}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34321,6 +34602,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 858552707}
   - {fileID: 1472184530}
   - {fileID: 1198881929}
   - {fileID: 1232829693}
@@ -34330,6 +34612,7 @@ RectTransform:
   - {fileID: 364288593}
   - {fileID: 1117420780}
   - {fileID: 1914434861}
+  - {fileID: 247637797}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

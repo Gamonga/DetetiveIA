@@ -2,24 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class PauseMenu : MonoBehaviour
 {
     public Animator Menu;
     public GameObject Pause;
     public GameObject Options;
+    public Image Painel;
+    private float contador;
 
     private bool open;
     // Start is called before the first frame update
     void Start()
     {
-        
+        contador = 0;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         abrirPauseMenu();
+        if(contador<= 300){
+            Painel.color = new Color(0,0,0, 1.0f - contador/300);
+            contador++;
+        }
     }
     public void Quit(){
         SceneManager.LoadScene(0);

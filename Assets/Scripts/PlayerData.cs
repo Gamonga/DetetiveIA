@@ -52,11 +52,19 @@ public class PlayerData
     public bool ajudaEntrada;
     public bool ajudaSaida;
     public bool PanoSangue;
+    public bool PortaQuebrada;
     public static int PontuacaoDoPlayer;
     public static int LevelsJogadosPeloPlayer;
+    public int numeroAssassino;
+    public int numeroAssassinoSegundo;
+    public int numeroAssassinoTerceiro;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
+        numeroAssassino = SpawnObjects.numeroAssassino;
+        PortaQuebrada = SpawnObjects.PortaQuebrada;
+        numeroAssassinoSegundo = SpawnObjects.numeroAssassinoSegundo;
+        numeroAssassinoTerceiro = SpawnObjects.numeroAssassinoTerceiro;
         selecionaArmaComSangueFalso = SpawnObjects.selecionaArmaComSangueFalso;
         actualCrimeScene = ScenesManager.ActualScene;
         horas = horario.Horario;

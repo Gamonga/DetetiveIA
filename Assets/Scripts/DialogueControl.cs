@@ -100,6 +100,7 @@ public class DialogueControl : MonoBehaviour
             primeiraVez = true;
             Analise.EntrouAnalisando = !Analise.EntrouAnalisando;
             Analise.terminouConversa = true;
+            ScenesManager.fechar();
             EndDialogue();
             return;
         }

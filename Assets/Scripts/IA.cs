@@ -23965,18 +23965,18 @@ public static class IA
             {
                 if (PossiblidadesproximoCaso[i] != -1)
                 {
+                    if((SpawnObjects.numeroAssassino == 0 ||SpawnObjects.numeroAssassino == 2) && (gabaritoArma[PossiblidadesproximoCaso[i] % 3, 6] == 1 || gabaritoArma[PossiblidadesproximoCaso[i] % 3, 10] == 1)){
+                        PossiblidadesproximoCaso[i] = -1;
+                    }
                     if (evidencias[PossiblidadesproximoCaso[i], 82] != 1)
                     {
                         PossiblidadesproximoCaso[i] = -1;
                     }
-                }
-            }
-            for (i = 0; i < PossiblidadesproximoCaso.Length; i++)
-            {
-                if (PossiblidadesproximoCaso[i] != -1)
-                {
-                    DeuRuim = false;
-                    contador++;
+                    if (PossiblidadesproximoCaso[i] != -1)
+                    {
+                        DeuRuim = false;
+                        contador++;
+                    }
                 }
             }
             if (DeuRuim)
@@ -24111,18 +24111,18 @@ public static class IA
             {
                 if (PossiblidadesproximoCaso[i] != -1)
                 {
-                    if (evidencias[PossiblidadesproximoCaso[i], 83] != 1)
+                    if((SpawnObjects.numeroAssassino == 0 ||SpawnObjects.numeroAssassino == 2) && (gabaritoArma[PossiblidadesproximoCaso[i] % 3, 6] == 1 || gabaritoArma[PossiblidadesproximoCaso[i] % 3, 10] == 1)){
+                        PossiblidadesproximoCaso[i] = -1;
+                    }
+                    if (evidencias[PossiblidadesproximoCaso[i], 82] != 1)
                     {
                         PossiblidadesproximoCaso[i] = -1;
                     }
-                }
-            }
-            for (i = 0; i < PossiblidadesproximoCaso.Length; i++)
-            {
-                if (PossiblidadesproximoCaso[i] != -1)
-                {
-                    DeuRuim = false;
-                    contador++;
+                    if (PossiblidadesproximoCaso[i] != -1)
+                    {
+                        DeuRuim = false;
+                        contador++;
+                    }
                 }
             }
             if (DeuRuim)
@@ -24257,18 +24257,18 @@ public static class IA
             {
                 if (PossiblidadesproximoCaso[i] != -1)
                 {
-                    if (evidencias[PossiblidadesproximoCaso[i], 84] != 1)
+                    if((SpawnObjects.numeroAssassino == 0 ||SpawnObjects.numeroAssassino == 2) && (gabaritoArma[PossiblidadesproximoCaso[i] % 3, 6] == 1 || gabaritoArma[PossiblidadesproximoCaso[i] % 3, 10] == 1)){
+                        PossiblidadesproximoCaso[i] = -1;
+                    }
+                    if (evidencias[PossiblidadesproximoCaso[i], 82] != 1)
                     {
                         PossiblidadesproximoCaso[i] = -1;
                     }
-                }
-            }
-            for (i = 0; i < PossiblidadesproximoCaso.Length; i++)
-            {
-                if (PossiblidadesproximoCaso[i] != -1)
-                {
-                    DeuRuim = false;
-                    contador++;
+                    if (PossiblidadesproximoCaso[i] != -1)
+                    {
+                        DeuRuim = false;
+                        contador++;
+                    }
                 }
             }
             if (DeuRuim)
