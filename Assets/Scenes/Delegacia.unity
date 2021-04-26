@@ -23878,6 +23878,7 @@ MonoBehaviour:
   botaoSim: {fileID: 6595550}
   botaoNao: {fileID: 2070321127}
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 451964874}
+  dialogoDelegadoExplicando: {fileID: 0}
   dialogueControl: {fileID: 451964875}
   isInRange: 0
   Transition: {fileID: 867574881}
@@ -27921,6 +27922,16 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
+        type: 3}
+      propertyPath: Nao
+      value: 
+      objectReference: {fileID: 2070321127}
+    - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
+        type: 3}
+      propertyPath: Sim
+      value: 
+      objectReference: {fileID: 6595550}
     - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
         type: 3}
       propertyPath: Transition

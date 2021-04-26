@@ -21,18 +21,28 @@ public class ScenesManager : MonoBehaviour
     public static Text E;
     private float i;
     public static bool DialogoTransicao;
+    public static bool PrimeiraVezDialogoTransicao;
     // Start is called before the first frame update
     void Start()
     {
+        PrimeiraVezDialogoTransicao = true;
         animator = GameObject.Find("CarroTransicaoGIF").GetComponent<Animator>();
-        DialogoTransicao = true;
-        animator.SetBool("CarroGif", true);
+        PlayerData data = SaveSystem.LoadPlayer();
+        if(MainMenu.NewGame == false){
+            PrimeiraVezDialogoTransicao = data.PrimeiraVezDialogoTransicao;
+        }
+        DialogoTransicao = false;
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
+            DialogoTransicao = true;
+            animator.SetBool("CarroGif", true);
             dialogueControl.StartDialogue(dialogoParceiroDetetiveIndoParaDelegacia);
         }
-        if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0 && PrimeiraVezDialogoTransicao)
         {
+            DialogoTransicao = true;
+            animator.SetBool("CarroGif", true);
+            PrimeiraVezDialogoTransicao = false;
             dialogueControl.StartDialogue(dialogoDelegadoExplicando);
         }
         botaoSim.SetActive(false);
@@ -41,7 +51,6 @@ public class ScenesManager : MonoBehaviour
         ActualScene = SceneManager.GetActiveScene().buildIndex;
         if ((SceneManager.GetActiveScene().buildIndex == 1))
         {
-            PlayerData data = SaveSystem.LoadPlayer();
             ActualScene = data.actualCrimeScene;
         }
         CrimeScene = ActualScene;

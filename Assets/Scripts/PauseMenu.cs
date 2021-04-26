@@ -30,6 +30,9 @@ public class PauseMenu : MonoBehaviour
             Painel.color = new Color(0,0,0, 1.0f - contador/300);
             contador++;
         }
+        else{
+            Destroy(Painel);
+        }
     }
     public void Quit(){
         SceneManager.LoadScene(0);

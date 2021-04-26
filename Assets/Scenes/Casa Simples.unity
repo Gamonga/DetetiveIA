@@ -3537,11 +3537,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 0}
-  spriteDetetivePaisagem: {fileID: 0}
-  spriteSecundarioPaisagem: {fileID: 0}
-  dialogueText: {fileID: 0}
-  animator: {fileID: 0}
+  nameText: {fileID: 1573812821}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
   SemImagem: 0
 --- !u!114 &198931401
 MonoBehaviour:
@@ -3555,38 +3555,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameperson1: Steve
+  nameperson1: Nolan
   nameperson2: Detetive
   sentences:
-  - "Detetive, tem certeza que esse \xE9 o melhor caminho?"
-  - troca embara
-  - "Para falar a verdade, n\xE3o tenho a menor ideia de como ir para delegacia."
-  - troca pensando
-  - "Bom, se vc virar o carro na pr\xF3xima esquerda, devemos chegar na delegacia."
+  - "Bom, detetive, como voc\xEA \xE9 novo na cidade eu fa\xE7o quest\xE3o de te
+    acompanhar at\xE9 o seu primeiro caso."
   - troca paisagem
-  - "Acredito que essa rua, n\xE3o tenha nem esquerda, nem direita. "
-  sentences2:
-  - "Voc\xEA ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
+  - Obrigado senhor.
   - troca paisagem
-  - Quem?
+  - "O que deve ser feito \xE9 simples, acredito que j\xE1 saiba como proceder."
+  - "Dado que j\xE1 tem uma certa experi\xEAncia na sua cidade natal."
+  - 'Mas eu gosto de deixar tudo acertado, detalhe  por detalhe. '
   - troca paisagem
-  - Uma Vtuber que eu adoro.
+  - Compreendo bem.
   - troca paisagem
-  - "(Que deus tenha d\xF3 desse rapaz)"
-  senteceloop:
-  - "Caso queira voltar para a cena do crime, me chame e eu irei at\xE9 o carro."
+  - "Voc\xEA deve entrar na cena do crime, juntar as evid\xEAncias que achar no local,
+    quando sentir que j\xE1 coletou todas as informa\xE7\xF5es, v\xE1 at\xE9 o carro
+    e volte para a delegacia."
+  - "Geralmente j\xE1 existir\xE1 uma equipe no local, como a nossa legista, algum
+    policial e o seu parceiro \xE9 claro."
+  - "\xC9 importante conversar com todo mundo, pois eles podem ter informa\xE7\xF5es
+    \xFAteis para o seu caso."
+  - "Retornando para a delegacia, v\xE1 at\xE9 a sua sala no segundo andar, e preencha
+    o seu relat\xF3rio sobre o caso."
+  - Entendido?
   - troca paisagem
-  - OK.
-  - troca paisagem
+  - Sim senhor.
+  sentences2: []
+  senteceloop: []
   sentencesIngles:
-  - Detective, are you sure this is the best way?
-  - troca embara
-  - Seriously, I have no idea how to go to the police station.
-  - troca pensando
-  - Well, if you turn to the left in the next exit, we should arrive at the police
-    station.
+  - "\rWell, detective, as you're new to the city,\r\nI insist to accompanying you,
+    in your first case."
   - troca paisagem
-  - I believe that this street has neither a left nor a right.
+  - Thank you sir.
+  - troca paisagem
+  - What should be done is simple, I believe you already know how to proceed.
+  - Since you already have some experience in your hometown.
+  - "\rBut I like to make everything right, detail by detail."
+  - troca paisagem
+  - "\rI understand well."
+  - troca paisagem
+  - You must enter the crime scene, gather the evidence you find, when you feel you
+    have already collected all the information, go to the car and return to the police
+    station.
+  - "\rThere will usually already be a team on site, like our coroner, a police officer
+    and your partner of course."
+  - "\rIt is important to talk to everyone, as they may have useful information for
+    you."
+  - "\rReturning to the police station, go to your office on the second floor, and
+    complete your report on the case."
+  - "\rUnderstood?"
+  - troca paisagem
+  - Yes sir.
   sentences2Ingles: []
   senteceloopIngles: []
   spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
@@ -3599,15 +3619,15 @@ MonoBehaviour:
     type: 3}
   spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
     type: 3}
-  spriteSecundarioPaisagem: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
     type: 3}
-  spriteSecundarioPensando: {fileID: 21300000, guid: 22cd442a67ec5034480d38eb35066412,
+  spriteSecundarioPensando: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
     type: 3}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
     type: 3}
-  spriteSecundarioDesgosto: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
     type: 3}
-  spriteSecundarioCaderno: {fileID: 21300000, guid: 03db266f71302ee43a52bf9f52c8ec99,
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
     type: 3}
   random: 0
 --- !u!95 &198931402
@@ -10991,6 +11011,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
         type: 3}
+      propertyPath: Nao
+      value: 
+      objectReference: {fileID: 1857987845}
+    - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
+        type: 3}
+      propertyPath: Sim
+      value: 
+      objectReference: {fileID: 4114674}
+    - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
+        type: 3}
       propertyPath: Transition
       value: 
       objectReference: {fileID: 1914434864}
@@ -17983,8 +18013,6 @@ GameObject:
   - component: {fileID: 1106623594}
   - component: {fileID: 1106623593}
   - component: {fileID: 1106623595}
-  - component: {fileID: 1106623596}
-  - component: {fileID: 1106623597}
   m_Layer: 0
   m_Name: CarroTransicao
   m_TagString: Untagged
@@ -18048,116 +18076,11 @@ MonoBehaviour:
   botaoSim: {fileID: 4114674}
   botaoNao: {fileID: 1857987845}
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 0}
-  dialogoDelegadoExplicando: {fileID: 1106623597}
-  dialogueControl: {fileID: 1106623596}
+  dialogoDelegadoExplicando: {fileID: 198931401}
+  dialogueControl: {fileID: 198931400}
   isInRange: 0
   Transition: {fileID: 1914434864}
   movimento: {fileID: 2097695721}
---- !u!114 &1106623596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106623592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameText: {fileID: 1573812821}
-  spriteDetetivePaisagem: {fileID: 1161651281}
-  spriteSecundarioPaisagem: {fileID: 1118739515}
-  dialogueText: {fileID: 607859828}
-  animator: {fileID: 364288594}
-  SemImagem: 0
---- !u!114 &1106623597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106623592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nameperson1: Nolan
-  nameperson2: Detetive
-  sentences:
-  - "Bom, detetive, como voc\xEA \xE9 novo na cidade eu fa\xE7o quest\xE3o de te
-    acompanhar at\xE9 o seu primeiro caso."
-  - troca paisagem
-  - Obrigado senhor.
-  - troca paisagem
-  - "O que deve ser feito \xE9 simples, acredito que j\xE1 saiba como proceder."
-  - "Dado que j\xE1 tem uma certa experi\xEAncia na sua cidade natal."
-  - 'Mas eu gosto de deixar tudo acertado, detalhe  por detalhe. '
-  - troca paisagem
-  - Compreendo bem.
-  - troca paisagem
-  - "Voc\xEA deve entrar na cena do crime, juntar as evid\xEAncias que achar no local,
-    quando sentir que j\xE1 coletou todas as informa\xE7\xF5es, v\xE1 at\xE9 o carro
-    e volte para a delegacia."
-  - "Geralmente j\xE1 existir\xE1 uma equipe no local, como a nossa legista, algum
-    policial e o seu parceiro \xE9 claro."
-  - "\xC9 importante conversar com todo mundo, pois eles podem ter informa\xE7\xF5es
-    \xFAteis para o seu caso."
-  - "Retornando para a delegacia, v\xE1 at\xE9 a sua sala no segundo andar, e preencha
-    o seu relat\xF3rio sobre o caso."
-  - Entendido?
-  - troca paisagem
-  - Sim senhor.
-  sentences2: []
-  senteceloop: []
-  sentencesIngles:
-  - "\rWell, detective, as you're new to the city,\r\nI insist to accompanying you,
-    in your first case."
-  - troca paisagem
-  - Thank you sir.
-  - troca paisagem
-  - What should be done is simple, I believe you already know how to proceed.
-  - Since you already have some experience in your hometown.
-  - "\rBut I like to make everything right, detail by detail."
-  - troca paisagem
-  - "\rI understand well."
-  - troca paisagem
-  - You must enter the crime scene, gather the evidence you find, when you feel you
-    have already collected all the information, go to the car and return to the police
-    station.
-  - "\rThere will usually already be a team on site, like our coroner, a police officer
-    and your partner of course."
-  - "\rIt is important to talk to everyone, as they may have useful information for
-    you."
-  - "\rReturning to the police station, go to your office on the second floor, and
-    complete your report on the case."
-  - "\rUnderstood?"
-  - troca paisagem
-  - Yes sir.
-  sentences2Ingles: []
-  senteceloopIngles: []
-  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
-    type: 3}
-  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
-    type: 3}
-  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
-    type: 3}
-  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
-    type: 3}
-  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
-    type: 3}
-  spriteSecundarioPaisagem: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
-    type: 3}
-  spriteSecundarioPensando: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
-    type: 3}
-  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
-    type: 3}
-  spriteSecundarioDesgosto: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
-    type: 3}
-  spriteSecundarioCaderno: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
-    type: 3}
-  random: 0
 --- !u!1 &1115270712
 GameObject:
   m_ObjectHideFlags: 0

@@ -162,8 +162,8 @@ public class movimento : MonoBehaviour
                 position.z = -20f;
                 break;
             case 3:
-                position.x = 11.11f;
-                position.y = -20.94f;
+                position.x = 13.11f;
+                position.y = -19.07f;
                 position.z = -20f;
                 break;
         }

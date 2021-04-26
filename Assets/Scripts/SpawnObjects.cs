@@ -569,8 +569,8 @@ public class SpawnObjects : MonoBehaviour
                 PrecisaDeAuxilioEntradaSaida = true;
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CelularEvidence.description = "Cell phone belonging to the victim.";
-                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Message saved on the phone 'Agreed! I'll be waiting for you here, see you later.', unidentified number.";
+                    CelularEvidence.descriptionIngles = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdateIngles = "Cell phone belonging to the victim. Message saved on the phone 'Agreed! I'll be waiting for you here, see you later.', unidentified number.";
                 }
                 else
                 {
@@ -585,8 +585,8 @@ public class SpawnObjects : MonoBehaviour
                 PortaQuebrada = true;
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CelularEvidence.description = "Cell phone belonging to the victim.";
-                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Note found on the phone 'To buy materials to fix the hinge'";
+                    CelularEvidence.descriptionIngles = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdateIngles = "Cell phone belonging to the victim. Note found on the phone 'To buy materials to fix the hinge'";
                 }
                 else
                 {
@@ -600,8 +600,8 @@ public class SpawnObjects : MonoBehaviour
                 PrecisaDeAuxilioEntradaSaida = true;
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CelularEvidence.description = "Cell phone belonging to the victim.";
-                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Phone's schedule doesn't show anything set for today.";
+                    CelularEvidence.descriptionIngles = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdateIngles = "Cell phone belonging to the victim. Phone's schedule doesn't show anything set for today.";
                 }
                 else
                 {
@@ -2021,8 +2021,8 @@ public class SpawnObjects : MonoBehaviour
                 {
                     if (PlayerData.Idioma == "ingles")
                     {
-                        CelularEvidence.description = "Cell phone belonging to the victim.";
-                        CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Message saved on the phone 'Agreed! I'll be waiting for you here, see you later.', unidentified number.";
+                        CelularEvidence.descriptionIngles = "Cell phone belonging to the victim.";
+                        CelularEvidence.descriptionUpdateIngles = "Cell phone belonging to the victim. Message saved on the phone 'Agreed! I'll be waiting for you here, see you later.', unidentified number.";
                     }
                     else
                     {
@@ -2036,8 +2036,8 @@ public class SpawnObjects : MonoBehaviour
                 {
                     if (PlayerData.Idioma == "ingles")
                     {
-                        CelularEvidence.description = "Cell phone belonging to the victim.";
-                        CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Note found on the phone 'To buy materials to fix the hinge'";
+                        CelularEvidence.descriptionIngles = "Cell phone belonging to the victim.";
+                        CelularEvidence.descriptionUpdateIngles = "Cell phone belonging to the victim. Note found on the phone 'To buy materials to fix the hinge'";
                     }
                     else
                     {
@@ -2052,8 +2052,8 @@ public class SpawnObjects : MonoBehaviour
             {
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CelularEvidence.description = "Cell phone belonging to the victim.";
-                    CelularEvidence.descriptionUpdate = "Cell phone belonging to the victim. Phone's schedule doesn't show anything set for today.";
+                    CelularEvidence.descriptionIngles = "Cell phone belonging to the victim.";
+                    CelularEvidence.descriptionUpdateIngles = "Cell phone belonging to the victim. Phone's schedule doesn't show anything set for today.";
                 }
                 else
                 {
@@ -2064,6 +2064,10 @@ public class SpawnObjects : MonoBehaviour
                 QuartaRespostaIngles = "Policeman's notes";
             }
         }
+        Debug.Log(ajudaEntrada);
+        Debug.Log(ajudaSaida);
+        Debug.Log(PrecisaDeAuxilioEntradaSaida);
+        Debug.Log(PortaQuebrada);
         GameObject CelularClone = Instantiate(Celular) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {

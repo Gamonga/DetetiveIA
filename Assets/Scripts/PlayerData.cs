@@ -58,9 +58,11 @@ public class PlayerData
     public int numeroAssassino;
     public int numeroAssassinoSegundo;
     public int numeroAssassinoTerceiro;
+    public bool PrimeiraVezDialogoTransicao;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
+        PrimeiraVezDialogoTransicao = ScenesManager.PrimeiraVezDialogoTransicao;
         numeroAssassino = SpawnObjects.numeroAssassino;
         PortaQuebrada = SpawnObjects.PortaQuebrada;
         numeroAssassinoSegundo = SpawnObjects.numeroAssassinoSegundo;

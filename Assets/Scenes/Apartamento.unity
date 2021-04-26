@@ -19136,6 +19136,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
         type: 3}
+      propertyPath: Nao
+      value: 
+      objectReference: {fileID: 1857987845}
+    - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
+        type: 3}
+      propertyPath: Sim
+      value: 
+      objectReference: {fileID: 4114674}
+    - target: {fileID: 6639167164175835756, guid: 7e562d4fb6fbf5247afd4b693da37863,
+        type: 3}
       propertyPath: Transition
       value: 
       objectReference: {fileID: 1914434864}
@@ -34942,7 +34952,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097695716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.88, y: -21.19, z: -20}
+  m_LocalPosition: {x: 13.11, y: -19.07, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 519420032}

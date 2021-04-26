@@ -72,6 +72,8 @@ public class Caderno : MonoBehaviour
     static public string Pensamento2;
     private static int numeroPensamento;
     public static int contadorPensamentos;
+    public GameObject Nao;
+    public GameObject Sim;
 
     // Start is called before the first frame update
     void Start()
@@ -117,6 +119,7 @@ public class Caderno : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Tab) && PermissaoAbrirCaderno)
         {
+
             if (!open)
             {
                 caderno.SetBool("abrir", true);
@@ -684,6 +687,8 @@ public class Caderno : MonoBehaviour
     }
     public void EscreverPensamentos()
     {
+        Sim.SetActive(false);
+        Nao.SetActive(false);
         if (contadorPensamentos > 0)
         {
             numeroPensamento = 1;
