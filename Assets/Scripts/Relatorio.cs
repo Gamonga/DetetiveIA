@@ -43,7 +43,7 @@ public class Relatorio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        jogoFinalizado= false;
+        jogoFinalizado = false;
         numeroDaPergunta = 1;
         Pontuacao = 0;
         entrouPreencher = false;
@@ -57,12 +57,23 @@ public class Relatorio : MonoBehaviour
         AcertouLocal = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FinalizaGame()
     {
-        if (isInRange && jogoFinalizado == true)
+        PixelArt.SetBool("On", false);
+        sentence.Enqueue("Respostas corretas:" + Pontuacao.ToString());
+        fraseAtual = sentence.Dequeue();
+        StartCoroutine(typeSentence(fraseAtual));
+        MainMenu.NewGame = true;
+        SaveSystem.SavePlayer(movimento);
+        jogoFinalizado = true;
+        PlayerData.LevelsJogadosPeloPlayer++;
+    }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        if (jogoFinalizado == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            /*if (Input.GetKeyDown(KeyCode.E))
             {
                 if (ScenesManager.ActualScene == 3)
                 {
@@ -72,7 +83,7 @@ public class Relatorio : MonoBehaviour
                 {
                     SceneManager.LoadScene(3);
                 }
-            }
+            }*/
         }
         if (isInRange && jogoFinalizado == false)
         {
@@ -257,16 +268,6 @@ public class Relatorio : MonoBehaviour
         perguntando = false;
         fraseAtual = sentence.Dequeue();
         StartCoroutine(typeSentence(fraseAtual));
-    }
-    public void FinalizaGame()
-    {
-        sentence.Enqueue("Respostas corretas:" + Pontuacao.ToString());
-        fraseAtual = sentence.Dequeue();
-        StartCoroutine(typeSentence(fraseAtual));
-        MainMenu.NewGame = true;
-        SaveSystem.SavePlayer(movimento);
-        jogoFinalizado = true;
-        PlayerData.LevelsJogadosPeloPlayer++;
     }
     public void Confirma()
     {

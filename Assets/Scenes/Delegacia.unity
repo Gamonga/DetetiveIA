@@ -23507,29 +23507,29 @@ MonoBehaviour:
   nameperson2: Detetive
   sentences:
   - Seja bem vindo de volta, detetive.
-  - troca
+  - troca paisagem
   - "Ol\xE1 Lydia, como tem estado a delegacia?"
-  - troca
+  - troca paisagem
   - Tem estado bem tranquila.
   - "N\xE3o tem tido muitas chamadas recentemente."
-  - troca
+  - troca paisagem
   - "Isso \xE9 um bom sinal."
   - "Caso algu\xEAm me procure, s\xF3 me avisar."
-  - troca
+  - troca paisagem
   - Tudo bem, detetive.
   sentences2: []
   senteceloop: []
   sentencesIngles:
   - Welcome back, detective.
-  - troca
+  - troca paisagem
   - Hello Lydia, how has the station been?
-  - troca
+  - troca paisagem
   - It's been peaceful.
   - We haven't had many phone calls recently.
-  - troca
+  - troca paisagem
   - That is a good sign.
   - If anyone needs me, just say the word.
-  - troca
+  - troca paisagem
   - Alright, detective.
   sentences2Ingles: []
   senteceloopIngles: []
@@ -23879,7 +23879,9 @@ MonoBehaviour:
   botaoNao: {fileID: 2070321127}
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 451964874}
   dialogoDelegadoExplicando: {fileID: 0}
+  diaologoFinalParceiro: {fileID: 1616764015}
   dialogueControl: {fileID: 451964875}
+  dialogueControlFinal: {fileID: 1616764014}
   isInRange: 0
   Transition: {fileID: 867574881}
   movimento: {fileID: 2097695721}
@@ -30655,6 +30657,141 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1616764013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1616764016}
+  - component: {fileID: 1616764015}
+  - component: {fileID: 1616764014}
+  m_Layer: 0
+  m_Name: DiaologoFinalParceiro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1616764014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616764013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1687097054}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
+--- !u!114 &1616764015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616764013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Steve
+  nameperson2: Detetive
+  sentences:
+  - troca paisagem
+  - Steve!?
+  - troca paisagem
+  - Oi detetive, indo para casa?
+  - troca paisagem
+  - "Estava indo para casa, acabei de entregar meu relat\xF3rio."
+  - "E voc\xEA?"
+  - troca paisagem
+  - "estava indo para casa tamb\xE9m, preciso terminar de preencher uma papelada
+    ... "
+  - e jogar o jogo novo que eu comprei.
+  - troca paisagem
+  - "Voc\xEA gosta de jogar? Temos algo em comum Steve."
+  - troca paisagem
+  - "Claro que eu gosto de jogar, at\xE9 atraso meu trabalho por causa disso."
+  - Vamos andando, detetive, temos muito que conversar.
+  - ...
+  sentences2:
+  - "Voc\xEA ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
+  - troca paisagem
+  - Quem?
+  - troca paisagem
+  - Uma Vtuber que eu adoro.
+  - troca paisagem
+  - "(Que deus tenha d\xF3 desse rapaz)"
+  senteceloop:
+  - "Caso queira voltar para a cena do crime, me chame e eu irei at\xE9 o carro."
+  - troca paisagem
+  - OK.
+  - troca paisagem
+  sentencesIngles:
+  - troca paisagem
+  - Steve!?
+  - troca paisagem
+  - Hi detective, going home?
+  - troca paisagem
+  - I was going home, I just delivered my report.
+  - And you?
+  - troca paisagem
+  - I was going home too, I need to finish filling out paperwork ...
+  - and play the new game that I bought.
+  - troca paisagem
+  - "\rYou like to play? We have something in common Steve."
+  - troca paisagem
+  - "\rOf course I like to play games, I even delay my work because of that."
+  - Let's walk, detective, we have a lot to talk about.
+  - ...
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: 22cd442a67ec5034480d38eb35066412,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 03db266f71302ee43a52bf9f52c8ec99,
+    type: 3}
+  random: 0
+--- !u!4 &1616764016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616764013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 102.60641, y: 7.025171, z: -134.36478}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624538602
 GameObject:
   m_ObjectHideFlags: 0
@@ -40087,7 +40224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097695716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.68, y: -27.87, z: -51.7}
+  m_LocalPosition: {x: 4.49, y: -28.26, z: -51.7}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 519420032}
@@ -40199,6 +40336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2097695720}
+  rbParceiroDetetive: {fileID: 1032071863}
   animator: {fileID: 2097695718}
   limitadorVelocidade: 10
 --- !u!61 &2097695722

@@ -7,13 +7,16 @@ using System;
 public class movimento : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Rigidbody2D rbParceiroDetetive;
     public Animator animator;
     public static bool ParaPersonagem;
     public float limitadorVelocidade = 10;
+    public static bool comecaDialogoFinal;
     int contador = 0;
     // Start is called before the first frame update
     void Start()
     {
+        comecaDialogoFinal = false;
         ParaPersonagem = false;
         contador = 0;
         if (MainMenu.NewGame == false)
@@ -139,6 +142,39 @@ public class movimento : MonoBehaviour
         {
             contador = Animation(contador);
         }
+        if (Relatorio.jogoFinalizado)
+        {
+            if (rb.position.y <= -20.14f)
+            {
+                if (rb.position.x >= 16.0f)
+                {
+                    rb.velocity = new Vector2(0.0f, 0.0f);
+                    animator.SetBool("Direita", false);
+                    comecaDialogoFinal = true;
+                    Relatorio.jogoFinalizado= false;
+                }
+                else
+                {
+                    rb.velocity = new Vector2(5f, 0.0f);
+                    animator.SetBool("Direita", true);
+                }
+            }
+            else
+            {
+                Vector3 position;
+                position.x = 4.84f;
+                position.y = -29.14f;
+                position.z = -50f;
+                rb.position = position;
+                Vector3 position2;
+                rbParceiroDetetive.bodyType = RigidbodyType2D.Dynamic;
+                rbParceiroDetetive.gravityScale = 0.0f;
+                position2.x = 20.39f;
+                position2.y = -29.14f;
+                position2.z = -50f;
+                rbParceiroDetetive.position = position2;
+            }
+        }
     }
 
     public void LoadPlayer()
@@ -167,7 +203,6 @@ public class movimento : MonoBehaviour
                 position.z = -20f;
                 break;
         }
-        transform.position = position;
         rb.position = position;
 
     }

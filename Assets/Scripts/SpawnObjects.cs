@@ -2064,10 +2064,6 @@ public class SpawnObjects : MonoBehaviour
                 QuartaRespostaIngles = "Policeman's notes";
             }
         }
-        Debug.Log(ajudaEntrada);
-        Debug.Log(ajudaSaida);
-        Debug.Log(PrecisaDeAuxilioEntradaSaida);
-        Debug.Log(PortaQuebrada);
         GameObject CelularClone = Instantiate(Celular) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {

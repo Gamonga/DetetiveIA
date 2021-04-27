@@ -12,7 +12,9 @@ public class ScenesManager : MonoBehaviour
     public static Animator animator;
     public Dialogue dialogoParceiroDetetiveIndoParaDelegacia;
     public Dialogue dialogoDelegadoExplicando;
+    public Dialogue diaologoFinalParceiro;
     public DialogueControl dialogueControl;
+    public DialogueControl dialogueControlFinal;
     public bool isInRange;
     public Animator Transition;
     public movimento movimento;
@@ -21,14 +23,17 @@ public class ScenesManager : MonoBehaviour
     public static Text E;
     private float i;
     public static bool DialogoTransicao;
+    public static bool startaFinal;
     public static bool PrimeiraVezDialogoTransicao;
     // Start is called before the first frame update
     void Start()
     {
+        startaFinal = true;
         PrimeiraVezDialogoTransicao = true;
         animator = GameObject.Find("CarroTransicaoGIF").GetComponent<Animator>();
         PlayerData data = SaveSystem.LoadPlayer();
-        if(MainMenu.NewGame == false){
+        if (MainMenu.NewGame == false)
+        {
             PrimeiraVezDialogoTransicao = data.PrimeiraVezDialogoTransicao;
         }
         DialogoTransicao = false;
@@ -78,6 +83,36 @@ public class ScenesManager : MonoBehaviour
                 {
                     dialogueControl.DisplayNextSentence(dialogoDelegadoExplicando);
                 }
+            }
+        }
+        if (movimento.comecaDialogoFinal)
+        {
+            if (startaFinal)
+            {
+                dialogueControlFinal.StartDialogue(diaologoFinalParceiro);
+                startaFinal = false;
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    dialogueControlFinal.DisplayNextSentence(diaologoFinalParceiro);
+                    if (Analise.terminouConversa == true)
+                    {
+                        if (Input.GetKeyDown(KeyCode.E))
+                        {
+                            if (ScenesManager.ActualScene == 3)
+                            {
+                                SceneManager.LoadScene(2);
+                            }
+                            else if (ScenesManager.ActualScene == 2)
+                            {
+                                SceneManager.LoadScene(3);
+                            }
+                        }
+                    }
+                }
+
             }
         }
         if (isInRange)
