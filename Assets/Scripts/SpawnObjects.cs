@@ -81,6 +81,14 @@ public class SpawnObjects : MonoBehaviour
     public Evidence CorpoMorto1Evidence;
     public Evidence CorpoMorto2Evidence;
     public GameObject CorpoMorto2;
+    public GameObject CorpoMorto3M;
+    public Evidence CorpoMorto3MEvidence;
+    public Evidence CorpoMorto4FEvidence;
+    public GameObject CorpoMorto4F;
+    public GameObject CorpoMorto1F;
+    public Evidence CorpoMorto1FEvidence;
+    public Evidence CorpoMorto2FEvidence;
+    public GameObject CorpoMorto2F;
     public GameObject BilheteCulposo;
     public Evidence BilheteCulposoEvidence;
     public Text dialogueText;
@@ -611,16 +619,116 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateCelular();
                 break;
             case 43:
-                InstantiateCorpoMorto1();
+                if (Random.value > 0.5f)
+                {
+                    if (SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5)
+                    {
+                        InstantiateCorpoMorto1();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto1F();
+                    }
+                }
+                else
+                {
+                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    {
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCorpoMorto1F();
+                        }
+                        InstantiateCorpoMorto1();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto1();
+                    }
+                }
                 break;
             case 44:
-                InstantiateCorpoMorto2();
+                if (Random.value > 0.5f)
+                {
+                    if (SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5)
+                    {
+                        InstantiateCorpoMorto2();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto2F();
+                    }
+                }
+                else
+                {
+                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    {
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCorpoMorto2F();
+                        }
+                        InstantiateCorpoMorto2();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto2();
+                    }
+                }
                 break;
             case 45:
-                InstantiateCorpoMorto3();
+                if (Random.value > 0.5f)
+                {
+                    if (SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5)
+                    {
+                        InstantiateCorpoMorto3M();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto3();
+                    }
+                }
+                else
+                {
+                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    {
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCorpoMorto3();
+                        }
+                        InstantiateCorpoMorto3M();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto3M();
+                    }
+                }
                 break;
             case 46:
-                InstantiateCorpoMorto4();
+                if (Random.value > 0.5f)
+                {
+                    if (SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5)
+                    {
+                        InstantiateCorpoMorto4();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto4F();
+                    }
+                }
+                else
+                {
+                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    {
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCorpoMorto4F();
+                        }
+                        InstantiateCorpoMorto4();
+                    }
+                    else
+                    {
+                        InstantiateCorpoMorto4();
+                    }
+                }
                 break;
             case 51:
                 break;
@@ -688,8 +796,8 @@ public class SpawnObjects : MonoBehaviour
         Armas[10] = CanoPerfuraçãoSangueEvidence;
         Armas[11] = CanoContundenteSangueEvidence;
         Armas[12] = SufocamentoEvidence;
-        Armas[selecionaArmaComSangueFalso].descriptionUpdate = Armas[selecionadorint].description + " Sangue falso.";
-        Armas[selecionaArmaComSangueFalso].descriptionUpdateIngles = Armas[selecionadorint].descriptionIngles + " False blood.";
+        Armas[selecionaArmaComSangueFalso].descriptionUpdate = Armas[selecionaArmaComSangueFalso].description + " Sangue falso.";
+        Armas[selecionaArmaComSangueFalso].descriptionUpdateIngles = Armas[selecionaArmaComSangueFalso].descriptionIngles + " False blood.";
     }
     public void LoadRespostas(PlayerData data)
     {
@@ -1073,10 +1181,24 @@ public class SpawnObjects : MonoBehaviour
         QuantidadeCorposDisponiveis = 0;
         Corpos = new Evidence[5];
         CorposDisponiveis = new Evidence[5];
-        Corpos[0] = CorpoMorto1Evidence;
-        Corpos[1] = CorpoMorto2Evidence;
-        Corpos[2] = CorpoMorto3Evidence;
-        Corpos[3] = CorpoMorto4Evidence;
+        if (SpawnObjects.numeroAssassino != 0 && SpawnObjects.numeroAssassino != 5)
+        {
+            Corpos[0] = CorpoMorto1Evidence;
+            Corpos[1] = CorpoMorto2Evidence;
+            Corpos[2] = CorpoMorto3Evidence;
+            Corpos[3] = CorpoMorto4Evidence;
+            Corpos[4] = CorpoMorto1FEvidence;
+            Corpos[5] = CorpoMorto2FEvidence;
+            Corpos[6] = CorpoMorto3MEvidence;
+            Corpos[7] = CorpoMorto4FEvidence;
+        }
+        else
+        {
+            Corpos[0] = CorpoMorto1Evidence;
+            Corpos[1] = CorpoMorto2Evidence;
+            Corpos[2] = CorpoMorto4Evidence;
+            Corpos[3] = CorpoMorto3MEvidence;
+        }
         for (j = 0; j < 4; j++)
         {
             if (Corpos[j].weaponDescription == Armas[numeroSelecionadoParaResposta].weaponDescription)
@@ -1182,7 +1304,7 @@ public class SpawnObjects : MonoBehaviour
         {
             NumeroArmas = 3;
         }
-        selecionadorint = Random.Range(0, 8);
+        selecionadorint = Random.Range(0, 13);
         if (selecionadorint == 7)
         {
             InstantiateDestrocos();
@@ -1388,6 +1510,18 @@ public class SpawnObjects : MonoBehaviour
             case "CanoNormalPerfurante(Clone)":
                 InstantiateCanoperfuracao();
                 break;
+            case "CorpoMorto2F(Clone)":
+                InstantiateCorpoMorto2F();
+                break;
+            case "CorpoMorto1F(Clone)":
+                InstantiateCorpoMorto1F();
+                break;
+            case "CorpoMorto3M(Clone)":
+                InstantiateCorpoMorto3M();
+                break;
+            case "CorpoMorto4F(Clone)":
+                InstantiateCorpoMorto4F();
+                break;
         }
     }
     public void LoadPlayer(PlayerData data, int i)
@@ -1396,6 +1530,18 @@ public class SpawnObjects : MonoBehaviour
         {
             case "Bilhete(Clone)":
                 InstantiateBilheteCulposo();
+                break;
+            case "CorpoMorto2F(Clone)":
+                InstantiateCorpoMorto2F();
+                break;
+            case "CorpoMorto1F(Clone)":
+                InstantiateCorpoMorto1F();
+                break;
+            case "CorpoMorto3M(Clone)":
+                InstantiateCorpoMorto3M();
+                break;
+            case "CorpoMorto4F(Clone)":
+                InstantiateCorpoMorto4F();
                 break;
             case "CorpoMorto2(Clone)":
                 InstantiateCorpoMorto2();
@@ -2743,25 +2889,25 @@ public class SpawnObjects : MonoBehaviour
                     case 2:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto1Evidence.descriptionIngles = "Body found in the living room with a cut on the back.";
-                            CorpoMorto1Evidence.descriptionUpdateIngles = "Body found in the living room with a cut on the back. Person lived alone.";
+                            CorpoMorto1Evidence.descriptionIngles = "Body found (Mascuilne) in the living room with a cut on the back.";
+                            CorpoMorto1Evidence.descriptionUpdateIngles = "Body found (Masculine) in the living room with a cut on the back. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto1Evidence.description = "Corpo encontrado na sala com um corte nas costas.";
-                            CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado na sala com um corte nas costas. Sujeito morava sozinho.";
+                            CorpoMorto1Evidence.description = "Corpo encontrado (Masculino) na sala com um corte nas costas.";
+                            CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado (Masculino) na sala com um corte nas costas. Sujeito morava sozinho.";
                         }
                         break;
                     case 3:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto1Evidence.descriptionIngles = "Body found in the balcony with a cut on the back.";
-                            CorpoMorto1Evidence.descriptionUpdateIngles = "Body found in the balcony with a cut on the back. Person lived alone.";
+                            CorpoMorto1Evidence.descriptionIngles = "Body found (Mascuilne) in the balcony with a cut on the back.";
+                            CorpoMorto1Evidence.descriptionUpdateIngles = "Body found (Masculine) in the balcony with a cut on the back. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto1Evidence.description = "Corpo encontrado na varanda com um corte nas costas.";
-                            CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado na varanda com um corte nas costas. Sujeito morava sozinho.";
+                            CorpoMorto1Evidence.description = "Corpo encontrado (Masculino) na varanda com um corte nas costas.";
+                            CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado (Masculino) na varanda com um corte nas costas. Sujeito morava sozinho.";
                         }
                         break;
                 }
@@ -2769,25 +2915,25 @@ public class SpawnObjects : MonoBehaviour
             case 2:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto1Evidence.descriptionIngles = "Body found in the living room with a cut on the back.";
-                    CorpoMorto1Evidence.descriptionUpdateIngles = "Body found in the living room with a cut on the back. Person lived alone.";
+                    CorpoMorto1Evidence.descriptionIngles = "Body found (Mascuilne) in the living room with a cut on the back.";
+                    CorpoMorto1Evidence.descriptionUpdateIngles = "Body found (Masculine) in the living room with a cut on the back. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto1Evidence.description = "Corpo encontrado na sala com um corte nas costas.";
-                    CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado na sala com um corte nas costas. Sujeito morava sozinho.";
+                    CorpoMorto1Evidence.description = "Corpo encontrado (Masculino) na sala com um corte nas costas.";
+                    CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado (Masculino) na sala com um corte nas costas. Sujeito morava sozinho.";
                 }
                 break;
             case 3:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto1Evidence.descriptionIngles = "Body found in the balcony with a cut on the back.";
-                    CorpoMorto1Evidence.descriptionUpdateIngles = "Body found in the balcony with a cut on the back. Person lived alone.";
+                    CorpoMorto1Evidence.descriptionIngles = "Body found (Mascuilne) in the balcony with a cut on the back.";
+                    CorpoMorto1Evidence.descriptionUpdateIngles = "Body found (Masculine) in the balcony with a cut on the back. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto1Evidence.description = "Corpo encontrado na varanda com um corte nas costas.";
-                    CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado na varanda com um corte nas costas. Person lived alone.";
+                    CorpoMorto1Evidence.description = "Corpo encontrado (Masculino) na varanda com um corte nas costas.";
+                    CorpoMorto1Evidence.descriptionUpdate = "Corpo encontrado (Masculino) na varanda com um corte nas costas. Person lived alone.";
                 }
                 break;
         }
@@ -2824,25 +2970,25 @@ public class SpawnObjects : MonoBehaviour
                     case 2:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto2Evidence.descriptionIngles = "Body found in the bedroom with bruises all over.";
-                            CorpoMorto2Evidence.descriptionUpdateIngles = "Body found in the bedroom with bruises all over. Person lived alone.";
+                            CorpoMorto2Evidence.descriptionIngles = "Body found (Masculine) in the bedroom with bruises all over.";
+                            CorpoMorto2Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bedroom with bruises all over. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto2Evidence.description = "Corpo encontrado no quarto com hematomas pelo corpo.";
-                            CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
+                            CorpoMorto2Evidence.description = "Corpo encontrado (Masculino) no quarto com hematomas pelo corpo.";
+                            CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
                         }
                         break;
                     case 3:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto2Evidence.descriptionIngles = "Body found in the bathroom with bruises all over.";
-                            CorpoMorto2Evidence.descriptionUpdateIngles = "Body found in the bathroom with bruises all over. Person lived alone.";
+                            CorpoMorto2Evidence.descriptionIngles = "Body found (Masculine) in the bathroom with bruises all over.";
+                            CorpoMorto2Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bathroom with bruises all over. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto2Evidence.description = "Corpo encontrado no banheiro com hematomas pelo corpo.";
-                            CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
+                            CorpoMorto2Evidence.description = "Corpo encontrado (Masculino) no banheiro com hematomas pelo corpo.";
+                            CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
                         }
 
                         break;
@@ -2851,26 +2997,26 @@ public class SpawnObjects : MonoBehaviour
             case 2:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto2Evidence.descriptionIngles = "Body found in the bedroom with bruises all over.";
-                    CorpoMorto2Evidence.descriptionUpdateIngles = "Body found in the bedroom with bruises all over. Person lived alone.";
+                    CorpoMorto2Evidence.descriptionIngles = "Body found (Masculine) in the bedroom with bruises all over.";
+                    CorpoMorto2Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bedroom with bruises all over. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto2Evidence.description = "Corpo encontrado no quarto com hematomas pelo corpo.";
-                    CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
+                    CorpoMorto2Evidence.description = "Corpo encontrado (Masculino) no quarto com hematomas pelo corpo.";
+                    CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
                 }
 
                 break;
             case 3:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto2Evidence.descriptionIngles = "Body found in the bathroom with bruises all over.";
-                    CorpoMorto2Evidence.descriptionUpdateIngles = "Body found in the bathroom with bruises all over. Person lived alone.";
+                    CorpoMorto2Evidence.descriptionIngles = "Body found (Masculine) in the bathroom with bruises all over.";
+                    CorpoMorto2Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bathroom with bruises all over. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto2Evidence.description = "Corpo encontrado no banheiro com hematomas pelo corpo.";
-                    CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
+                    CorpoMorto2Evidence.description = "Corpo encontrado (Masculino) no banheiro com hematomas pelo corpo.";
+                    CorpoMorto2Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
                 }
                 break;
         }
@@ -2907,25 +3053,25 @@ public class SpawnObjects : MonoBehaviour
                     case 2:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto3Evidence.descriptionIngles = "Body found in the living room with a perforation.";
-                            CorpoMorto3Evidence.descriptionUpdateIngles = "Body found in the living room with a perforation. Person lived alone.";
+                            CorpoMorto3Evidence.descriptionIngles = "Body found (Feminine) in the living room with a perforation.";
+                            CorpoMorto3Evidence.descriptionUpdateIngles = "Body found (Feminine) in the living room with a perforation. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto3Evidence.description = "Corpo encontrado na sala com uma perfuração.";
-                            CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado na sala com uma perfuração. Sujeito morava sozinho.";
+                            CorpoMorto3Evidence.description = "Corpo encontrado (Feminino) na sala com uma perfuração.";
+                            CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado (Feminino) na sala com uma perfuração. Sujeito morava sozinho.";
                         }
                         break;
                     case 3:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto3Evidence.descriptionIngles = "Body found in the balcony with a perforation.";
-                            CorpoMorto3Evidence.descriptionUpdateIngles = "Body found in the balcony with a perforation. Person lived alone.";
+                            CorpoMorto3Evidence.descriptionIngles = "Body found (Feminine) in the balcony with a perforation.";
+                            CorpoMorto3Evidence.descriptionUpdateIngles = "Body found (Feminine) in the balcony with a perforation. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto3Evidence.description = "Corpo encontrado na varanda com uma perfuração.";
-                            CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado na varanda com uma perfuração. Sujeito morava sozinho.";
+                            CorpoMorto3Evidence.description = "Corpo encontrado (Feminino) na varanda com uma perfuração.";
+                            CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado (Feminino) na varanda com uma perfuração. Sujeito morava sozinho.";
                         }
                         break;
                 }
@@ -2933,25 +3079,25 @@ public class SpawnObjects : MonoBehaviour
             case 2:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto3Evidence.descriptionIngles = "Body found in the living room with a perforation.";
-                    CorpoMorto3Evidence.descriptionUpdateIngles = "Body found in the living room with a perforation. Person lived alone.";
+                    CorpoMorto3Evidence.descriptionIngles = "Body found (Feminine) in the living room with a perforation.";
+                    CorpoMorto3Evidence.descriptionUpdateIngles = "Body found (Feminine) in the living room with a perforation. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto3Evidence.description = "Corpo encontrado na sala com uma perfuração.";
-                    CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado na sala uma perfuração. Sujeito morava sozinho.";
+                    CorpoMorto3Evidence.description = "Corpo encontrado (Feminino) na sala com uma perfuração.";
+                    CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado (Feminino) na sala uma perfuração. Sujeito morava sozinho.";
                 }
                 break;
             case 3:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto3Evidence.descriptionIngles = "Body found in the balcony with a perforation.";
-                    CorpoMorto3Evidence.descriptionUpdateIngles = "Body found in the balcony with a perforation. Person lived alone.";
+                    CorpoMorto3Evidence.descriptionIngles = "Body found (Feminine) in the balcony with a perforation.";
+                    CorpoMorto3Evidence.descriptionUpdateIngles = "Body found (Feminine) in the balcony with a perforation. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto3Evidence.description = "Corpo encontrado na varanda uma perfuração.";
-                    CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado na varanda uma perfuração. Sujeito morava sozinho.";
+                    CorpoMorto3Evidence.description = "Corpo encontrado (Feminino) na varanda uma perfuração.";
+                    CorpoMorto3Evidence.descriptionUpdate = "Corpo encontrado (Feminino) na varanda uma perfuração. Sujeito morava sozinho.";
                 }
                 break;
         }
@@ -2988,25 +3134,25 @@ public class SpawnObjects : MonoBehaviour
                     case 2:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto4Evidence.descriptionIngles = "Body found in the bedroom.";
-                            CorpoMorto4Evidence.descriptionUpdateIngles = "Body found in the bedroom. Person lived alone.";
+                            CorpoMorto4Evidence.descriptionIngles = "Body found (Masculine) in the bedroom.";
+                            CorpoMorto4Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bedroom. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto4Evidence.description = "Corpo encontrado no quarto.";
-                            CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado no quarto. Sujeito morava sozinho.";
+                            CorpoMorto4Evidence.description = "Corpo encontrado (Masculino) no quarto.";
+                            CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no quarto. Sujeito morava sozinho.";
                         }
                         break;
                     case 3:
                         if (PlayerData.Idioma == "ingles")
                         {
-                            CorpoMorto4Evidence.descriptionIngles = "Body found in the bathroom. .";
-                            CorpoMorto4Evidence.descriptionUpdateIngles = "Body found in the bathroom. Person lived alone.";
+                            CorpoMorto4Evidence.descriptionIngles = "Body found (Masculine) in the bathroom. .";
+                            CorpoMorto4Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bathroom. Person lived alone.";
                         }
                         else
                         {
-                            CorpoMorto4Evidence.description = "Corpo encontrado no banheiro.";
-                            CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado no banheiro. Sujeito morava sozinho.";
+                            CorpoMorto4Evidence.description = "Corpo encontrado (Masculino) no banheiro.";
+                            CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no banheiro. Sujeito morava sozinho.";
                         }
                         break;
                 }
@@ -3014,25 +3160,25 @@ public class SpawnObjects : MonoBehaviour
             case 2:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto4Evidence.descriptionIngles = "Body found in the bedroom.";
-                    CorpoMorto4Evidence.descriptionUpdateIngles = "Body found in the bedroom. Person lived alone.";
+                    CorpoMorto4Evidence.descriptionIngles = "Body found (Masculine) in the bedroom.";
+                    CorpoMorto4Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bedroom. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto4Evidence.description = "Corpo encontrado no quarto.";
-                    CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado no quarto. Sujeito morava sozinho.";
+                    CorpoMorto4Evidence.description = "Corpo encontrado (Masculino) no quarto.";
+                    CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no quarto. Sujeito morava sozinho.";
                 }
                 break;
             case 3:
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CorpoMorto4Evidence.descriptionIngles = "Body found in the bathroom. .";
-                    CorpoMorto4Evidence.descriptionUpdateIngles = "Body found in the bathroom. Person lived alone.";
+                    CorpoMorto4Evidence.descriptionIngles = "Body found (Masculine) in the bathroom. .";
+                    CorpoMorto4Evidence.descriptionUpdateIngles = "Body found (Masculine) in the bathroom. Person lived alone.";
                 }
                 else
                 {
-                    CorpoMorto4Evidence.description = "Corpo encontrado no banheiro.";
-                    CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado no banheiro. Sujeito morava sozinho.";
+                    CorpoMorto4Evidence.description = "Corpo encontrado (Masculino) no banheiro.";
+                    CorpoMorto4Evidence.descriptionUpdate = "Corpo encontrado (Masculino) no banheiro. Sujeito morava sozinho.";
                 }
                 break;
         }
@@ -3055,6 +3201,332 @@ public class SpawnObjects : MonoBehaviour
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto4(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCorpoMorto1F()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                switch (ScenesManager.ActualScene)
+                {
+                    case 2:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto1FEvidence.descriptionIngles = "Body found (Feminine) in the living room with a cut on the back.";
+                            CorpoMorto1FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the living room with a cut on the back. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto1FEvidence.description = "Corpo encontrado (Feminino) na sala com um corte nas costas.";
+                            CorpoMorto1FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) na sala com um corte nas costas. Sujeito morava sozinho.";
+                        }
+                        break;
+                    case 3:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto1FEvidence.descriptionIngles = "Body found (Feminine) in the balcony with a cut on the back.";
+                            CorpoMorto1FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the balcony with a cut on the back. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto1FEvidence.description = "Corpo encontrado (Feminino) na varanda com um corte nas costas.";
+                            CorpoMorto1FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) na varanda com um corte nas costas. Sujeito morava sozinho.";
+                        }
+                        break;
+                }
+                break;
+            case 2:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto1FEvidence.descriptionIngles = "Body found (Feminine) in the living room with a cut on the back.";
+                    CorpoMorto1FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the living room with a cut on the back. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto1FEvidence.description = "Corpo encontrado (Feminino) na sala com um corte nas costas.";
+                    CorpoMorto1FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) na sala com um corte nas costas. Sujeito morava sozinho.";
+                }
+                break;
+            case 3:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto1FEvidence.descriptionIngles = "Body found (Feminine) in the balcony with a cut on the back.";
+                    CorpoMorto1FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the balcony with a cut on the back. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto1FEvidence.description = "Corpo encontrado (Feminino) na varanda com um corte nas costas.";
+                    CorpoMorto1FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) na varanda com um corte nas costas. Person lived alone.";
+                }
+                break;
+        }
+        GameObject CorpoMorto1Clone = Instantiate(CorpoMorto1F) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CorpoMorto1Clone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                break;
+            case 2:
+                CorpoMorto1Clone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                break;
+            case 3:
+                CorpoMorto1Clone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto1F(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCorpoMorto2F()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                switch (ScenesManager.ActualScene)
+                {
+                    case 2:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto2FEvidence.descriptionIngles = "Body found (Feminine) in the bedroom with bruises all over.";
+                            CorpoMorto2FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bedroom with bruises all over. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto2FEvidence.description = "Corpo encontrado (Feminino) no quarto com hematomas pelo corpo.";
+                            CorpoMorto2FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
+                        }
+                        break;
+                    case 3:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto2FEvidence.descriptionIngles = "Body found (Feminine) in the bathroom with bruises all over.";
+                            CorpoMorto2FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bathroom with bruises all over. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto2FEvidence.description = "Corpo encontrado (Feminino) no banheiro com hematomas pelo corpo.";
+                            CorpoMorto2FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
+                        }
+
+                        break;
+                }
+                break;
+            case 2:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto2FEvidence.descriptionIngles = "Body found (Feminine) in the bedroom with bruises all over.";
+                    CorpoMorto2FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bedroom with bruises all over. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto2FEvidence.description = "Corpo encontrado (Feminino) no quarto com hematomas pelo corpo.";
+                    CorpoMorto2FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no quarto com hematomas pelo corpo. Sujeito morava sozinho.";
+                }
+
+                break;
+            case 3:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto2FEvidence.descriptionIngles = "Body found (Feminine) in the bathroom with bruises all over.";
+                    CorpoMorto2FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bathroom with bruises all over. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto2FEvidence.description = "Corpo encontrado (Feminino) no banheiro com hematomas pelo corpo.";
+                    CorpoMorto2FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no banheiro com hematomas pelo corpo. Sujeito morava sozinho.";
+                }
+                break;
+        }
+        GameObject CorpoMorto2Clone = Instantiate(CorpoMorto2F) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CorpoMorto2Clone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                break;
+            case 2:
+                CorpoMorto2Clone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                break;
+            case 3:
+                CorpoMorto2Clone.transform.position = new Vector3(-3.39f, 18.99f, -5);
+                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto2F(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCorpoMorto3M()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                switch (ScenesManager.ActualScene)
+                {
+                    case 2:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto3MEvidence.descriptionIngles = "Body found (Masculine) in the living room with a perforation.";
+                            CorpoMorto3MEvidence.descriptionUpdateIngles = "Body found (Masculine) in the living room with a perforation. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto3MEvidence.description = "Corpo encontrado (Masculino) na sala com uma perfuração.";
+                            CorpoMorto3MEvidence.descriptionUpdate = "Corpo encontrado (Masculino) na sala com uma perfuração. Sujeito morava sozinho.";
+                        }
+                        break;
+                    case 3:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto3MEvidence.descriptionIngles = "Body found (Masculine) in the balcony with a perforation.";
+                            CorpoMorto3MEvidence.descriptionUpdateIngles = "Body found (Masculine) in the balcony with a perforation. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto3MEvidence.description = "Corpo encontrado (Masculino) na varanda com uma perfuração.";
+                            CorpoMorto3MEvidence.descriptionUpdate = "Corpo encontrado (Masculino) na varanda com uma perfuração. Sujeito morava sozinho.";
+                        }
+                        break;
+                }
+                break;
+            case 2:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto3MEvidence.descriptionIngles = "Body found (Masculine) in the living room with a perforation.";
+                    CorpoMorto3MEvidence.descriptionUpdateIngles = "Body found (Masculine) in the living room with a perforation. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto3MEvidence.description = "Corpo encontrado (Masculino) na sala com uma perfuração.";
+                    CorpoMorto3MEvidence.descriptionUpdate = "Corpo encontrado (Masculino) na sala uma perfuração. Sujeito morava sozinho.";
+                }
+                break;
+            case 3:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto3MEvidence.descriptionIngles = "Body found (Masculine) in the balcony with a perforation.";
+                    CorpoMorto3MEvidence.descriptionUpdateIngles = "Body found (Masculine) in the balcony with a perforation. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto3MEvidence.description = "Corpo encontrado (Masculino) na varanda uma perfuração.";
+                    CorpoMorto3MEvidence.descriptionUpdate = "Corpo encontrado (Masculino) na varanda uma perfuração. Sujeito morava sozinho.";
+                }
+                break;
+        }
+        GameObject CorpoMorto3Clone = Instantiate(CorpoMorto3M) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CorpoMorto3Clone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                break;
+            case 2:
+                CorpoMorto3Clone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                break;
+            case 3:
+                CorpoMorto3Clone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto3M(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCorpoMorto4F()
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                switch (ScenesManager.ActualScene)
+                {
+                    case 2:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto4FEvidence.descriptionIngles = "Body found (Feminine) in the bedroom.";
+                            CorpoMorto4FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bedroom. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto4FEvidence.description = "Corpo encontrado (Feminino) no quarto.";
+                            CorpoMorto4FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no quarto. Sujeito morava sozinho.";
+                        }
+                        break;
+                    case 3:
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            CorpoMorto4FEvidence.descriptionIngles = "Body found (Feminine) in the bathroom. .";
+                            CorpoMorto4FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bathroom. Person lived alone.";
+                        }
+                        else
+                        {
+                            CorpoMorto4FEvidence.description = "Corpo encontrado (Feminino) no banheiro.";
+                            CorpoMorto4FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no banheiro. Sujeito morava sozinho.";
+                        }
+                        break;
+                }
+                break;
+            case 2:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto4FEvidence.descriptionIngles = "Body found (Feminine) in the bedroom.";
+                    CorpoMorto4FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bedroom. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto4FEvidence.description = "Corpo encontrado (Feminino) no quarto.";
+                    CorpoMorto4FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no quarto. Sujeito morava sozinho.";
+                }
+                break;
+            case 3:
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CorpoMorto4FEvidence.descriptionIngles = "Body found (Feminine) in the bathroom. .";
+                    CorpoMorto4FEvidence.descriptionUpdateIngles = "Body found (Feminine) in the bathroom. Person lived alone.";
+                }
+                else
+                {
+                    CorpoMorto4FEvidence.description = "Corpo encontrado (Feminino) no banheiro.";
+                    CorpoMorto4FEvidence.descriptionUpdate = "Corpo encontrado (Feminino) no banheiro. Sujeito morava sozinho.";
+                }
+                break;
+        }
+        GameObject CorpoMorto4Clone = Instantiate(CorpoMorto4F) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CorpoMorto4Clone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                break;
+            case 2:
+                CorpoMorto4Clone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                break;
+            case 3:
+                CorpoMorto4Clone.transform.position = new Vector3(-3.39f, 18.99f, -5);
+                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto4F(Clone)";
         NumeroDeObjetos++;
     }
     void Update()

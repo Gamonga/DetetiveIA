@@ -3480,6 +3480,79 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.9901485, y: 5.289009}
   m_EdgeRadius: 0
+--- !u!1 &261509856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261509858}
+  - component: {fileID: 261509857}
+  m_Layer: 0
+  m_Name: TrocaIdioma
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &261509857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261509856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf18cae77582c504385d9a66af979c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sim: {fileID: 940807460}
+  nao: {fileID: 1867004659}
+  roubo: {fileID: 0}
+  "justi\xE7a": {fileID: 0}
+  tortura: {fileID: 0}
+  finalizar: {fileID: 0}
+  suicidio: {fileID: 0}
+  "desven\xE7a": {fileID: 0}
+  Raiva: {fileID: 0}
+  nomeDetetive: {fileID: 958786881}
+  nomeParceiro: {fileID: 400041469}
+  pessoas: {fileID: 667485629}
+  evidencias: {fileID: 2038893721}
+  pensamentos: {fileID: 586626492}
+  juntarPensamentos: {fileID: 2049648472}
+  preencher: {fileID: 0}
+  selecionaOutro: {fileID: 479892787}
+  simAnalise: {fileID: 0}
+  noAnalise: {fileID: 0}
+  semEvidencias: {fileID: 0}
+  anotacoes: {fileID: 1244801280}
+  departamentoPolica: {fileID: 266385225}
+  servirProteger: {fileID: 1545857099}
+  acredita: {fileID: 1633747766}
+  duvida: {fileID: 1894964398}
+  discorda: {fileID: 1627454093}
+  visto: {fileID: 567583425}
+  ouviu: {fileID: 1341299600}
+  relacao: {fileID: 1582036525}
+  simTextoBox: {fileID: 2110783355}
+--- !u!4 &261509858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261509856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 431.83218, y: 218.46286, z: -217.69122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &266385224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19020,7 +19093,9 @@ MonoBehaviour:
   botaoNao: {fileID: 1857987845}
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 0}
   dialogoDelegadoExplicando: {fileID: 858552709}
+  diaologoFinalParceiro: {fileID: 0}
   dialogueControl: {fileID: 858552708}
+  dialogueControlFinal: {fileID: 0}
   isInRange: 0
   Transition: {fileID: 1914434864}
   movimento: {fileID: 2097695721}
@@ -35064,6 +35139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2097695720}
+  rbParceiroDetetive: {fileID: 0}
   animator: {fileID: 2097695718}
   limitadorVelocidade: 10
 --- !u!61 &2097695722
@@ -35701,6 +35777,30 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: CorpoMorto1F
+      value: 
+      objectReference: {fileID: 7103688940869535227, guid: 71ebe30d80a714641a5785d12dfe423c,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto2F
+      value: 
+      objectReference: {fileID: 975593970210970047, guid: 2f3f3dc7c942bb74abbbee91e38b317f,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto3M
+      value: 
+      objectReference: {fileID: 4745920798662620029, guid: a328d9cc230cbc248bac499f29c04a8c,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto4F
+      value: 
+      objectReference: {fileID: 7941145668862000080, guid: 841351064a2d27647be29962ac99c787,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: ManchaSangue
       value: 
       objectReference: {fileID: 5689862355987363187, guid: 6e9c5789e7699994f9d22b83556d6050,
@@ -35829,6 +35929,30 @@ PrefabInstance:
       propertyPath: CofreFechadoEvidence
       value: 
       objectReference: {fileID: 7784851377435229148, guid: 7a65fb5144e075f42ae6ee5b2aff43c5,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto1FEvidence
+      value: 
+      objectReference: {fileID: 4960359390581651388, guid: 71ebe30d80a714641a5785d12dfe423c,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto2FEvidence
+      value: 
+      objectReference: {fileID: 3155301975050038264, guid: 2f3f3dc7c942bb74abbbee91e38b317f,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto3MEvidence
+      value: 
+      objectReference: {fileID: 7466693525647540538, guid: a328d9cc230cbc248bac499f29c04a8c,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CorpoMorto4FEvidence
+      value: 
+      objectReference: {fileID: 5221780868680681879, guid: 841351064a2d27647be29962ac99c787,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

@@ -32,7 +32,7 @@ public class ScenesManager : MonoBehaviour
         PrimeiraVezDialogoTransicao = true;
         animator = GameObject.Find("CarroTransicaoGIF").GetComponent<Animator>();
         PlayerData data = SaveSystem.LoadPlayer();
-        if (MainMenu.NewGame == false)
+        if (MainMenu.PrimeiroCaso == false)
         {
             PrimeiraVezDialogoTransicao = data.PrimeiraVezDialogoTransicao;
         }

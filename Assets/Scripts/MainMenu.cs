@@ -9,7 +9,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public class MainMenu : MonoBehaviour
 {
     public AudioMixer SoundEffectsMixer;
-    public AudioMixer MusicMixer;    
+    public AudioMixer MusicMixer;
     public static bool NewGame = false;
     public movimento movimento;
     public Slider MusicSlider;
@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
     public Text Music;
     public Text SoundEffects;
     public Text Language;
-    public Text Language2;    
+    public Text Language2;
     public Text CarregaGame;
     public Text Quit;
     public GameObject acentos;
@@ -43,66 +43,80 @@ public class MainMenu : MonoBehaviour
         contador = 0;
         CarregaMusicas();
         SetSoundEffectSlider();
-        SetMusicSlider();        
+        SetMusicSlider();
         CarregaIdioma();
     }
-    void FixedUpdate ()
+    void FixedUpdate()
     {
-        if(contador<= 257){
+        if (contador <= 257)
+        {
             contador++;
-            Painel.color = new Color(contador/100,contador/100,contador/100, 1.0f);
+            Painel.color = new Color(contador / 100, contador / 100, contador / 100, 1.0f);
         }
 
     }
 
-    public void CarregaIdioma(){
-        if (File.Exists(Application.persistentDataPath + "/player.fun")){
+    public void CarregaIdioma()
+    {
+        if (File.Exists(Application.persistentDataPath + "/player.fun"))
+        {
             idioma = PlayerData.Idioma;
-            if(idioma == "portugues"){
+            if (idioma == "portugues")
+            {
                 EscolheuPortugues();
             }
-            else{
+            else
+            {
                 EscolheuIngles();
             }
         }
-        else{
+        else
+        {
             EscolheuIngles();
         }
     }
-    public void CarregaMusicas(){
-        if (File.Exists(Application.persistentDataPath + "/music.fun")){
+    public void CarregaMusicas()
+    {
+        if (File.Exists(Application.persistentDataPath + "/music.fun"))
+        {
             PlayerData datamusica = SaveSystem.LoadMusica();
             MusicSlider.value = datamusica.volumeMusica;
             SoundEffectSlider.value = datamusica.volumeSoundEffects;
         }
     }
-    public void PlayGame(){
+    public void PlayGame()
+    {
         NewGame = true;
         PlayerData.LevelsJogadosPeloPlayer = 0;
         PrimeiroCaso = true;
-        PlayerData.DificuldadeAtual = 3;        
+        PlayerData.DificuldadeAtual = 3;
         CarregaMusicas();
-        if(Random.value >= 0.5){
+        if (Random.value >= 0.5)
+        {
             SceneManager.LoadScene(2);
         }
-        else{
+        else
+        {
             SceneManager.LoadScene(3);
         }
     }
 
-    public void LoadGame(){
+    public void LoadGame()
+    {
         NewGame = false;
         PrimeiroCaso = false;
-        PlayerData data = SaveSystem.LoadPlayer();        
+        PlayerData data = SaveSystem.LoadPlayer();
         CarregaMusicas();
         SceneManager.LoadScene(data.level);
     }
 
-    public void QuitGame(){
+    public void QuitGame()
+    {
         Application.Quit();
     }
 
-    public void EscolheuIngles(){
+    public void EscolheuIngles()
+    {
         idioma = "ingles";
         NovoJogo.text = "New Game";
         Options.text = "Options";
@@ -119,11 +133,12 @@ public class MainMenu : MonoBehaviour
         SoundEffects.text = "Sound Effects";
         Music.text = "Music";
         Language.text = "Language";
-        Language2.text = "Language";    
+        Language2.text = "Language";
 
 
     }
-    public void EscolheuPortugues(){
+    public void EscolheuPortugues()
+    {
         idioma = "portugues";
         NovoJogo.text = "Novo Jogo";
         Options.text = "Opcoes";
@@ -140,32 +155,38 @@ public class MainMenu : MonoBehaviour
         SoundEffects.text = "Efeitos Sonoros";
         Music.text = "Música";
         Language.text = "Idioma";
-        Language2.text = "Idioma";    
+        Language2.text = "Idioma";
     }
-    public void SavePlayer(){
+    public void SavePlayer()
+    {
         SaveSystem.SavePlayer(movimento);
         SaveSystem.SaveMusic();
     }
-    public void SaveMusica(){
+    public void SaveMusica()
+    {
         SaveSystem.SaveMusic();
     }
-    
-    public void SetVolumeSoundEffects(float volume){
+
+    public void SetVolumeSoundEffects(float volume)
+    {
         SoundEffectsMixer.SetFloat("soundEffectsVolume", volume);
         volumeSoundEffects = volume;
     }
-    public void SetVolumeGeral(float volume){
+    public void SetVolumeGeral(float volume)
+    {
         MusicMixer.SetFloat("MusicVolume", volume);
         volumeMusica = volume;
     }
 
-    public void SetSoundEffectSlider(){
-        SoundEffectsMixer.GetFloat("soundEffectsVolume",out volumeSoundEffects);
+    public void SetSoundEffectSlider()
+    {
+        SoundEffectsMixer.GetFloat("soundEffectsVolume", out volumeSoundEffects);
         SoundEffectSlider.value = volumeSoundEffects;
     }
 
-    public void SetMusicSlider(){
-        MusicMixer.GetFloat("MusicVolume",out volumeMusica);
+    public void SetMusicSlider()
+    {
+        MusicMixer.GetFloat("MusicVolume", out volumeMusica);
         MusicSlider.value = volumeMusica;
     }
 }
