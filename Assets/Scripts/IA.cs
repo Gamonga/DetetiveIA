@@ -24019,36 +24019,42 @@ public static class IA
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 3 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 0] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 2] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 2 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 1] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 3) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 3] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 4] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else
                                 {
@@ -24228,36 +24234,42 @@ public static class IA
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 3 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 0] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 2] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 2 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 1] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 3) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 3] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 4] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else
                                 {
@@ -24437,36 +24449,42 @@ public static class IA
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 3 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 0] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 2] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 2 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 1] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 3) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 3] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else if ((SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 4] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;
                                     i = 0;
+                                    contador2 = -1;
                                 }
                                 else
                                 {
