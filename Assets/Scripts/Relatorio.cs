@@ -66,7 +66,7 @@ public class Relatorio : MonoBehaviour
         MainMenu.NewGame = true;
         SaveSystem.SavePlayer(movimento);
         jogoFinalizado = true;
-        PlayerData.LevelsJogadosPeloPlayer++;
+        PauseMenu.NumeroDeCasosJogadoPeloPlayer++;
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -361,18 +361,17 @@ public class Relatorio : MonoBehaviour
     }
     public void No()
     {
-        if (isInRange)
-        {
-            isInRange = false;
-            Transition.SetBool("Abrir", false);
-            CadernoLimpo.SetActive(true);
-            Evidencias.SetActive(false);
-            caderno.SetBool("Rela", false);
-            entrouPreencher = false;
-            sentence.Clear();
-            PixelArt.SetBool("On", false);
-            Caderno.PermissaoAbrirCaderno = true;
-        }
+        isInRange = false;
+        Transition.SetBool("Abrir", false);
+        CadernoLimpo.SetActive(true);
+        Evidencias.SetActive(false);
+        caderno.SetBool("Rela", false);
+        entrouPreencher = false;
+        sentence.Clear();
+        PixelArt.SetBool("On", false);
+        movimento.ParaPersonagem = false;
+        Caderno.PermissaoAbrirCaderno = true;
+
     }
     private void OnTriggerStay2D(Collider2D collision)
     {

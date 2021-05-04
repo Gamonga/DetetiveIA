@@ -47,6 +47,10 @@ public class Caderno : MonoBehaviour
     public Text evidencia10;
     public Text evidencia11;
     public Text evidencia12;
+    public Text evidencia13;
+    public Text evidencia14;
+    public Text evidencia15;
+    public Text evidencia16;
     public Text pessoa1;
     public Text pessoa2;
     public Text pessoa3;
@@ -59,6 +63,10 @@ public class Caderno : MonoBehaviour
     public Text pessoa10;
     public Text pessoa11;
     public Text pessoa12;
+    public Text pessoa13;
+    public Text pessoa14;
+    public Text pessoa15;
+
     public Image ImagemObjeto;
     static public int posiçãoEvidencias = 0;
     private int i = 0;
@@ -329,6 +337,48 @@ public class Caderno : MonoBehaviour
             }
             update[11] = true;
         }
+        if (tag == 12)
+        {
+            evidencias[12].description = evidencias[12].descriptionUpdate;
+            evidencias[12].descriptionIngles = evidencias[12].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[12].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[12].description;
+            }
+            update[12] = true;
+        }
+        if (tag == 13)
+        {
+            evidencias[13].description = evidencias[13].descriptionUpdate;
+            evidencias[13].descriptionIngles = evidencias[13].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[13].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[13].description;
+            }
+            update[13] = true;
+        }
+        if (tag == 14)
+        {
+            evidencias[14].description = evidencias[14].descriptionUpdate;
+            evidencias[14].descriptionIngles = evidencias[14].descriptionUpdateIngles;
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[14].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[14].description;
+            }
+            update[14] = true;
+        }
         evidenciasTextos.SetActive(false);
     }
     public void trocarDescricao(Text Text)
@@ -481,6 +531,42 @@ public class Caderno : MonoBehaviour
                 description.text = evidencias[11].description;
             }
             ImagemObjeto.sprite = evidencias[11].ImagemObjeto;
+        }
+        if (Text.tag == "12")
+        {
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[12].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[12].description;
+            }
+            ImagemObjeto.sprite = evidencias[12].ImagemObjeto;
+        }
+        if (Text.tag == "13")
+        {
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[13].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[13].description;
+            }
+            ImagemObjeto.sprite = evidencias[13].ImagemObjeto;
+        }
+        if (Text.tag == "14")
+        {
+            if (PlayerData.Idioma == "ingles")
+            {
+                description.text = evidencias[14].descriptionIngles;
+            }
+            else
+            {
+                description.text = evidencias[14].description;
+            }
+            ImagemObjeto.sprite = evidencias[14].ImagemObjeto;
         }
     }
     public void JuntarPensamentos()
@@ -835,6 +921,39 @@ public class Caderno : MonoBehaviour
                             evidencia12.text = evidencias[11].nome;
                         }
                         break;
+                    case 12:
+                        evidencia13 = GameObject.Find("Text12").GetComponent<Text>();
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia13.text = evidencias[12].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia13.text = evidencias[12].nome;
+                        }
+                        break;
+                    case 13:
+                        evidencia14 = GameObject.Find("Text13").GetComponent<Text>();
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia14.text = evidencias[13].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia14.text = evidencias[13].nome;
+                        }
+                        break;
+                    case 14:
+                        evidencia15 = GameObject.Find("Text14").GetComponent<Text>();
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            evidencia15.text = evidencias[14].nomeIngles;
+                        }
+                        else
+                        {
+                            evidencia15.text = evidencias[14].nome;
+                        }
+                        break;
                 }
             }
         }
@@ -1013,6 +1132,39 @@ public class Caderno : MonoBehaviour
                         evidencia12.text = evidencias[11].nome;
                     }
                     break;
+                case 12:
+                    evidencia13 = GameObject.Find("Text12").GetComponent<Text>();
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia13.text = evidencias[12].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia13.text = evidencias[12].nome;
+                    }
+                    break;
+                case 13:
+                    evidencia14 = GameObject.Find("Text13").GetComponent<Text>();
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia14.text = evidencias[13].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia14.text = evidencias[13].nome;
+                    }
+                    break;
+                case 14:
+                    evidencia15 = GameObject.Find("Text14").GetComponent<Text>();
+                    if (PlayerData.Idioma == "ingles")
+                    {
+                        evidencia15.text = evidencias[14].nomeIngles;
+                    }
+                    else
+                    {
+                        evidencia15.text = evidencias[14].nome;
+                    }
+                    break;
             }
         }
     }
@@ -1066,6 +1218,18 @@ public class Caderno : MonoBehaviour
         if (Text.tag == "11")
         {
             description.text = pessoas[11].description;
+        }
+        if (Text.tag == "12")
+        {
+            description.text = pessoas[12].description;
+        }
+        if (Text.tag == "13")
+        {
+            description.text = pessoas[13].description;
+        }
+        if (Text.tag == "14")
+        {
+            description.text = pessoas[14].description;
         }
     }
     public void Pessoas()
@@ -1125,6 +1289,18 @@ public class Caderno : MonoBehaviour
                 case 11:
                     pessoa12 = GameObject.Find("Pessoa11").GetComponent<Text>();
                     pessoa12.text = pessoas[11].nome;
+                    break;
+                case 12:
+                    pessoa13 = GameObject.Find("Pessoa12").GetComponent<Text>();
+                    pessoa13.text = pessoas[12].nome;
+                    break;
+                case 13:
+                    pessoa14 = GameObject.Find("Pessoa13").GetComponent<Text>();
+                    pessoa14.text = pessoas[13].nome;
+                    break;
+                case 14:
+                    pessoa15 = GameObject.Find("Pessoa14").GetComponent<Text>();
+                    pessoa15.text = pessoas[14].nome;
                     break;
             }
         }
@@ -1267,6 +1443,25 @@ public class Caderno : MonoBehaviour
                 posiçãoPessoa++;
                 return;
             }
+            if (posiçãoPessoa == 12)
+            {
+                pessoas[12] = pessoa;
+                posiçãoPessoa++;
+                return;
+            }
+            if (posiçãoPessoa == 13)
+            {
+                pessoas[13] = pessoa;
+                posiçãoPessoa++;
+                return;
+            }
+            if (posiçãoPessoa == 14)
+            {
+                pessoas[14] = pessoa;
+                posiçãoPessoa++;
+                return;
+            }
+
         }
     }
 
@@ -1349,6 +1544,30 @@ public class Caderno : MonoBehaviour
             if (posiçãoEvidencias == 11)
             {
                 evidencias[11] = evidence;
+                posiçãoEvidencias++;
+                return;
+            }
+            if (posiçãoEvidencias == 12)
+            {
+                evidencias[12] = evidence;
+                posiçãoEvidencias++;
+                return;
+            }
+            if (posiçãoEvidencias == 13)
+            {
+                evidencias[13] = evidence;
+                posiçãoEvidencias++;
+                return;
+            }
+            if (posiçãoEvidencias == 14)
+            {
+                evidencias[14] = evidence;
+                posiçãoEvidencias++;
+                return;
+            }
+            if (posiçãoEvidencias == 15)
+            {
+                evidencias[15] = evidence;
                 posiçãoEvidencias++;
                 return;
             }

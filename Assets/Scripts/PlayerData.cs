@@ -54,18 +54,23 @@ public class PlayerData
     public bool PanoSangue;
     public bool PortaQuebrada;
     public static int PontuacaoDoPlayer;
-    public static int LevelsJogadosPeloPlayer;
     public int numeroAssassino;
     public int numeroAssassinoSegundo;
     public int numeroAssassinoTerceiro;
     public bool PrimeiraVezDialogoTransicao;
+    public int NumeroDeCasosJogadoPeloPlayer;
+    public bool depoimentoTestemunhaVisto;
+    public bool depoimentoTestemunhaOuviu;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
+        NumeroDeCasosJogadoPeloPlayer = PauseMenu.NumeroDeCasosJogadoPeloPlayer;
         PrimeiraVezDialogoTransicao = ScenesManager.PrimeiraVezDialogoTransicao;
         numeroAssassino = SpawnObjects.numeroAssassino;
+        depoimentoTestemunhaVisto = Testemunha.depoimentoTestemunhaVisto;
         PortaQuebrada = SpawnObjects.PortaQuebrada;
         numeroAssassinoSegundo = SpawnObjects.numeroAssassinoSegundo;
+        depoimentoTestemunhaOuviu = Testemunha.depoimentoTestemunhaOuviu;
         numeroAssassinoTerceiro = SpawnObjects.numeroAssassinoTerceiro;
         selecionaArmaComSangueFalso = SpawnObjects.selecionaArmaComSangueFalso;
         actualCrimeScene = ScenesManager.ActualScene;

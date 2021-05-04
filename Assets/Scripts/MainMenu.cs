@@ -87,7 +87,6 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         NewGame = true;
-        PlayerData.LevelsJogadosPeloPlayer = 0;
         PrimeiroCaso = true;
         PlayerData.DificuldadeAtual = 3;
         CarregaMusicas();

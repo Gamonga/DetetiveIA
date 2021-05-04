@@ -109,7 +109,7 @@ MonoBehaviour:
   ImagemObjeto: {fileID: 21300000, guid: 51f1b17919c904341acaea71b57efdbe, type: 3}
   NomeObjeto: Sufocamento(Clone)
   NumeroCaderno: 0
-  weaponRuido: 0
+  weaponRuido: 1
   weaponInstantDeath: 1
   TemPlanejamento: 0
   NTemPlanejamento: 0

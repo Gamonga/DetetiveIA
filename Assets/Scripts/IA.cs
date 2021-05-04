@@ -23854,7 +23854,7 @@ public static class IA
         entrouPrimeiraVez = false;
         DeuRuim = true;
         pontuacaoReal = Relatorio.Pontuacao + PlayerData.PontuacaoDoPlayer;
-        taxaDeAcertos = pontuacaoReal / (5 * PlayerData.LevelsJogadosPeloPlayer);
+        taxaDeAcertos = pontuacaoReal / (5 * PauseMenu.NumeroDeCasosJogadoPeloPlayer);
 
         if (taxaDeAcertos >= 0.4 && taxaDeAcertos < 0.6)
         {

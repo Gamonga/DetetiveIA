@@ -109,7 +109,7 @@ MonoBehaviour:
   ImagemObjeto: {fileID: 21300000, guid: 2a253443ca1681148976fb4bd503d168, type: 3}
   NomeObjeto: Punhos(Clone)
   NumeroCaderno: 0
-  weaponRuido: 0
+  weaponRuido: 2
   weaponInstantDeath: 0
   TemPlanejamento: 0
   NTemPlanejamento: 0

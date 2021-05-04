@@ -33,6 +33,8 @@ public class SpawnObjects : MonoBehaviour
     public Evidence DestrocosEvidence;
     public GameObject ManchaSangue;
     public Evidence ManchaSangueEvidence;
+    public GameObject ManchaSangueTortura;
+    public Evidence ManchaSangueTorturaEvidence;
     public GameObject Revolver;
     public Evidence RevolverEvidence;
     public GameObject PortaDeSaida;
@@ -57,6 +59,8 @@ public class SpawnObjects : MonoBehaviour
     public Evidence BastaoDeBeisebolEvidence;
     public GameObject Bala;
     public Evidence BalaEvidence;
+    public GameObject Testemunha;
+    public Evidence TestemunhaEvidence;
     public GameObject Policial;
     public Evidence PolicialEvidence;
     public GameObject Laudo;
@@ -146,6 +150,7 @@ public class SpawnObjects : MonoBehaviour
     public static int numeroAssassino;
     public static int numeroAssassinoSegundo;
     public static int numeroAssassinoTerceiro;
+    private int sangueOriginal;
     // Start is called before the first frame update
     void Start()
     {
@@ -154,6 +159,7 @@ public class SpawnObjects : MonoBehaviour
         NumeroDeObjetos = 0;
         NumeroDeportas = carregaNumeroDePortas();
         PortaDaCena = carregaPortaDaCena();
+        InstantiateTestemunha();
         if (MainMenu.NewGame == false)
         {
             PlayerData data = SaveSystem.LoadPlayer();
@@ -224,20 +230,16 @@ public class SpawnObjects : MonoBehaviour
                                     break;
                                 case 1:
                                     QuintaResposta = "Prazer";
-
                                     break;
                                 case 2:
                                     QuintaResposta = "Desavenca";
-
                                     break;
                                 case 3:
                                     QuintaResposta = "Justica";
-
                                     break;
                                 case 4:
                                     QuintaResposta = "Raiva";
                                     break;
-
                             }
                         }
                     }
@@ -248,56 +250,72 @@ public class SpawnObjects : MonoBehaviour
                             switch (i)
                             {
                                 case 0:
+                                    sangueOriginal = 0;
                                     TerceiraResposta = BastaoDeBeisebolEvidence.nome;
                                     TerceiraRespostaIngles = BastaoDeBeisebolEvidence.nomeIngles;
                                     break;
                                 case 1:
+                                    sangueOriginal = 1;
                                     TerceiraResposta = BastaoDeBeisebolSangueEvidence.nome;
                                     TerceiraRespostaIngles = BastaoDeBeisebolSangueEvidence.nomeIngles;
                                     break;
                                 case 2:
+                                    sangueOriginal = 2;
                                     TerceiraResposta = CaixaDeRemedioEvidence.nome;
                                     TerceiraRespostaIngles = CaixaDeRemedioEvidence.nomeIngles;
                                     break;
                                 case 3:
+                                    sangueOriginal = 3;
                                     TerceiraResposta = FacaCozinhaEvidence.nome;
                                     TerceiraRespostaIngles = FacaCozinhaEvidence.nomeIngles;
                                     break;
                                 case 4:
+                                    sangueOriginal = 4;
                                     TerceiraResposta = FacaNormalSemSangueEvidence.nome;
                                     TerceiraRespostaIngles = FacaNormalSemSangueEvidence.nomeIngles;
                                     break;
                                 case 5:
+                                    sangueOriginal = 5;
                                     TerceiraResposta = FacaNormalEvidence.nome;
                                     TerceiraRespostaIngles = FacaNormalEvidence.nomeIngles;
                                     break;
                                 case 6:
+                                    sangueOriginal = 6;
                                     TerceiraResposta = PunhosEvidence.nome;
                                     TerceiraRespostaIngles = PunhosEvidence.nomeIngles;
                                     break;
                                 case 7:
+                                    sangueOriginal = 7;
                                     TerceiraResposta = RevolverEvidence.nome;
                                     TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
                                     break;
                                 case 8:
+                                    sangueOriginal = 8;
+                                    TerceiraResposta = RevolverEvidence.nome;
+                                    TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
                                     break;
                                 case 9:
+                                    sangueOriginal = 9;
                                     TerceiraResposta = CanoPerfuraçãoEvidence.nome;
                                     TerceiraRespostaIngles = CanoPerfuraçãoEvidence.nomeIngles;
                                     break;
                                 case 10:
+                                    sangueOriginal = 10;
                                     TerceiraResposta = SufocamentoEvidence.nome;
                                     TerceiraRespostaIngles = SufocamentoEvidence.nomeIngles;
                                     break;
                                 case 11:
+                                    sangueOriginal = 11;
                                     TerceiraResposta = CanoPerfuraçãoSangueEvidence.nome;
                                     TerceiraRespostaIngles = CanoPerfuraçãoSangueEvidence.nomeIngles;
                                     break;
                                 case 12:
+                                    sangueOriginal = 12;
                                     TerceiraResposta = CanoContundenteEvidence.nome;
                                     TerceiraRespostaIngles = CanoContundenteEvidence.nomeIngles;
                                     break;
                                 case 13:
+                                    sangueOriginal = 13;
                                     TerceiraResposta = CanoContundenteSangueEvidence.nome;
                                     TerceiraRespostaIngles = CanoContundenteSangueEvidence.nomeIngles;
                                     break;
@@ -429,10 +447,16 @@ public class SpawnObjects : MonoBehaviour
                                     break;
                             }
                         }
+                        depoimentoTestemunhaOuviu = false;
+                        if (Random.value > 0.5f)
+                        {
+                            depoimentoTestemunhaOuviu = true;
+                        }
                         if (IA.evidencias[intProximoCaso, i] == 1)
                         {
                             GeraCasoIA(i);
                         }
+                        GeraTestemunho();
                     }
                 }
             }
@@ -467,49 +491,262 @@ public class SpawnObjects : MonoBehaviour
             }
         }
     }
+    public void GeraTestemunho()
+    {
+        if (Random.value > 0.5f)
+        {
+            depoimentoTestemunhaVisto = true;
+        }
+        else
+        {
+            depoimentoTestemunhaVisto = false;
+        }
+        /*1*/
+        if (PedraInteriorJanela && PortaArrombadaDentro && depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+        /*2*/
+        if (PedraInteriorJanela && !PortaArrombadaDentro && !depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+        /*3*/
+        if (!PedraInteriorJanela && !PortaArrombadaDentro && depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "false";
+        }
+        /*4*/
+        if (!PedraInteriorJanela && PortaArrombadaDentro && !depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "true";
+        }
+        /*5*/
+        if (PedraInteriorJanela && !PortaArrombadaDentro && depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "true";
+        }
+        /*6*/
+        if (PedraInteriorJanela && PortaArrombadaDentro && !depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+        /*7*/
+        if (!PedraInteriorJanela && PortaArrombadaDentro && depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "false";
+        }
+        /*8*/
+        if (!PedraInteriorJanela && !PortaArrombadaDentro && !depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+
+        if (PedraInteriorJanela && !PortaQuebrada && depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+        if (PedraInteriorJanela && !PortaQuebrada && !depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+        if (!PedraInteriorJanela && !PortaQuebrada && depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "false";
+        }
+        if (!PedraInteriorJanela && !PortaQuebrada && !depoimentoTestemunhaVisto)
+        {
+            VistoVerdade = "duvida";
+        }
+    }
     public void GeraCasoIA(int i)
     {
         switch (i)
         {
             case 0:
+                if (sangueOriginal != 0)
+                {
+                    selecionaArmaComSangueFalso = 0;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
                 InstantiateBastao();
                 break;
             case 1:
+                if (sangueOriginal != 1)
+                {
+                    selecionaArmaComSangueFalso = 1;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
                 InstantiateBastaoSangue();
                 break;
             case 2:
+                if (sangueOriginal != 2)
+                {
+                    selecionaArmaComSangueFalso = 2;
+                }
+                if (Armas[selecionadorint].weaponRuido == 0 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
+                if (Armas[selecionadorint].weaponRuido == 0 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
                 InstantiateCaixaRemedio();
                 break;
             case 3:
+                if (sangueOriginal != 3)
+                {
+                    selecionaArmaComSangueFalso = 3;
+                }
+                if (Armas[selecionadorint].weaponRuido == 1)
+                {
+                    OuviuVerdade = "duvida";
+                }
                 InstantiateFacaCozinha();
                 break;
             case 4:
+                if (sangueOriginal != 4)
+                {
+                    selecionaArmaComSangueFalso = 4;
+                }
+                if (Armas[selecionadorint].weaponRuido == 1)
+                {
+                    OuviuVerdade = "duvida";
+                }
                 InstantiateFacaNormalSemSangue();
                 break;
             case 5:
+                if (sangueOriginal != 5)
+                {
+                    selecionaArmaComSangueFalso = 5;
+                }
+                if (Armas[selecionadorint].weaponRuido == 1)
+                {
+                    OuviuVerdade = "duvida";
+                }
                 InstantiateFacaNormal();
                 break;
             case 6:
+                if (sangueOriginal != 6)
+                {
+                    selecionaArmaComSangueFalso = 6;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
                 InstantiatePunhos();
                 break;
             case 7:
+                if (sangueOriginal != 7)
+                {
+                    selecionaArmaComSangueFalso = 7;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
                 InstantiateRevolver();
                 break;
             case 8:
+                if (sangueOriginal != 8)
+                {
+                    selecionaArmaComSangueFalso = 8;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
+                InstantiateRevolver();
                 break;
             case 9:
+                if (sangueOriginal != 9)
+                {
+                    selecionaArmaComSangueFalso = 9;
+                }
+                if (Armas[selecionadorint].weaponRuido == 1)
+                {
+                    OuviuVerdade = "duvida";
+                }
                 InstantiateCanoperfuracao();
                 break;
             case 10:
+                if (sangueOriginal != 10)
+                {
+                    selecionaArmaComSangueFalso = 10;
+                }
+                if (Armas[selecionadorint].weaponRuido == 1)
+                {
+                    OuviuVerdade = "duvida";
+                }
                 InstantiateSufocamento();
                 break;
             case 11:
+                if (sangueOriginal != 11)
+                {
+                    selecionaArmaComSangueFalso = 11;
+                }
+                if (Armas[selecionadorint].weaponRuido == 1)
+                {
+                    OuviuVerdade = "duvida";
+                }
                 InstantiateCanoPerfuracaoSangue();
                 break;
             case 12:
+                if (sangueOriginal != 12)
+                {
+                    selecionaArmaComSangueFalso = 12;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
                 InstantiateCanocontundente();
                 break;
             case 13:
+                if (sangueOriginal != 13)
+                {
+                    selecionaArmaComSangueFalso = 13;
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "true";
+                }
+                if (Armas[selecionadorint].weaponRuido > 1 && !depoimentoTestemunhaOuviu)
+                {
+                    OuviuVerdade = "false";
+                }
                 InstantiateCanoContundenteSangue();
                 break;
             case 28:
@@ -524,6 +761,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiatePolicial();
                 break;
             case 35:
+                PortaQuebrada = false;
                 if (PlayerData.Idioma == "ingles")
                 {
                     PolicialEvidence.description = "No signs of movement and when I got here the door was unlocked.";
@@ -539,6 +777,8 @@ public class SpawnObjects : MonoBehaviour
                 InstantiatePolicial();
                 break;
             case 36:
+                PortaArrombadaDentro = true;
+                PortaQuebrada = true;
                 if (PlayerData.Idioma == "ingles")
                 {
                     PolicialEvidence.description = "No signs of movement and when I got here the door was broken.";
@@ -554,6 +794,8 @@ public class SpawnObjects : MonoBehaviour
                 InstantiatePolicial();
                 break;
             case 37:
+                PortaArrombadaDentro = false;
+                PortaQuebrada = true;
                 if (PlayerData.Idioma == "ingles")
                 {
                     PolicialEvidence.description = "No signs of movement and when I got here the door was broken.";
@@ -735,7 +977,14 @@ public class SpawnObjects : MonoBehaviour
             case 52:
                 break;
             case 58:
-                InstantiateManchaSangue();
+                if (Random.value > 0.5f)
+                {
+                    InstantiateManchaSangue();
+                }
+                if (Random.value > 0.5f)
+                {
+                    InstantiateManchaSangueTortura();
+                }
                 break;
             case 59:
                 InstantiateCofreVazio();
@@ -773,9 +1022,11 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 79:
                 InstantiateJanelaQuebradaPedraInterior();
+                PedraInteriorJanela = true;
                 break;
             case 80:
                 InstantiateJanelaQuebradaPedraExterior();
+                PedraInteriorJanela = false;
                 break;
 
         }
@@ -879,8 +1130,27 @@ public class SpawnObjects : MonoBehaviour
                     {
                         ContinuaNoLoop = false;
                         LaudoEvidence.descriptionUpdate = LaudoEvidence.descriptionUpdate + ". Morreu de Forma Lenta.";
-                        InstantiateManchaSangue();
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateManchaSangue();
+                            InstantiateManchaSangueTortura();
+                        }
+                        else
+                        {
+                            InstantiateManchaSangue();
+                        }
                         QuintaResposta = "Prazer";
+                    }
+                    else
+                    {
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateManchaSangueTortura();
+                        }
+                        else
+                        {
+                            InstantiateManchaSangue();
+                        }
                     }
                     break;
                 case 2:
@@ -1223,8 +1493,8 @@ public class SpawnObjects : MonoBehaviour
             case "corte":
                 if (PlayerData.Idioma == "ingles")
                 {
-                    LaudoEvidence.descriptionIngles = "Died around 10 A.M. Signs of cutting were found.";
-                    LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. Signs of cutting were found.";
+                    LaudoEvidence.descriptionIngles = "Died around 10:00. Signs of cutting were found.";
+                    LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. Signs of cutting were found.";
                 }
                 else
                 {
@@ -1235,8 +1505,8 @@ public class SpawnObjects : MonoBehaviour
             case "contundente":
                 if (PlayerData.Idioma == "ingles")
                 {
-                    LaudoEvidence.descriptionIngles = "Died around 10 A.M. Sings of contusion were found.";
-                    LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. Sings of contusion were found.";
+                    LaudoEvidence.descriptionIngles = "Died around 10:00. Sings of contusion were found.";
+                    LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. Sings of contusion were found.";
                 }
                 else
                 {
@@ -1247,8 +1517,8 @@ public class SpawnObjects : MonoBehaviour
             case "veneno":
                 if (PlayerData.Idioma == "ingles")
                 {
-                    LaudoEvidence.descriptionIngles = "Died around 10 A.M. No signs of harm were found.";
-                    LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. No signs of harm were found.";
+                    LaudoEvidence.descriptionIngles = "Died around 10:00. No signs of harm were found.";
+                    LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. No signs of harm were found.";
                 }
                 else
                 {
@@ -1259,8 +1529,8 @@ public class SpawnObjects : MonoBehaviour
             case "armaDeFogo":
                 if (PlayerData.Idioma == "ingles")
                 {
-                    LaudoEvidence.descriptionIngles = "Died around 10 A.M. Sings of perforation were found.";
-                    LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. Sings of perforation were found.";
+                    LaudoEvidence.descriptionIngles = "Died around 10:00. Sings of perforation were found.";
+                    LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. Sings of perforation were found.";
                 }
                 else
                 {
@@ -1459,6 +1729,9 @@ public class SpawnObjects : MonoBehaviour
             case "Informações do policial(Clone)":
                 InstantiatePolicial();
                 break;
+            case "Informações da testemunha(Clone)":
+                InstantiateTestemunha();
+                break;
             case "BastaoDeBeisebol(Clone)":
                 InstantiateBastao();
                 break;
@@ -1476,6 +1749,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case "ManchaSangue(Clone)":
                 InstantiateManchaSangue();
+                break;
+            case "ManchaSangueTortura(Clone)":
+                InstantiateManchaSangueTortura();
                 break;
             case "Cofre com dinheiro honesto(Clone)":
                 InstantiateCofreDinheiroHonesto();
@@ -1588,6 +1864,9 @@ public class SpawnObjects : MonoBehaviour
             case "Informações do policial(Clone)":
                 InstantiatePolicial();
                 break;
+            case "Informações da testemunha(Clone)":
+                InstantiateTestemunha();
+                break;
             case "BastaoDeBeisebol(Clone)":
                 InstantiateBastao();
                 break;
@@ -1605,6 +1884,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case "ManchaSangue(Clone)":
                 InstantiateManchaSangue();
+                break;
+            case "ManchaSangueTortura(Clone)":
+                InstantiateManchaSangueTortura();
                 break;
             case "Cofre com dinheiro honesto(Clone)":
                 InstantiateCofreDinheiroHonesto();
@@ -1794,6 +2076,29 @@ public class SpawnObjects : MonoBehaviour
             else
             {
                 dialogueText.text = FacaNormalSemSangueEvidence.nome + " foi adicionado ao caderno";
+            }
+            entrouNoTexto = true;
+        }
+        else
+        {
+            animator.SetBool("Abrir", false);
+            entrouNoTexto = false;
+        }
+    }
+    public void ManchaSangueTorturaNome()
+    {
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if (!entrouNoTexto)
+        {
+            animator.SetBool("Abrir", true);
+            if (PlayerData.Idioma == "ingles")
+            {
+                dialogueText.text = ManchaSangueTorturaEvidence.nomeIngles + " was added to the notebook";
+            }
+            else
+            {
+                dialogueText.text = ManchaSangueTorturaEvidence.nome + " foi adicionado ao caderno";
             }
             entrouNoTexto = true;
         }
@@ -2139,6 +2444,11 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateManchaSangue()
     {
+        if (QuintaResposta == "Prazer")
+        {
+            ManchaSangueEvidence.descriptionUpdate = ManchaSangueEvidence.description + " Sangue da vítima, perto do corpo, derramada por volta das 01:50.";
+            ManchaSangueEvidence.descriptionUpdateIngles = ManchaSangueEvidence.descriptionIngles + " Victim's blood, near the body, spilled around 01:50.";
+        }
         GameObject ManchaSangueClone = Instantiate(ManchaSangue) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -2155,6 +2465,48 @@ public class SpawnObjects : MonoBehaviour
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "ManchaSangue(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateManchaSangueTortura()
+    {
+        if (QuintaResposta == "Prazer")
+        {
+            ManchaSangueTorturaEvidence.descriptionUpdate = ManchaSangueTorturaEvidence.description + " Sangue da vítima, na cozinha, derramada por volta das 00:50.";
+            ManchaSangueTorturaEvidence.descriptionUpdateIngles = ManchaSangueTorturaEvidence.descriptionIngles + " Victim's blood, in the kitchen, spilled around 00:50.";
+            SegundaResposta = ManchaSangueTorturaEvidence.nome;
+            SegundaRespostaIngles = ManchaSangueTorturaEvidence.nomeIngles;
+        }
+        else
+        {
+            if (Random.value > 0.5f)
+            {
+                ManchaSangueTorturaEvidence.descriptionUpdate = ManchaSangueTorturaEvidence.description + " Sangue da vítima, na cozinha, derramada por volta das 09:30.";
+                ManchaSangueTorturaEvidence.descriptionUpdateIngles = ManchaSangueTorturaEvidence.descriptionIngles + " Victim's blood, in the kitchen, spilled around 09:30.";
+                SegundaResposta = ManchaSangueTorturaEvidence.nome;
+                SegundaRespostaIngles = ManchaSangueTorturaEvidence.nomeIngles;
+            }
+            else
+            {
+                ManchaSangueTorturaEvidence.descriptionUpdate = ManchaSangueTorturaEvidence.description + " Sangue da vítima, na cozinha, derramada por volta das 10:05.";
+                ManchaSangueTorturaEvidence.descriptionUpdateIngles = ManchaSangueTorturaEvidence.descriptionIngles + " Victim's blood, in the kitchen, spilled around 10:05.";
+            }
+        }
+        GameObject ManchaSangueTorturaClone = Instantiate(ManchaSangueTortura) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                ManchaSangueTortura.transform.position = new Vector3(PosicaoCorpoMorto.x - 1.5f, PosicaoCorpoMorto.y - 0.12f, -4);
+                break;
+            case 2:
+                ManchaSangueTortura.transform.position = new Vector3(4.92f, -6.66f, -4);
+                break;
+            case 3:
+                ManchaSangueTortura.transform.position = new Vector3(-4.79f, -2.12f, -4);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "ManchaSangueTortura(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiateCelular()
@@ -2464,8 +2816,8 @@ public class SpawnObjects : MonoBehaviour
                 case "corte":
                     if (PlayerData.Idioma == "ingles")
                     {
-                        LaudoEvidence.descriptionIngles = "Died around 10 A.M. Signs of cutting were found.";
-                        LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. Signs of cutting were found.";
+                        LaudoEvidence.descriptionIngles = "Died around 10:00. Signs of cutting were found.";
+                        LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. Signs of cutting were found.";
                     }
                     else
                     {
@@ -2476,8 +2828,8 @@ public class SpawnObjects : MonoBehaviour
                 case "contundente":
                     if (PlayerData.Idioma == "ingles")
                     {
-                        LaudoEvidence.descriptionIngles = "Died around 10 A.M. Sings of contusion were found.";
-                        LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. Sings of contusion were found.";
+                        LaudoEvidence.descriptionIngles = "Died around 10:00. Sings of contusion were found.";
+                        LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. Sings of contusion were found.";
                     }
                     else
                     {
@@ -2488,8 +2840,8 @@ public class SpawnObjects : MonoBehaviour
                 case "veneno":
                     if (PlayerData.Idioma == "ingles")
                     {
-                        LaudoEvidence.descriptionIngles = "Died around 10 A.M. No signs of harm were found.";
-                        LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. No signs of harm were found.";
+                        LaudoEvidence.descriptionIngles = "Died around 10:00. No signs of harm were found.";
+                        LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. No signs of harm were found.";
                     }
                     else
                     {
@@ -2500,8 +2852,8 @@ public class SpawnObjects : MonoBehaviour
                 case "armaDeFogo":
                     if (PlayerData.Idioma == "ingles")
                     {
-                        LaudoEvidence.descriptionIngles = "Died around 10 A.M. Sings of perforation were found.";
-                        LaudoEvidence.descriptionUpdateIngles = "Died around 10 A.M. Sings of perforation were found.";
+                        LaudoEvidence.descriptionIngles = "Died around 10:00. Sings of perforation were found.";
+                        LaudoEvidence.descriptionUpdateIngles = "Died around 10:00. Sings of perforation were found.";
                     }
                     else
                     {
@@ -2527,6 +2879,32 @@ public class SpawnObjects : MonoBehaviour
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Laudo(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateTestemunha()
+    {
+        if (PlayerData.Idioma == "ingles")
+        {
+        }
+        else
+        {
+        }
+        GameObject TestemunhalClone = Instantiate(Testemunha) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                TestemunhalClone.transform.position = new Vector3(-6.9f, -15.36f, 0);
+                break;
+            case 2:
+                TestemunhalClone.transform.position = new Vector3(-6.9f, -15.36f, 0);
+                break;
+            case 3:
+                TestemunhalClone.transform.position = new Vector3(16.64f, -17.55f, 0);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "Informações da testemunha(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiatePolicial()
@@ -3263,22 +3641,22 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
-        GameObject CorpoMorto1Clone = Instantiate(CorpoMorto1F) as GameObject;
+        GameObject CorpoMorto1FClone = Instantiate(CorpoMorto1F) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
                 break;
             case 1:
-                CorpoMorto1Clone.transform.position = new Vector3(-7f, -4.5f, -5);
-                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                CorpoMorto1FClone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto1FClone.transform.position;
                 break;
             case 2:
-                CorpoMorto1Clone.transform.position = new Vector3(-7f, -4.5f, -5);
-                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                CorpoMorto1FClone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto1FClone.transform.position;
                 break;
             case 3:
-                CorpoMorto1Clone.transform.position = new Vector3(3.28f, -30.21f, -5);
-                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                CorpoMorto1FClone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto1FClone.transform.position;
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto1F(Clone)";
@@ -3346,22 +3724,22 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
-        GameObject CorpoMorto2Clone = Instantiate(CorpoMorto2F) as GameObject;
+        GameObject CorpoMorto2FClone = Instantiate(CorpoMorto2F) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
                 break;
             case 1:
-                CorpoMorto2Clone.transform.position = new Vector3(4.32f, 0f, -5);
-                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                CorpoMorto2FClone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto2FClone.transform.position;
                 break;
             case 2:
-                CorpoMorto2Clone.transform.position = new Vector3(4.32f, 0f, -5);
-                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                CorpoMorto2FClone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto2FClone.transform.position;
                 break;
             case 3:
-                CorpoMorto2Clone.transform.position = new Vector3(-3.39f, 18.99f, -5);
-                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                CorpoMorto2FClone.transform.position = new Vector3(-3.39f, 18.99f, -5);
+                PosicaoCorpoMorto = CorpoMorto2FClone.transform.position;
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto2F(Clone)";
@@ -3427,22 +3805,22 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
-        GameObject CorpoMorto3Clone = Instantiate(CorpoMorto3M) as GameObject;
+        GameObject CorpoMorto3MClone = Instantiate(CorpoMorto3M) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
                 break;
             case 1:
-                CorpoMorto3Clone.transform.position = new Vector3(-7f, -4.5f, -5);
-                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                CorpoMorto3MClone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto3MClone.transform.position;
                 break;
             case 2:
-                CorpoMorto3Clone.transform.position = new Vector3(-7f, -4.5f, -5);
-                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                CorpoMorto3MClone.transform.position = new Vector3(-7f, -4.5f, -5);
+                PosicaoCorpoMorto = CorpoMorto3MClone.transform.position;
                 break;
             case 3:
-                CorpoMorto3Clone.transform.position = new Vector3(3.28f, -30.21f, -5);
-                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                CorpoMorto3MClone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto3MClone.transform.position;
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto3M(Clone)";
@@ -3508,22 +3886,22 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
-        GameObject CorpoMorto4Clone = Instantiate(CorpoMorto4F) as GameObject;
+        GameObject CorpoMorto4FClone = Instantiate(CorpoMorto4F) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
                 break;
             case 1:
-                CorpoMorto4Clone.transform.position = new Vector3(4.32f, 0f, -5);
-                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                CorpoMorto4FClone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto4FClone.transform.position;
                 break;
             case 2:
-                CorpoMorto4Clone.transform.position = new Vector3(4.32f, 0f, -5);
-                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                CorpoMorto4FClone.transform.position = new Vector3(4.32f, 0f, -5);
+                PosicaoCorpoMorto = CorpoMorto4FClone.transform.position;
                 break;
             case 3:
-                CorpoMorto4Clone.transform.position = new Vector3(-3.39f, 18.99f, -5);
-                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                CorpoMorto4FClone.transform.position = new Vector3(-3.39f, 18.99f, -5);
+                PosicaoCorpoMorto = CorpoMorto4FClone.transform.position;
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto4F(Clone)";

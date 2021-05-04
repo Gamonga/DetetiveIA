@@ -13,37 +13,73 @@ public class PauseMenu : MonoBehaviour
     public GameObject Pause;
     public GameObject Options;
     public Image Painel;
+    public Text CasosNumeros;
     private float contador;
+    private float contadorSecundario;
+    public static int NumeroDeCasosJogadoPeloPlayer;
 
     private bool open;
     // Start is called before the first frame update
     void Start()
     {
+        if (MainMenu.PrimeiroCaso)
+        {
+            NumeroDeCasosJogadoPeloPlayer = 1;
+        }
+        else{
+            PlayerData data = SaveSystem.LoadPlayer();
+            NumeroDeCasosJogadoPeloPlayer = data.NumeroDeCasosJogadoPeloPlayer;
+            NumeroDeCasosJogadoPeloPlayer++;
+        }
         contador = 0;
+        contadorSecundario = 0;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         abrirPauseMenu();
-        if(contador<= 300){
-            Painel.color = new Color(0,0,0, 1.0f - contador/300);
-            contador++;
+        if (contador <= 400)
+        {
+            Painel.color = new Color(0, 0, 0, 1.0f - contador / 250);
+            if (MainMenu.NewGame)
+            {
+                CasosNumeros.color = new Color(255, 255, 255, 1.0f - contador / 250);
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CasosNumeros.text = NumeroDeCasosJogadoPeloPlayer.ToString() + "º case";
+                }
+                else
+                {
+                    CasosNumeros.text = NumeroDeCasosJogadoPeloPlayer.ToString() + "º caso";
+                }
+                contadorSecundario++;
+                if(contadorSecundario > 75){
+                    contador++;
+                }
+            }
+            else{
+                contador++;
+            }
         }
-        else{
+        else
+        {
             Destroy(Painel);
+            Destroy(CasosNumeros);
         }
     }
-    public void Quit(){
+    public void Quit()
+    {
         SceneManager.LoadScene(0);
     }
-    public void Resume(){
+    public void Resume()
+    {
         Menu.SetBool("Abrir", false);
         open = false;
     }
     void abrirPauseMenu()
     {
-       
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!open)
