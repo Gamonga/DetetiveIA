@@ -61,9 +61,33 @@ public class PlayerData
     public int NumeroDeCasosJogadoPeloPlayer;
     public bool depoimentoTestemunhaVisto;
     public bool depoimentoTestemunhaOuviu;
+    public string OuviuTestemunha;
+    public string VistoTestemunha;
+    public string RelacaoTestemunha;
+    public int RuidoArmaDoCrime;
+    public bool entrouTutorialPensamentos;
+    public bool entrouTutorialTestemunha;
+    public bool entrouTutorialEvidencias;
+    public bool entrouTutorialControles;
+    public bool entrouTutorialIA;
+    public bool entrouTutorialRelatorio;
+    public int idadePersonagem;
+    public  int numeroMotivoVitimaComum;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
+        numeroMotivoVitimaComum = SpawnObjects.numeroMotivoVitimaComum;
+        idadePersonagem = SpawnObjects.idadePersonagem;
+        entrouTutorialPensamentos = ScenesManager.entrouTutorialPensamentos;
+        entrouTutorialTestemunha = ScenesManager.entrouTutorialTestemunha;
+        entrouTutorialEvidencias = ScenesManager.entrouTutorialEvidencias;
+        entrouTutorialControles = ScenesManager.entrouTutorialControles;
+        entrouTutorialIA = ScenesManager.entrouTutorialIA;
+        entrouTutorialRelatorio = ScenesManager.entrouTutorialRelatorio;
+        RuidoArmaDoCrime = SpawnObjects.RuidoArmaDoCrime;
+        OuviuTestemunha = Testemunha.OuviuTestemunha;
+        VistoTestemunha = Testemunha.VistoTestemunha; ;
+        RelacaoTestemunha = Testemunha.RelacaoTestemunha; ;
         NumeroDeCasosJogadoPeloPlayer = PauseMenu.NumeroDeCasosJogadoPeloPlayer;
         PrimeiraVezDialogoTransicao = ScenesManager.PrimeiraVezDialogoTransicao;
         numeroAssassino = SpawnObjects.numeroAssassino;

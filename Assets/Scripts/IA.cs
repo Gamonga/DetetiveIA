@@ -24021,41 +24021,6 @@ public static class IA
                                     i = 0;
                                     contador2 = -1;
                                 }
-                                else if ((SpawnObjects.numeroAssassino == 3 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 0] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 2] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 2 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 1] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 3) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 3] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 4] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
                                 else
                                 {
                                     return PossiblidadesproximoCaso[i];
@@ -24236,41 +24201,6 @@ public static class IA
                                     i = 0;
                                     contador2 = -1;
                                 }
-                                else if ((SpawnObjects.numeroAssassino == 3 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 0] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 2] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 2 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 1] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 3) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 3] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 4] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
                                 else
                                 {
                                     return PossiblidadesproximoCaso[i];
@@ -24445,41 +24375,6 @@ public static class IA
                             if (Zerai < 2)
                             {
                                 if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6) && (gabaritoArma[PossiblidadesproximoCaso[i] % 3, 6] != 1 || gabaritoArma[PossiblidadesproximoCaso[i] % 3, 10] != 1))
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 3 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 0] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 2] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 2 || SpawnObjects.numeroAssassino == 6) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 1] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 1 || SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 3) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 3] == 0)
-                                {
-                                    selecionadorint = Random.Range(0, contador);
-                                    Zerai++;
-                                    i = 0;
-                                    contador2 = -1;
-                                }
-                                else if ((SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5) && gabaritoMotivo[PossiblidadesproximoCaso[i] % 3, 4] == 0)
                                 {
                                     selecionadorint = Random.Range(0, contador);
                                     Zerai++;

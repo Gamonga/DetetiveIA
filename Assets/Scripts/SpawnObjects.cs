@@ -13,6 +13,16 @@ public class SpawnObjects : MonoBehaviour
     public Caderno caderno;
     public static string[] NomeDosObjetos = new string[20];
     public static int NumeroDeObjetos;
+    public GameObject PanoBranco;
+    public Evidence PanoBrancoEvidence;
+    public GameObject CartaoAlcool;
+    public Evidence CartaoAlcoolEvidence;
+    public GameObject CartaoPolicia;
+    public Evidence CartaoPoliciaEvidence;
+    public GameObject CartaoFilme;
+    public Evidence CartaoFilmeEvidence;
+    public GameObject Relogio;
+    public Evidence RelogioEvidence;
     public GameObject Pano;
     public Evidence PanoEvidence;
     public GameObject Convite;
@@ -137,9 +147,11 @@ public class SpawnObjects : MonoBehaviour
     public static bool ajudaEntrada;
     public static bool ajudaSaida;
     private static Vector3 PosicaoCorpoMorto;
+    public static int RuidoArmaDoCrime;
     private int i = 0;
     private int j = 0;
     public int PortaDaCena = 0;
+    public static int idadePersonagem = 0;
     /*static private float selecionador = 0;*/
     static private int selecionadorint = 0;
     static private int numeroSelecionadoParaResposta = 0;
@@ -150,7 +162,9 @@ public class SpawnObjects : MonoBehaviour
     public static int numeroAssassino;
     public static int numeroAssassinoSegundo;
     public static int numeroAssassinoTerceiro;
+    public static int numeroMotivoVitimaComum;
     private int sangueOriginal;
+    private int numeroDoForLocal = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -159,13 +173,15 @@ public class SpawnObjects : MonoBehaviour
         NumeroDeObjetos = 0;
         NumeroDeportas = carregaNumeroDePortas();
         PortaDaCena = carregaPortaDaCena();
-        InstantiateTestemunha();
         if (MainMenu.NewGame == false)
         {
             PlayerData data = SaveSystem.LoadPlayer();
+            idadePersonagem = data.idadePersonagem;
+            RuidoArmaDoCrime = data.RuidoArmaDoCrime;
             numeroAssassino = data.numeroAssassino;
             numeroAssassinoSegundo = data.numeroAssassinoSegundo;
             numeroAssassinoTerceiro = data.numeroAssassinoTerceiro;
+            numeroMotivoVitimaComum = data.numeroMotivoVitimaComum;
             selecionaArmaComSangueFalso = data.selecionaArmaComSangueFalso;
             ColocaSangueFalso();
             contador = data.contadorAnalise;
@@ -188,8 +204,10 @@ public class SpawnObjects : MonoBehaviour
         }
         else
         {
+            InstantiateTestemunha();
             if (!MainMenu.PrimeiroCaso)
             {
+                idadePersonagem = IdadeSet();
                 contador = 3;
                 intProximoCaso = IA.geraProximoCaso();
                 if (intProximoCaso == -1)
@@ -456,15 +474,18 @@ public class SpawnObjects : MonoBehaviour
                         {
                             GeraCasoIA(i);
                         }
+                        ColocaSangueFalso();
                         GeraTestemunho();
                     }
                 }
             }
             else
             {
+                numeroMotivoVitimaComum = Assassino.numeroMotivoVitimaComum;
                 numeroAssassino = Assassino.numeroAssassino;
                 numeroAssassinoSegundo = Assassino.numeroAssassinoSegundo;
                 numeroAssassinoTerceiro = Assassino.numeroAssassinoTerceiro;
+                idadePersonagem = IdadeSet();
                 contador = 3;
                 if (SceneManager.GetActiveScene().buildIndex == 3)
                 {
@@ -490,6 +511,26 @@ public class SpawnObjects : MonoBehaviour
                 }
             }
         }
+    }
+    public int IdadeSet()
+    {
+        if (numeroAssassino == 1 || numeroAssassino == 3)
+        {
+            return Random.Range(0, 7) * 3 + 36; /* 36 ATÉ 54 */
+        }
+        if (numeroAssassino == 4)
+        {
+            return Random.Range(0, 6) * 3 + 18; /* 18 ATÉ 36*/
+        }
+        if (numeroMotivoVitimaComum == 3)
+        {
+            return Random.Range(0, 4) * 3 + 36; /* 45 ATÉ 54 */
+        }
+        if (numeroMotivoVitimaComum == 2)
+        {
+            return Random.Range(0, 4) * 3 + 18; /* 18 ATÉ 27*/
+        }
+        return Random.Range(0, 13) * 3 + 18;
     }
     public void GeraTestemunho()
     {
@@ -576,6 +617,7 @@ public class SpawnObjects : MonoBehaviour
                 {
                     OuviuVerdade = "false";
                 }
+                RuidoArmaDoCrime = 1;
                 InstantiateBastao();
                 break;
             case 1:
@@ -591,9 +633,11 @@ public class SpawnObjects : MonoBehaviour
                 {
                     OuviuVerdade = "false";
                 }
+                RuidoArmaDoCrime = 1;
                 InstantiateBastaoSangue();
                 break;
             case 2:
+                RuidoArmaDoCrime = 0;
                 if (sangueOriginal != 2)
                 {
                     selecionaArmaComSangueFalso = 2;
@@ -609,6 +653,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateCaixaRemedio();
                 break;
             case 3:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 3)
                 {
                     selecionaArmaComSangueFalso = 3;
@@ -620,6 +665,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateFacaCozinha();
                 break;
             case 4:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 4)
                 {
                     selecionaArmaComSangueFalso = 4;
@@ -631,6 +677,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateFacaNormalSemSangue();
                 break;
             case 5:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 5)
                 {
                     selecionaArmaComSangueFalso = 5;
@@ -642,6 +689,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateFacaNormal();
                 break;
             case 6:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 6)
                 {
                     selecionaArmaComSangueFalso = 6;
@@ -657,6 +705,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiatePunhos();
                 break;
             case 7:
+                RuidoArmaDoCrime = 2;
                 if (sangueOriginal != 7)
                 {
                     selecionaArmaComSangueFalso = 7;
@@ -672,6 +721,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateRevolver();
                 break;
             case 8:
+                RuidoArmaDoCrime = 2;
                 if (sangueOriginal != 8)
                 {
                     selecionaArmaComSangueFalso = 8;
@@ -687,6 +737,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateRevolver();
                 break;
             case 9:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 9)
                 {
                     selecionaArmaComSangueFalso = 9;
@@ -698,6 +749,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateCanoperfuracao();
                 break;
             case 10:
+                RuidoArmaDoCrime = 0;
                 if (sangueOriginal != 10)
                 {
                     selecionaArmaComSangueFalso = 10;
@@ -709,6 +761,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateSufocamento();
                 break;
             case 11:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 11)
                 {
                     selecionaArmaComSangueFalso = 11;
@@ -720,6 +773,7 @@ public class SpawnObjects : MonoBehaviour
                 InstantiateCanoPerfuracaoSangue();
                 break;
             case 12:
+                RuidoArmaDoCrime = 1;
                 if (sangueOriginal != 12)
                 {
                     selecionaArmaComSangueFalso = 12;
@@ -869,22 +923,60 @@ public class SpawnObjects : MonoBehaviour
                     }
                     else
                     {
-                        InstantiateCorpoMorto1F();
+                        if (numeroMotivoVitimaComum == 1)
+                        {
+                            if (Random.value > 0.5f)
+                            {
+                                InstantiateCorpoMorto1F();
+                            }
+                            else
+                            {
+                                if (SpawnObjects.numeroAssassino != 2)
+                                {
+                                    InstantiateCorpoMorto1();
+                                }
+                                else
+                                {
+                                    InstantiateCorpoMorto1F();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto1F();
+                        }
                     }
                 }
                 else
                 {
-                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    if (numeroMotivoVitimaComum == 0)
                     {
                         if (Random.value > 0.5f)
                         {
                             InstantiateCorpoMorto1F();
                         }
-                        InstantiateCorpoMorto1();
+                        else
+                        {
+                            if (SpawnObjects.numeroAssassino != 2)
+                            {
+                                InstantiateCorpoMorto1();
+                            }
+                            else
+                            {
+                                InstantiateCorpoMorto1F();
+                            }
+                        }
                     }
                     else
                     {
-                        InstantiateCorpoMorto1();
+                        if (SpawnObjects.numeroAssassino != 2)
+                        {
+                            InstantiateCorpoMorto1();
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto1F();
+                        }
                     }
                 }
                 break;
@@ -897,22 +989,60 @@ public class SpawnObjects : MonoBehaviour
                     }
                     else
                     {
-                        InstantiateCorpoMorto2F();
+                        if (numeroMotivoVitimaComum == 1)
+                        {
+                            if (Random.value > 0.5f)
+                            {
+                                InstantiateCorpoMorto2F();
+                            }
+                            else
+                            {
+                                if (SpawnObjects.numeroAssassino != 2)
+                                {
+                                    InstantiateCorpoMorto2();
+                                }
+                                else
+                                {
+                                    InstantiateCorpoMorto2F();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto2F();
+                        }
                     }
                 }
                 else
                 {
-                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    if (numeroMotivoVitimaComum == 0)
                     {
                         if (Random.value > 0.5f)
                         {
                             InstantiateCorpoMorto2F();
                         }
-                        InstantiateCorpoMorto2();
+                        else
+                        {
+                            if (SpawnObjects.numeroAssassino != 2)
+                            {
+                                InstantiateCorpoMorto2();
+                            }
+                            else
+                            {
+                                InstantiateCorpoMorto2F();
+                            }
+                        }
                     }
                     else
                     {
-                        InstantiateCorpoMorto2();
+                        if (SpawnObjects.numeroAssassino != 2)
+                        {
+                            InstantiateCorpoMorto2();
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto2F();
+                        }
                     }
                 }
                 break;
@@ -921,26 +1051,71 @@ public class SpawnObjects : MonoBehaviour
                 {
                     if (SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5)
                     {
-                        InstantiateCorpoMorto3M();
+                        InstantiateCorpoMorto3();
                     }
                     else
                     {
-                        InstantiateCorpoMorto3();
+                        if (numeroMotivoVitimaComum == 1)
+                        {
+                            if (Random.value > 0.5f)
+                            {
+                                if (SpawnObjects.numeroAssassino != 2)
+                                {
+                                    InstantiateCorpoMorto3();
+                                }
+                                else
+                                {
+                                    InstantiateCorpoMorto3M();
+                                }
+                            }
+                            else
+                            {
+                                InstantiateCorpoMorto3M();
+                            }
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto3M();
+                        }
                     }
                 }
                 else
                 {
-                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    if (numeroMotivoVitimaComum == 0)
                     {
                         if (Random.value > 0.5f)
                         {
-                            InstantiateCorpoMorto3();
+                            if (SpawnObjects.numeroAssassino != 2)
+                            {
+                                InstantiateCorpoMorto3();
+                            }
+                            else
+                            {
+                                InstantiateCorpoMorto3M();
+                            }
                         }
-                        InstantiateCorpoMorto3M();
+                        else
+                        {
+                            if (SpawnObjects.numeroAssassino == 0 || SpawnObjects.numeroAssassino == 5)
+                            {
+                                InstantiateCorpoMorto3();
+                            }
+                            else
+                            {
+                                InstantiateCorpoMorto3M();
+                            }
+                        }
                     }
                     else
                     {
-                        InstantiateCorpoMorto3M();
+                        if (SpawnObjects.numeroAssassino != 2)
+                        {
+                            InstantiateCorpoMorto3();
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto3M();
+                        }
                     }
                 }
                 break;
@@ -953,22 +1128,60 @@ public class SpawnObjects : MonoBehaviour
                     }
                     else
                     {
-                        InstantiateCorpoMorto4F();
+                        if (numeroMotivoVitimaComum == 1)
+                        {
+                            if (Random.value > 0.5f)
+                            {
+                                InstantiateCorpoMorto4F();
+                            }
+                            else
+                            {
+                                if (SpawnObjects.numeroAssassino != 2)
+                                {
+                                    InstantiateCorpoMorto4();
+                                }
+                                else
+                                {
+                                    InstantiateCorpoMorto4F();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto4F();
+                        }
                     }
                 }
                 else
                 {
-                    if (SpawnObjects.numeroAssassino == 4 || SpawnObjects.numeroAssassino == 6)
+                    if (numeroMotivoVitimaComum == 0)
                     {
                         if (Random.value > 0.5f)
                         {
                             InstantiateCorpoMorto4F();
                         }
-                        InstantiateCorpoMorto4();
+                        else
+                        {
+                            if (SpawnObjects.numeroAssassino != 2)
+                            {
+                                InstantiateCorpoMorto4();
+                            }
+                            else
+                            {
+                                InstantiateCorpoMorto4F();
+                            }
+                        }
                     }
                     else
                     {
-                        InstantiateCorpoMorto4();
+                        if (SpawnObjects.numeroAssassino != 2)
+                        {
+                            InstantiateCorpoMorto4();
+                        }
+                        else
+                        {
+                            InstantiateCorpoMorto4F();
+                        }
                     }
                 }
                 break;
@@ -1449,18 +1662,31 @@ public class SpawnObjects : MonoBehaviour
     public void SelecionaLocal()
     {
         QuantidadeCorposDisponiveis = 0;
-        Corpos = new Evidence[5];
-        CorposDisponiveis = new Evidence[5];
+        Corpos = new Evidence[10];
+        CorposDisponiveis = new Evidence[10];
         if (SpawnObjects.numeroAssassino != 0 && SpawnObjects.numeroAssassino != 5)
         {
-            Corpos[0] = CorpoMorto1Evidence;
-            Corpos[1] = CorpoMorto2Evidence;
-            Corpos[2] = CorpoMorto3Evidence;
-            Corpos[3] = CorpoMorto4Evidence;
-            Corpos[4] = CorpoMorto1FEvidence;
-            Corpos[5] = CorpoMorto2FEvidence;
-            Corpos[6] = CorpoMorto3MEvidence;
-            Corpos[7] = CorpoMorto4FEvidence;
+            if (SpawnObjects.numeroAssassino != 2)
+            {
+                Corpos[0] = CorpoMorto1Evidence;
+                Corpos[1] = CorpoMorto2Evidence;
+                Corpos[2] = CorpoMorto3Evidence;
+                Corpos[3] = CorpoMorto4Evidence;
+                Corpos[4] = CorpoMorto1FEvidence;
+                Corpos[5] = CorpoMorto2FEvidence;
+                Corpos[6] = CorpoMorto3MEvidence;
+                Corpos[7] = CorpoMorto4FEvidence;
+                numeroDoForLocal = 8;
+            }
+            else
+            {
+                Corpos[0] = CorpoMorto3Evidence;
+                Corpos[1] = CorpoMorto1FEvidence;
+                Corpos[2] = CorpoMorto2FEvidence;
+                Corpos[3] = CorpoMorto4FEvidence;
+                numeroDoForLocal = 4;
+            }
+
         }
         else
         {
@@ -1468,8 +1694,9 @@ public class SpawnObjects : MonoBehaviour
             Corpos[1] = CorpoMorto2Evidence;
             Corpos[2] = CorpoMorto4Evidence;
             Corpos[3] = CorpoMorto3MEvidence;
+            numeroDoForLocal = 4;
         }
-        for (j = 0; j < 4; j++)
+        for (j = 0; j < numeroDoForLocal; j++)
         {
             if (Corpos[j].weaponDescription == Armas[numeroSelecionadoParaResposta].weaponDescription)
             {
@@ -1587,6 +1814,7 @@ public class SpawnObjects : MonoBehaviour
                 numeroSelecionadoParaResposta = selecionadorint;
                 TerceiraResposta = Armas[selecionadorint].nome;
                 TerceiraRespostaIngles = Armas[selecionadorint].nomeIngles;
+                RuidoArmaDoCrime = Armas[selecionadorint].weaponRuido;
                 if (Armas[selecionadorint].weaponRuido == 1)
                 {
                     OuviuVerdade = "duvida";
@@ -2214,6 +2442,75 @@ public class SpawnObjects : MonoBehaviour
             else
             {
                 dialogueText.text = "Revólver foi adicionado ao caderno";
+            }
+            entrouNoTexto = true;
+        }
+        else
+        {
+            animator.SetBool("Abrir", false);
+            entrouNoTexto = false;
+        }
+    }
+    public void CartaoNome()
+    {
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if (!entrouNoTexto)
+        {
+            animator.SetBool("Abrir", true);
+            if (PlayerData.Idioma == "ingles")
+            {
+                dialogueText.text = "Card was added to the notebook";
+            }
+            else
+            {
+                dialogueText.text = "Cartão foi adicionado ao caderno";
+            }
+            entrouNoTexto = true;
+        }
+        else
+        {
+            animator.SetBool("Abrir", false);
+            entrouNoTexto = false;
+        }
+    }
+    public void PedacoBrancoPanoNome()
+    {
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if (!entrouNoTexto)
+        {
+            animator.SetBool("Abrir", true);
+            if (PlayerData.Idioma == "ingles")
+            {
+                dialogueText.text = "Piece of white cloth was added to the notebook";
+            }
+            else
+            {
+                dialogueText.text = "Pano branco foi adicionado ao caderno";
+            }
+            entrouNoTexto = true;
+        }
+        else
+        {
+            animator.SetBool("Abrir", false);
+            entrouNoTexto = false;
+        }
+    }
+    public void RelogioNome()
+    {
+        animator = GameObject.Find("TransitionBox").GetComponent<Animator>();
+        dialogueText = GameObject.Find("TextoTransition").GetComponent<Text>();
+        if (!entrouNoTexto)
+        {
+            animator.SetBool("Abrir", true);
+            if (PlayerData.Idioma == "ingles")
+            {
+                dialogueText.text = "Watch was added to the notebook";
+            }
+            else
+            {
+                dialogueText.text = "Relógio foi adicionado ao caderno";
             }
             entrouNoTexto = true;
         }
@@ -2883,11 +3180,21 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateTestemunha()
     {
-        if (PlayerData.Idioma == "ingles")
+        if (MainMenu.NewGame == false)
         {
-        }
-        else
-        {
+            PlayerData data = SaveSystem.LoadPlayer();
+            if (PlayerData.Idioma == "ingles")
+            {
+                TestemunhaEvidence.descriptionIngles = "<b>What was seen?</b>" + "\n" + data.VistoTestemunha + "\n" +
+                "<b>What was heard?</b>" + "\n" + data.OuviuTestemunha + "\n" +
+                "<b>Relationship with the victim?</b>" + "\n" + data.RelacaoTestemunha;
+            }
+            else
+            {
+                TestemunhaEvidence.description = "<b>O que foi visto?</b>" + "\n" + data.VistoTestemunha + "\n" +
+                "<b>O que foi ouvido?</b>" + "\n" + data.OuviuTestemunha + "\n" +
+                "<b>Relação com a vítima?</b>" + "\n" + data.RelacaoTestemunha;
+            }
         }
         GameObject TestemunhalClone = Instantiate(Testemunha) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
@@ -3075,6 +3382,106 @@ public class SpawnObjects : MonoBehaviour
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CanoNormalPerfurante(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiatePanoBranco()
+    {
+        GameObject PanoBrancoClone = Instantiate(PanoBranco) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                PanoBrancoClone.transform.position = new Vector3(-13.39f, 9.82f, -5);
+                break;
+            case 2:
+                PanoBrancoClone.transform.position = new Vector3(12.56f, -18.26f, -5);
+                break;
+            case 3:
+                PanoBrancoClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "PedacoPanoBranco(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCartaoPolicia()
+    {
+        GameObject CartaoPoliciaClone = Instantiate(CartaoPolicia) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CartaoPoliciaClone.transform.position = new Vector3(-13.39f, 9.82f, -5);
+                break;
+            case 2:
+                CartaoPoliciaClone.transform.position = new Vector3(12.56f, -18.26f, -5);
+                break;
+            case 3:
+                CartaoPoliciaClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CartaoPolical(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCartaoAlcool()
+    {
+        GameObject CartaoAlcoolClone = Instantiate(CartaoAlcool) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CartaoAlcoolClone.transform.position = new Vector3(-13.39f, 9.82f, -5);
+                break;
+            case 2:
+                CartaoAlcoolClone.transform.position = new Vector3(12.56f, -18.26f, -5);
+                break;
+            case 3:
+                CartaoAlcoolClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CartaoAlcool(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateCartaoFilme()
+    {
+        GameObject CartaoFilmeClone = Instantiate(CartaoFilme) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                CartaoFilmeClone.transform.position = new Vector3(-13.39f, 9.82f, -5);
+                break;
+            case 2:
+                CartaoFilmeClone.transform.position = new Vector3(12.56f, -18.26f, -5);
+                break;
+            case 3:
+                CartaoFilmeClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "CartaoFilme(Clone)";
+        NumeroDeObjetos++;
+    }
+    public void InstantiateRelogio()
+    {
+        GameObject RelogioClone = Instantiate(Relogio) as GameObject;
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 0:
+                break;
+            case 1:
+                RelogioClone.transform.position = new Vector3(-13.39f, 9.82f, -5);
+                break;
+            case 2:
+                RelogioClone.transform.position = new Vector3(12.56f, -18.26f, -5);
+                break;
+            case 3:
+                RelogioClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+        }
+        NomeDosObjetos[NumeroDeObjetos] = "Relogio(Clone)";
         NumeroDeObjetos++;
     }
     public void InstantiateCanoContundenteSangue()
@@ -3315,6 +3722,8 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto1Evidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto1Evidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
         GameObject CorpoMorto1Clone = Instantiate(CorpoMorto1) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3398,6 +3807,8 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto2Evidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto2Evidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
         GameObject CorpoMorto2Clone = Instantiate(CorpoMorto2) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3479,6 +3890,8 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto3Evidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto3Evidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
         GameObject CorpoMorto3Clone = Instantiate(CorpoMorto3) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3560,6 +3973,8 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto4Evidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto4Evidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
         GameObject CorpoMorto4Clone = Instantiate(CorpoMorto4) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3641,6 +4056,9 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto1FEvidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto1FEvidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+
         GameObject CorpoMorto1FClone = Instantiate(CorpoMorto1F) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3724,6 +4142,9 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto2FEvidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto2FEvidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+
         GameObject CorpoMorto2FClone = Instantiate(CorpoMorto2F) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3805,6 +4226,9 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto3MEvidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto3MEvidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+
         GameObject CorpoMorto3MClone = Instantiate(CorpoMorto3M) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
@@ -3886,6 +4310,8 @@ public class SpawnObjects : MonoBehaviour
                 }
                 break;
         }
+        CorpoMorto4FEvidence.description = CorpoMorto1Evidence.description + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
+        CorpoMorto4FEvidence.descriptionUpdate = CorpoMorto1Evidence.descriptionUpdate + "\n" + "(idade: " + idadePersonagem.ToString() + " )";
         GameObject CorpoMorto4FClone = Instantiate(CorpoMorto4F) as GameObject;
         switch (SceneManager.GetActiveScene().buildIndex)
         {

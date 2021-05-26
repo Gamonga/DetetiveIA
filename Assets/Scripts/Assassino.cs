@@ -9,6 +9,7 @@ public static class Assassino
     public static int numeroAssassinoSegundo;
     public static int numeroAssassinoTerceiro;
     public static bool podeContinuar;
+    public static int numeroMotivoVitimaComum;
 
     public static void EscolheAssassino(){
         /*
@@ -29,5 +30,15 @@ public static class Assassino
                 podeContinuar = true;
             }
         }
+    	/*
+        numeroMotivoVitimaComum
+        0 Mulheres
+        1 Homens
+        2 Jovens
+        3 Velhos
+        4 Corruptas
+        5 Ricas
+        */
+        numeroMotivoVitimaComum = Random.Range(0, 7);
     }
 }

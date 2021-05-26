@@ -38,8 +38,14 @@ public class MainMenu : MonoBehaviour
     public Image Painel;
     private float contador;
     public static bool PrimeiroCaso = false;
+    public Text testemunhaTexto;
+    public Animator animatorTutorial;
+    public bool entrouTutorial;
+    public bool contadorTelaPreta;
     void Start()
     {
+        entrouTutorial = false;
+        contadorTelaPreta = true;
         contador = 0;
         CarregaMusicas();
         SetSoundEffectSlider();
@@ -48,10 +54,24 @@ public class MainMenu : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (contador <= 257)
+        if (contador <= 100 && contadorTelaPreta)
         {
             contador++;
             Painel.color = new Color(contador / 100, contador / 100, contador / 100, 1.0f);
+            if (contador == 100)
+            {
+                contador = contador/10;
+                contadorTelaPreta = false;
+            }
+        }
+        if (entrouTutorial)
+        {
+            contador--;
+            Painel.color = new Color(contador / 10, contador / 10, contador / 10, 1.0f);
+        }
+        if (entrouTutorial && Input.GetKeyDown(KeyCode.Escape))
+        {
+            PlayGameDepoisTutorial();
         }
 
     }
@@ -85,6 +105,32 @@ public class MainMenu : MonoBehaviour
         }
     }
     public void PlayGame()
+    {
+        contadorTelaPreta = false;
+        entrouTutorial = true;
+        animatorTutorial.SetBool("AbrirTutorial", true);
+        if (PlayerData.Idioma == "ingles")
+        {
+            testemunhaTexto.text = "<color=red>Controles</color>" + "\n" +
+            "Para se movimentar use 'W''A''S''D' ou as setas do teclado" + "\n" +
+            "interagir com objetos pressione 'E'" + "\n" +
+            "avançar nos diálogos pressione 'E'" + "\n" +
+            "fechar e abrir o caderno pressione 'TAB'" + "\n" +
+            "Abrir menu de pause pressione 'ESC'" + "\n" +
+            "Aperte esc para fechar este menu";
+        }
+        else
+        {
+            testemunhaTexto.text = "<color=red>Controles</color>" + "\n" +
+            "Para se movimentar use 'W''A''S''D' ou as setas do teclado" + "\n" +
+            "interagir com objetos pressione 'E'" + "\n" +
+            "avançar nos diálogos pressione 'E'" + "\n" +
+            "fechar e abrir o caderno pressione 'TAB'" + "\n" +
+            "Abrir menu de pause pressione 'ESC'" + "\n" +
+            "Aperte esc para fechar este menu";
+        }
+    }
+    public void PlayGameDepoisTutorial()
     {
         NewGame = true;
         PrimeiroCaso = true;

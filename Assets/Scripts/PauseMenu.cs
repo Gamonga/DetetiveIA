@@ -29,7 +29,6 @@ public class PauseMenu : MonoBehaviour
         else{
             PlayerData data = SaveSystem.LoadPlayer();
             NumeroDeCasosJogadoPeloPlayer = data.NumeroDeCasosJogadoPeloPlayer;
-            NumeroDeCasosJogadoPeloPlayer++;
         }
         contador = 0;
         contadorSecundario = 0;
@@ -47,11 +46,11 @@ public class PauseMenu : MonoBehaviour
                 CasosNumeros.color = new Color(255, 255, 255, 1.0f - contador / 250);
                 if (PlayerData.Idioma == "ingles")
                 {
-                    CasosNumeros.text = NumeroDeCasosJogadoPeloPlayer.ToString() + "º case";
+                    CasosNumeros.text = "case " + NumeroDeCasosJogadoPeloPlayer.ToString();
                 }
                 else
                 {
-                    CasosNumeros.text = NumeroDeCasosJogadoPeloPlayer.ToString() + "º caso";
+                    CasosNumeros.text = "caso " + NumeroDeCasosJogadoPeloPlayer.ToString() ;
                 }
                 contadorSecundario++;
                 if(contadorSecundario > 75){

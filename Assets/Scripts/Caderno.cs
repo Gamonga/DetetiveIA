@@ -120,12 +120,12 @@ public class Caderno : MonoBehaviour
     }
     void abrirCaderno()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && ScenesManager.entrouTutorial == false)
         {
             caderno.SetBool("abrir", false);
             open = false;
         }
-        if (Input.GetKeyDown(KeyCode.Tab) && PermissaoAbrirCaderno)
+        if (Input.GetKeyDown(KeyCode.Tab) && PermissaoAbrirCaderno && ScenesManager.entrouTutorial == false)
         {
 
             if (!open)
@@ -691,7 +691,31 @@ public class Caderno : MonoBehaviour
                 textoPensamentos.text = "Pensamento adicionado ao caderno.";
             }
         }
+        else if (Pensamento1 == "Laudo" && Pensamento2 == "Vítima")
+        {
+            adicionar(GameObject.Find("Convite(Clone)").GetComponent<Evidence>());
+            if (PlayerData.Idioma == "ingles")
+            {
+                textoPensamentos.text = "Thought added to the notebook.";
+            }
+            else
+            {
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
+        }
         else if (Pensamento2 == "Vítima" && Pensamento1 == "Laudo")
+        {
+            adicionar(GameObject.Find("Sufocamento(Clone)").GetComponent<Evidence>());
+            if (PlayerData.Idioma == "ingles")
+            {
+                textoPensamentos.text = "Thought added to the notebook.";
+            }
+            else
+            {
+                textoPensamentos.text = "Pensamento adicionado ao caderno.";
+            }
+        }
+        else if (Pensamento1 == "Vítima" && Pensamento2 == "Laudo")
         {
             adicionar(GameObject.Find("Sufocamento(Clone)").GetComponent<Evidence>());
             if (PlayerData.Idioma == "ingles")

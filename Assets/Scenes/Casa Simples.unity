@@ -894,7 +894,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1726,6 +1726,10 @@ MonoBehaviour:
   acentos: {fileID: 0}
   acentos2: {fileID: 0}
   Painel: {fileID: 0}
+  testemunhaTexto: {fileID: 0}
+  animatorTutorial: {fileID: 0}
+  entrouTutorial: 0
+  contadorTelaPreta: 0
 --- !u!1001 &140345988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3176,8 +3180,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000068665, y: -0.000031471}
-  m_SizeDelta: {x: 4797.104, y: 428.5692}
+  m_AnchoredPosition: {x: 18.439981, y: -0.000031471}
+  m_SizeDelta: {x: 4270.2456, y: 428.5692}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &185637486
 MonoBehaviour:
@@ -3206,7 +3210,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3257,8 +3261,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -123.75, y: -42.9}
-  m_SizeDelta: {x: 256.31415, y: 30}
+  m_AnchoredPosition: {x: -126.61, y: -42.9}
+  m_SizeDelta: {x: 262.03455, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &197752226
 MonoBehaviour:
@@ -8341,8 +8345,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000038146973, y: -0.039859}
-  m_SizeDelta: {x: 2151.9062, y: 427.4334}
+  m_AnchoredPosition: {x: 5.729, y: -0.039859}
+  m_SizeDelta: {x: 1988.2202, y: 427.4334}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &439332795
 MonoBehaviour:
@@ -8371,7 +8375,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -9577,6 +9581,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &533664688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533664689}
+  - component: {fileID: 533664692}
+  - component: {fileID: 533664691}
+  - component: {fileID: 533664690}
+  m_Layer: 0
+  m_Name: Tutorial
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &533664689
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533664688}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_Children:
+  - {fileID: 1749294888}
+  m_Father: {fileID: 2049014668}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1035.4, y: -1875.3}
+  m_SizeDelta: {x: 1142.2438, y: 600}
+  m_Pivot: {x: 0, y: 0}
+--- !u!95 &533664690
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533664688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bec25ebe183d0884baac9689fd55c33e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &533664691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533664688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 02dc2a96041cebc4baeab9015b547525, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &533664692
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533664688}
+  m_CullTransparentMesh: 0
 --- !u!1 &541646796
 GameObject:
   m_ObjectHideFlags: 0
@@ -9613,8 +9713,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -154.8, y: -9.6}
-  m_SizeDelta: {x: 194.20682, y: 30}
+  m_AnchoredPosition: {x: -156.59, y: -9.6}
+  m_SizeDelta: {x: 202.07236, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541646798
 MonoBehaviour:
@@ -11269,8 +11369,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00027847, y: -0.039859}
-  m_SizeDelta: {x: 2159.3572, y: 427.4334}
+  m_AnchoredPosition: {x: 1.7505, y: -0.039859}
+  m_SizeDelta: {x: 2109.3518, y: 427.4334}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &603339380
 MonoBehaviour:
@@ -11299,7 +11399,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -12574,8 +12674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00021458, y: 0.44}
-  m_SizeDelta: {x: 4155.176, y: 413.72314}
+  m_AnchoredPosition: {x: 22.198, y: 0.44}
+  m_SizeDelta: {x: 3520.9673, y: 413.72314}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &672770843
 MonoBehaviour:
@@ -12604,7 +12704,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -14026,7 +14126,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -14897,7 +14997,7 @@ PrefabInstance:
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
@@ -14907,7 +15007,7 @@ PrefabInstance:
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
@@ -14923,7 +15023,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1106623595}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
@@ -14947,7 +15047,7 @@ PrefabInstance:
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Resposta
+      value: tutorialPensamentos
       objectReference: {fileID: 0}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
@@ -14962,7 +15062,7 @@ PrefabInstance:
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Analise, Assembly-CSharp
+      value: ScenesManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
@@ -14978,7 +15078,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 836669996}
+      objectReference: {fileID: 0}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
@@ -14992,7 +15092,7 @@ PrefabInstance:
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.UI.Text, UnityEngine.UI
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1385494843339587267, guid: de67d07e15853214e96dc21be9327dcf,
         type: 3}
@@ -15336,7 +15436,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -16380,7 +16480,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -18837,8 +18937,12 @@ MonoBehaviour:
   diaologoFinalParceiro: {fileID: 0}
   dialogueControl: {fileID: 198931400}
   dialogueControlFinal: {fileID: 0}
+  diaologoInicialParceiro: {fileID: 1260017520}
+  dialogueControlInicialParceiro: {fileID: 1260017519}
   isInRange: 0
+  testemunhaTexto: {fileID: 1749294889}
   Transition: {fileID: 1914434864}
+  animatorTutorial: {fileID: 533664690}
   movimento: {fileID: 2097695721}
 --- !u!1 &1115270712
 GameObject:
@@ -21167,6 +21271,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259634412}
   m_CullTransparentMesh: 0
+--- !u!1 &1260017518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1260017521}
+  - component: {fileID: 1260017520}
+  - component: {fileID: 1260017519}
+  m_Layer: 0
+  m_Name: ParceiroDiaologoStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1260017519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260017518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1573812821}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
+--- !u!114 &1260017520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260017518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Steve
+  nameperson2: Detetive
+  sentences:
+  - Detetive, eu tenho um sonho.
+  - troca paisagem
+  - Qual?
+  - troca paisagem
+  - Eu sempre quis fazer um jogo.
+  - troca paisagem
+  - Que tipo de jogo?
+  - troca paisagem
+  - "Um jogo que retrata o nosso dia a dia, um jogo de detetive, onde o assassino
+    fosse controlado por uma intelig\xEAncia artificial."
+  - troca paisagem
+  - (Essa ideia parece uma merda)
+  - Acredito no seu potencial.
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - Detective, I have a dream.
+  - troca paisagem
+  - Which?
+  - troca paisagem
+  - "\rI always wanted to develop a game."
+  - troca paisagem
+  - "\rWhat kind of game?"
+  - troca paisagem
+  - "A game that portrays our daily life, a detective game, where the killer was
+    controlled by artificial intelligence.\r"
+  - troca paisagem
+  - "\r(That idea looks like shit)"
+  - "\rI believe in your potential."
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: 22cd442a67ec5034480d38eb35066412,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 03db266f71302ee43a52bf9f52c8ec99,
+    type: 3}
+  random: 1
+--- !u!4 &1260017521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260017518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 597.7194, y: 348.68347, z: -994.733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1268400210
 GameObject:
   m_ObjectHideFlags: 0
@@ -21362,7 +21583,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -23535,8 +23756,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00005722, y: -0.0019825}
-  m_SizeDelta: {x: 2795.2632, y: 428.62775}
+  m_AnchoredPosition: {x: 2.3472, y: -0.0019825}
+  m_SizeDelta: {x: 2728.1997, y: 428.62775}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &1437730993
 MonoBehaviour:
@@ -23565,7 +23786,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -28549,6 +28770,88 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746942607}
   m_CullTransparentMesh: 0
+--- !u!1 &1749294887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1749294888}
+  - component: {fileID: 1749294890}
+  - component: {fileID: 1749294889}
+  m_Layer: 0
+  m_Name: Texto
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1749294888
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749294887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 533664689}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 7041.9565, y: 3585.939}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1749294889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749294887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 33db7d92c4b57574894a9e94fea9f7d2, type: 3}
+    m_FontSize: 160
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 160
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Evidencias\nEvidencias sao pistas encontradas na cena do crime\nelas sao
+    anotados no seu caderno  (aperte \"tab\" para abrir o caderno)\nas evidencias
+    possuem informa\xE7\xF5es que te ajudaram a solucionar o caso\naperte esc para
+    fechar este menu"
+--- !u!222 &1749294890
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749294887}
+  m_CullTransparentMesh: 0
 --- !u!1 &1796256017
 GameObject:
   m_ObjectHideFlags: 0
@@ -30221,8 +30524,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2924.6338, y: 815.47046}
+  m_AnchoredPosition: {x: 20.4, y: 0}
+  m_SizeDelta: {x: 2341.771, y: 815.47046}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &1867004659
 MonoBehaviour:
@@ -30251,7 +30554,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -32406,6 +32709,8 @@ GameObject:
   - component: {fileID: 2022772563}
   - component: {fileID: 2022772568}
   - component: {fileID: 2022772569}
+  - component: {fileID: 2022772571}
+  - component: {fileID: 2022772570}
   m_Layer: 0
   m_Name: Testemunha
   m_TagString: Untagged
@@ -32589,9 +32894,148 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2022772570}
+        m_TargetAssemblyTypeName: DialogueControl, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2022772571}
+          m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1106623595}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: tutorialTestemunha
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   FechaJanela:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022772570}
+        m_TargetAssemblyTypeName: DialogueControl, Assembly-CSharp
+        m_MethodName: FechaJanela
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2022772570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022772562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1573812821}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
+--- !u!114 &2022772571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022772562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Jessie
+  nameperson2: Detetive
+  sentences:
+  - troca paisagem
+  - "Ol\xE1, eu sou o novo ..."
+  - troca paisagem
+  - "Voc\xEA \xE9 o novo detetive na cidade."
+  - troca paisagem
+  - Sim, prazer me chamo ...
+  - troca paisagem
+  - "Voc\xEA se chama David Mills."
+  - troca pensando
+  - "(j\xE1 vi que essa vai ser d\xEDficil de conversar)"
+  - paisagem detetive
+  - "E aposto que voc\xEA \xE9 a jornalista investigativa."
+  - troca pensando
+  - "(como ser\xE1 que ele descobriu?!)"
+  - troca paisagem
+  - E aposto que se chama Angela.
+  - troca paisagem
+  - "N\xE3o, eu n\xE3o me chamo assim."
+  - troca embara
+  - (tentei pelo menos)
+  - paisagem detetive
+  - "Se voc\xEA n\xE3o se importar, eu irei te fazer algumas perguntas."
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - troca paisagem
+  - Hello, I'm the new ...
+  - troca paisagem
+  - You are the new detective in town.
+  - troca paisagem
+  - Yes, my name is ...
+  - troca paisagem
+  - Your name is David Mills.
+  - troca pensando
+  - "\r(I already saw that she will be difficult to talk)"
+  - paisagem detetive
+  - And i bet you're the investigative journalist.
+  - troca pensando
+  - "\r(how did he find out ?!)"
+  - troca paisagem
+  - "\rAnd I bet it's called Angela."
+  - troca paisagem
+  - "\rNo, that's not my name."
+  - troca embara
+  - "\r(tried at least)"
+  - paisagem detetive
+  - "\rIf you don't mind, I'll ask you a few questions."
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: c2f7e3b67149ff44397a3bf4d28de151,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  random: 1
 --- !u!1001 &2027835969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33264,6 +33708,7 @@ RectTransform:
   - {fileID: 1914434861}
   - {fileID: 2125238526}
   - {fileID: 1849096543}
+  - {fileID: 533664689}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

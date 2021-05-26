@@ -17,14 +17,11 @@ public class Testemunha : MonoBehaviour
     public Caderno cadernoObjeto;
     public string NomeDaTestemunha;
     private static string evidenciaUsada;
-    private string NomeEvidenciaDiscordaOuviu;
-    private string NomeEvidenciaDiscordaViu;
-    private string NomeEvidenciaDiscordaRelacao;
     public GameObject RelaçãoComVitimaB;
     private Queue<string> sentence;
     public Text texto;
     public Text Nome;
-    private bool isInRange;
+    public static bool isInRange;
     public static bool relacaoPergunta;
     public static bool ouviuPergunta;
     public static bool vistoPergunta;
@@ -44,14 +41,16 @@ public class Testemunha : MonoBehaviour
     private static bool TerminouPerguntas;
     private int i;
     private int NumeroInfoTestemunha;
-    private string OuviuTestemunha;
-    private string VistoTestemunha;
-    private string RelacaoTestemunha;
+    public static string OuviuTestemunha;
+    public static string VistoTestemunha;
+    public static string RelacaoTestemunha;
     public static bool depoimentoTestemunhaVisto;
     public static bool depoimentoTestemunhaOuviu;
+    public static bool terminouConversa;
     // Start is called before the first frame update
     void Start()
     {
+        terminouConversa = false;
         OuviuTestemunha = "";
         VistoTestemunha = "";
         RelacaoTestemunha = "";
@@ -79,10 +78,11 @@ public class Testemunha : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInRange)
+        if (isInRange && terminouConversa)
         {
             if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false && FinalizouTestemunha == false)
             {
+                sentence.Clear();
                 texto.text = "";
                 if (!vistoPergunta && !ouviuPergunta && !relacaoPergunta)
                 {
@@ -122,6 +122,7 @@ public class Testemunha : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == false && perguntando == false && FinalizouTestemunha == false)
             {
+                texto.text = "";
                 fraseAtual = sentence.Dequeue();
                 if (fraseAtual != "Pergunta" && fraseAtual != "Terminou")
                 {
@@ -194,6 +195,7 @@ public class Testemunha : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == true && perguntando == false && FinalizouTestemunha == false)
             {
+                texto.text = "";
                 StopAllCoroutines();
                 texto.text = fraseAtual;
                 escrevendo = false;
@@ -232,7 +234,22 @@ public class Testemunha : MonoBehaviour
         OuviuVerdade = SpawnObjects.OuviuVerdade;
         depoimentoTestemunhaVisto = SpawnObjects.depoimentoTestemunhaVisto;
         depoimentoTestemunhaOuviu = SpawnObjects.depoimentoTestemunhaOuviu;
-        RelaçãoVerdade = "true";
+        if(SceneManager.GetActiveScene().buildIndex == 2){
+            if(SpawnObjects.idadePersonagem < 30){
+                RelaçãoVerdade = "true";
+            }
+            else{
+                RelaçãoVerdade = "duvida";
+            }
+        }
+        if(SceneManager.GetActiveScene().buildIndex == 3){
+            if(SpawnObjects.QuintaResposta == "Roubo"){
+                RelaçãoVerdade = "true";
+            }
+            else{
+                RelaçãoVerdade = "duvida";
+            }
+        }
     }
     public void Concorda()
     {
@@ -276,7 +293,6 @@ public class Testemunha : MonoBehaviour
                         "<b>Relação com a vítima?</b>" + "\n" + RelacaoTestemunha;
                         Caderno.evidencias[NumeroInfoTestemunha].descriptionUpdate = Caderno.evidencias[NumeroInfoTestemunha].description;
                     }
-
                 }
                 else
                 {
@@ -297,8 +313,22 @@ public class Testemunha : MonoBehaviour
                 {
                     if (PlayerData.Idioma == "ingles")
                     {
-                        sentence.Enqueue("I heard a gunshot actually");
-                        OuviuTestemunha = "I heard a gunshot actually";
+                        if (SpawnObjects.RuidoArmaDoCrime == 0)
+                        {
+                            sentence.Enqueue("I didn't hear anything.");
+                            OuviuTestemunha = "I didn't hear anything.";
+
+                        }
+                        else if (SpawnObjects.RuidoArmaDoCrime == 1)
+                        {
+                            sentence.Enqueue("I heard a very low noise");
+                            OuviuTestemunha = "I heard a very low noise";
+                        }
+                        else
+                        {
+                            sentence.Enqueue("I heard a loud noise");
+                            OuviuTestemunha = "I heard a loud noise";
+                        }
                         Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
                         "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
                         "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
@@ -333,8 +363,21 @@ public class Testemunha : MonoBehaviour
                 {
                     if (PlayerData.Idioma == "ingles")
                     {
-                        sentence.Enqueue("I only know that he used to like to be alone.");
-                        RelacaoTestemunha = "I only know that he used to like to be alone.";
+                        if (SpawnObjects.QuintaResposta == "Roubo")
+                        {
+                            sentence.Enqueue("Mafia business.");
+                            RelacaoTestemunha = "I always knew that I dealt with illegal money. Mafia business.";
+                        }
+                        else if (SpawnObjects.QuintaResposta == "Desavenca")
+                        {
+                            sentence.Enqueue("A lot of people know the wrong things that have been done.");
+                            RelacaoTestemunha = "It was not the first time that someone came with wrong intentions. A lot of people know the wrong things that have been done.";
+                        }
+                        else
+                        {
+                            sentence.Enqueue("I only know that he used to like to be alone.");
+                            RelacaoTestemunha = "I only know that he used to like to be alone.";
+                        }
                         Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
                         "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
                         "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
@@ -342,8 +385,21 @@ public class Testemunha : MonoBehaviour
                     }
                     else
                     {
-                        sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
-                        RelacaoTestemunha = "Só sei que ele gostava de ficar sozinho.";
+                        if (SpawnObjects.QuintaResposta == "Roubo")
+                        {
+                            sentence.Enqueue("Negocios da mafia.");
+                            RelacaoTestemunha = "Eu sempre soube que mexia com dinheiro ilegal. Negocios da mafia.";
+                        }
+                        else if (SpawnObjects.QuintaResposta == "Desavenca")
+                        {
+                            sentence.Enqueue("Muita gente sabia das coisas erradas que eram feitas.");
+                            RelacaoTestemunha = "Não foi a primeira vez que alguem veio com intenções erradas. Muita gente sabia das coisas erradas que eram feitas.";
+                        }
+                        else
+                        {
+                            sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
+                            RelacaoTestemunha = "Só sei que ele gostava de ficar sozinho.";
+                        }
                         Caderno.evidencias[NumeroInfoTestemunha].description = "<b>O que foi visto?</b>" + "\n" + VistoTestemunha + "\n" +
                         "<b>O que foi ouvido?</b>" + "\n" + OuviuTestemunha + "\n" +
                         "<b>Relação com a vítima?</b>" + "\n" + RelacaoTestemunha;
@@ -382,7 +438,7 @@ public class Testemunha : MonoBehaviour
                 case "visto":
                     if (VistoVerdade == "false")
                     {
-                        if (evidenciaUsada == NomeEvidenciaDiscordaViu)
+                        if (evidenciaUsada == SpawnObjects.PrimeiraResposta || evidenciaUsada == SpawnObjects.PrimeiraRespostaIngles || evidenciaUsada == SpawnObjects.QuartaRespostaIngles || evidenciaUsada == SpawnObjects.QuartaResposta)
                         {
                             if (PlayerData.Idioma == "ingles")
                             {
@@ -448,12 +504,26 @@ public class Testemunha : MonoBehaviour
                 case "ouviu":
                     if (OuviuVerdade == "false")
                     {
-                        if (evidenciaUsada == NomeEvidenciaDiscordaOuviu)
+                        if (evidenciaUsada == SpawnObjects.TerceiraResposta || evidenciaUsada == SpawnObjects.TerceiraResposta)
                         {
                             if (PlayerData.Idioma == "ingles")
                             {
-                                sentence.Enqueue("I heard a gunshot actually");
-                                OuviuTestemunha = "I heard a gunshot actually";
+                                if (SpawnObjects.RuidoArmaDoCrime == 0)
+                                {
+                                    sentence.Enqueue("I didn't hear anything.");
+                                    OuviuTestemunha = "I didn't hear anything.";
+
+                                }
+                                else if (SpawnObjects.RuidoArmaDoCrime == 1)
+                                {
+                                    sentence.Enqueue("I heard a very low noise");
+                                    OuviuTestemunha = "I heard a very low noise";
+                                }
+                                else
+                                {
+                                    sentence.Enqueue("I heard a loud noise");
+                                    OuviuTestemunha = "I heard a loud noise";
+                                }
                                 Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
                                 "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
                                 "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
@@ -498,38 +568,60 @@ public class Testemunha : MonoBehaviour
                 case "relacao":
                     if (RelaçãoVerdade == "false")
                     {
-                        if (evidenciaUsada == NomeEvidenciaDiscordaRelacao)
+
+                        if (PlayerData.Idioma == "ingles")
                         {
-                            if (PlayerData.Idioma == "ingles")
+                            if (SpawnObjects.QuintaResposta == "Roubo")
+                            {
+                                sentence.Enqueue("Mafia business.");
+                                RelacaoTestemunha = "I always knew that I dealt with illegal money. Mafia business.";
+                            }
+                            else if (SpawnObjects.QuintaResposta == "Desavenca")
+                            {
+                                sentence.Enqueue("A lot of people know the wrong things that have been done.");
+                                RelacaoTestemunha = "It was not the first time that someone came with wrong intentions. A lot of people know the wrong things that have been done.";
+                            }
+                            else
                             {
                                 sentence.Enqueue("I only know that he used to like to be alone.");
                                 RelacaoTestemunha = "I only know that he used to like to be alone.";
-                                Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
-                                "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
-                                "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
-                                Caderno.evidencias[NumeroInfoTestemunha].descriptionUpdateIngles = Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles;
+                            }
+                            Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
+                            "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
+                            "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
+                            Caderno.evidencias[NumeroInfoTestemunha].descriptionUpdateIngles = Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles;
+                        }
+                        else
+                        {
+                            if (SpawnObjects.QuintaResposta == "Roubo")
+                            {
+                                sentence.Enqueue("Negocios da mafia.");
+                                RelacaoTestemunha = "Eu sempre soube que mexia com dinheiro ilegal. Negocios da mafia.";
+                            }
+                            else if (SpawnObjects.QuintaResposta == "Desavenca")
+                            {
+                                sentence.Enqueue("Muita gente sabia das coisas erradas que eram feitas.");
+                                RelacaoTestemunha = "Não foi a primeira vez que alguem veio com intenções erradas. Muita gente sabia das coisas erradas que eram feitas.";
                             }
                             else
                             {
                                 sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
                                 RelacaoTestemunha = "Só sei que ele gostava de ficar sozinho.";
-                                Caderno.evidencias[NumeroInfoTestemunha].description = "<b>O que foi visto?</b>" + "\n" + VistoTestemunha + "\n" +
-                                "<b>O que foi ouvido?</b>" + "\n" + OuviuTestemunha + "\n" +
-                                "<b>Relação com a vítima?</b>" + "\n" + RelacaoTestemunha;
-                                Caderno.evidencias[NumeroInfoTestemunha].descriptionUpdate = Caderno.evidencias[NumeroInfoTestemunha].description;
                             }
+                            Caderno.evidencias[NumeroInfoTestemunha].description = "<b>O que foi visto?</b>" + "\n" + VistoTestemunha + "\n" +
+                            "<b>O que foi ouvido?</b>" + "\n" + OuviuTestemunha + "\n" +
+                            "<b>Relação com a vítima?</b>" + "\n" + RelacaoTestemunha;
+                            Caderno.evidencias[NumeroInfoTestemunha].descriptionUpdate = Caderno.evidencias[NumeroInfoTestemunha].description;
+                        }
+                        if (PlayerData.Idioma == "ingles")
+                        {
+                            sentence.Enqueue("Making false accusations is something serious, detective.");
                         }
                         else
                         {
-                            if (PlayerData.Idioma == "ingles")
-                            {
-                                sentence.Enqueue("Making false accusations is something serious, detective.");
-                            }
-                            else
-                            {
-                                sentence.Enqueue("Fazer acusações falsas é algo grave, detetive.");
-                            }
+                            sentence.Enqueue("Fazer acusações falsas é algo grave, detetive.");
                         }
+
                     }
                     else
                     {
@@ -653,8 +745,22 @@ public class Testemunha : MonoBehaviour
                 {
                     if (PlayerData.Idioma == "ingles")
                     {
-                        sentence.Enqueue("I heard a gunshot actually");
-                        OuviuTestemunha = "I heard a gunshot actually";
+                        if (SpawnObjects.RuidoArmaDoCrime == 0)
+                        {
+                            sentence.Enqueue("I didn't hear anything.");
+                            OuviuTestemunha = "I didn't hear anything.";
+
+                        }
+                        else if (SpawnObjects.RuidoArmaDoCrime == 1)
+                        {
+                            sentence.Enqueue("I heard a very low noise");
+                            OuviuTestemunha = "I heard a very low noise";
+                        }
+                        else
+                        {
+                            sentence.Enqueue("I heard a loud noise");
+                            OuviuTestemunha = "I heard a loud noise";
+                        }
                         Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
                         "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
                         "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
@@ -689,8 +795,21 @@ public class Testemunha : MonoBehaviour
                 {
                     if (PlayerData.Idioma == "ingles")
                     {
-                        sentence.Enqueue("I only know that he used to like to be alone.");
-                        RelacaoTestemunha = "I only know that he used to like to be alone.";
+                        if (SpawnObjects.QuintaResposta == "Roubo")
+                        {
+                            sentence.Enqueue("Mafia business.");
+                            RelacaoTestemunha = "I always knew that I dealt with illegal money. Mafia business.";
+                        }
+                        else if (SpawnObjects.QuintaResposta == "Desavenca")
+                        {
+                            sentence.Enqueue("A lot of people know the wrong things that have been done.");
+                            RelacaoTestemunha = "It was not the first time that someone came with wrong intentions. A lot of people know the wrong things that have been done.";
+                        }
+                        else
+                        {
+                            sentence.Enqueue("I only know that he used to like to be alone.");
+                            RelacaoTestemunha = "I only know that he used to like to be alone.";
+                        }
                         Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
                         "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
                         "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
@@ -698,8 +817,21 @@ public class Testemunha : MonoBehaviour
                     }
                     else
                     {
-                        sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
-                        RelacaoTestemunha = "Só sei que ele gostava de ficar sozinho.";
+                        if (SpawnObjects.QuintaResposta == "Roubo")
+                        {
+                            sentence.Enqueue("Negocios da mafia.");
+                            RelacaoTestemunha = "Eu sempre soube que mexia com dinheiro ilegal. Negocios da mafia.";
+                        }
+                        else if (SpawnObjects.QuintaResposta == "Desavenca")
+                        {
+                            sentence.Enqueue("Muita gente sabia das coisas erradas que eram feitas.");
+                            RelacaoTestemunha = "Não foi a primeira vez que alguem veio com intenções erradas. Muita gente sabia das coisas erradas que eram feitas.";
+                        }
+                        else
+                        {
+                            sentence.Enqueue("Só sei que ele gostava de ficar sozinho.");
+                            RelacaoTestemunha = "Só sei que ele gostava de ficar sozinho.";
+                        }
                         Caderno.evidencias[NumeroInfoTestemunha].description = "<b>O que foi visto?</b>" + "\n" + VistoTestemunha + "\n" +
                         "<b>O que foi ouvido?</b>" + "\n" + OuviuTestemunha + "\n" +
                         "<b>Relação com a vítima?</b>" + "\n" + RelacaoTestemunha;
@@ -838,9 +970,23 @@ public class Testemunha : MonoBehaviour
         sentence.Clear();
         if (PlayerData.Idioma == "ingles")
         {
-            sentence.Enqueue("I hardly knew him.");
-            sentence.Enqueue("I have always found him a peaceful man.");
-            RelacaoTestemunha = "I hardly knew him. I have always found him a peaceful man.";
+            if (SpawnObjects.QuintaResposta == "Roubo")
+            {
+                sentence.Enqueue("I always knew that I dealt with illegal money.");
+                RelacaoTestemunha = "I always knew that I dealt with illegal money.";
+            }
+            else if (SpawnObjects.QuintaResposta == "Desavenca")
+            {
+                sentence.Enqueue("It was not the first time that someone came with wrong intentions.");
+                sentence.Enqueue("Too bad it ended up with blood this time.");
+                RelacaoTestemunha = "It was not the first time that someone came with wrong intentions.";
+            }
+            else
+            {
+                sentence.Enqueue("I hardly knew him.");
+                sentence.Enqueue("I have always found him a peaceful man.");
+                RelacaoTestemunha = "I hardly knew him. I have always found him a peaceful man.";
+            }
             Caderno.evidencias[NumeroInfoTestemunha].descriptionIngles = "<b>What was seen?</b>" + "\n" + VistoTestemunha + "\n" +
             "<b>What was heard?</b>" + "\n" + OuviuTestemunha + "\n" +
             "<b>Relationship with the victim?</b>" + "\n" + RelacaoTestemunha;
@@ -848,9 +994,24 @@ public class Testemunha : MonoBehaviour
         }
         else
         {
-            sentence.Enqueue("Eu o conhecia só de vista.");
-            sentence.Enqueue("Sempre achei ele um homem tranquilo com todos.");
-            RelacaoTestemunha = "Eu o conhecia só de vista. Sempre achei ele um homem tranquilo com todos.";
+            if (SpawnObjects.QuintaResposta == "Roubo")
+            {
+                sentence.Enqueue("Eu sempre soube que mexia com dinheiro ilegal.");
+                RelacaoTestemunha = "Eu sempre soube que mexia com dinheiro ilegal.";
+
+            }
+            else if (SpawnObjects.QuintaResposta == "Desavenca")
+            {
+                sentence.Enqueue("Não foi a primeira vez que alguem veio com intenções erradas.");
+                sentence.Enqueue("Pena que dessa vez acabou com sangue.");
+                RelacaoTestemunha = "Não foi a primeira vez que alguem veio com intenções erradas.";
+            }
+            else
+            {
+                sentence.Enqueue("Eu o conhecia só de vista.");
+                sentence.Enqueue("Sempre achei ele um homem tranquilo com todos.");
+                RelacaoTestemunha = "Eu o conhecia só de vista. Sempre achei ele um homem tranquilo com todos.";
+            }
             Caderno.evidencias[NumeroInfoTestemunha].description = "<b>O que foi visto?</b>" + "\n" + VistoTestemunha + "\n" +
             "<b>O que foi ouvido?</b>" + "\n" + OuviuTestemunha + "\n" +
             "<b>Relação com a vítima?</b>" + "\n" + RelacaoTestemunha;
