@@ -440,13 +440,20 @@ public class ScenesManager : MonoBehaviour
                     {
                         if (Input.GetKeyDown(KeyCode.E))
                         {
-                            if (ScenesManager.ActualScene == 3)
+                            if (PauseMenu.NumeroDeCasosJogadoPeloPlayer == 6)
                             {
-                                SceneManager.LoadScene(2);
+                                SceneManager.LoadScene(4);
                             }
-                            else if (ScenesManager.ActualScene == 2)
+                            else
                             {
-                                SceneManager.LoadScene(3);
+                                if (ScenesManager.ActualScene == 3)
+                                {
+                                    SceneManager.LoadScene(2);
+                                }
+                                else if (ScenesManager.ActualScene == 2)
+                                {
+                                    SceneManager.LoadScene(3);
+                                }
                             }
                         }
                     }

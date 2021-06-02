@@ -10,6 +10,12 @@ public class PlayerData
     public int level;
     public bool horas;
     public string[] NomeDosObjetos = new string[30];
+    public string[] nomeObjetoEvidenciasCaso1 = new string[30];
+    public string[] nomeObjetoEvidenciasCaso2 = new string[30];
+    public string[] nomeObjetoEvidenciasCaso3 = new string[30];
+    public string[] nomeObjetoEvidenciasCaso4 = new string[30];
+    public string[] nomeObjetoEvidenciasCaso5 = new string[30];
+    public string[] nomeObjetoEvidenciasCaso6 = new string[30];
     public bool[] update = new bool[30];
     public int NumeroDeObjetos;
     public bool[] isOpen = new bool[25];
