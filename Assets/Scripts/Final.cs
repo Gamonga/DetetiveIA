@@ -6,47 +6,66 @@ using UnityEngine.UI;
 
 public class Final : MonoBehaviour
 {
-   public Caderno cadernoOriginal;
+    public Caderno cadernoOriginal;
+    public GameObject VitimasMulheres;
+    public GameObject VitimasHomens;
+    public GameObject VitimasJovens;
+    public GameObject VitimasVelhos;
+    public GameObject VitimasCorruptas;
+    public GameObject VitimasRicas;
+    public GameObject Delegado;
+    public GameObject Policial;
+    public GameObject Jornalista;
+    public GameObject Legista;
+    public GameObject TI;
+    public GameObject Rico;
+    public GameObject Parceiro;
     public GameObject Roubo;
-    public GameObject CadernoLimpo;
     public GameObject Evidencias;
     public GameObject Desavença;
     public GameObject Raiva;
-    public GameObject Suicidio;
     public GameObject Prazer;
     public GameObject Justica;
-    public GameObject preencher;
     public GameObject trocarCenaSim;
     public GameObject SemEvidencia;
     public GameObject Finalizar;
     public GameObject no;
     private Queue<string> sentence;
     public Text texto;
-    public bool isInRange;
     public Animator PixelArt;
     public Animator Transition;
     public Animator caderno;
     public movimento movimento;
     private string fraseAtual;
-    public static bool entrouPreencher = false;
     public static bool escrevendo = false;
     public string respostaTexto;
     public int numeroDaPergunta;
     public static int Pontuacao;
+    public static bool AcertouAssassino;
     public static int AcertouArma;
     public static int AcertouMotivo;
     public static int AcertouEntrada;
     public static int AcertouSaida;
-    public static int AcertouLocal;
     public static bool jogoFinalizado;
     public static bool perguntando = false;
+    public static int paginaAtual;
+    public static int respostaAssassino;
+    public static bool acertouAssassino;
+    public static int interesseResposta;
+    public static bool acertouInteresse;
+    public static bool ClickCaderno;
     // Start is called before the first frame update
     void Start()
     {
+        DesativaAssassino();
+        ClickCaderno = false;
+        acertouInteresse = false;
+        acertouAssassino = false;
+        paginaAtual = 1;
+        AcertouAssassino = false;
         jogoFinalizado = false;
         numeroDaPergunta = 1;
         Pontuacao = 0;
-        entrouPreencher = false;
         escrevendo = false;
         sentence = new Queue<string>();
         Finalizar.SetActive(false);
@@ -54,139 +73,200 @@ public class Final : MonoBehaviour
         AcertouMotivo = 0;
         AcertouEntrada = 0;
         AcertouSaida = 0;
-        AcertouLocal = 0;
+        if (PlayerData.Idioma == "ingles")
+        {
+            sentence.Enqueue("Já sei o que aconteceu.");
+            sentence.Enqueue("O assassino está entre nós nesse exato momento.");
+            sentence.Enqueue("E irei mostrar para todos, seguindo o meu raciocínio.");
+            sentence.Enqueue("E a solução para essa séries de casos pode começar com um simples erro do assassino.");
+            sentence.Enqueue("Um item que ele deixou cair em um de seus assassinatos que indica quem ele pode ser.");
+            sentence.Enqueue("E aqui está o item:");
+            sentence.Enqueue("Esse item não teve correlação com o caso.");
+            sentence.Enqueue("O assassino tambem pode falhar e deixar itens como esse pelo local.");
+            sentence.Enqueue("Assim como ele deixa os seus interesses de assassinato tambem transparecer nas vitimas.");
+            sentence.Enqueue("Sendo que ele tem um interesse especifico em todas as suas vitimas.");
+            sentence.Enqueue("E esse interesse é:");
+            sentence.Enqueue("Matando todas essas pessoas o assassino tem um interesse em comum.");
+            sentence.Enqueue("O motivo por traz de tudo isso.");
+            sentence.Enqueue("Ele pode ter mudado de caso a caso, mas o motivo real do assassinato em série é só um.");
+            sentence.Enqueue("E esse motivo é:");
+            sentence.Enqueue("Com isso eu tenho tudo em mãos para prender o assassino.");
+            sentence.Enqueue("Eu tenho o motivo, a relação com a vítima, a oportunidade de estar no local.");
+            sentence.Enqueue("O que me leva a um único suspeito.");
+            sentence.Enqueue("O verdadeiro assassino:");
+        }
+        else
+        {
+            sentence.Enqueue("Já sei o que aconteceu.");
+            sentence.Enqueue("O assassino está entre nós nesse exato momento.");
+            sentence.Enqueue("E irei mostrar para todos, seguindo o meu raciocínio.");
+            sentence.Enqueue("E a solução para essa séries de casos pode começar com um simples erro do assassino.");
+            sentence.Enqueue("Um item que ele deixou cair em um de seus assassinatos que indica quem ele pode ser.");
+            sentence.Enqueue("E aqui está o item:");
+            sentence.Enqueue("Esse item não teve correlação com o caso.");
+            sentence.Enqueue("O assassino tambem pode falhar e deixar itens como esse pelo local.");
+            sentence.Enqueue("Assim como ele deixa os seus interesses de assassinato tambem transparecer nas vitimas.");
+            sentence.Enqueue("Sendo que ele tem um interesse especifico em todas as suas vitimas.");
+            sentence.Enqueue("E esse interesse é:");
+            sentence.Enqueue("Matando todas essas pessoas o assassino tem um interesse em comum.");
+            sentence.Enqueue("O motivo por traz de tudo isso.");
+            sentence.Enqueue("Ele pode ter mudado de caso a caso, mas o motivo real do assassinato em série é só um.");
+            sentence.Enqueue("E esse motivo é:");
+            sentence.Enqueue("Com isso eu tenho tudo em mãos para prender o assassino.");
+            sentence.Enqueue("Eu tenho o motivo, a relação com a vítima, a oportunidade de estar no local.");
+            sentence.Enqueue("O que me leva a um único suspeito.");
+            sentence.Enqueue("O verdadeiro assassino:");
+        }
+        Transition.SetBool("Abrir", true);
+
+
+        movimento.ParaPersonagem = true;
+        Caderno.PermissaoAbrirCaderno = false;
+        no.SetActive(false);
+        fraseAtual = sentence.Dequeue();
+        StartCoroutine(typeSentence(fraseAtual));
+    }
+
+    public void ViraPaginaDireita()
+    {
+        if (paginaAtual == 6)
+        {
+            return;
+        }
+        paginaAtual++;
+        cadernoOriginal.ViraPagina();
+    }
+    public void ViraPaginaEsquerda()
+    {
+        if (paginaAtual == 1)
+        {
+            return;
+        }
+        paginaAtual--;
+        cadernoOriginal.ViraPagina();
     }
 
     public void FinalizaGame()
     {
-        PixelArt.SetBool("On", false);
-        sentence.Enqueue("Respostas corretas:" + Pontuacao.ToString());
-        fraseAtual = sentence.Dequeue();
-        StartCoroutine(typeSentence(fraseAtual));
-        MainMenu.NewGame = true;
-        SaveSystem.SavePlayer(movimento);
-        jogoFinalizado = true;
-        PauseMenu.NumeroDeCasosJogadoPeloPlayer++;
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (AcertouAssassino == true && Pontuacao == 3)
+            {
+                /*final bom*/
+                SceneManager.LoadScene(2);
+            }
+            else if (AcertouAssassino == true && Pontuacao < 3)
+            {
+                /*final medio*/
+                SceneManager.LoadScene(3);
+            }
+            else if (AcertouAssassino == false && Pontuacao == 3)
+            {
+                /*final medio*/
+                SceneManager.LoadScene(3);
+            }
+            else
+            {
+                /*final ruim*/
+                SceneManager.LoadScene(3);
+            }
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (jogoFinalizado == true)
+        if (jogoFinalizado == false)
         {
-            /*if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (ScenesManager.ActualScene == 3)
-                {
-                    SceneManager.LoadScene(2);
-                }
-                else if (ScenesManager.ActualScene == 2)
-                {
-                    SceneManager.LoadScene(3);
-                }
-            }*/
-        }
-        if (isInRange && jogoFinalizado == false)
-        {
-            if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == false)
-            {
-                if (PlayerData.Idioma == "ingles")
-                {
-                    sentence.Enqueue("I need to understand what happened in this case.");
-                    sentence.Enqueue("First I need to reformulate the crime scene.");
-                    sentence.Enqueue("How did the murderer enter the place?");
-                    sentence.Enqueue("It makes sense for them to enter like this.");
-                    sentence.Enqueue("But after entering, something happened inside there.");
-                    sentence.Enqueue("Where did the murder take place?");
-                    sentence.Enqueue("Knowing the victim died there.");
-                    sentence.Enqueue("I still need to find out more.");
-                    sentence.Enqueue("What weapon did they use?");
-                    sentence.Enqueue("After commiting the murder.");
-                    sentence.Enqueue("They must have had a escape plan.");
-                    sentence.Enqueue("How did the murderer leave the place?");
-                    sentence.Enqueue("It's all coming together.");
-                    sentence.Enqueue("Having figured out how they entered.");
-                    sentence.Enqueue("Where the murder happened, the weapon used and how they left.");
-                    sentence.Enqueue("It's time to figure out the motive.");
-                    sentence.Enqueue("What is the reason of the murder?");
-                    sentence.Enqueue("Should I turn in the Report like this?");
-                    texto.text = "Write the Report?";
-                }
-                else
-                {
-                    sentence.Enqueue("Preciso entender o que aconteceu nesse caso.");
-                    sentence.Enqueue("Primeiro preciso reformular a cena do crime.");
-                    sentence.Enqueue("De que forma o assassino entrou no local?");
-                    sentence.Enqueue("Faz sentido ele entrar dessa forma.");
-                    sentence.Enqueue("Mas após ele entrar, algo aconteceu lá dentro.");
-                    sentence.Enqueue("Em que local será que ocorreu o assassinato?");
-                    sentence.Enqueue("Sabendo que ele morreu ali.");
-                    sentence.Enqueue("Ainda é necessário saber outra coisa.");
-                    sentence.Enqueue("Qual arma ele utilizou no crime?");
-                    sentence.Enqueue("Após ter cometido o assassinato.");
-                    sentence.Enqueue("Ele deve ter tido algum plano para fugir.");
-                    sentence.Enqueue("De que forma o assassino saiu do local?");
-                    sentence.Enqueue("Tudo está começando a se encaixar.");
-                    sentence.Enqueue("Tendo agora pensado em como ele entrou.");
-                    sentence.Enqueue("Onde ele assassinou, a arma utilizada e como ele saiu.");
-                    sentence.Enqueue("É preciso saber o motivo por trás.");
-                    sentence.Enqueue("Qual a razão do assassinato?");
-                    sentence.Enqueue("Devo entregar o relatório assim?");
-                    texto.text = "Escrever o relatório?";
-                }
-                preencher.SetActive(true);
-                trocarCenaSim.SetActive(false);
-                no.SetActive(true);
-                Transition.SetBool("Abrir", true);
-            }
-            else if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == true && perguntando == false)
+            if (Input.GetKeyDown(KeyCode.E) && escrevendo == true && perguntando == false)
             {
                 StopAllCoroutines();
                 texto.text = fraseAtual;
                 escrevendo = false;
             }
-            else if (Input.GetKeyDown(KeyCode.E) && entrouPreencher == true && escrevendo == false && perguntando == false)
+            else if (Input.GetKeyDown(KeyCode.E) && escrevendo == false && perguntando == false)
             {
                 fraseAtual = sentence.Dequeue();
                 StartCoroutine(typeSentence(fraseAtual));
-                if (fraseAtual == "De que forma o assassino entrou no local?" ||
-                fraseAtual == "De que forma o assassino saiu do local?" ||
-                fraseAtual == "Em que local será que ocorreu o assassinato?" ||
-                fraseAtual == "Qual arma ele utilizou no crime?" ||
-
-                fraseAtual == "How did the murderer enter the place?" ||
-                fraseAtual == "Where did the murder take place?" ||
-                fraseAtual == "What weapon did they use?" ||
-                fraseAtual == "How did the murderer leave the place?")
+                if (fraseAtual == "E aqui está o item:")
                 {
-                    CadernoLimpo.SetActive(false);
+                    ClickCaderno = true;
                     Evidencias.SetActive(true);
                     cadernoOriginal.EscreverEvidencias();
                     caderno.SetBool("Rela", true);
                     SemEvidencia.SetActive(true);
                     perguntando = true;
                 }
-                else if (fraseAtual == "Qual a razão do assassinato?" ||
-                fraseAtual == "What is the reason of the murder?")
+                else if (fraseAtual == "E esse interesse é:")
                 {
-                    CadernoLimpo.SetActive(true);
+                    Evidencias.SetActive(true);
+                    cadernoOriginal.EscreverEvidencias();
+                    caderno.SetBool("Rela", true);
+                    perguntando = true;
+                    AtivaInteresse();
+                }
+                else if (fraseAtual == "E esse motivo é:")
+                {
+                    Evidencias.SetActive(true);
+                    cadernoOriginal.EscreverEvidencias();
+                    caderno.SetBool("Rela", true);
+                    perguntando = true;
+                    Ativa6Botoes();
+                }
+                else if (fraseAtual == "O verdadeiro assassino:")
+                {
                     Evidencias.SetActive(false);
                     caderno.SetBool("Rela", false);
                     perguntando = true;
-                    Ativa6Botoes();
+                    SelecionaAssassino();
                 }
             }
         }
         else
         {
-            trocarCenaSim.SetActive(true);
-            preencher.SetActive(false);
-            no.SetActive(true);
+            FinalizaGame();
         }
+    }
+    public void AtivaInteresse()
+    {
+        VitimasMulheres.SetActive(true);
+        VitimasHomens.SetActive(true);
+        VitimasJovens.SetActive(true);
+        VitimasVelhos.SetActive(true);
+        VitimasCorruptas.SetActive(true);
+        VitimasRicas.SetActive(true);
+    }
+    public void DesativaInteresse()
+    {
+        VitimasMulheres.SetActive(false);
+        VitimasHomens.SetActive(false);
+        VitimasJovens.SetActive(false);
+        VitimasVelhos.SetActive(false);
+        VitimasCorruptas.SetActive(false);
+        VitimasRicas.SetActive(false);
+    }
+    public void DesativaAssassino()
+    {
+        Delegado.SetActive(false);
+        Policial.SetActive(false);
+        Jornalista.SetActive(false);
+        Legista.SetActive(false);
+        TI.SetActive(false);
+        Rico.SetActive(false);
+        Parceiro.SetActive(false);
+    }
+    public void SelecionaAssassino()
+    {
+        Delegado.SetActive(true);
+        Policial.SetActive(true);
+        Jornalista.SetActive(true);
+        Legista.SetActive(true);
+        TI.SetActive(true);
+        Rico.SetActive(true);
+        Parceiro.SetActive(true);
     }
     public void Ativa6Botoes()
     {
         Raiva.SetActive(true);
-        Suicidio.SetActive(true);
         Prazer.SetActive(true);
         Desavença.SetActive(true);
         Justica.SetActive(true);
@@ -195,11 +275,90 @@ public class Final : MonoBehaviour
     public void Desativa6Botoes()
     {
         Raiva.SetActive(false);
-        Suicidio.SetActive(false);
         Prazer.SetActive(false);
         Desavença.SetActive(false);
         Justica.SetActive(false);
         Roubo.SetActive(false);
+    }
+    public void InteresseMulheres()
+    {
+        interesseResposta = 0;
+        ConfirmaInteresse();
+    }
+    public void InteresseHomens()
+    {
+        interesseResposta = 1;
+        ConfirmaInteresse();
+    }
+    public void InteresseJovens()
+    {
+        interesseResposta = 2;
+        ConfirmaInteresse();
+    }
+    public void InteresseVelhos()
+    {
+        interesseResposta = 3;
+        ConfirmaInteresse();
+    }
+    public void InteresseCorruptos()
+    {
+        interesseResposta = 4;
+        ConfirmaInteresse();
+    }
+    public void InteresseRicos()
+    {
+        interesseResposta = 5;
+        ConfirmaInteresse();
+    }
+    public void ConfirmaInteresse()
+    {
+        switch (interesseResposta)
+        {
+            case 0:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+            case 1:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+            case 2:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+            case 3:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+            case 4:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+            case 5:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+            case 6:
+                if (interesseResposta == SpawnObjects.numeroMotivoVitimaComum)
+                {
+                    acertouInteresse = true;
+                }
+                break;
+        }
+        perguntando = false;
+        DesativaInteresse();
     }
     public void RaivaResposta()
     {
@@ -231,9 +390,110 @@ public class Final : MonoBehaviour
         respostaTexto = "Roubo";
         Confirma();
     }
+
+    public void PolicialResposta()
+    {
+        respostaAssassino = 1;
+        ConfirmaAssassino();
+    }
+    public void JornalistaResposta()
+    {
+        respostaAssassino = 5;
+        ConfirmaAssassino();
+    }
+    public void DelegadoResposta()
+    {
+        respostaAssassino = 4;
+        ConfirmaAssassino();
+    }
+    public void ParceiroResposta()
+    {
+        respostaAssassino = 0;
+        ConfirmaAssassino();
+    }
+    public void LegistaResposta()
+    {
+        respostaAssassino = 2;
+        ConfirmaAssassino();
+    }
+    public void TIResposta()
+    {
+        respostaAssassino = 3;
+        ConfirmaAssassino();
+    }
+    public void RicoResposta()
+    {
+        respostaAssassino = 6;
+        ConfirmaAssassino();
+    }
+    public void AcertouAssassinoDiaologo()
+    {
+
+    }
+    public void ErrouAssassinoDiaologo()
+    {
+
+    }
+    public void ConfirmaAssassino()
+    {
+        switch (respostaAssassino)
+        {
+            case 0:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+            case 1:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+            case 2:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+            case 3:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+            case 4:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+            case 5:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+            case 6:
+                if (respostaAssassino == SpawnObjects.numeroAssassino)
+                {
+                    acertouAssassino = true;
+                    AcertouAssassinoDiaologo();
+                }
+                break;
+        }
+        perguntando = false;
+        DesativaAssassino();
+    }
     public void Resposta(Text resposta)
     {
-        if (isInRange)
+        if (ClickCaderno)
         {
             respostaTexto = resposta.text;
             trocarCenaSim.SetActive(true);
@@ -247,170 +507,61 @@ public class Final : MonoBehaviour
                 texto.text = "Sera que é isso?";
             }
         }
+
     }
     public void NoEvidencias()
     {
-        if (numeroDaPergunta == 5)
+        if (ClickCaderno)
         {
-            CadernoLimpo.SetActive(true);
-            Evidencias.SetActive(false);
-            caderno.SetBool("Rela", false);
-            Desativa6Botoes();
-            no.SetActive(true);
-            Finalizar.SetActive(true);
-        }
-        numeroDaPergunta++;
-        trocarCenaSim.SetActive(false);
-        SemEvidencia.SetActive(false);
-        CadernoLimpo.SetActive(true);
-        Evidencias.SetActive(false);
-        caderno.SetBool("Rela", false);
-        perguntando = false;
-        fraseAtual = sentence.Dequeue();
-        StartCoroutine(typeSentence(fraseAtual));
-    }
-    public void Confirma()
-    {
-        if (isInRange)
-        {
-            switch (numeroDaPergunta)
+            if (numeroDaPergunta == 5)
             {
-                case 1:
-                    if (respostaTexto == SpawnObjects.PrimeiraResposta)
-                    {
-                        Pontuacao++;
-                        AcertouEntrada = 1;
-                    }
-                    else if (respostaTexto == SpawnObjects.PrimeiraRespostaIngles)
-                    {
-                        Pontuacao++;
-                        AcertouEntrada = 1;
-                    }
-                    break;
-                case 2:
-                    if (respostaTexto == SpawnObjects.SegundaResposta)
-                    {
-                        Pontuacao++;
-                        AcertouLocal = 1;
-                    }
-                    else if (respostaTexto == SpawnObjects.SegundaRespostaIngles)
-                    {
-                        Pontuacao++;
-                        AcertouLocal = 1;
-                    }
-                    break;
-                case 3:
-                    if (respostaTexto == SpawnObjects.TerceiraResposta)
-                    {
-                        Pontuacao++;
-                        AcertouArma = 1;
-                    }
-                    else if (respostaTexto == SpawnObjects.TerceiraRespostaIngles)
-                    {
-                        Pontuacao++;
-                        AcertouArma = 1;
-                    }
-                    break;
-                case 4:
-                    if (respostaTexto == SpawnObjects.QuartaResposta)
-                    {
-                        Pontuacao++;
-                        AcertouSaida = 1;
-                    }
-                    else if (respostaTexto == SpawnObjects.QuartaRespostaIngles)
-                    {
-                        Pontuacao++;
-                        AcertouSaida = 1;
-                    }
-                    break;
-                case 5:
-                    if (respostaTexto == SpawnObjects.QuintaResposta)
-                    {
-                        Pontuacao++;
-                        AcertouMotivo = 1;
-                    }
-                    CadernoLimpo.SetActive(true);
-                    Evidencias.SetActive(false);
-                    caderno.SetBool("Rela", false);
-                    Desativa6Botoes();
-                    no.SetActive(true);
-                    Finalizar.SetActive(true);
-                    break;
+                Evidencias.SetActive(false);
+                caderno.SetBool("Rela", false);
+                Desativa6Botoes();
+                no.SetActive(true);
+                Finalizar.SetActive(true);
             }
-            CadernoLimpo.SetActive(true);
-            Evidencias.SetActive(false);
-            caderno.SetBool("Rela", false);
+            numeroDaPergunta++;
             trocarCenaSim.SetActive(false);
             SemEvidencia.SetActive(false);
-            numeroDaPergunta++;
+            Evidencias.SetActive(false);
+            caderno.SetBool("Rela", false);
             perguntando = false;
             fraseAtual = sentence.Dequeue();
             StartCoroutine(typeSentence(fraseAtual));
         }
     }
-    public void PreencherORelatorio()
+    public void Confirma()
     {
-        movimento.ParaPersonagem = true;
-        Caderno.PermissaoAbrirCaderno = false;
-        entrouPreencher = true;
-        PixelArt.SetBool("On", true);
-        preencher.SetActive(false);
-        no.SetActive(false);
+        switch(SpawnObjects.numeroAssassino){
+            case 0:
+            if(respostaTexto == "relogio"){
+                Pontuacao = 1;
+            }
+            break;
+        }
+        Evidencias.SetActive(false);
+        caderno.SetBool("Rela", false);
+        trocarCenaSim.SetActive(false);
+        SemEvidencia.SetActive(false);
+        numeroDaPergunta++;
+        perguntando = false;
         fraseAtual = sentence.Dequeue();
         StartCoroutine(typeSentence(fraseAtual));
+        ClickCaderno = false;
+
     }
     public void No()
     {
-        isInRange = false;
         Transition.SetBool("Abrir", false);
-        CadernoLimpo.SetActive(true);
         Evidencias.SetActive(false);
         caderno.SetBool("Rela", false);
-        entrouPreencher = false;
         sentence.Clear();
         PixelArt.SetBool("On", false);
         movimento.ParaPersonagem = false;
         Caderno.PermissaoAbrirCaderno = true;
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            isInRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (PlayerData.Idioma == "ingles")
-            {
-                texto.text = "Do you wish to return to the crime scene?";
-            }
-            else
-            {
-                texto.text = "Deseja voltar a cena do crime?";
-            }
-            Transition.SetBool("Abrir", false);
-            CadernoLimpo.SetActive(true);
-            Evidencias.SetActive(false);
-            caderno.SetBool("Rela", false);
-            SemEvidencia.SetActive(false);
-            Finalizar.SetActive(false);
-            trocarCenaSim.SetActive(true);
-            no.SetActive(true);
-            Desativa6Botoes();
-            isInRange = false;
-            Pontuacao = 0;
-            perguntando = false;
-            numeroDaPergunta = 1;
-            entrouPreencher = false;
-            sentence.Clear();
-        }
-    }
-
     IEnumerator typeSentence(string sentence)
     {
         texto.text = "";

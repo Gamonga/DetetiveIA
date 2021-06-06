@@ -124,11 +124,17 @@ public class SpawnObjects : MonoBehaviour
     public static bool depoimentoTestemunhaOuviu;
     public static string policialUpdateSalvar;
     public static string policialSalvar;
+    public static string PrimeiraRespostaFinal;
+    public static string SegundaRespostaFinal;
+    public static string TerceiraRespostaFinal;
     public static string PrimeiraResposta;
     public static string SegundaResposta;
     public static string TerceiraResposta;
     public static string QuartaResposta;
     public static string QuintaResposta;
+    public static string PrimeiraRespostaInglesFinal;
+    public static string SegundaRespostaInglesFinal;
+    public static string TerceiraRespostaInglesFinal;
     public static string PrimeiraRespostaIngles;
     public static string SegundaRespostaIngles;
     public static string TerceiraRespostaIngles;

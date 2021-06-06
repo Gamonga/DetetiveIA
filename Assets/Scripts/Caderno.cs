@@ -381,6 +381,121 @@ public class Caderno : MonoBehaviour
         }
         evidenciasTextos.SetActive(false);
     }
+    public void ViraPagina()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+        switch (Final.paginaAtual)
+        {
+            case 1:
+                for (j = 0; j < evidencias.Length; j++)
+                {
+                    evidencias[j] = null;
+                }
+                LoadPessoas(data);
+                contadorPensamentos = data.contadorPensamento;
+                posiçãoEvidencias = 0;
+                for (j = 0; j < data.NumeroDeEvidencias; j++)
+                {
+                    adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso1[j]).GetComponent<Evidence>());
+                    update[j] = data.update[j];
+                    if (update[j] == true)
+                    {
+                        atualizaDescricao(j);
+                    }
+                }
+                break;
+            case 2:
+                for (j = 0; j < evidencias.Length; j++)
+                {
+                    evidencias[j] = null;
+                }
+                LoadPessoas(data);
+                contadorPensamentos = data.contadorPensamento;
+                posiçãoEvidencias = 0;
+                for (j = 0; j < data.NumeroDeEvidencias; j++)
+                {
+                    adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso2[j]).GetComponent<Evidence>());
+                    update[j] = data.update[j];
+                    if (update[j] == true)
+                    {
+                        atualizaDescricao(j);
+                    }
+                }
+                break;
+            case 3:
+                for (j = 0; j < evidencias.Length; j++)
+                {
+                    evidencias[j] = null;
+                }
+                LoadPessoas(data);
+                contadorPensamentos = data.contadorPensamento;
+                posiçãoEvidencias = 0;
+                for (j = 0; j < data.NumeroDeEvidencias; j++)
+                {
+                    adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso3[j]).GetComponent<Evidence>());
+                    update[j] = data.update[j];
+                    if (update[j] == true)
+                    {
+                        atualizaDescricao(j);
+                    }
+                }
+                break;
+            case 4:
+                for (j = 0; j < evidencias.Length; j++)
+                {
+                    evidencias[j] = null;
+                }
+                LoadPessoas(data);
+                contadorPensamentos = data.contadorPensamento;
+                posiçãoEvidencias = 0;
+                for (j = 0; j < data.NumeroDeEvidencias; j++)
+                {
+                    adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso4[j]).GetComponent<Evidence>());
+                    update[j] = data.update[j];
+                    if (update[j] == true)
+                    {
+                        atualizaDescricao(j);
+                    }
+                }
+                break;
+            case 5:
+                for (j = 0; j < evidencias.Length; j++)
+                {
+                    evidencias[j] = null;
+                }
+                LoadPessoas(data);
+                contadorPensamentos = data.contadorPensamento;
+                posiçãoEvidencias = 0;
+                for (j = 0; j < data.NumeroDeEvidencias; j++)
+                {
+                    adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso5[j]).GetComponent<Evidence>());
+                    update[j] = data.update[j];
+                    if (update[j] == true)
+                    {
+                        atualizaDescricao(j);
+                    }
+                }
+                break;
+            case 6:
+                for (j = 0; j < evidencias.Length; j++)
+                {
+                    evidencias[j] = null;
+                }
+                LoadPessoas(data);
+                contadorPensamentos = data.contadorPensamento;
+                posiçãoEvidencias = 0;
+                for (j = 0; j < data.NumeroDeEvidencias; j++)
+                {
+                    adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso6[j]).GetComponent<Evidence>());
+                    update[j] = data.update[j];
+                    if (update[j] == true)
+                    {
+                        atualizaDescricao(j);
+                    }
+                }
+                break;
+        }
+    }
     public void trocarDescricao(Text Text)
     {
         description = GameObject.Find("Description").GetComponent<Text>();

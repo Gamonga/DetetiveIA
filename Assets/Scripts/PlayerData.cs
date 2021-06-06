@@ -78,7 +78,7 @@ public class PlayerData
     public bool entrouTutorialIA;
     public bool entrouTutorialRelatorio;
     public int idadePersonagem;
-    public  int numeroMotivoVitimaComum;
+    public int numeroMotivoVitimaComum;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
@@ -216,6 +216,27 @@ public class PlayerData
     public void SalvaCaderno(int i)
     {
         nomeObjetoEvidencias[i] = Caderno.evidencias[i].NomeObjeto;
+        switch (NumeroDeCasosJogadoPeloPlayer)
+        {
+            case 1:
+                nomeObjetoEvidenciasCaso1[i] = Caderno.evidencias[i].NomeObjeto;
+                break;
+            case 2:
+                nomeObjetoEvidenciasCaso2[i] = Caderno.evidencias[i].NomeObjeto;
+                break;
+            case 3:
+                nomeObjetoEvidenciasCaso3[i] = Caderno.evidencias[i].NomeObjeto;
+                break;
+            case 4:
+                nomeObjetoEvidenciasCaso4[i] = Caderno.evidencias[i].NomeObjeto;
+                break;
+            case 5:
+                nomeObjetoEvidenciasCaso5[i] = Caderno.evidencias[i].NomeObjeto;
+                break;
+            case 6:
+                nomeObjetoEvidenciasCaso6[i] = Caderno.evidencias[i].NomeObjeto;
+                break;
+        }
         update[i] = Caderno.update[i];
     }
     public void SalvaObjetos(int i)
