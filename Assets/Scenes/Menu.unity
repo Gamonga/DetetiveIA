@@ -1867,6 +1867,7 @@ MonoBehaviour:
   movimento: {fileID: 0}
   MusicSlider: {fileID: 990506310}
   SoundEffectSlider: {fileID: 427136311}
+  mainmenu: {fileID: 83403984}
   NovoJogo: {fileID: 696722666}
   Options: {fileID: 1405824524}
   Options2: {fileID: 765373432}

@@ -71,7 +71,8 @@ public class TrocaIdioma : MonoBehaviour
                 noAnalise.text = "Not now";
                 semEvidencias.text = "No evidence";
             }
-            if(SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0){
+            if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0)
+            {
                 acredita.text = "Believe";
                 duvida.text = "Doubt";
                 discorda.text = "Disagree";
@@ -83,18 +84,21 @@ public class TrocaIdioma : MonoBehaviour
         }
         else
         {
-            sim.text = "Sim";
-            nao.text = "Agora não";
-            nomeDetetive.text = "Detetive: David Mills";
-            nomeParceiro.text = "Pareceiro: Stevie Gary";
-            juntarPensamentos.text = "Juntar os pensamentos";
-            selecionaOutro.text = "Selecionar outros pensamentos";
-            anotacoes.text = "Anotações:";
-            departamentoPolica.text = "Departamento de polícia de Grande Vale";
-            servirProteger.text = "'Servir e Proteger'";
-            pessoas.text = "Pessoas";
-            evidencias.text = "Evidências";
-            pensamentos.text = "Pensamentos";
+            if (SceneManager.GetActiveScene().buildIndex != 4)
+            {
+                sim.text = "Sim";
+                nao.text = "Agora não";
+                nomeDetetive.text = "Detetive: David Mills";
+                nomeParceiro.text = "Pareceiro: Stevie Gary";
+                juntarPensamentos.text = "Juntar os pensamentos";
+                selecionaOutro.text = "Selecionar outros pensamentos";
+                anotacoes.text = "Anotações:";
+                departamentoPolica.text = "Departamento de polícia de Grande Vale";
+                servirProteger.text = "'Servir e Proteger'";
+                pessoas.text = "Pessoas";
+                evidencias.text = "Evidências";
+                pensamentos.text = "Pensamentos";
+            }
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 roubo.text = "Roubo";
@@ -109,7 +113,8 @@ public class TrocaIdioma : MonoBehaviour
                 noAnalise.text = "Agora não";
                 semEvidencias.text = "Sem evidências";
             }
-            if(SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0){
+            if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 4)
+            {
                 acredita.text = "Acreditar";
                 duvida.text = "Duvidar";
                 discorda.text = "Discordar";

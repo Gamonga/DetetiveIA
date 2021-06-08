@@ -17,18 +17,30 @@ public class PauseMenu : MonoBehaviour
     private float contador;
     private float contadorSecundario;
     public static int NumeroDeCasosJogadoPeloPlayer;
-
     private bool open;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("primeiro caso do pause menu:" + MainMenu.PrimeiroCaso);
         if (MainMenu.PrimeiroCaso)
         {
             NumeroDeCasosJogadoPeloPlayer = 1;
         }
-        else{
+        else
+        {
             PlayerData data = SaveSystem.LoadPlayer();
             NumeroDeCasosJogadoPeloPlayer = data.NumeroDeCasosJogadoPeloPlayer;
+            if (SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 4)
+            {
+                if (PlayerData.Idioma == "ingles")
+                {
+                    CasosNumeros.text = "case " + NumeroDeCasosJogadoPeloPlayer.ToString();
+                }
+                else
+                {
+                    CasosNumeros.text = "caso " + NumeroDeCasosJogadoPeloPlayer.ToString();
+                }
+            }
         }
         contador = 0;
         contadorSecundario = 0;
@@ -50,14 +62,16 @@ public class PauseMenu : MonoBehaviour
                 }
                 else
                 {
-                    CasosNumeros.text = "caso " + NumeroDeCasosJogadoPeloPlayer.ToString() ;
+                    CasosNumeros.text = "caso " + NumeroDeCasosJogadoPeloPlayer.ToString();
                 }
                 contadorSecundario++;
-                if(contadorSecundario > 75){
+                if (contadorSecundario > 75)
+                {
                     contador++;
                 }
             }
-            else{
+            else
+            {
                 contador++;
             }
         }

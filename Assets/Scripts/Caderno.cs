@@ -1720,6 +1720,7 @@ public class Caderno : MonoBehaviour
         {
             LoadPlayer();
             repetidor++;
+            Debug.Log("aaaa");
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 Destroy_Object();
@@ -1734,9 +1735,10 @@ public class Caderno : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();
         posiçãoEvidencias = data.NumeroDeEvidencias;
-        for (j = 0; j < data.NumeroDeObjetos; j++)
+        for (j = 0; j < data.NumeroDeEvidencias; j++)
         {
-            Destroy(GameObject.Find(data.NomeDosObjetos[j]));
+            Debug.Log(data.nomeObjetoEvidencias[j]);
+            Destroy(GameObject.Find(data.nomeObjetoEvidencias[j]));
         }
     }
     public void LoadPlayer()
@@ -1762,53 +1764,56 @@ public class Caderno : MonoBehaviour
     }
     public void LoadPessoas(PlayerData data)
     {
-        Sanefuji = data.Sanefuji;
-        Jessie = data.Jessie;
-        kyle = data.kyle;
-        Steve = data.Steve;
-        Jhony = data.Jhony;
-        Devi = data.Devi;
-        TesteJessie = new Pessoa();
-        TesteJohny = new Pessoa();
-        TesteSteve = new Pessoa();
-        TesteDevi = new Pessoa();
-        TesteSanefuji = new Pessoa();
-        TesteKyle = new Pessoa();
-        if (Sanefuji == true)
+        if (SceneManager.GetActiveScene().buildIndex != 4)
         {
-            TesteSanefuji.nome = "Sanefuji";
-            TesteSanefuji.description = "Empresário da alta classe, só pensa em business.";
-            adicionarPessoas(TesteSanefuji);
-        }
-        if (Jessie == true)
-        {
-            TesteJessie.nome = "Jessie";
-            TesteJessie.description = "Jornalista investigativa.";
-            adicionarPessoas(TesteJessie);
-        }
-        if (kyle == true)
-        {
-            TesteKyle.nome = "kyle";
-            TesteKyle.description = "Perito digital da delegacia.";
-            adicionarPessoas(TesteKyle);
-        }
-        if (Steve == true)
-        {
-            TesteSteve.nome = "Steve";
-            TesteSteve.description = "Parceiro do detetive.";
-            adicionarPessoas(TesteSteve);
-        }
-        if (Jhony == true)
-        {
-            TesteJohny.nome = "Johnny";
-            TesteJohny.description = "Policial.";
-            adicionarPessoas(TesteJohny);
-        }
-        if (Devi == true)
-        {
-            TesteDevi.nome = "Devi";
-            TesteDevi.description = "Legista.";
-            adicionarPessoas(TesteDevi);
+            Sanefuji = data.Sanefuji;
+            Jessie = data.Jessie;
+            kyle = data.kyle;
+            Steve = data.Steve;
+            Jhony = data.Jhony;
+            Devi = data.Devi;
+            TesteJessie = new Pessoa();
+            TesteJohny = new Pessoa();
+            TesteSteve = new Pessoa();
+            TesteDevi = new Pessoa();
+            TesteSanefuji = new Pessoa();
+            TesteKyle = new Pessoa();
+            if (Sanefuji == true)
+            {
+                TesteSanefuji.nome = "Sanefuji";
+                TesteSanefuji.description = "Empresário da alta classe, só pensa em business.";
+                adicionarPessoas(TesteSanefuji);
+            }
+            if (Jessie == true)
+            {
+                TesteJessie.nome = "Jessie";
+                TesteJessie.description = "Jornalista investigativa.";
+                adicionarPessoas(TesteJessie);
+            }
+            if (kyle == true)
+            {
+                TesteKyle.nome = "kyle";
+                TesteKyle.description = "Perito digital da delegacia.";
+                adicionarPessoas(TesteKyle);
+            }
+            if (Steve == true)
+            {
+                TesteSteve.nome = "Steve";
+                TesteSteve.description = "Parceiro do detetive.";
+                adicionarPessoas(TesteSteve);
+            }
+            if (Jhony == true)
+            {
+                TesteJohny.nome = "Johnny";
+                TesteJohny.description = "Policial.";
+                adicionarPessoas(TesteJohny);
+            }
+            if (Devi == true)
+            {
+                TesteDevi.nome = "Devi";
+                TesteDevi.description = "Legista.";
+                adicionarPessoas(TesteDevi);
+            }
         }
     }
 }

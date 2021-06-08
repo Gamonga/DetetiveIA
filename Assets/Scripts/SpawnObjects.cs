@@ -177,8 +177,12 @@ public class SpawnObjects : MonoBehaviour
         PanoSangue = false;
         PlayerData.DificuldadeAtual = 0;
         NumeroDeObjetos = 0;
-        NumeroDeportas = carregaNumeroDePortas();
-        PortaDaCena = carregaPortaDaCena();
+        if (SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            NumeroDeportas = carregaNumeroDePortas();
+            PortaDaCena = carregaPortaDaCena();
+        }
+        Debug.Log("primeiro caso spawnobject é :" + MainMenu.PrimeiroCaso);
         if (MainMenu.NewGame == false)
         {
             PlayerData data = SaveSystem.LoadPlayer();
@@ -205,7 +209,10 @@ public class SpawnObjects : MonoBehaviour
             }
             for (i = 0; i < NumeroDeportas; i++)
             {
-                GameObject.Find("Porta" + (i + PortaDaCena)).GetComponent<PortaController>().isOpen = data.isOpen[i + PortaDaCena];
+                if (SceneManager.GetActiveScene().buildIndex != 1)
+                {
+                    GameObject.Find("Porta" + (i + PortaDaCena)).GetComponent<PortaController>().isOpen = data.isOpen[i + PortaDaCena];
+                }
             }
         }
         else
@@ -2036,7 +2043,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void LoadPlayer(PlayerData data, int i)
     {
-        switch (data.NomeDosObjetos[i])
+        switch (data.nomeObjetoEvidencias[i])
         {
             case "Bilhete(Clone)":
                 InstantiateBilheteCulposo();

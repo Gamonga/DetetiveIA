@@ -17,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public static string idioma;
     public static float volumeMusica = 0;
     public static float volumeSoundEffects = 0;
+    public GameObject mainmenu;
     public Text NovoJogo;
     public Text Options;
     public Text Options2;
@@ -47,6 +48,7 @@ public class MainMenu : MonoBehaviour
         entrouTutorial = false;
         contadorTelaPreta = true;
         contador = 0;
+
         CarregaMusicas();
         SetSoundEffectSlider();
         SetMusicSlider();
@@ -106,6 +108,7 @@ public class MainMenu : MonoBehaviour
     }
     public void PlayGame()
     {
+        mainmenu.SetActive(false);
         contadorTelaPreta = false;
         entrouTutorial = true;
         animatorTutorial.SetBool("AbrirTutorial", true);
@@ -136,6 +139,7 @@ public class MainMenu : MonoBehaviour
         PrimeiroCaso = true;
         PlayerData.DificuldadeAtual = 3;
         CarregaMusicas();
+        SavePlayer();
         if (Random.value >= 0.5)
         {
             SceneManager.LoadScene(2);
@@ -152,6 +156,7 @@ public class MainMenu : MonoBehaviour
         PrimeiroCaso = false;
         PlayerData data = SaveSystem.LoadPlayer();
         CarregaMusicas();
+        SavePlayer();
         SceneManager.LoadScene(data.level);
     }
 

@@ -66,7 +66,6 @@ public class Relatorio : MonoBehaviour
         MainMenu.NewGame = true;
         SaveSystem.SavePlayer(movimento);
         jogoFinalizado = true;
-        PauseMenu.NumeroDeCasosJogadoPeloPlayer++;
     }
     // Update is called once per frame
     void FixedUpdate()

@@ -2916,6 +2916,7 @@ MonoBehaviour:
   movimento: {fileID: 2097695721}
   MusicSlider: {fileID: 368422473}
   SoundEffectSlider: {fileID: 304278483}
+  mainmenu: {fileID: 0}
   NovoJogo: {fileID: 0}
   Options: {fileID: 0}
   Options2: {fileID: 0}
@@ -2935,6 +2936,10 @@ MonoBehaviour:
   acentos: {fileID: 0}
   acentos2: {fileID: 0}
   Painel: {fileID: 0}
+  testemunhaTexto: {fileID: 0}
+  animatorTutorial: {fileID: 0}
+  entrouTutorial: 0
+  contadorTelaPreta: 0
 --- !u!1 &135700773
 GameObject:
   m_ObjectHideFlags: 0
@@ -21860,21 +21865,38 @@ MonoBehaviour:
   nameperson1: Steve
   nameperson2: Detetive
   sentences:
-  - Cara tem um maluco do TI muito chato.
-  - troca paisagem
-  - "De quem voc\xEA esta falando?"
-  - troca paisagem
-  - "O Boris, eu n\xE3o o suporto mais."
-  - troca paisagem
-  - Sad.
+  - Comecei a frequentar a academia.
+  - troca
+  - "(N\xE3o parece, ao meu ver)"
+  - "Nossa! Tem dado resultados incr\xEDveis. (N\xE3o tem n\xE3o)"
+  - troca
+  - "Voc\xEA acha mesmo?! Eu achei que era furada, que estava conseguindo nenhum
+    resultado."
+  - "At\xE9 comecei a tirar foto no espelho para mostrar que estou ficando monstro."
+  - troca
+  - Espelho da sua casa, imagino.
+  - troca
+  - "N\xE3o. Da academia mesmo, depois de pegar no supino pesado."
+  - troca
+  - (Coitado de quem faz academia com ele)
+  - Tem pego quanto no supino?
+  - troca
+  - "Ainda n\xE3o pego peso nenhum, s\xF3 uso a barra de 5 quilos."
+  - troca
+  - (F)
+  - troca
+  - Tenho feito isso para ver se consigo sair com umas gatinhas.
+  - troca
+  - Boa sorte.
+  - "(Que Deus tenha d\xF3 desse rapaz, gado d+)"
   sentences2:
-  - "Voc\xEA ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
+  - "Voc\xEA ficou sabendo que a Gawr Gura vai streamar com a Kiara?"
   - troca paisagem
   - Quem?
   - troca paisagem
   - Uma Vtuber que eu adoro.
   - troca paisagem
-  - "(Que deus tenha d\xF3 desse rapaz)"
+  - "(Que Deus tenha d\xF3 desse rapaz)"
   senteceloop:
   - "Caso queira voltar para a cena do crime, me chame e eu irei at\xE9 o carro."
   - troca paisagem
@@ -25550,6 +25572,8 @@ MonoBehaviour:
   diaologoFinalParceiro: {fileID: 1616764015}
   dialogueControl: {fileID: 451964875}
   dialogueControlFinal: {fileID: 1616764014}
+  diaologoInicialParceiro: {fileID: 0}
+  dialogueControlInicialParceiro: {fileID: 0}
   isInRange: 0
   testemunhaTexto: {fileID: 411253590}
   Transition: {fileID: 867574881}
@@ -32395,6 +32419,17 @@ MonoBehaviour:
   - "Claro que eu gosto de jogar, at\xE9 atraso meu trabalho por causa disso."
   - Vamos andando, detetive, temos muito que conversar.
   - ...
+  - finalizar
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
   sentences2:
   - "Voc\xEA ficou sabendo que a Gawr Gura nunca mais far\xE1 stream?"
   - troca paisagem
@@ -32424,6 +32459,17 @@ MonoBehaviour:
   - troca paisagem
   - "\rOf course I like to play games, I even delay my work because of that."
   - Let's walk, detective, we have a lot to talk about.
+  - ...
+  - finalizar
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
+  - ...
   - ...
   sentences2Ingles: []
   senteceloopIngles: []

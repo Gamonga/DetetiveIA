@@ -10,9 +10,11 @@ public class ScenesManager : MonoBehaviour
     public GameObject botaoSim;
     public GameObject botaoNao;
     public static Animator animator;
+    public Dialogue dialogoFinalDoJogo;
     public Dialogue dialogoParceiroDetetiveIndoParaDelegacia;
     public Dialogue dialogoDelegadoExplicando;
     public Dialogue diaologoFinalParceiro;
+    public DialogueControl FinalDoJogoControl;
     public DialogueControl dialogueControl;
     public DialogueControl dialogueControlFinal;
     public Dialogue diaologoInicialParceiro;
@@ -44,7 +46,6 @@ public class ScenesManager : MonoBehaviour
     {
         entrouTutorial = false;
         startaFinal = true;
-        PrimeiraVezDialogoTransicao = true;
         animator = GameObject.Find("CarroTransicaoGIF").GetComponent<Animator>();
         PlayerData data = SaveSystem.LoadPlayer();
         if (MainMenu.PrimeiroCaso == false)
@@ -55,7 +56,7 @@ public class ScenesManager : MonoBehaviour
             entrouTutorialControles = data.entrouTutorialControles;
             entrouTutorialIA = data.entrouTutorialIA;
             entrouTutorialRelatorio = data.entrouTutorialRelatorio;
-            PrimeiraVezDialogoTransicao = data.PrimeiraVezDialogoTransicao;
+            PrimeiraVezDialogoTransicao = false;
         }
         else
         {
@@ -65,6 +66,7 @@ public class ScenesManager : MonoBehaviour
             entrouTutorialControles = false;
             entrouTutorialIA = false;
             entrouTutorialRelatorio = false;
+            PrimeiraVezDialogoTransicao = true;
         }
         DialogoTransicao = false;
         if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -73,7 +75,13 @@ public class ScenesManager : MonoBehaviour
             animator.SetBool("CarroGif", true);
             dialogueControl.StartDialogue(dialogoParceiroDetetiveIndoParaDelegacia);
         }
-        if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0)
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            DialogoTransicao = true;
+            animator.SetBool("CarroGif", true);
+            dialogueControl.StartDialogue(dialogoFinalDoJogo);
+        }
+        if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 4)
         {
             if (PrimeiraVezDialogoTransicao)
             {
@@ -84,7 +92,7 @@ public class ScenesManager : MonoBehaviour
             }
             else
             {
-                if (Assassino.numeroAssassinoSegundo == 4 || Assassino.numeroAssassinoSegundo == 4)
+                if (Assassino.numeroAssassinoSegundo == 4 || Assassino.numeroAssassinoTerceiro == 4)
                 {
                     DialogoTransicao = true;
                     animator.SetBool("CarroGif", true);
@@ -103,9 +111,12 @@ public class ScenesManager : MonoBehaviour
 
             }
         }
-        botaoSim.SetActive(false);
-        botaoNao.SetActive(false);
-        E = GameObject.Find("E").GetComponent<Text>();
+        if (SceneManager.GetActiveScene().buildIndex != 4)
+        {
+            botaoSim.SetActive(false);
+            botaoNao.SetActive(false);
+            E = GameObject.Find("E").GetComponent<Text>();
+        }
         ActualScene = SceneManager.GetActiveScene().buildIndex;
         if ((SceneManager.GetActiveScene().buildIndex == 1))
         {
@@ -337,59 +348,130 @@ public class ScenesManager : MonoBehaviour
     }
     public void DelegadoInicialElogio()
     {
-        dialogoDelegadoExplicando.sentences[0] = "Obrigado pela carona, detetive.";
-        dialogoDelegadoExplicando.sentences[1] = "troca paisagem";
-        dialogoDelegadoExplicando.sentences[2] = "Não tem problemas senhor.";
-        dialogoDelegadoExplicando.sentences[3] = "troca paisagem";
-        dialogoDelegadoExplicando.sentences[4] = "Você tem feito um bom trabalho, o pessoal na delegacia tem gostado do seu trabalho.";
-        dialogoDelegadoExplicando.sentences[5] = "troca embara";
-        dialogoDelegadoExplicando.sentences[6] = "Oobrigado, só tenho feito o meu trabalho.";
-        dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
-        dialogoDelegadoExplicando.sentences[8] = "Fico feliz que o pessoal esteja gostando.";
-        dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
-        dialogoDelegadoExplicando.sentences[10] = "Continue assim.";
-        dialogoDelegadoExplicando.sentences[11] = "finalizar";
-
-        dialogoDelegadoExplicando.sentencesIngles[0] = "Thanks for the ride, detective.";
-        dialogoDelegadoExplicando.sentencesIngles[1] = "troca paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[2] = "No problem, sir.";
-        dialogoDelegadoExplicando.sentencesIngles[3] = "troca paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[4] = "You have done a good job, the people at the police station have been appreciating your work.";
-        dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
-        dialogoDelegadoExplicando.sentencesIngles[6] = "Thank you, i'm only doing my job.";
-        dialogoDelegadoExplicando.sentencesIngles[7] = "detetive paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[8] = "I'm glad that people are enjoying it.";
-        dialogoDelegadoExplicando.sentencesIngles[9] = "troca paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[10] = "Keep it up.";
-        dialogoDelegadoExplicando.sentencesIngles[11] = "finalizar";
+        if (PlayerData.Idioma == "ingles")
+        {
+            dialogoDelegadoExplicando.sentencesIngles[0] = "Thanks for the ride, detective.";
+            dialogoDelegadoExplicando.sentencesIngles[1] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[2] = "No problem, sir.";
+            dialogoDelegadoExplicando.sentencesIngles[3] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[4] = "You have done a good job, the people at the police station have been appreciating your work.";
+            dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "Thank you, i'm only doing my job.";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[8] = "I'm glad that people are enjoying it.";
+            dialogoDelegadoExplicando.sentencesIngles[9] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[10] = "Keep it up.";
+            dialogoDelegadoExplicando.sentencesIngles[11] = "finalizar";
+        }
+        else
+        {
+            dialogoDelegadoExplicando.sentences[0] = "Obrigado pela carona, detetive.";
+            dialogoDelegadoExplicando.sentences[1] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[2] = "Não tem problemas senhor.";
+            dialogoDelegadoExplicando.sentences[3] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[4] = "Você tem feito um bom trabalho, o pessoal na delegacia tem gostado do seu trabalho.";
+            dialogoDelegadoExplicando.sentences[5] = "troca embara";
+            dialogoDelegadoExplicando.sentences[6] = "Oobrigado, só tenho feito o meu trabalho.";
+            dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentences[8] = "Fico feliz que o pessoal esteja gostando.";
+            dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[10] = "Continue assim.";
+            dialogoDelegadoExplicando.sentences[11] = "finalizar";
+        }
+    }
+    public void DelegadoNMataIdosos()
+    {
+        if (PlayerData.Idioma == "ingles")
+        {
+            dialogoDelegadoExplicando.sentencesIngles[0] = "Ouvi dizer que o caso de hoje vai ser feio.";
+            dialogoDelegadoExplicando.sentencesIngles[1] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[2] = "Nunca ouvi falar de um caso bonito.";
+            dialogoDelegadoExplicando.sentencesIngles[3] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[4] = "Mas esse é mais feio que bater na mãe.";
+            dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[8] = "De qualquer forma, não poderei te ajudar nesse caso.";
+            dialogoDelegadoExplicando.sentencesIngles[9] = "Tenho que ir à reunião da associação de amparo aos idosos.";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[8] = "Que legal, delegado. Aposto que por lá você não precisa ser o delegado de sempre. Hahaha.";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[8] = "Não. Eu sou sim. Também sou um delegado lá.";
+            dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "Lá eles me dão biscoitos. Adoro biscoitos";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "finalizar";
+        }
+        else
+        {
+            dialogoDelegadoExplicando.sentencesIngles[0] = "Ouvi dizer que o caso de hoje vai ser feio.";
+            dialogoDelegadoExplicando.sentencesIngles[1] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[2] = "Nunca ouvi falar de um caso bonito.";
+            dialogoDelegadoExplicando.sentencesIngles[3] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[4] = "Mas esse é mais feio que bater na mãe.";
+            dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[8] = "De qualquer forma, não poderei te ajudar nesse caso.";
+            dialogoDelegadoExplicando.sentencesIngles[9] = "Tenho que ir à reunião da Associação de Amparo aos Idosos.";
+            dialogoDelegadoExplicando.sentencesIngles[10] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[11] = "Que legal, delegado. Aposto que por lá você não precisa ser o delegado de sempre. Hahaha.";
+            dialogoDelegadoExplicando.sentencesIngles[12] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[13] = "Não. Eu sou sim. Também sou um delegado lá.";
+            dialogoDelegadoExplicando.sentencesIngles[14] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[15] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[16] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[17] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[18] = "Lá eles me dão biscoitos. Adoro biscoitos";
+            dialogoDelegadoExplicando.sentencesIngles[19] = "finalizar";
+        }
     }
     public void DelegadoInicialCritica()
     {
-        dialogoDelegadoExplicando.sentences[0] = "We need to talk detective.";
-        dialogoDelegadoExplicando.sentences[1] = "troca paisagem";
-        dialogoDelegadoExplicando.sentences[2] = "Some problem sir.";
-        dialogoDelegadoExplicando.sentences[3] = "troca paisagem";
-        dialogoDelegadoExplicando.sentences[4] = "You have not done a good job, the people at the police station have not been very fond of your work.";
-        dialogoDelegadoExplicando.sentences[5] = "troca embara";
-        dialogoDelegadoExplicando.sentences[6] = "I'm sorry, delegate, I've only been doing my job.";
-        dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
-        dialogoDelegadoExplicando.sentences[8] = "I will try to improve.";
-        dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
-        dialogoDelegadoExplicando.sentences[10] = "I hope so.";
-        dialogoDelegadoExplicando.sentences[11] = "finalizar";
+        if (PlayerData.Idioma == "ingles")
+        {
+            dialogoDelegadoExplicando.sentences[0] = "We need to talk detective.";
+            dialogoDelegadoExplicando.sentences[1] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[2] = "Some problem, sir?";
+            dialogoDelegadoExplicando.sentences[3] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[4] = "You have not done a good job, the people at the police station have not been very fond of your work.";
+            dialogoDelegadoExplicando.sentences[5] = "troca embara";
+            dialogoDelegadoExplicando.sentences[6] = "I'm sorry, delegate, I've only been doing my job.";
+            dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentences[8] = "I will try to improve.";
+            dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[10] = "I hope so.";
+            dialogoDelegadoExplicando.sentences[11] = "finalizar";
+        }
+        else
+        {
+            dialogoDelegadoExplicando.sentences[0] = "Precisamos conversar detetive.";
+            dialogoDelegadoExplicando.sentences[1] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[2] = "Algum problema, senhor?";
+            dialogoDelegadoExplicando.sentences[3] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[4] = "Você não tem feito um bom trabalho, as pessoas na delegacia não tem gostado muito de como você está conduzindo os casos.";
+            dialogoDelegadoExplicando.sentences[5] = "troca embara";
+            dialogoDelegadoExplicando.sentences[6] = "Me desculpa, delegado, eu só tenho tentado fazer o meu trabalho.";
+            dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentences[8] = "Eu irei melhorar.";
+            dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
+            dialogoDelegadoExplicando.sentences[10] = "Assim espero.";
+            dialogoDelegadoExplicando.sentences[11] = "finalizar";
+        }
+    }
 
-        dialogoDelegadoExplicando.sentencesIngles[0] = "Thanks for the ride, detective.";
-        dialogoDelegadoExplicando.sentencesIngles[1] = "troca paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[2] = "No problem, sir.";
-        dialogoDelegadoExplicando.sentencesIngles[3] = "troca paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[4] = "You have done a good job, the people at the police station have been appreciating your work.";
-        dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
-        dialogoDelegadoExplicando.sentencesIngles[6] = "Thank you, i'm only doing my job.";
-        dialogoDelegadoExplicando.sentencesIngles[7] = "detetive paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[8] = "I'm glad that people are enjoying it.";
-        dialogoDelegadoExplicando.sentencesIngles[9] = "troca paisagem";
-        dialogoDelegadoExplicando.sentencesIngles[10] = "Keep it up.";
-        dialogoDelegadoExplicando.sentencesIngles[11] = "finalizar";
+    public void ParceiroDetetiveNMataMulher()
+    {
+        if (PlayerData.Idioma == "ingles")
+        {
+            diaologoFinalParceiro.sentences[0] = "";
+        }
+        else
+        {
+            diaologoFinalParceiro.sentences[0] = "";
+        }
     }
     // Update is called once per frame
     void Update()
@@ -413,10 +495,11 @@ public class ScenesManager : MonoBehaviour
                 }
             }
         }
-        if (movimento.comecaDialogoFinal)
+        if (Relatorio.jogoFinalizado)
         {
             if (startaFinal)
             {
+                nomeDaPessoaNoFinal = "parceiro";
                 switch (nomeDaPessoaNoFinal)
                 {
                     case "parceiro":
@@ -430,35 +513,41 @@ public class ScenesManager : MonoBehaviour
                         break;
                 }
                 startaFinal = false;
+                Analise.terminouConversa = false;
             }
-            else
+        }
+        else
+        {
+            if (!startaFinal)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    MainMenu.PrimeiroCaso = false;
                     dialogueControlFinal.DisplayNextSentence(diaologoFinalParceiro);
                     if (Analise.terminouConversa == true)
                     {
-                        if (Input.GetKeyDown(KeyCode.E))
+
+                        if (PauseMenu.NumeroDeCasosJogadoPeloPlayer == 6)
                         {
-                            if (PauseMenu.NumeroDeCasosJogadoPeloPlayer == 6)
+                            SavePlayer();
+                            SceneManager.LoadScene(4);
+                        }
+                        else
+                        {
+                            PauseMenu.NumeroDeCasosJogadoPeloPlayer++;
+                            SavePlayer();
+                            if (ScenesManager.ActualScene == 3)
                             {
-                                SceneManager.LoadScene(4);
+                                SceneManager.LoadScene(2);
                             }
-                            else
+                            else if (ScenesManager.ActualScene == 2)
                             {
-                                if (ScenesManager.ActualScene == 3)
-                                {
-                                    SceneManager.LoadScene(2);
-                                }
-                                else if (ScenesManager.ActualScene == 2)
-                                {
-                                    SceneManager.LoadScene(3);
-                                }
+                                SceneManager.LoadScene(3);
                             }
                         }
+
                     }
                 }
-
             }
         }
         if (isInRange)
@@ -505,57 +594,62 @@ public class ScenesManager : MonoBehaviour
     {
         if (!MainMenu.PrimeiroCaso)
         {
-            diaologoFinalParceiro.sentences[0] = "Caso complicado hoje.";
-            diaologoFinalParceiro.sentences[1] = "Como pode alguem cometer crimes assim?";
-            diaologoFinalParceiro.sentences[2] = "troca paisagem";
-            diaologoFinalParceiro.sentences[3] = "Estamos aqui para desvendar o caso.";
-            diaologoFinalParceiro.sentences[4] = "Não gaste muito tempo pensando nele.";
-            diaologoFinalParceiro.sentences[5] = "troca paisagem";
-            diaologoFinalParceiro.sentences[6] = "Foi o meu primeira caso detetive.";
-            diaologoFinalParceiro.sentences[7] = "É diferente do que eu esperava.";
-            diaologoFinalParceiro.sentences[8] = "troca pensando";
-            diaologoFinalParceiro.sentences[9] = "(talvez seja uma experiência diferente de tudo que ele já tenha visto)";
-            diaologoFinalParceiro.sentences[10] = "detetive pensando";
-            diaologoFinalParceiro.sentences[11] = "Esta tudo bem, no meu primeiro caso como parceiro, eu me mijei todo.";
-            diaologoFinalParceiro.sentences[12] = "troca paisagem";
-            diaologoFinalParceiro.sentences[13] = "Não acreito nisso!";
-            diaologoFinalParceiro.sentences[14] = "Só pode ser brincadeira.";
-            diaologoFinalParceiro.sentences[15] = "troca embara";
-            diaologoFinalParceiro.sentences[16] = "Estou brincando só.";
-            diaologoFinalParceiro.sentences[17] = "Mas de fato foi algo díficil para mim, é díficil para todo mundo na primeira vez.";
-            diaologoFinalParceiro.sentences[18] = "troca paisagem";
-            diaologoFinalParceiro.sentences[19] = "Obrigado detetive.";
-            diaologoFinalParceiro.sentences[20] = "Espero que isso não aconteça com muita frequência.";
-            diaologoFinalParceiro.sentences[21] = "troca paisagem";
-            diaologoFinalParceiro.sentences[22] = "Eu vim para essa cidade, por que eu soube que era mais tranquila.";
-            diaologoFinalParceiro.sentences[23] = "Acredito que não teremos muitos casos de assassinato.";
-            diaologoFinalParceiro.sentences[24] = "finalizar";
-
-            diaologoFinalParceiro.sentencesIngles[0] = "Complicated case today.";
-            diaologoFinalParceiro.sentencesIngles[1] = "How can someone commit crimes like that?";
-            diaologoFinalParceiro.sentencesIngles[2] = "troca paisagem";
-            diaologoFinalParceiro.sentencesIngles[3] = "We are here to solve the case.";
-            diaologoFinalParceiro.sentencesIngles[4] = "Don't spend a lot of time thinking about him.";
-            diaologoFinalParceiro.sentencesIngles[5] = "troca paisagem";
-            diaologoFinalParceiro.sentencesIngles[6] = "It was my first detective case.";
-            diaologoFinalParceiro.sentencesIngles[7] = "It is different from what I expected.";
-            diaologoFinalParceiro.sentencesIngles[8] = "troca pensando";
-            diaologoFinalParceiro.sentencesIngles[9] = "(maybe it is an experience unlike anything he has ever seen)";
-            diaologoFinalParceiro.sentencesIngles[10] = "detetive pensando";
-            diaologoFinalParceiro.sentencesIngles[11] = "It's okay, in my first case as a partner, I pissed myself all over.";
-            diaologoFinalParceiro.sentencesIngles[12] = "troca paisagem";
-            diaologoFinalParceiro.sentencesIngles[13] = "I don't believe it!";
-            diaologoFinalParceiro.sentencesIngles[14] = "You must be kidding.";
-            diaologoFinalParceiro.sentencesIngles[15] = "troca embara";
-            diaologoFinalParceiro.sentencesIngles[16] = "I'm just kidding.";
-            diaologoFinalParceiro.sentencesIngles[17] = "But in fact it was difficult for me, it is difficult for everyone the first time.";
-            diaologoFinalParceiro.sentencesIngles[18] = "troca paisagem";
-            diaologoFinalParceiro.sentencesIngles[19] = "Thank you, detective.";
-            diaologoFinalParceiro.sentencesIngles[20] = "I hope this doesn't happen very often.";
-            diaologoFinalParceiro.sentencesIngles[21] = "troca paisagem";
-            diaologoFinalParceiro.sentencesIngles[22] = "I came to this city, because I knew it was more peaceful.";
-            diaologoFinalParceiro.sentencesIngles[23] = "I believe that we will not have many cases of murder.";
-            diaologoFinalParceiro.sentencesIngles[24] = "finalizar";
+            if (PlayerData.Idioma == "ingles")
+            {
+                diaologoFinalParceiro.sentencesIngles[0] = "Complicated case today.";
+                diaologoFinalParceiro.sentencesIngles[1] = "How can someone commit crimes like that?";
+                diaologoFinalParceiro.sentencesIngles[2] = "troca paisagem";
+                diaologoFinalParceiro.sentencesIngles[3] = "We are here to solve the case.";
+                diaologoFinalParceiro.sentencesIngles[4] = "Don't spend a lot of time thinking about him.";
+                diaologoFinalParceiro.sentencesIngles[5] = "troca paisagem";
+                diaologoFinalParceiro.sentencesIngles[6] = "It was my first detective case.";
+                diaologoFinalParceiro.sentencesIngles[7] = "It is different from what I expected.";
+                diaologoFinalParceiro.sentencesIngles[8] = "troca pensando";
+                diaologoFinalParceiro.sentencesIngles[9] = "(maybe it is an experience unlike anything he has ever seen)";
+                diaologoFinalParceiro.sentencesIngles[10] = "detetive pensando";
+                diaologoFinalParceiro.sentencesIngles[11] = "It's okay, in my first case as a partner, I pissed myself all over.";
+                diaologoFinalParceiro.sentencesIngles[12] = "troca paisagem";
+                diaologoFinalParceiro.sentencesIngles[13] = "I don't believe it!";
+                diaologoFinalParceiro.sentencesIngles[14] = "You must be kidding.";
+                diaologoFinalParceiro.sentencesIngles[15] = "troca embara";
+                diaologoFinalParceiro.sentencesIngles[16] = "I'm just kidding.";
+                diaologoFinalParceiro.sentencesIngles[17] = "But in fact it was difficult for me, it is difficult for everyone the first time.";
+                diaologoFinalParceiro.sentencesIngles[18] = "troca paisagem";
+                diaologoFinalParceiro.sentencesIngles[19] = "Thank you, detective.";
+                diaologoFinalParceiro.sentencesIngles[20] = "I hope this doesn't happen very often.";
+                diaologoFinalParceiro.sentencesIngles[21] = "troca paisagem";
+                diaologoFinalParceiro.sentencesIngles[22] = "I came to this city, because I knew it was more peaceful.";
+                diaologoFinalParceiro.sentencesIngles[23] = "I believe that we will not have many cases of murder.";
+                diaologoFinalParceiro.sentencesIngles[24] = "finalizar";
+            }
+            else
+            {
+                diaologoFinalParceiro.sentences[0] = "Caso complicado hoje.";
+                diaologoFinalParceiro.sentences[1] = "Como pode alguem cometer crimes assim?";
+                diaologoFinalParceiro.sentences[2] = "troca paisagem";
+                diaologoFinalParceiro.sentences[3] = "Estamos aqui para desvendar o caso.";
+                diaologoFinalParceiro.sentences[4] = "Não gaste muito tempo pensando nele.";
+                diaologoFinalParceiro.sentences[5] = "troca paisagem";
+                diaologoFinalParceiro.sentences[6] = "Foi o meu primeira caso detetive.";
+                diaologoFinalParceiro.sentences[7] = "É diferente do que eu esperava.";
+                diaologoFinalParceiro.sentences[8] = "troca pensando";
+                diaologoFinalParceiro.sentences[9] = "(talvez seja uma experiência diferente de tudo que ele já tenha visto)";
+                diaologoFinalParceiro.sentences[10] = "detetive pensando";
+                diaologoFinalParceiro.sentences[11] = "Esta tudo bem, no meu primeiro caso como parceiro, eu me mijei todo.";
+                diaologoFinalParceiro.sentences[12] = "troca paisagem";
+                diaologoFinalParceiro.sentences[13] = "Não acreito nisso!";
+                diaologoFinalParceiro.sentences[14] = "Só pode ser brincadeira.";
+                diaologoFinalParceiro.sentences[15] = "troca embara";
+                diaologoFinalParceiro.sentences[16] = "Estou brincando só.";
+                diaologoFinalParceiro.sentences[17] = "Mas de fato foi algo díficil para mim, é díficil para todo mundo na primeira vez.";
+                diaologoFinalParceiro.sentences[18] = "troca paisagem";
+                diaologoFinalParceiro.sentences[19] = "Obrigado detetive.";
+                diaologoFinalParceiro.sentences[20] = "Espero que isso não aconteça com muita frequência.";
+                diaologoFinalParceiro.sentences[21] = "troca paisagem";
+                diaologoFinalParceiro.sentences[22] = "Eu vim para essa cidade, por que eu soube que era mais tranquila.";
+                diaologoFinalParceiro.sentences[23] = "Acredito que não teremos muitos casos de assassinato.";
+                diaologoFinalParceiro.sentences[24] = "finalizar";
+            }
         }
         dialogueControlFinal.StartDialogue(diaologoFinalParceiro);
     }
@@ -567,9 +661,9 @@ public class ScenesManager : MonoBehaviour
     public void Delegacia()
     {
         MainMenu.NewGame = false;
-        MainMenu.PrimeiroCaso = false;
         SavePlayer();
         SceneManager.LoadScene(1);
+
     }
 
     public void Voltar()
@@ -579,6 +673,7 @@ public class ScenesManager : MonoBehaviour
             SavePlayer();
             SceneManager.LoadScene(CrimeScene);
         }
+
     }
 
     public void No()
