@@ -602,8 +602,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496879304}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 26
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &43030852
 PrefabInstance:
@@ -5441,8 +5441,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1904957983}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 22
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &271835906
 PrefabInstance:
@@ -5894,7 +5894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 301316210}
-  m_RootOrder: 30
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &278753614
 MonoBehaviour:
@@ -6687,16 +6687,6 @@ Transform:
   - {fileID: 2028338828}
   - {fileID: 77527657}
   - {fileID: 1914893018}
-  - {fileID: 339793678}
-  - {fileID: 1061299904}
-  - {fileID: 589273895}
-  - {fileID: 229304561}
-  - {fileID: 2034346033}
-  - {fileID: 1662063788}
-  - {fileID: 710081466}
-  - {fileID: 37515177}
-  - {fileID: 536051776}
-  - {fileID: 394772978}
   - {fileID: 1268428268}
   - {fileID: 278753613}
   m_Father: {fileID: 0}
@@ -8357,8 +8347,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1746677586}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 19
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &349012542
 PrefabInstance:
@@ -10214,8 +10204,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2103747548}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 28
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &396295244
 GameObject:
@@ -13257,8 +13247,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1595927003}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 27
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &539992622
 GameObject:
@@ -15164,8 +15154,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1370853158}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 21
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &596738354
 PrefabInstance:
@@ -17736,8 +17726,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 61619523}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 25
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &711785962
 GameObject:
@@ -22569,8 +22559,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 71283999}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 20
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1067274243
 GameObject:
@@ -23999,6 +23989,7 @@ MonoBehaviour:
   Raiva: {fileID: 337775730}
   Suicidio: {fileID: 1966885026}
   Prazer: {fileID: 691838774}
+  ScenesManager: {fileID: 1291378450}
   Justica: {fileID: 1155494784}
   preencher: {fileID: 809633660}
   trocarCenaSim: {fileID: 6595550}
@@ -24803,7 +24794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 301316210}
-  m_RootOrder: 29
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1268428269
 SpriteRenderer:
@@ -25567,9 +25558,15 @@ MonoBehaviour:
   texto: {fileID: 1327602465}
   botaoSim: {fileID: 6595550}
   botaoNao: {fileID: 2070321127}
+  dialogoFinalLegistaNMataHomens: {fileID: 0}
+  dialogoFinalLegistaNMataHomensControl: {fileID: 0}
+  dialogoFinalDoJogo: {fileID: 0}
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 451964874}
   dialogoDelegadoExplicando: {fileID: 0}
   diaologoFinalParceiro: {fileID: 1616764015}
+  dialogoInicioTestemunhaJornalista: {fileID: 0}
+  dialogoInicioTestemunhaRico: {fileID: 0}
+  FinalDoJogoControl: {fileID: 0}
   dialogueControl: {fileID: 451964875}
   dialogueControlFinal: {fileID: 1616764014}
   diaologoInicialParceiro: {fileID: 0}
@@ -33189,8 +33186,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1377922193}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 24
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675415989
 GameObject:
@@ -38076,6 +38073,16 @@ Transform:
   - {fileID: 1362192376}
   - {fileID: 1168831373}
   - {fileID: 1599392270}
+  - {fileID: 339793678}
+  - {fileID: 1061299904}
+  - {fileID: 589273895}
+  - {fileID: 229304561}
+  - {fileID: 2034346033}
+  - {fileID: 1662063788}
+  - {fileID: 710081466}
+  - {fileID: 37515177}
+  - {fileID: 536051776}
+  - {fileID: 394772978}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40308,8 +40315,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 944763220}
-  m_Father: {fileID: 301316210}
-  m_RootOrder: 23
+  m_Father: {fileID: 1941469473}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2036216505
 PrefabInstance:
@@ -42037,7 +42044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097695716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.49, y: -28.26, z: -51.7}
+  m_LocalPosition: {x: 4.73, y: -28.26, z: -51.7}
   m_LocalScale: {x: 1, y: 1, z: 5}
   m_Children:
   - {fileID: 519420032}

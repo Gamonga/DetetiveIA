@@ -14,6 +14,7 @@ public class Relatorio : MonoBehaviour
     public GameObject Raiva;
     public GameObject Suicidio;
     public GameObject Prazer;
+    public ScenesManager ScenesManager;
     public GameObject Justica;
     public GameObject preencher;
     public GameObject trocarCenaSim;
@@ -59,6 +60,7 @@ public class Relatorio : MonoBehaviour
 
     public void FinalizaGame()
     {
+        ScenesManager.tutorialIA();
         PixelArt.SetBool("On", false);
         sentence.Enqueue("Respostas corretas:" + Pontuacao.ToString());
         fraseAtual = sentence.Dequeue();
@@ -90,6 +92,7 @@ public class Relatorio : MonoBehaviour
             {
                 if (PlayerData.Idioma == "ingles")
                 {
+                    ScenesManager.tutorialRelatorio();
                     sentence.Enqueue("I need to understand what happened in this case.");
                     sentence.Enqueue("First I need to reformulate the crime scene.");
                     sentence.Enqueue("How did the murderer enter the place?");

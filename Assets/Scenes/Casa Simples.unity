@@ -1707,6 +1707,7 @@ MonoBehaviour:
   movimento: {fileID: 2097695721}
   MusicSlider: {fileID: 368422473}
   SoundEffectSlider: {fileID: 304278483}
+  mainmenu: {fileID: 0}
   NovoJogo: {fileID: 0}
   Options: {fileID: 0}
   Options2: {fileID: 0}
@@ -18932,9 +18933,13 @@ MonoBehaviour:
   texto: {fileID: 512707328}
   botaoSim: {fileID: 4114674}
   botaoNao: {fileID: 1857987845}
+  dialogoFinalDoJogo: {fileID: 0}
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 0}
   dialogoDelegadoExplicando: {fileID: 198931401}
   diaologoFinalParceiro: {fileID: 0}
+  dialogoInicioTestemunhaJornalista: {fileID: 0}
+  dialogoInicioTestemunhaRico: {fileID: 0}
+  FinalDoJogoControl: {fileID: 0}
   dialogueControl: {fileID: 198931400}
   dialogueControlFinal: {fileID: 0}
   diaologoInicialParceiro: {fileID: 1260017520}
@@ -32975,11 +32980,11 @@ MonoBehaviour:
   - troca paisagem
   - "Voc\xEA se chama David Mills."
   - troca pensando
-  - "(j\xE1 vi que essa vai ser d\xEDficil de conversar)"
+  - "(J\xE1 vi que essa vai ser dif\xEDcil de conversar)"
   - paisagem detetive
   - "E aposto que voc\xEA \xE9 a jornalista investigativa."
   - troca pensando
-  - "(como ser\xE1 que ele descobriu?!)"
+  - "(Como ser\xE1 que ele descobriu?!)"
   - troca paisagem
   - E aposto que se chama Angela.
   - troca paisagem

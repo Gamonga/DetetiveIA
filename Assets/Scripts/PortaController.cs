@@ -35,6 +35,10 @@ public class PortaController : MonoBehaviour
                 PortaFechada.SetActive(false);
             }
         }
+        else{
+            PortaAberta.SetActive(false);
+            PortaFechada.SetActive(true);
+        }
     }
     public void OpenDoor()
     {
