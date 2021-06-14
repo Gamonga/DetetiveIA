@@ -46,13 +46,14 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: descriptionUpdate
-      value: "Mancha de sangue no ch\xE3o. Sangue da v\xEDtima, derramada por volta
-        das 9:50."
+      value: "Mancha de sangue no ch\xE3o. Sangue da v\xEDtima, na cozinha, derramada
+        por volta das 00:50."
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: descriptionUpdateIngles
-      value: Bloodstain on the ground. Victim's blood, spilled around 9:50.
+      value: Bloodstain on the ground. Victim's blood, in the kitchen, spilled around
+        00:50.
       objectReference: {fileID: 0}
     - target: {fileID: 3006260498401048977, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -180,17 +181,17 @@ PrefabInstance:
     - target: {fileID: 8480484922263570548, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.91
+      value: 2.8200002
       objectReference: {fileID: 0}
     - target: {fileID: 8480484922263570548, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.95
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 8480484922263570548, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8480484922263570548, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}

@@ -11,7 +11,7 @@ public class SpawnObjects : MonoBehaviour
     static bool entrouNoTexto = false;
     public Animator animator;
     public Caderno caderno;
-    public static string[] NomeDosObjetos = new string[20];
+    public static string[] NomeDosObjetos = new string[40];
     public static int NumeroDeObjetos;
     public GameObject PanoBranco;
     public Evidence PanoBrancoEvidence;
@@ -182,49 +182,325 @@ public class SpawnObjects : MonoBehaviour
             NumeroDeportas = carregaNumeroDePortas();
             PortaDaCena = carregaPortaDaCena();
         }
-        Debug.Log("primeiro caso spawnobject é :" + MainMenu.PrimeiroCaso);
-        if (MainMenu.NewGame == false)
+        if (SceneManager.GetActiveScene().buildIndex != 4)
         {
-            PlayerData data = SaveSystem.LoadPlayer();
-            idadePersonagem = data.idadePersonagem;
-            RuidoArmaDoCrime = data.RuidoArmaDoCrime;
-            numeroAssassino = data.numeroAssassino;
-            numeroAssassinoSegundo = data.numeroAssassinoSegundo;
-            numeroAssassinoTerceiro = data.numeroAssassinoTerceiro;
-            numeroMotivoVitimaComum = data.numeroMotivoVitimaComum;
-            selecionaArmaComSangueFalso = data.selecionaArmaComSangueFalso;
-            ColocaSangueFalso();
-            contador = data.contadorAnalise;
-            PanoSangue = data.PanoSangue;
-            policialSalvar = data.policial;
-            policialUpdateSalvar = data.policialUpdate;
-            PrecisaDeAuxilioEntradaSaida = data.PrecisaDeAuxilioEntradaSaida;
-            ajudaEntrada = data.ajudaEntrada;
-            ajudaSaida = data.ajudaSaida;
-            PortaQuebrada = data.PortaQuebrada;
-            LoadRespostas(data);
-            for (i = 0; i < data.NumeroDeObjetos; i++)
+            if (MainMenu.NewGame == false)
             {
-                LoadPlayer(data, i);
-            }
-            for (i = 0; i < NumeroDeportas; i++)
-            {
-                if (SceneManager.GetActiveScene().buildIndex != 1)
+                PlayerData data = SaveSystem.LoadPlayer();
+                idadePersonagem = data.idadePersonagem;
+                RuidoArmaDoCrime = data.RuidoArmaDoCrime;
+                numeroAssassino = data.numeroAssassino;
+                numeroAssassinoSegundo = data.numeroAssassinoSegundo;
+                numeroAssassinoTerceiro = data.numeroAssassinoTerceiro;
+                numeroMotivoVitimaComum = data.numeroMotivoVitimaComum;
+                selecionaArmaComSangueFalso = data.selecionaArmaComSangueFalso;
+                ColocaSangueFalso();
+                contador = data.contadorAnalise;
+                PanoSangue = data.PanoSangue;
+                policialSalvar = data.policial;
+                policialUpdateSalvar = data.policialUpdate;
+                PrecisaDeAuxilioEntradaSaida = data.PrecisaDeAuxilioEntradaSaida;
+                ajudaEntrada = data.ajudaEntrada;
+                ajudaSaida = data.ajudaSaida;
+                PortaQuebrada = data.PortaQuebrada;
+                LoadRespostas(data);
+                for (i = 0; i < data.NumeroDeObjetos; i++)
                 {
-                    GameObject.Find("Porta" + (i + PortaDaCena)).GetComponent<PortaController>().isOpen = data.isOpen[i + PortaDaCena];
+                    LoadPlayer(data, i);
+                }
+                for (i = 0; i < NumeroDeportas; i++)
+                {
+                    if (SceneManager.GetActiveScene().buildIndex != 1)
+                    {
+                        GameObject.Find("Porta" + (i + PortaDaCena)).GetComponent<PortaController>().isOpen = data.isOpen[i + PortaDaCena];
+                    }
                 }
             }
-        }
-        else
-        {
-            InstantiateTestemunha();
-            if (!MainMenu.PrimeiroCaso)
+            else
             {
-                idadePersonagem = IdadeSet();
-                contador = 3;
-                intProximoCaso = IA.geraProximoCaso();
-                if (intProximoCaso == -1)
+                InstantiateTestemunha();
+                if (!MainMenu.PrimeiroCaso)
                 {
+                    idadePersonagem = IdadeSet();
+                    contador = 3;
+                    intProximoCaso = IA.geraProximoCaso();
+                    if (intProximoCaso == -1)
+                    {
+                        if (SceneManager.GetActiveScene().buildIndex == 3)
+                        {
+                            InstantiatePortaSaida();
+                        }
+                        for (i = 0; i < 4; i++)
+                        {
+                            switch (i)
+                            {
+                                case 0:
+                                    SelecionaArma();
+                                    break;
+                                case 1:
+                                    SelecionaLocal();
+                                    break;
+                                case 2:
+                                    SelecionaEntradaSaida();
+                                    break;
+                                case 3:
+                                    SelecionaMotivo();
+                                    break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (i = 0; i < 5; i++)
+                        {
+                            if (IA.gabaritoMotivo[intProximoCaso % 3, i] == 1)
+                            {
+                                switch (i)
+                                {
+                                    case 0:
+                                        QuintaResposta = "Roubo";
+                                        break;
+                                    case 1:
+                                        QuintaResposta = "Prazer";
+                                        break;
+                                    case 2:
+                                        QuintaResposta = "Desavenca";
+                                        break;
+                                    case 3:
+                                        QuintaResposta = "Justica";
+                                        break;
+                                    case 4:
+                                        QuintaResposta = "Raiva";
+                                        break;
+                                }
+                            }
+                        }
+                        for (i = 0; i < 81; i++)
+                        {
+                            if (IA.gabaritoArma[intProximoCaso % 3, i] == 1)
+                            {
+                                switch (i)
+                                {
+                                    case 0:
+                                        sangueOriginal = 0;
+                                        TerceiraResposta = BastaoDeBeisebolEvidence.nome;
+                                        TerceiraRespostaIngles = BastaoDeBeisebolEvidence.nomeIngles;
+                                        break;
+                                    case 1:
+                                        sangueOriginal = 1;
+                                        TerceiraResposta = BastaoDeBeisebolSangueEvidence.nome;
+                                        TerceiraRespostaIngles = BastaoDeBeisebolSangueEvidence.nomeIngles;
+                                        break;
+                                    case 2:
+                                        sangueOriginal = 2;
+                                        TerceiraResposta = CaixaDeRemedioEvidence.nome;
+                                        TerceiraRespostaIngles = CaixaDeRemedioEvidence.nomeIngles;
+                                        break;
+                                    case 3:
+                                        sangueOriginal = 3;
+                                        TerceiraResposta = FacaCozinhaEvidence.nome;
+                                        TerceiraRespostaIngles = FacaCozinhaEvidence.nomeIngles;
+                                        break;
+                                    case 4:
+                                        sangueOriginal = 4;
+                                        TerceiraResposta = FacaNormalSemSangueEvidence.nome;
+                                        TerceiraRespostaIngles = FacaNormalSemSangueEvidence.nomeIngles;
+                                        break;
+                                    case 5:
+                                        sangueOriginal = 5;
+                                        TerceiraResposta = FacaNormalEvidence.nome;
+                                        TerceiraRespostaIngles = FacaNormalEvidence.nomeIngles;
+                                        break;
+                                    case 6:
+                                        sangueOriginal = 6;
+                                        TerceiraResposta = PunhosEvidence.nome;
+                                        TerceiraRespostaIngles = PunhosEvidence.nomeIngles;
+                                        break;
+                                    case 7:
+                                        sangueOriginal = 7;
+                                        TerceiraResposta = RevolverEvidence.nome;
+                                        TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
+                                        break;
+                                    case 8:
+                                        sangueOriginal = 8;
+                                        TerceiraResposta = RevolverEvidence.nome;
+                                        TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
+                                        break;
+                                    case 9:
+                                        sangueOriginal = 9;
+                                        TerceiraResposta = CanoPerfuraçãoEvidence.nome;
+                                        TerceiraRespostaIngles = CanoPerfuraçãoEvidence.nomeIngles;
+                                        break;
+                                    case 10:
+                                        sangueOriginal = 10;
+                                        TerceiraResposta = SufocamentoEvidence.nome;
+                                        TerceiraRespostaIngles = SufocamentoEvidence.nomeIngles;
+                                        break;
+                                    case 11:
+                                        sangueOriginal = 11;
+                                        TerceiraResposta = CanoPerfuraçãoSangueEvidence.nome;
+                                        TerceiraRespostaIngles = CanoPerfuraçãoSangueEvidence.nomeIngles;
+                                        break;
+                                    case 12:
+                                        sangueOriginal = 12;
+                                        TerceiraResposta = CanoContundenteEvidence.nome;
+                                        TerceiraRespostaIngles = CanoContundenteEvidence.nomeIngles;
+                                        break;
+                                    case 13:
+                                        sangueOriginal = 13;
+                                        TerceiraResposta = CanoContundenteSangueEvidence.nome;
+                                        TerceiraRespostaIngles = CanoContundenteSangueEvidence.nomeIngles;
+                                        break;
+                                }
+                            }
+                            if (IA.gabaritoLocal[intProximoCaso % 3, i] == 1)
+                            {
+                                switch (i)
+                                {
+                                    case 43:
+                                        SegundaResposta = CorpoMorto1Evidence.nome;
+                                        SegundaRespostaIngles = CorpoMorto1Evidence.nomeIngles;
+                                        break;
+                                    case 44:
+                                        SegundaResposta = CorpoMorto2Evidence.nome;
+                                        SegundaRespostaIngles = CorpoMorto2Evidence.nomeIngles;
+                                        break;
+                                    case 45:
+                                        SegundaResposta = CorpoMorto3Evidence.nome;
+                                        SegundaRespostaIngles = CorpoMorto3Evidence.nomeIngles;
+                                        break;
+                                    case 46:
+                                        SegundaResposta = CorpoMorto4Evidence.nome;
+                                        SegundaRespostaIngles = CorpoMorto4Evidence.nomeIngles;
+                                        break;
+                                    case 58:
+                                        SegundaResposta = ManchaSangueEvidence.nome;
+                                        SegundaRespostaIngles = ManchaSangueEvidence.nomeIngles;
+                                        break;
+                                }
+                            }
+                            if (IA.gabaritoEntrada[intProximoCaso % 3, i] == 1)
+                            {
+                                switch (i)
+                                {
+                                    case 29:
+                                        PrimeiraResposta = ConviteEvidence.nome;
+                                        PrimeiraRespostaIngles = ConviteEvidence.nomeIngles;
+                                        break;
+                                    case 34:
+                                        PrimeiraResposta = PolicialEvidence.nome;
+                                        PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 35:
+                                        PrimeiraResposta = PolicialEvidence.nome;
+                                        PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 36:
+                                        PrimeiraResposta = PolicialEvidence.nome;
+                                        PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 37:
+                                        PrimeiraResposta = PolicialEvidence.nome;
+                                        PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 39:
+                                        PrimeiraResposta = PortaDeSaidaEvidence.nome;
+                                        PrimeiraRespostaIngles = PortaDeSaidaEvidence.nomeIngles;
+                                        break;
+                                    case 40:
+                                        PrimeiraResposta = CelularEvidence.nome;
+                                        PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
+                                        break;
+                                    case 41:
+                                        PrimeiraResposta = CelularEvidence.nome;
+                                        PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
+                                        break;
+                                    case 42:
+                                        PrimeiraResposta = CelularEvidence.nome;
+                                        PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
+                                        break;
+                                    case 79:
+                                        PrimeiraResposta = JanelaQuebradaPedraInteriorEvidence.nome;
+                                        PrimeiraRespostaIngles = JanelaQuebradaPedraInteriorEvidence.nomeIngles;
+                                        break;
+                                    case 80:
+                                        PrimeiraResposta = JanelaQuebradaPedraExteriorEvidence.nome;
+                                        PrimeiraRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
+                                        break;
+                                }
+                            }
+                            if (IA.gabaritoSaida[intProximoCaso % 3, i] == 1)
+                            {
+                                switch (i)
+                                {
+                                    case 29:
+                                        QuartaResposta = ConviteEvidence.nome;
+                                        QuartaRespostaIngles = ConviteEvidence.nomeIngles;
+                                        break;
+                                    case 34:
+                                        QuartaResposta = PolicialEvidence.nome;
+                                        QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 35:
+                                        QuartaResposta = PolicialEvidence.nome;
+                                        QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 36:
+                                        QuartaResposta = PolicialEvidence.nome;
+                                        QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 37:
+                                        QuartaResposta = PolicialEvidence.nome;
+                                        QuartaRespostaIngles = PolicialEvidence.nomeIngles;
+                                        break;
+                                    case 39:
+                                        QuartaResposta = PortaDeSaidaEvidence.nome;
+                                        QuartaRespostaIngles = PortaDeSaidaEvidence.nomeIngles;
+                                        break;
+                                    case 40:
+                                        QuartaResposta = CelularEvidence.nome;
+                                        QuartaRespostaIngles = CelularEvidence.nomeIngles;
+                                        break;
+                                    case 41:
+                                        QuartaResposta = CelularEvidence.nome;
+                                        QuartaRespostaIngles = CelularEvidence.nomeIngles;
+                                        break;
+                                    case 42:
+                                        QuartaResposta = CelularEvidence.nome;
+                                        QuartaRespostaIngles = CelularEvidence.nomeIngles;
+                                        break;
+                                    case 79:
+                                        QuartaResposta = JanelaQuebradaPedraInteriorEvidence.nome;
+                                        QuartaRespostaIngles = JanelaQuebradaPedraInteriorEvidence.nomeIngles;
+                                        break;
+                                    case 80:
+                                        QuartaResposta = JanelaQuebradaPedraExteriorEvidence.nome;
+                                        QuartaRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
+                                        break;
+                                }
+                            }
+                            depoimentoTestemunhaOuviu = false;
+                            if (Random.value > 0.5f)
+                            {
+                                depoimentoTestemunhaOuviu = true;
+                            }
+                            if (IA.evidencias[intProximoCaso, i] == 1)
+                            {
+                                GeraCasoIA(i);
+                            }
+                            ColocaSangueFalso();
+                            GeraTestemunho();
+                        }
+                    }
+                }
+                else
+                {
+                    numeroMotivoVitimaComum = Assassino.numeroMotivoVitimaComum;
+                    numeroAssassino = Assassino.numeroAssassino;
+                    numeroAssassinoSegundo = Assassino.numeroAssassinoSegundo;
+                    numeroAssassinoTerceiro = Assassino.numeroAssassinoTerceiro;
+                    idadePersonagem = IdadeSet();
+                    contador = 3;
                     if (SceneManager.GetActiveScene().buildIndex == 3)
                     {
                         InstantiatePortaSaida();
@@ -248,281 +524,49 @@ public class SpawnObjects : MonoBehaviour
                         }
                     }
                 }
-                else
-                {
-                    for (i = 0; i < 5; i++)
-                    {
-                        if (IA.gabaritoMotivo[intProximoCaso % 3, i] == 1)
-                        {
-                            switch (i)
-                            {
-                                case 0:
-                                    QuintaResposta = "Roubo";
-                                    break;
-                                case 1:
-                                    QuintaResposta = "Prazer";
-                                    break;
-                                case 2:
-                                    QuintaResposta = "Desavenca";
-                                    break;
-                                case 3:
-                                    QuintaResposta = "Justica";
-                                    break;
-                                case 4:
-                                    QuintaResposta = "Raiva";
-                                    break;
-                            }
-                        }
-                    }
-                    for (i = 0; i < 81; i++)
-                    {
-                        if (IA.gabaritoArma[intProximoCaso % 3, i] == 1)
-                        {
-                            switch (i)
-                            {
-                                case 0:
-                                    sangueOriginal = 0;
-                                    TerceiraResposta = BastaoDeBeisebolEvidence.nome;
-                                    TerceiraRespostaIngles = BastaoDeBeisebolEvidence.nomeIngles;
-                                    break;
-                                case 1:
-                                    sangueOriginal = 1;
-                                    TerceiraResposta = BastaoDeBeisebolSangueEvidence.nome;
-                                    TerceiraRespostaIngles = BastaoDeBeisebolSangueEvidence.nomeIngles;
-                                    break;
-                                case 2:
-                                    sangueOriginal = 2;
-                                    TerceiraResposta = CaixaDeRemedioEvidence.nome;
-                                    TerceiraRespostaIngles = CaixaDeRemedioEvidence.nomeIngles;
-                                    break;
-                                case 3:
-                                    sangueOriginal = 3;
-                                    TerceiraResposta = FacaCozinhaEvidence.nome;
-                                    TerceiraRespostaIngles = FacaCozinhaEvidence.nomeIngles;
-                                    break;
-                                case 4:
-                                    sangueOriginal = 4;
-                                    TerceiraResposta = FacaNormalSemSangueEvidence.nome;
-                                    TerceiraRespostaIngles = FacaNormalSemSangueEvidence.nomeIngles;
-                                    break;
-                                case 5:
-                                    sangueOriginal = 5;
-                                    TerceiraResposta = FacaNormalEvidence.nome;
-                                    TerceiraRespostaIngles = FacaNormalEvidence.nomeIngles;
-                                    break;
-                                case 6:
-                                    sangueOriginal = 6;
-                                    TerceiraResposta = PunhosEvidence.nome;
-                                    TerceiraRespostaIngles = PunhosEvidence.nomeIngles;
-                                    break;
-                                case 7:
-                                    sangueOriginal = 7;
-                                    TerceiraResposta = RevolverEvidence.nome;
-                                    TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
-                                    break;
-                                case 8:
-                                    sangueOriginal = 8;
-                                    TerceiraResposta = RevolverEvidence.nome;
-                                    TerceiraRespostaIngles = RevolverEvidence.nomeIngles;
-                                    break;
-                                case 9:
-                                    sangueOriginal = 9;
-                                    TerceiraResposta = CanoPerfuraçãoEvidence.nome;
-                                    TerceiraRespostaIngles = CanoPerfuraçãoEvidence.nomeIngles;
-                                    break;
-                                case 10:
-                                    sangueOriginal = 10;
-                                    TerceiraResposta = SufocamentoEvidence.nome;
-                                    TerceiraRespostaIngles = SufocamentoEvidence.nomeIngles;
-                                    break;
-                                case 11:
-                                    sangueOriginal = 11;
-                                    TerceiraResposta = CanoPerfuraçãoSangueEvidence.nome;
-                                    TerceiraRespostaIngles = CanoPerfuraçãoSangueEvidence.nomeIngles;
-                                    break;
-                                case 12:
-                                    sangueOriginal = 12;
-                                    TerceiraResposta = CanoContundenteEvidence.nome;
-                                    TerceiraRespostaIngles = CanoContundenteEvidence.nomeIngles;
-                                    break;
-                                case 13:
-                                    sangueOriginal = 13;
-                                    TerceiraResposta = CanoContundenteSangueEvidence.nome;
-                                    TerceiraRespostaIngles = CanoContundenteSangueEvidence.nomeIngles;
-                                    break;
-                            }
-                        }
-                        if (IA.gabaritoLocal[intProximoCaso % 3, i] == 1)
-                        {
-                            switch (i)
-                            {
-                                case 43:
-                                    SegundaResposta = CorpoMorto1Evidence.nome;
-                                    SegundaRespostaIngles = CorpoMorto1Evidence.nomeIngles;
-                                    break;
-                                case 44:
-                                    SegundaResposta = CorpoMorto2Evidence.nome;
-                                    SegundaRespostaIngles = CorpoMorto2Evidence.nomeIngles;
-                                    break;
-                                case 45:
-                                    SegundaResposta = CorpoMorto3Evidence.nome;
-                                    SegundaRespostaIngles = CorpoMorto3Evidence.nomeIngles;
-                                    break;
-                                case 46:
-                                    SegundaResposta = CorpoMorto4Evidence.nome;
-                                    SegundaRespostaIngles = CorpoMorto4Evidence.nomeIngles;
-                                    break;
-                                case 58:
-                                    SegundaResposta = ManchaSangueEvidence.nome;
-                                    SegundaRespostaIngles = ManchaSangueEvidence.nomeIngles;
-                                    break;
-                            }
-                        }
-                        if (IA.gabaritoEntrada[intProximoCaso % 3, i] == 1)
-                        {
-                            switch (i)
-                            {
-                                case 29:
-                                    PrimeiraResposta = ConviteEvidence.nome;
-                                    PrimeiraRespostaIngles = ConviteEvidence.nomeIngles;
-                                    break;
-                                case 34:
-                                    PrimeiraResposta = PolicialEvidence.nome;
-                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 35:
-                                    PrimeiraResposta = PolicialEvidence.nome;
-                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 36:
-                                    PrimeiraResposta = PolicialEvidence.nome;
-                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 37:
-                                    PrimeiraResposta = PolicialEvidence.nome;
-                                    PrimeiraRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 39:
-                                    PrimeiraResposta = PortaDeSaidaEvidence.nome;
-                                    PrimeiraRespostaIngles = PortaDeSaidaEvidence.nomeIngles;
-                                    break;
-                                case 40:
-                                    PrimeiraResposta = CelularEvidence.nome;
-                                    PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
-                                    break;
-                                case 41:
-                                    PrimeiraResposta = CelularEvidence.nome;
-                                    PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
-                                    break;
-                                case 42:
-                                    PrimeiraResposta = CelularEvidence.nome;
-                                    PrimeiraRespostaIngles = CelularEvidence.nomeIngles;
-                                    break;
-                                case 79:
-                                    PrimeiraResposta = JanelaQuebradaPedraInteriorEvidence.nome;
-                                    PrimeiraRespostaIngles = JanelaQuebradaPedraInteriorEvidence.nomeIngles;
-                                    break;
-                                case 80:
-                                    PrimeiraResposta = JanelaQuebradaPedraExteriorEvidence.nome;
-                                    PrimeiraRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
-                                    break;
-                            }
-                        }
-                        if (IA.gabaritoSaida[intProximoCaso % 3, i] == 1)
-                        {
-                            switch (i)
-                            {
-                                case 29:
-                                    QuartaResposta = ConviteEvidence.nome;
-                                    QuartaRespostaIngles = ConviteEvidence.nomeIngles;
-                                    break;
-                                case 34:
-                                    QuartaResposta = PolicialEvidence.nome;
-                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 35:
-                                    QuartaResposta = PolicialEvidence.nome;
-                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 36:
-                                    QuartaResposta = PolicialEvidence.nome;
-                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 37:
-                                    QuartaResposta = PolicialEvidence.nome;
-                                    QuartaRespostaIngles = PolicialEvidence.nomeIngles;
-                                    break;
-                                case 39:
-                                    QuartaResposta = PortaDeSaidaEvidence.nome;
-                                    QuartaRespostaIngles = PortaDeSaidaEvidence.nomeIngles;
-                                    break;
-                                case 40:
-                                    QuartaResposta = CelularEvidence.nome;
-                                    QuartaRespostaIngles = CelularEvidence.nomeIngles;
-                                    break;
-                                case 41:
-                                    QuartaResposta = CelularEvidence.nome;
-                                    QuartaRespostaIngles = CelularEvidence.nomeIngles;
-                                    break;
-                                case 42:
-                                    QuartaResposta = CelularEvidence.nome;
-                                    QuartaRespostaIngles = CelularEvidence.nomeIngles;
-                                    break;
-                                case 79:
-                                    QuartaResposta = JanelaQuebradaPedraInteriorEvidence.nome;
-                                    QuartaRespostaIngles = JanelaQuebradaPedraInteriorEvidence.nomeIngles;
-                                    break;
-                                case 80:
-                                    QuartaResposta = JanelaQuebradaPedraExteriorEvidence.nome;
-                                    QuartaRespostaIngles = JanelaQuebradaPedraExteriorEvidence.nomeIngles;
-                                    break;
-                            }
-                        }
-                        depoimentoTestemunhaOuviu = false;
-                        if (Random.value > 0.5f)
-                        {
-                            depoimentoTestemunhaOuviu = true;
-                        }
-                        if (IA.evidencias[intProximoCaso, i] == 1)
-                        {
-                            GeraCasoIA(i);
-                        }
-                        ColocaSangueFalso();
-                        GeraTestemunho();
-                    }
-                }
             }
-            else
-            {
-                numeroMotivoVitimaComum = Assassino.numeroMotivoVitimaComum;
-                numeroAssassino = Assassino.numeroAssassino;
-                numeroAssassinoSegundo = Assassino.numeroAssassinoSegundo;
-                numeroAssassinoTerceiro = Assassino.numeroAssassinoTerceiro;
-                idadePersonagem = IdadeSet();
-                contador = 3;
-                if (SceneManager.GetActiveScene().buildIndex == 3)
-                {
-                    InstantiatePortaSaida();
-                }
-                for (i = 0; i < 4; i++)
-                {
-                    switch (i)
-                    {
-                        case 0:
-                            SelecionaArma();
-                            break;
-                        case 1:
-                            SelecionaLocal();
-                            break;
-                        case 2:
-                            SelecionaEntradaSaida();
-                            break;
-                        case 3:
-                            SelecionaMotivo();
-                            break;
-                    }
-                }
-            }
+        }
+        else
+        {
+            InstantiateBilheteCulposo();
+            InstantiateCorpoMorto2();
+            InstantiateCorpoMorto1();
+            InstantiateCorpoMorto3();
+            InstantiateCorpoMorto4();
+            InstantiateCofreDinheiro();
+            InstantiateCofreFechado();
+            InstantiateCofreVazio();
+            InstantiateFacaCozinha();
+            InstantiateFacaNormalSemSangue();
+            InstantiateFacaNormal();
+            InstantiateJanelaQuebradaPedraInterior();
+            InstantiateJanelaQuebradaPedraExterior();
+            InstantiatePratos();
+            InstantiateLaudo();
+            InstantiatePolicial();
+            InstantiateTestemunha();
+            InstantiateBastao();
+            InstantiateBastaoSangue();
+            InstantiateRevolver();
+            InstantiateCaixaRemedio();
+            InstantiateCelular();
+            InstantiateManchaSangue();
+            InstantiateManchaSangueTortura();
+            InstantiateCofreDinheiroHonesto();
+            InstantiatePortaSaida();
+            InstantiateDestrocos();
+            InstantiatePunhos();
+            InstantiateConvite();
+            InstantiateCanocontundente();
+            InstantiateCanoContundenteSangue();
+            InstantiateSufocamento();
+            InstantiatePano();
+            InstantiateCanoPerfuracaoSangue();
+            InstantiateCanoperfuracao();
+            InstantiateCorpoMorto2F();
+            InstantiateCorpoMorto1F();
+            InstantiateCorpoMorto3M();
+            InstantiateCorpoMorto4F();
         }
     }
     public int IdadeSet()
@@ -2335,11 +2379,11 @@ public class SpawnObjects : MonoBehaviour
             animator.SetBool("Abrir", true);
             if (PlayerData.Idioma == "ingles")
             {
-                dialogueText.text = ManchaSangueTorturaEvidence.nomeIngles + " was added to the notebook";
+                dialogueText.text = "Bloodstains distant was added to the notebook";
             }
             else
             {
-                dialogueText.text = ManchaSangueTorturaEvidence.nome + " foi adicionado ao caderno";
+                dialogueText.text = "Mancha de Sangue distante foi adicionado ao caderno";
             }
             entrouNoTexto = true;
         }

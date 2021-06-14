@@ -391,7 +391,6 @@ public class Caderno : MonoBehaviour
                 {
                     evidencias[j] = null;
                 }
-                LoadPessoas(data);
                 contadorPensamentos = data.contadorPensamento;
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
@@ -409,7 +408,6 @@ public class Caderno : MonoBehaviour
                 {
                     evidencias[j] = null;
                 }
-                LoadPessoas(data);
                 contadorPensamentos = data.contadorPensamento;
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
@@ -427,7 +425,6 @@ public class Caderno : MonoBehaviour
                 {
                     evidencias[j] = null;
                 }
-                LoadPessoas(data);
                 contadorPensamentos = data.contadorPensamento;
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
@@ -445,7 +442,6 @@ public class Caderno : MonoBehaviour
                 {
                     evidencias[j] = null;
                 }
-                LoadPessoas(data);
                 contadorPensamentos = data.contadorPensamento;
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
@@ -463,7 +459,6 @@ public class Caderno : MonoBehaviour
                 {
                     evidencias[j] = null;
                 }
-                LoadPessoas(data);
                 contadorPensamentos = data.contadorPensamento;
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
@@ -481,7 +476,6 @@ public class Caderno : MonoBehaviour
                 {
                     evidencias[j] = null;
                 }
-                LoadPessoas(data);
                 contadorPensamentos = data.contadorPensamento;
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
@@ -1611,8 +1605,10 @@ public class Caderno : MonoBehaviour
         }
         else
         {
-            barulhoAnotando = GameObject.Find("escrita").GetComponent<AudioSource>();
-            barulhoAnotando.Play();
+            if(SceneManager.GetActiveScene().buildIndex != 4 && SceneManager.GetActiveScene().buildIndex != 1 ){
+                barulhoAnotando = GameObject.Find("escrita").GetComponent<AudioSource>();
+                barulhoAnotando.Play();
+            }
             if (entrou == false)
             {
                 evidencias[0] = evidence;

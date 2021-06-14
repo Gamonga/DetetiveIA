@@ -45,18 +45,21 @@ public class TrocaIdioma : MonoBehaviour
     {
         if (PlayerData.Idioma == "ingles")
         {
-            sim.text = "Yes";
-            nao.text = "Not now";
-            nomeDetetive.text = "Detective: David Mills";
-            nomeParceiro.text = "Partner: Stevie Gary";
-            juntarPensamentos.text = "Bring the thoughts together";
-            selecionaOutro.text = "Select other thoughts";
-            anotacoes.text = "Notes:";
-            departamentoPolica.text = "Police Department of Grande Vale";
-            servirProteger.text = "'Serve and Protect'";
-            pessoas.text = "Persons";
-            evidencias.text = "Evidences";
-            pensamentos.text = "Thoughts";
+            if (SceneManager.GetActiveScene().buildIndex != 4)
+            {
+                sim.text = "Yes";
+                nao.text = "Not now";
+                nomeDetetive.text = "Detective: David Mills";
+                nomeParceiro.text = "Partner: Stevie Gary";
+                juntarPensamentos.text = "Bring the thoughts together";
+                selecionaOutro.text = "Select other thoughts";
+                anotacoes.text = "Notes:";
+                departamentoPolica.text = "Police Department of Grande Vale";
+                servirProteger.text = "'Serve and Protect'";
+                pessoas.text = "Persons";
+                evidencias.text = "Evidences";
+                pensamentos.text = "Thoughts";
+            }
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 roubo.text = "Theft";
@@ -71,7 +74,7 @@ public class TrocaIdioma : MonoBehaviour
                 noAnalise.text = "Not now";
                 semEvidencias.text = "No evidence";
             }
-            if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0)
+            if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 4)
             {
                 acredita.text = "Believe";
                 duvida.text = "Doubt";

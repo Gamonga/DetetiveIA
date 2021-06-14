@@ -25558,6 +25558,10 @@ MonoBehaviour:
   texto: {fileID: 1327602465}
   botaoSim: {fileID: 6595550}
   botaoNao: {fileID: 2070321127}
+  dialogoPolicialNMataIdosa: {fileID: 0}
+  dialogoPolicialNMataIdosaControl: {fileID: 0}
+  dialogoComecoJornalistaBrigaComALegista: {fileID: 0}
+  dialogoComecoJornalistaBrigaComALegistaControl: {fileID: 0}
   dialogoFinalLegistaNMataHomens: {fileID: 0}
   dialogoFinalLegistaNMataHomensControl: {fileID: 0}
   dialogoFinalDoJogo: {fileID: 0}
@@ -42815,6 +42819,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: Relogio
+      value: 
+      objectReference: {fileID: 6457782046807149465, guid: 1670bc37a7b32bd4b973c748087336e4,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: caderno
       value: 
       objectReference: {fileID: 1494596743}
@@ -42848,9 +42858,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: PanoBranco
+      value: 
+      objectReference: {fileID: 1980415328052646566, guid: e242f9cef9b5a774da38c2c917f2870a,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: Testemunha
       value: 
       objectReference: {fileID: 3715669714583468743, guid: 816e652ef7cdef841abc502e2997409a,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CartaoFilme
+      value: 
+      objectReference: {fileID: 1551814689919398583, guid: 2561676e64f5aac439b5a7e4df849971,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -42875,6 +42897,12 @@ PrefabInstance:
       propertyPath: BalaEvidence
       value: 
       objectReference: {fileID: 6144525213565618207, guid: f2be1adb7831e7f48aebeb28237694f2,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CartaoAlcool
+      value: 
+      objectReference: {fileID: 7851067734623816213, guid: bae6265763e3d144996db0e2d5c30ed1,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -42931,6 +42959,12 @@ PrefabInstance:
       objectReference: {fileID: 1327602465}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: CartaoPolicia
+      value: 
+      objectReference: {fileID: 6344670808728789038, guid: af8a6d45c0fcc5f4bacc4afb8ecfc265,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: CofreDinheiro
       value: 
       objectReference: {fileID: 5522669139245681441, guid: 024d39eef7a75664590648541948b41e,
@@ -42979,6 +43013,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: RelogioEvidence
+      value: 
+      objectReference: {fileID: 8091530607908700978, guid: 1670bc37a7b32bd4b973c748087336e4,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: BastaoDeBeisebol
       value: 
       objectReference: {fileID: 2274512310696497419, guid: 77ffd56b8a092fe45b52a99fe96d95bf,
@@ -43009,9 +43049,21 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: PanoBrancoEvidence
+      value: 
+      objectReference: {fileID: 3652308825150429709, guid: e242f9cef9b5a774da38c2c917f2870a,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: TestemunhaEvidence
       value: 
       objectReference: {fileID: 6477923089204945552, guid: 816e652ef7cdef841abc502e2997409a,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CartaoFilmeEvidence
+      value: 
+      objectReference: {fileID: 4349744432865376796, guid: 2561676e64f5aac439b5a7e4df849971,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -43036,6 +43088,12 @@ PrefabInstance:
       propertyPath: SufocamentoEvidence
       value: 
       objectReference: {fileID: 787910529231531239, guid: 0e486812c5501934999c95d1fe5a846b,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CartaoAlcoolEvidence
+      value: 
+      objectReference: {fileID: 4981221135220998846, guid: bae6265763e3d144996db0e2d5c30ed1,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -43084,6 +43142,12 @@ PrefabInstance:
       propertyPath: CanoContundenteSangue
       value: 
       objectReference: {fileID: 5861951170173384373, guid: 11e5d12d0b7c66744b5fceafdb8341f5,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CartaoPoliciaEvidence
+      value: 
+      objectReference: {fileID: 8203463698927151237, guid: af8a6d45c0fcc5f4bacc4afb8ecfc265,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

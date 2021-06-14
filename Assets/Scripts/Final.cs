@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Final : MonoBehaviour
 {
+    public Text textoNumeroCasos;
     public Caderno cadernoOriginal;
     public GameObject VitimasMulheres;
     public GameObject VitimasHomens;
@@ -60,6 +61,14 @@ public class Final : MonoBehaviour
         jogoFinalizado = false;
         numeroDaPergunta = 1;
         Pontuacao = 0;
+        if (PlayerData.Idioma == "ingles")
+        {
+            textoNumeroCasos.text = "CASE " + paginaAtual.ToString();
+        }
+        else
+        {
+            textoNumeroCasos.text = "CASO " + paginaAtual.ToString();
+        }
         escrevendo = false;
         sentence = new Queue<string>();
         Finalizar.SetActive(false);
@@ -119,6 +128,14 @@ public class Final : MonoBehaviour
         {
             return;
         }
+        if (PlayerData.Idioma == "ingles")
+        {
+            textoNumeroCasos.text = "CASE " + paginaAtual.ToString();
+        }
+        else
+        {
+            textoNumeroCasos.text = "CASO " + paginaAtual.ToString();
+        }
         paginaAtual++;
         cadernoOriginal.ViraPagina();
     }
@@ -127,6 +144,14 @@ public class Final : MonoBehaviour
         if (paginaAtual == 1)
         {
             return;
+        }
+        if (PlayerData.Idioma == "ingles")
+        {
+            textoNumeroCasos.text = "CASE " + paginaAtual.ToString();
+        }
+        else
+        {
+            textoNumeroCasos.text = "CASO " + paginaAtual.ToString();
         }
         paginaAtual--;
         cadernoOriginal.ViraPagina();
@@ -380,7 +405,6 @@ public class Final : MonoBehaviour
         respostaTexto = "Roubo";
         Confirma();
     }
-
     public void PolicialResposta()
     {
         respostaAssassino = 1;

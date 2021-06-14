@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
         if (contador <= 400)
         {
             Painel.color = new Color(0, 0, 0, 1.0f - contador / 250);
-            if (MainMenu.NewGame)
+            if (MainMenu.NewGame && SceneManager.GetActiveScene().buildIndex != 4)
             {
                 CasosNumeros.color = new Color(255, 255, 255, 1.0f - contador / 250);
                 if (PlayerData.Idioma == "ingles")

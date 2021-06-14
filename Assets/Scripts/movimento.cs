@@ -140,7 +140,10 @@ public class movimento : MonoBehaviour
     {
         if (!ParaPersonagem)
         {
-            contador = Animation(contador);
+            if (SceneManager.GetActiveScene().buildIndex != 4)
+            {
+                contador = Animation(contador);
+            }
         }
         if (Relatorio.jogoFinalizado)
         {
@@ -151,7 +154,7 @@ public class movimento : MonoBehaviour
                     rb.velocity = new Vector2(0.0f, 0.0f);
                     animator.SetBool("Direita", false);
                     comecaDialogoFinal = true;
-                    Relatorio.jogoFinalizado= false;
+                    Relatorio.jogoFinalizado = false;
                 }
                 else
                 {
