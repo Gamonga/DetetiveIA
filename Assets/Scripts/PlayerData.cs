@@ -79,9 +79,11 @@ public class PlayerData
     public bool entrouTutorialRelatorio;
     public int idadePersonagem;
     public int numeroMotivoVitimaComum;
+    public bool ComeuAMaeDoPolicial;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
+        ComeuAMaeDoPolicial = ScenesManager.ComeuAMaeDoPolicial;
         numeroMotivoVitimaComum = SpawnObjects.numeroMotivoVitimaComum;
         idadePersonagem = SpawnObjects.idadePersonagem;
         entrouTutorialPensamentos = ScenesManager.entrouTutorialPensamentos;
@@ -215,28 +217,46 @@ public class PlayerData
 
     public void SalvaCaderno(int i)
     {
+        Debug.Log("entrou no salvar caderno");
         nomeObjetoEvidencias[i] = Caderno.evidencias[i].NomeObjeto;
+        Debug.Log("NumeroDeCasosJogadoPeloPlayer: " + NumeroDeCasosJogadoPeloPlayer);
         switch (NumeroDeCasosJogadoPeloPlayer)
         {
             case 1:
                 nomeObjetoEvidenciasCaso1[i] = Caderno.evidencias[i].NomeObjeto;
                 break;
             case 2:
+                nomeObjetoEvidenciasCaso1[i] = Caderno.nomeObjetoEvidenciasCaso1[i];
                 nomeObjetoEvidenciasCaso2[i] = Caderno.evidencias[i].NomeObjeto;
                 break;
             case 3:
+                nomeObjetoEvidenciasCaso1[i] = Caderno.nomeObjetoEvidenciasCaso1[i];
+                nomeObjetoEvidenciasCaso2[i] = Caderno.nomeObjetoEvidenciasCaso2[i];
                 nomeObjetoEvidenciasCaso3[i] = Caderno.evidencias[i].NomeObjeto;
                 break;
             case 4:
+                nomeObjetoEvidenciasCaso1[i] = Caderno.nomeObjetoEvidenciasCaso1[i];
+                nomeObjetoEvidenciasCaso2[i] = Caderno.nomeObjetoEvidenciasCaso2[i];
+                nomeObjetoEvidenciasCaso3[i] = Caderno.nomeObjetoEvidenciasCaso3[i];
                 nomeObjetoEvidenciasCaso4[i] = Caderno.evidencias[i].NomeObjeto;
                 break;
             case 5:
+                nomeObjetoEvidenciasCaso1[i] = Caderno.nomeObjetoEvidenciasCaso1[i];
+                nomeObjetoEvidenciasCaso2[i] = Caderno.nomeObjetoEvidenciasCaso2[i];
+                nomeObjetoEvidenciasCaso3[i] = Caderno.nomeObjetoEvidenciasCaso3[i];
+                nomeObjetoEvidenciasCaso4[i] = Caderno.nomeObjetoEvidenciasCaso4[i];
                 nomeObjetoEvidenciasCaso5[i] = Caderno.evidencias[i].NomeObjeto;
                 break;
             case 6:
+                nomeObjetoEvidenciasCaso1[i] = Caderno.nomeObjetoEvidenciasCaso1[i];
+                nomeObjetoEvidenciasCaso2[i] = Caderno.nomeObjetoEvidenciasCaso2[i];
+                nomeObjetoEvidenciasCaso3[i] = Caderno.nomeObjetoEvidenciasCaso3[i];
+                nomeObjetoEvidenciasCaso4[i] = Caderno.nomeObjetoEvidenciasCaso4[i];
+                nomeObjetoEvidenciasCaso5[i] = Caderno.nomeObjetoEvidenciasCaso5[i];
                 nomeObjetoEvidenciasCaso6[i] = Caderno.evidencias[i].NomeObjeto;
                 break;
         }
+        Debug.Log("nomeObjetoEvidenciasCaso1: " + nomeObjetoEvidenciasCaso1[i]);
         update[i] = Caderno.update[i];
     }
     public void SalvaObjetos(int i)

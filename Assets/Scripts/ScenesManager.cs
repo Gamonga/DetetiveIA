@@ -10,6 +10,10 @@ public class ScenesManager : MonoBehaviour
     public GameObject botaoSim;
     public GameObject botaoNao;
     public static Animator animator;
+    public Dialogue dialogoPolicialFimNTortura;
+    public DialogueControl dialogoPolicialFimNTorturaControl;
+    public Dialogue dialogoDelegadoTransicaonRouba;
+    public DialogueControl dialogoDelegadoTransicaonRoubaControl;
     public Dialogue dialogoPolicialNMataIdosa;
     public DialogueControl dialogoPolicialNMataIdosaControl;
     public Dialogue dialogoComecoJornalistaBrigaComALegista;
@@ -47,15 +51,18 @@ public class ScenesManager : MonoBehaviour
     public static bool entrouTutorialIA;
     public static bool entrouTutorialRelatorio;
     public static string nomeDaPessoaNoFinal;
+    public static bool ComeuAMaeDoPolicial;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        ComeuAMaeDoPolicial = false;
         entrouTutorial = false;
         startaFinal = true;
         animator = GameObject.Find("CarroTransicaoGIF").GetComponent<Animator>();
         PlayerData data = SaveSystem.LoadPlayer();
+        ComeuAMaeDoPolicial = data.ComeuAMaeDoPolicial;
         if (MainMenu.PrimeiroCaso == false)
         {
             entrouTutorialPensamentos = data.entrouTutorialPensamentos;
@@ -137,7 +144,118 @@ public class ScenesManager : MonoBehaviour
         }
         CrimeScene = ActualScene;
     }
+    public void dialogoPolicialNTortura(){
+        if (PlayerData.Idioma == "ingles")
+        {
+            dialogoPolicialFimNTortura.sentencesIngles[0] = "Dia difícil hoje, detetive?";
+            dialogoPolicialFimNTortura.sentencesIngles[1] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentencesIngles[2] = "Complicado como sempre.";
+            dialogoPolicialFimNTortura.sentencesIngles[3] = "Diga-me Johnny, você teve algum caso bem complicado aqui na cidade?";
+            dialogoPolicialFimNTortura.sentencesIngles[4] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentencesIngles[5] = "Já que perguntou, vou te contar uma história";
+            dialogoPolicialFimNTortura.sentencesIngles[6] = "troca pensando";
+            dialogoPolicialFimNTortura.sentencesIngles[7] = "(Tomara que não me arrependa da pergunta)";
+            dialogoPolicialFimNTortura.sentencesIngles[8] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentencesIngles[9] = "Alguns anos atrás, quando entrei na polícia, tinha um assassino em série.";
+            dialogoPolicialFimNTortura.sentencesIngles[10] = "Depois de muito estudo sobre seus métodos de assassinato e seus trejeitos, o delegado, ex detetive e o pessoal da delegacia encontraram seu paradeiro.";
+            dialogoPolicialFimNTortura.sentencesIngles[11] = "Fechamos o local onde ele estava. Eu e o delegado entramos para prender o assassino, fui pelo lado oposto ao delegado.";
+            dialogoPolicialFimNTortura.sentencesIngles[12] = "Mas antes que pudessemos fazer alguma coisa ele atirou na perna do delegado e correu.";
+            dialogoPolicialFimNTortura.sentencesIngles[13] = "Para minha sorte eu estava do outro lado e consegui pegar o criminoso sem que ele pudesse reagir";
+            dialogoPolicialFimNTortura.sentencesIngles[14] = "Estava com muito ódio do sujeito, queria poder torturá-lo como ele fez com todas as suas vítimas.";
+            dialogoPolicialFimNTortura.sentencesIngles[15] = "troca pensando";
+            dialogoPolicialFimNTortura.sentencesIngles[16] = "E o fez?";
+            dialogoPolicialFimNTortura.sentencesIngles[17] = "troca pensando";
+            dialogoPolicialFimNTortura.sentencesIngles[18] = "Não. Não desci ao nível dele. O algemei e levei de volta para a delegacia.";
+            dialogoPolicialFimNTortura.sentencesIngles[19] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentencesIngles[20] = "E o delegado? Ficou bem?";
+            dialogoPolicialFimNTortura.sentencesIngles[21] = "Sentiu raiva do assassino pelas coisas que ele fez e pelo tiro em sua perna?";
+            dialogoPolicialFimNTortura.sentencesIngles[22] = "troca pensando";
+            dialogoPolicialFimNTortura.sentencesIngles[23] = "O delegado era o responsável pelo caso dos assassinatos, mas ele não é um homem emotivo ou que sente raiva, sempre esteve calmo.";
+            dialogoPolicialFimNTortura.sentencesIngles[24] = "Hoje o assassino está em uma prisão fora da cidade.";
+            dialogoPolicialFimNTortura.sentencesIngles[25] = "troca pensando";
+            dialogoPolicialFimNTortura.sentencesIngles[26] = "Bom saber dessas histórias. Obrigado, policial.";
+            dialogoPolicialFimNTortura.sentencesIngles[27] = "finalizar";
+        }
+        else
+        {
+            dialogoPolicialFimNTortura.sentences[0] = "Dia difícil hoje, detetive?";
+            dialogoPolicialFimNTortura.sentences[1] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentences[2] = "Complicado como sempre.";
+            dialogoPolicialFimNTortura.sentences[3] = "Diga-me Johnny, você teve algum caso bem complicado aqui na cidade?";
+            dialogoPolicialFimNTortura.sentences[4] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentences[5] = "Já que perguntou, vou te contar uma história";
+            dialogoPolicialFimNTortura.sentences[6] = "troca pensando";
+            dialogoPolicialFimNTortura.sentences[7] = "(Tomara que não me arrependa da pergunta)";
+            dialogoPolicialFimNTortura.sentences[8] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentences[9] = "Alguns anos atrás, quando entrei na polícia, tinha um assassino em série.";
+            dialogoPolicialFimNTortura.sentences[10] = "Depois de muito estudo sobre seus métodos de assassinato e seus trejeitos, o delegado, ex detetive e o pessoal da delegacia encontraram seu paradeiro.";
+            dialogoPolicialFimNTortura.sentences[11] = "Fechamos o local onde ele estava. Eu e o delegado entramos para prender o assassino, fui pelo lado oposto ao delegado.";
+            dialogoPolicialFimNTortura.sentences[12] = "Mas antes que pudessemos fazer alguma coisa ele atirou na perna do delegado e correu.";
+            dialogoPolicialFimNTortura.sentences[13] = "Para minha sorte eu estava do outro lado e consegui pegar o criminoso sem que ele pudesse reagir";
+            dialogoPolicialFimNTortura.sentences[14] = "Estava com muito ódio do sujeito, queria poder torturá-lo como ele fez com todas as suas vítimas.";
+            dialogoPolicialFimNTortura.sentences[15] = "troca pensando";
+            dialogoPolicialFimNTortura.sentences[16] = "E o fez?";
+            dialogoPolicialFimNTortura.sentences[17] = "troca pensando";
+            dialogoPolicialFimNTortura.sentences[18] = "Não. Não desci ao nível dele. O algemei e levei de volta para a delegacia.";
+            dialogoPolicialFimNTortura.sentences[19] = "troca paisagem";
+            dialogoPolicialFimNTortura.sentences[20] = "E o delegado? Ficou bem?";
+            dialogoPolicialFimNTortura.sentences[21] = "Sentiu raiva do assassino pelas coisas que ele fez e pelo tiro em sua perna?";
+            dialogoPolicialFimNTortura.sentences[22] = "troca pensando";
+            dialogoPolicialFimNTortura.sentences[23] = "O delegado era o responsável pelo caso dos assassinatos, mas ele não é um homem emotivo ou que sente raiva, sempre esteve calmo.";
+            dialogoPolicialFimNTortura.sentences[24] = "Hoje o assassino está em uma prisão fora da cidade.";
+            dialogoPolicialFimNTortura.sentences[25] = "troca pensando";
+            dialogoPolicialFimNTortura.sentences[26] = "Bom saber dessas histórias. Obrigado, policial.";
+            dialogoPolicialFimNTortura.sentences[27] = "finalizar";
+        }
+    }
+    public void dialogoDelegadoNRouba(){
+        if (PlayerData.Idioma == "ingles")
+        {
+            dialogoDelegadoTransicaonRouba.sentencesIngles[0] = "troca paisagem";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[1] = "Delegado, por acaso o senhor viu o celular do Steve?";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[2] = "troca paisagem";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[3] = "Eu encontrei um celular na minha sala hoje mais cedo, estava procurando o dono.";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[4] = "troca pensando";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[5] = "Deixe-me ver.";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[6] = "detetive paisagem";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[7] = "Acredito que seja esse mesmo. Ele perdeu o celular denovo e pediu para eu ajudar a encontrá-lo.";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[8] = "troca paisagem";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[9] = "Tranquilo, tudo que eu encontro perdido eu tento devolver para o dono.";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[10] = "A menos que seja biscoitos, ai eu como.";
+            dialogoDelegadoTransicaonRouba.sentencesIngles[11] = "troca paisagem";
+            if(ComeuAMaeDoPolicial){
+                dialogoDelegadoTransicaonRouba.sentencesIngles[12] = "(A mãe do Johnny também)";
+                dialogoDelegadoTransicaonRouba.sentencesIngles[13] = "finalizar";
+            }   
+            else{
+                dialogoDelegadoTransicaonRouba.sentencesIngles[12] = "finalizar";
+            }
+        }
+        else
+        {
+            dialogoDelegadoTransicaonRouba.sentences[0] = "troca paisagem";
+            dialogoDelegadoTransicaonRouba.sentences[1] = "Delegado, por acaso o senhor viu o celular do Steve?";
+            dialogoDelegadoTransicaonRouba.sentences[2] = "troca paisagem";
+            dialogoDelegadoTransicaonRouba.sentences[3] = "Eu encontrei um celular na minha sala hoje mais cedo, estava procurando o dono.";
+            dialogoDelegadoTransicaonRouba.sentences[4] = "troca pensando";
+            dialogoDelegadoTransicaonRouba.sentences[5] = "Deixe-me ver.";
+            dialogoDelegadoTransicaonRouba.sentences[6] = "detetive paisagem";
+            dialogoDelegadoTransicaonRouba.sentences[7] = "Acredito que seja esse mesmo. Ele perdeu o celular de novo e me pediu para ajudar a encontrá-lo.";
+            dialogoDelegadoTransicaonRouba.sentences[8] = "troca paisagem";
+            dialogoDelegadoTransicaonRouba.sentences[9] = "Tranquilo, tudo que eu encontro perdido tento devolver para o dono.";
+            dialogoDelegadoTransicaonRouba.sentences[10] = "A menos que sejam biscoitos, aí eu como.";
+            dialogoDelegadoTransicaonRouba.sentences[11] = "troca paisagem";
+            if(ComeuAMaeDoPolicial){
+                dialogoDelegadoTransicaonRouba.sentences[12] = "(A mãe do Johnny também)";
+                dialogoDelegadoTransicaonRouba.sentences[13] = "finalizar";
+            }   
+            else{
+                dialogoDelegadoTransicaonRouba.sentences[12] = "finalizar";
+            }
+        }
+    }
     public void dialogoPolicialNMataIdosaFunction(){
+        ComeuAMaeDoPolicial = true;
         if (PlayerData.Idioma == "ingles")
         {
             dialogoPolicialNMataIdosa.sentencesIngles[0] = "Olá, detetive.";
@@ -173,6 +291,7 @@ public class ScenesManager : MonoBehaviour
             dialogoPolicialNMataIdosa.sentencesIngles[30] = "Você ri porque não é com você. Haha.";
             dialogoPolicialNMataIdosa.sentencesIngles[31] = "troca paisagem";
             dialogoPolicialNMataIdosa.sentencesIngles[32] = "Ainda bem. Hahaha.";
+            dialogoPolicialNMataIdosa.sentencesIngles[33] = "finalizar";
         }
         else
         {
@@ -209,6 +328,7 @@ public class ScenesManager : MonoBehaviour
             dialogoPolicialNMataIdosa.sentences[30] = "Você ri porque não é com você. Haha.";
             dialogoPolicialNMataIdosa.sentences[31] = "troca paisagem";
             dialogoPolicialNMataIdosa.sentences[32] = "Ainda bem. Hahaha.";
+            dialogoPolicialNMataIdosa.sentences[33] = "finalizar";
         }
     }
     public void ComecoJornalistaBrigaMulherVitima(){
@@ -230,6 +350,7 @@ public class ScenesManager : MonoBehaviour
             dialogoComecoJornalistaBrigaComALegista.sentencesIngles[13] = "Deve ter sido o maior barraco.";
             dialogoComecoJornalistaBrigaComALegista.sentencesIngles[14] = "troca paisagem";
             dialogoComecoJornalistaBrigaComALegista.sentencesIngles[15] = "Foi mesmo. Hahaha."; 
+            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[16] = "finalizar"; 
         }
         else
         {
@@ -249,6 +370,7 @@ public class ScenesManager : MonoBehaviour
             dialogoComecoJornalistaBrigaComALegista.sentences[13] = "Deve ter sido o maior barraco.";
             dialogoComecoJornalistaBrigaComALegista.sentences[14] = "troca paisagem";
             dialogoComecoJornalistaBrigaComALegista.sentences[15] = "Foi mesmo. Hahaha."; 
+            dialogoComecoJornalistaBrigaComALegista.sentences[16] = "finalizar"; 
         }
     }
     public void ComecoJornalistaBrigaHomemVitima(){
@@ -271,6 +393,7 @@ public class ScenesManager : MonoBehaviour
             dialogoComecoJornalistaBrigaComALegista.sentencesIngles[14] = "Deve ter sido o maior barraco.";
             dialogoComecoJornalistaBrigaComALegista.sentencesIngles[15] = "troca paisagem";
             dialogoComecoJornalistaBrigaComALegista.sentencesIngles[16] = "Foi mesmo. Hahaha."; 
+            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[17] = "finalizar"; 
         }
         else
         {
@@ -291,6 +414,7 @@ public class ScenesManager : MonoBehaviour
             dialogoComecoJornalistaBrigaComALegista.sentences[14] = "Deve ter sido o maior barraco.";
             dialogoComecoJornalistaBrigaComALegista.sentences[15] = "troca paisagem";
             dialogoComecoJornalistaBrigaComALegista.sentences[16] = "Foi mesmo. Hahaha."; 
+            dialogoComecoJornalistaBrigaComALegista.sentences[17] = "finalizar"; 
         }
     }
     public void finalLegistaNPunhoRaivas(){
@@ -320,6 +444,7 @@ public class ScenesManager : MonoBehaviour
             dialogoFinalLegistaNMataHomens.sentencesIngles[21] = "Difícil a situação, mas estou em cima do caso, falta pouco para o assassino estar atrás das grades.";
             dialogoFinalLegistaNMataHomens.sentencesIngles[22] = "troca paisagem";
             dialogoFinalLegistaNMataHomens.sentencesIngles[23] = "Tomara, detetive.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[24] = "finalizar";
         }
         else
         {
@@ -347,6 +472,7 @@ public class ScenesManager : MonoBehaviour
             dialogoFinalLegistaNMataHomens.sentences[21] = "Difícil a situação, mas estou em cima do caso, falta pouco para o assassino estar atrás das grades.";
             dialogoFinalLegistaNMataHomens.sentences[22] = "troca paisagem";
             dialogoFinalLegistaNMataHomens.sentences[23] = "Tomara, detetive.";
+            dialogoFinalLegistaNMataHomens.sentences[24] = "finalizar";
         }
     }
     public void finalLegistaNMataHomem()
@@ -354,44 +480,46 @@ public class ScenesManager : MonoBehaviour
         if (PlayerData.Idioma == "ingles")
         {
             dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Indo para casa, Devi?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Estou indo, mas já que te encontrei aqui, gostaria de dar uma passadinha lá.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Mas é claro, eu adoraria.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Eu não sei se você sabia, mas eu sempre te achei tão bonito e esperto, detetive.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Nossa Devi, eu sinto o mesmo, é sério isso?!.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Não! Hahaha.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Mas... Mas eu...";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Estava brincado com você detetive, adoro brincar com o coração dos homens.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "Eu estou indo para casa, te vejo outro dia.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "(Só tristezas essa vida)";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[1] = "Indo para casa, Devi?";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[2] = "troca paisagem";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[3] = "Estou indo, mas já que te encontrei aqui, gostaria de dar uma passadinha lá.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[4] = "troca embara";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[5] = "Mas é claro, eu adoraria.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[6] = "troca embara";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[7] = "Eu não sei se você sabia, mas eu sempre te achei tão bonito e esperto, detetive.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[8] = "troca embara";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[9] = "Nossa Devi, eu sinto o mesmo, é sério isso?!.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[10] = "troca paisagem";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[11] = "Não! Hahaha.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[12] = "troca desgosto";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[13] = "Mas... Mas eu...";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[14] = "Estava brincado com você detetive, adoro brincar com o coração dos homens.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[15] = "Eu estou indo para casa, te vejo outro dia.";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[16] = "troca desgosto";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[17] = "(Só tristezas essa vida)";
+            dialogoFinalLegistaNMataHomens.sentencesIngles[18] = "finalizar";
         }
         else
         {
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Indo para casa, Devi?";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Estou indo, mas já que te encontrei aqui, gostaria de dar uma passadinha lá.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Mas é claro, eu adoraria.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Eu não sei se você sabia, mas eu sempre te achei tão bonito e esperto, detetive.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Nossa Devi, eu sinto o mesmo, é sério isso?!.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Não! Hahaha.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Mas... Mas eu...";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Estava brincado com você detetive, adoro brincar com o coração dos homens.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "Eu estou indo para casa, te vejo outro dia.";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentences[0] = "(Só tristezas essa vida)";
+            dialogoFinalLegistaNMataHomens.sentences[0]  = "troca paisagem";
+            dialogoFinalLegistaNMataHomens.sentences[1]  = "Indo para casa, Devi?";
+            dialogoFinalLegistaNMataHomens.sentences[2]  = "troca paisagem";
+            dialogoFinalLegistaNMataHomens.sentences[3]  = "Estou indo, mas já que te encontrei aqui, gostaria de dar uma passadinha lá.";
+            dialogoFinalLegistaNMataHomens.sentences[4]  = "troca embara";
+            dialogoFinalLegistaNMataHomens.sentences[5]  = "Mas é claro, eu adoraria.";
+            dialogoFinalLegistaNMataHomens.sentences[6]  = "troca embara";
+            dialogoFinalLegistaNMataHomens.sentences[7]  = "Eu não sei se você sabia, mas eu sempre te achei tão bonito e esperto, detetive.";
+            dialogoFinalLegistaNMataHomens.sentences[8]  = "troca embara";
+            dialogoFinalLegistaNMataHomens.sentences[9]  = "Nossa Devi, eu sinto o mesmo, é sério isso?!.";
+            dialogoFinalLegistaNMataHomens.sentences[10] = "troca paisagem";
+            dialogoFinalLegistaNMataHomens.sentences[11] = "Não! Hahaha.";
+            dialogoFinalLegistaNMataHomens.sentences[12] = "troca desgosto";
+            dialogoFinalLegistaNMataHomens.sentences[13] = "Mas... Mas eu...";
+            dialogoFinalLegistaNMataHomens.sentences[14] = "Estava brincado com você detetive, adoro brincar com o coração dos homens.";
+            dialogoFinalLegistaNMataHomens.sentences[15] = "Eu estou indo para casa, te vejo outro dia.";
+            dialogoFinalLegistaNMataHomens.sentences[16] = "troca desgosto";
+            dialogoFinalLegistaNMataHomens.sentences[17] = "(Só tristezas essa vida)";
+            dialogoFinalLegistaNMataHomens.sentences[18] = "finalizar";
         }
     }
     public void trocaTestemunhoJornalista()
@@ -406,6 +534,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaJornalista.sentencesIngles[5] = "Uma coisa é um crime passional ou por falta de empatia, mas matar um inocente de forma planejada é muito além do compreensível.";
             dialogoInicioTestemunhaJornalista.sentencesIngles[6] = "troca paisagem";
             dialogoInicioTestemunhaJornalista.sentencesIngles[7] = "Qualquer ato criminoso é incompreensível.";
+            dialogoInicioTestemunhaJornalista.sentencesIngles[8] = "finalizar";
         }
         else
         {
@@ -417,6 +546,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaJornalista.sentences[5] = "Uma coisa é um crime passional ou por falta de empatia, mas matar um inocente de forma planejada é muito além do compreensível.";
             dialogoInicioTestemunhaJornalista.sentences[6] = "troca paisagem";
             dialogoInicioTestemunhaJornalista.sentences[7] = "Qualquer ato criminoso é incompreensível.";
+            dialogoInicioTestemunhaJornalista.sentences[8] = "finalizar";
         }
 
     }
@@ -444,6 +574,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaRico.sentencesIngles[17] = "(Tenho certeza que o Steve não é assim)";
             dialogoInicioTestemunhaRico.sentencesIngles[18] = "detetive pensando";
             dialogoInicioTestemunhaRico.sentencesIngles[19] = "(Ainda bem que ele não é assim)";
+            dialogoInicioTestemunhaRico.sentencesIngles[20] = "finalizar";
         }
         else
         {
@@ -467,6 +598,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaRico.sentences[17] = "(Tenho certeza que o Steve não é assim)";
             dialogoInicioTestemunhaRico.sentences[18] = "detetive pensando";
             dialogoInicioTestemunhaRico.sentences[19] = "(Ainda bem que ele não é assim)";
+             dialogoInicioTestemunhaRico.sentences[20] = "finalizar";
         }
     }
 
@@ -484,6 +616,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaRico.sentencesIngles[7] = "As vezes a situação fica apertada e as pessoas partem para formas ilegais de conseguir dinheiro para te pagar nesses tempos difíceis.";
             dialogoInicioTestemunhaRico.sentencesIngles[8] = "troca paisagem";
             dialogoInicioTestemunhaRico.sentencesIngles[9] = "Dinheiro é dinheiro. Hahaha.";
+            dialogoInicioTestemunhaRico.sentencesIngles[10] = "finalizar";
         }
         else
         {
@@ -497,6 +630,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaRico.sentences[7] = "As vezes a situação fica apertada e as pessoas partem para formas ilegais de conseguir dinheiro para te pagar nesses tempos difíceis.";
             dialogoInicioTestemunhaRico.sentences[8] = "troca paisagem";
             dialogoInicioTestemunhaRico.sentences[9] = "Dinheiro é dinheiro. Hahaha.";
+            dialogoInicioTestemunhaRico.sentences[10] = "finalizar";
         }
     }
     public void tutorialTestemunha()
@@ -509,7 +643,7 @@ public class ScenesManager : MonoBehaviour
             animatorTutorial.SetBool("AbrirTutorial", true);
             if (PlayerData.Idioma == "ingles")
             {
-                testemunhaTexto.text = "Testemunhas" + "\n" +
+                testemunhaTexto.text = "Witnesses" + "\n" +
                 "Witnesses are people found at the crime scene. It's possible to ask them questions about the murder." + "\n" +
                 "To each question asked, the witness will tell their version of the case, and it's up to the detective to know if what they are saying is true or false." + "\n" +
                 "There are 3 possible answers to each testimony." + "\n" +
@@ -548,6 +682,8 @@ public class ScenesManager : MonoBehaviour
                 testemunhaTexto.text = "Evidence" + "\n" +
                 "Pieces of evidence are clues found at the crime scene. They are registered on your notebook (press 'TAB' to open the notebook)." + "\n" +
                 "Pieces of evidence have info that will help you solve the case." + "\n" +
+                "They can be updated by talking to the digital expert, in the police station." + "\n" +
+                "It is only possible to update a limited number of evidences per case." + "\n" +
                 "Press 'ESC' to close this menu.";
             }
             else
@@ -555,6 +691,8 @@ public class ScenesManager : MonoBehaviour
                 testemunhaTexto.text = "Evidências" + "\n" +
                 "Evidências são pistas encontradas na cena do crime. Elas são anotadas no seu caderno (aperte 'TAB' para abrir o caderno)." + "\n" +
                 "As evidências possuem informações que te ajudarão a solucionar o caso." + "\n" +
+                "Elas podem ser atualizadas conversando com o perito digital, que se encontra na delgacia." + "\n" +
+                "Só é possivel atualizar um numero limitado de evidências por caso." + "\n" +
                 "Aperte 'ESC' para fechar este menu.";
             }
 
@@ -758,26 +896,26 @@ public class ScenesManager : MonoBehaviour
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoDelegadoExplicando.sentencesIngles[0] = "Ouvi dizer que o caso de hoje vai ser feio.";
-            dialogoDelegadoExplicando.sentencesIngles[1] = "troca embara";
-            dialogoDelegadoExplicando.sentencesIngles[2] = "Nunca ouvi falar de um caso bonito.";
-            dialogoDelegadoExplicando.sentencesIngles[3] = "troca paisagem";
-            dialogoDelegadoExplicando.sentencesIngles[4] = "Mas esse é mais feio que bater na mãe.";
-            dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
-            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
-            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
-            dialogoDelegadoExplicando.sentencesIngles[8] = "De qualquer forma, não poderei te ajudar nesse caso.";
-            dialogoDelegadoExplicando.sentencesIngles[9] = "Tenho que ir à reunião da Associação de Amparo aos Idosos.";
-            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
-            dialogoDelegadoExplicando.sentencesIngles[8] = "Que legal, delegado. Aposto que por lá você não precisa ser o delegado de sempre. Hahaha.";
-            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
-            dialogoDelegadoExplicando.sentencesIngles[8] = "Não. Eu sou sim. Também sou um delegado lá.";
-            dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
-            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
-            dialogoDelegadoExplicando.sentencesIngles[7] = "troca paisagem";
-            dialogoDelegadoExplicando.sentencesIngles[6] = "...";
-            dialogoDelegadoExplicando.sentencesIngles[6] = "Lá eles me dão biscoitos. Adoro biscoitos";
-            dialogoDelegadoExplicando.sentencesIngles[6] = "finalizar";
+            dialogoDelegadoExplicando.sentencesIngles[0]  = "Ouvi dizer que o caso de hoje vai ser feio.";
+            dialogoDelegadoExplicando.sentencesIngles[1]  = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[2]  = "Nunca ouvi falar de um caso bonito.";
+            dialogoDelegadoExplicando.sentencesIngles[3]  = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[4]  = "Mas esse é mais feio que bater na mãe.";
+            dialogoDelegadoExplicando.sentencesIngles[5]  = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[6]  = "...";
+            dialogoDelegadoExplicando.sentencesIngles[7]  = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[8]  = "De qualquer forma, não poderei te ajudar nesse caso.";
+            dialogoDelegadoExplicando.sentencesIngles[9]  = "Tenho que ir à reunião da Associação de Amparo aos Idosos.";
+            dialogoDelegadoExplicando.sentencesIngles[10] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[11] = "Que legal, delegado. Aposto que por lá você não precisa ser o delegado de sempre. Hahaha.";
+            dialogoDelegadoExplicando.sentencesIngles[12] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[13] = "Não. Eu sou sim. Também sou um delegado lá.";
+            dialogoDelegadoExplicando.sentencesIngles[14] = "troca embara";
+            dialogoDelegadoExplicando.sentencesIngles[15] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[16] = "troca paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[17] = "...";
+            dialogoDelegadoExplicando.sentencesIngles[18] = "Lá eles me dão biscoitos. Adoro biscoitos";
+            dialogoDelegadoExplicando.sentencesIngles[19] = "finalizar";
         }
         else
         {
@@ -994,6 +1132,7 @@ public class ScenesManager : MonoBehaviour
                 diaologoFinalParceiro.sentencesIngles[14] = "Jamais faria isso com alguém.";
                 diaologoFinalParceiro.sentencesIngles[15] = "troca paisagem";
                 diaologoFinalParceiro.sentencesIngles[16] = "Que bom, Steve. Isso só mostra que você não é um maluco por dinheiro. Hahaha.";
+                diaologoFinalParceiro.sentencesIngles[17] = "finalizar";
             }
             else
             {
@@ -1014,6 +1153,7 @@ public class ScenesManager : MonoBehaviour
                 diaologoFinalParceiro.sentences[14] = "Jamais faria isso com alguém.";
                 diaologoFinalParceiro.sentences[15] = "troca paisagem";
                 diaologoFinalParceiro.sentences[16] = "Que bom, Steve. Isso só mostra que você não é um maluco por dinheiro. Hahaha.";
+                diaologoFinalParceiro.sentences[17] = "finalizar";
             }
         }
         dialogueControlFinal.StartDialogue(diaologoFinalParceiro);

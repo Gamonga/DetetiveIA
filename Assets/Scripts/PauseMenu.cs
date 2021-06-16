@@ -21,7 +21,6 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("primeiro caso do pause menu:" + MainMenu.PrimeiroCaso);
         if (MainMenu.PrimeiroCaso)
         {
             NumeroDeCasosJogadoPeloPlayer = 1;

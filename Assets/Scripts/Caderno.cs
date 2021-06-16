@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 public class Caderno : MonoBehaviour
 {
     static public Evidence[] evidencias = new Evidence[20];
+    public static string[] nomeObjetoEvidenciasCaso1 = new string[40];
+    public static string[] nomeObjetoEvidenciasCaso2 = new string[40];
+    public static string[] nomeObjetoEvidenciasCaso3 = new string[40];
+    public static string[] nomeObjetoEvidenciasCaso4 = new string[40];
+    public static string[] nomeObjetoEvidenciasCaso5 = new string[40];
+    public static string[] nomeObjetoEvidenciasCaso6 = new string[40];
     static public bool[] update = new bool[20];
     static public Pessoa[] pessoas = new Pessoa[20];
     public static int posiçãoPessoa;
@@ -384,9 +390,13 @@ public class Caderno : MonoBehaviour
     public void ViraPagina()
     {
         PlayerData data = SaveSystem.LoadPlayer();
+        CarregaObjetosPassados(data);
+        entrou = false;
+        Debug.Log("Final Pagina Atual: " + Final.paginaAtual);
         switch (Final.paginaAtual)
         {
             case 1:
+                Debug.Log("Entrou caso 1" + Final.paginaAtual);
                 for (j = 0; j < evidencias.Length; j++)
                 {
                     evidencias[j] = null;
@@ -395,6 +405,7 @@ public class Caderno : MonoBehaviour
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
                 {
+                    Debug.Log("Esta dentro do for");
                     adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso1[j]).GetComponent<Evidence>());
                     update[j] = data.update[j];
                     if (update[j] == true)
@@ -1602,15 +1613,19 @@ public class Caderno : MonoBehaviour
     {
         if (verificaExistencia(evidence))
         {
+            Debug.Log("ja existe");
         }
         else
         {
-            if(SceneManager.GetActiveScene().buildIndex != 4 && SceneManager.GetActiveScene().buildIndex != 1 ){
+            Debug.Log("Existe adicionar");
+            if (SceneManager.GetActiveScene().buildIndex != 4 && SceneManager.GetActiveScene().buildIndex != 1)
+            {
                 barulhoAnotando = GameObject.Find("escrita").GetComponent<AudioSource>();
                 barulhoAnotando.Play();
             }
             if (entrou == false)
             {
+                Debug.Log("evidencia0");
                 evidencias[0] = evidence;
                 posiçãoEvidencias = 1;
                 entrou = true;
@@ -1618,6 +1633,7 @@ public class Caderno : MonoBehaviour
             }
             if (posiçãoEvidencias == 1)
             {
+                Debug.Log("evidencia1");
                 evidencias[1] = evidence;
                 posiçãoEvidencias++;
                 return;
@@ -1716,7 +1732,6 @@ public class Caderno : MonoBehaviour
         {
             LoadPlayer();
             repetidor++;
-            Debug.Log("aaaa");
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 Destroy_Object();
@@ -1733,8 +1748,38 @@ public class Caderno : MonoBehaviour
         posiçãoEvidencias = data.NumeroDeEvidencias;
         for (j = 0; j < data.NumeroDeEvidencias; j++)
         {
-            Debug.Log(data.nomeObjetoEvidencias[j]);
             Destroy(GameObject.Find(data.nomeObjetoEvidencias[j]));
+        }
+    }
+    public void CarregaObjetosPassados(PlayerData data)
+    {
+        for (j = 0; j < PauseMenu.NumeroDeCasosJogadoPeloPlayer; j++)
+        {
+            for (i = 0; i < data.NumeroDeEvidencias; i++)
+            {
+                switch (j + 1)
+                {
+                    case 1:
+                        nomeObjetoEvidenciasCaso1[i] = data.nomeObjetoEvidenciasCaso1[i];
+                        Debug.Log("Estou no caderno nome objeto evidencias: " + nomeObjetoEvidenciasCaso1[i]);
+                        break;
+                    case 2:
+                        nomeObjetoEvidenciasCaso2[i] = data.nomeObjetoEvidenciasCaso2[i];
+                        break;
+                    case 3:
+                        nomeObjetoEvidenciasCaso3[i] = data.nomeObjetoEvidenciasCaso3[i];
+                        break;
+                    case 4:
+                        nomeObjetoEvidenciasCaso4[i] = data.nomeObjetoEvidenciasCaso4[i];
+                        break;
+                    case 5:
+                        nomeObjetoEvidenciasCaso5[i] = data.nomeObjetoEvidenciasCaso5[i];
+                        break;
+                    case 6:
+                        nomeObjetoEvidenciasCaso6[i] = data.nomeObjetoEvidenciasCaso6[i];
+                        break;
+                }
+            }
         }
     }
     public void LoadPlayer()
@@ -1749,7 +1794,6 @@ public class Caderno : MonoBehaviour
         posiçãoEvidencias = 0;
         for (j = 0; j < data.NumeroDeEvidencias; j++)
         {
-            Debug.Log(data.nomeObjetoEvidencias[j]);
             adicionar(GameObject.Find(data.nomeObjetoEvidencias[j]).GetComponent<Evidence>());
             update[j] = data.update[j];
             if (update[j] == true)
@@ -1757,6 +1801,7 @@ public class Caderno : MonoBehaviour
                 atualizaDescricao(j);
             }
         }
+        CarregaObjetosPassados(data);
     }
     public void LoadPessoas(PlayerData data)
     {

@@ -128,6 +128,7 @@ public class Final : MonoBehaviour
         {
             return;
         }
+        paginaAtual++;
         if (PlayerData.Idioma == "ingles")
         {
             textoNumeroCasos.text = "CASE " + paginaAtual.ToString();
@@ -136,7 +137,6 @@ public class Final : MonoBehaviour
         {
             textoNumeroCasos.text = "CASO " + paginaAtual.ToString();
         }
-        paginaAtual++;
         cadernoOriginal.ViraPagina();
     }
     public void ViraPaginaEsquerda()
@@ -145,6 +145,7 @@ public class Final : MonoBehaviour
         {
             return;
         }
+        paginaAtual--;
         if (PlayerData.Idioma == "ingles")
         {
             textoNumeroCasos.text = "CASE " + paginaAtual.ToString();
@@ -153,7 +154,6 @@ public class Final : MonoBehaviour
         {
             textoNumeroCasos.text = "CASO " + paginaAtual.ToString();
         }
-        paginaAtual--;
         cadernoOriginal.ViraPagina();
     }
 
@@ -203,6 +203,7 @@ public class Final : MonoBehaviour
                     StartCoroutine(typeSentence(fraseAtual));
                     if (fraseAtual == "E aqui está o item:")
                     {
+                        cadernoOriginal.ViraPagina();
                         ClickCaderno = true;
                         Evidencias.SetActive(true);
                         cadernoOriginal.EscreverEvidencias();

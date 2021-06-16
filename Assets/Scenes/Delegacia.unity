@@ -25558,6 +25558,10 @@ MonoBehaviour:
   texto: {fileID: 1327602465}
   botaoSim: {fileID: 6595550}
   botaoNao: {fileID: 2070321127}
+  dialogoPolicialFimNTortura: {fileID: 0}
+  dialogoPolicialFimNTorturaControl: {fileID: 0}
+  dialogoDelegadoTransicaonRouba: {fileID: 0}
+  dialogoDelegadoTransicaonRoubaControl: {fileID: 0}
   dialogoPolicialNMataIdosa: {fileID: 0}
   dialogoPolicialNMataIdosaControl: {fileID: 0}
   dialogoComecoJornalistaBrigaComALegista: {fileID: 0}
@@ -37867,6 +37871,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1914893027}
           m_ObjectArgumentAssemblyTypeName: Pessoa, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1291378450}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: tutorialEvidencias
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
