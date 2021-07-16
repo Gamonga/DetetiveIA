@@ -57,7 +57,6 @@ public class Final : MonoBehaviour
         acertouInteresse = false;
         acertouAssassino = false;
         paginaAtual = 1;
-        AcertouAssassino = false;
         jogoFinalizado = false;
         numeroDaPergunta = 1;
         Pontuacao = 0;

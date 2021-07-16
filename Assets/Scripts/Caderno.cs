@@ -500,6 +500,7 @@ public class Caderno : MonoBehaviour
                 }
                 break;
         }
+        EscreverEvidencias();
     }
     public void trocarDescricao(Text Text)
     {

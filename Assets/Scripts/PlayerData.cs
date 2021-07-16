@@ -80,9 +80,13 @@ public class PlayerData
     public int idadePersonagem;
     public int numeroMotivoVitimaComum;
     public bool ComeuAMaeDoPolicial;
+    public bool sexoAtual;
+    public bool sexoUltimoCaso;
     public PlayerData(movimento movimento)
     {
         level = SceneManager.GetActiveScene().buildIndex;
+        sexoUltimoCaso = ScenesManager.eraHomemUltimoCaso;
+        sexoAtual = SpawnObjects.SexoMasculino;
         ComeuAMaeDoPolicial = ScenesManager.ComeuAMaeDoPolicial;
         numeroMotivoVitimaComum = SpawnObjects.numeroMotivoVitimaComum;
         idadePersonagem = SpawnObjects.idadePersonagem;

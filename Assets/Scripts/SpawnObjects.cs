@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SpawnObjects : MonoBehaviour
 {
+    public static bool SexoMasculino;
     public static int NumeroDeportas = 0;
     public static int selecionaArmaComSangueFalso;
     static bool entrouNoTexto = false;
@@ -187,6 +188,7 @@ public class SpawnObjects : MonoBehaviour
             if (MainMenu.NewGame == false)
             {
                 PlayerData data = SaveSystem.LoadPlayer();
+                SexoMasculino = data.sexoAtual;
                 idadePersonagem = data.idadePersonagem;
                 RuidoArmaDoCrime = data.RuidoArmaDoCrime;
                 numeroAssassino = data.numeroAssassino;
@@ -3721,6 +3723,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto1()
     {
+        SexoMasculino = true;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -3804,6 +3807,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto2()
     {
+        SexoMasculino = true;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -3889,6 +3893,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto3()
     {
+        SexoMasculino = false;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -3972,6 +3977,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto4()
     {
+        SexoMasculino = true;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -4055,6 +4061,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto1F()
     {
+        SexoMasculino = false;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -4139,6 +4146,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto2F()
     {
+        SexoMasculino = false;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -4225,6 +4233,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto3M()
     {
+        SexoMasculino = true;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
@@ -4309,6 +4318,7 @@ public class SpawnObjects : MonoBehaviour
     }
     public void InstantiateCorpoMorto4F()
     {
+        SexoMasculino = false;
         switch (SceneManager.GetActiveScene().buildIndex)
         {
             case 0:
