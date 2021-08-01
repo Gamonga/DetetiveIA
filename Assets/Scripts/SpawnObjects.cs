@@ -185,6 +185,82 @@ public class SpawnObjects : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex != 4)
         {
+            if (IA.taxaDeAcertos >= 0.8 && PauseMenu.NumeroDeCasosJogadoPeloPlayer >= 5)
+            {
+                switch (numeroAssassino)
+                {
+                    case 0:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCartaoPolicia();
+                        }
+                        else
+                        {
+                            InstantiateCartaoFilme();
+                        }
+                        break;
+                    case 1:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCartaoPolicia();
+                        }
+                        else
+                        {
+                            InstantiateCartaoFilme();
+                        }
+                        break;
+                    case 2:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCartaoAlcool();
+                        }
+                        else
+                        {
+                            InstantiatePanoBranco();
+                        }
+                        break;
+                    case 3:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiatePanoBranco();
+                        }
+                        else
+                        {
+                            InstantiateCartaoFilme();
+                        }
+                        break;
+                    case 4:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateRelogio();
+                        }
+                        else
+                        {
+                            InstantiateCartaoPolicia();
+                        }
+                        break;
+                    case 5:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateCartaoFilme();
+                        }
+                        else
+                        {
+                            InstantiateCartaoAlcool();
+                        }
+                        break;
+                    case 6:
+                        if (Random.value > 0.5f)
+                        {
+                            InstantiateRelogio();
+                        }
+                        else
+                        {
+                            InstantiatePanoBranco();
+                        }
+                        break;
+                }
+            }
             if (MainMenu.NewGame == false)
             {
                 PlayerData data = SaveSystem.LoadPlayer();

@@ -9175,7 +9175,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -18933,6 +18933,14 @@ MonoBehaviour:
   texto: {fileID: 512707328}
   botaoSim: {fileID: 4114674}
   botaoNao: {fileID: 1857987845}
+  dialogoTIgostaDeXovens: {fileID: 0}
+  dialogoTIgostaDeXovensControl: {fileID: 0}
+  dialogoTINMataVinganca: {fileID: 0}
+  dialogoTINMataVingancaControl: {fileID: 0}
+  dialogoPolicialFimNTortura: {fileID: 0}
+  dialogoPolicialFimNTorturaControl: {fileID: 0}
+  dialogoDelegadoTransicaonRouba: {fileID: 0}
+  dialogoDelegadoTransicaonRoubaControl: {fileID: 0}
   dialogoPolicialNMataIdosa: {fileID: 0}
   dialogoPolicialNMataIdosaControl: {fileID: 0}
   dialogoComecoJornalistaBrigaComALegista: {fileID: 0}

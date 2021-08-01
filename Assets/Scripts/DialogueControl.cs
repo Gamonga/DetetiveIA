@@ -110,6 +110,7 @@ public class DialogueControl : MonoBehaviour
                 primeiraVez = true;
                 Analise.EntrouAnalisando = !Analise.EntrouAnalisando;
                 Analise.terminouConversa = true;
+                Final.FinalDialiogoBool = true;
                 ScenesManager.fechar();
                 if (!Testemunha.isInRange)
                 {

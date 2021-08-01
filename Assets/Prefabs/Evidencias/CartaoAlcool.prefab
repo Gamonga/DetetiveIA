@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: nome
-      value: "Cart\xE3o"
+      value: "Cart\xE3o A.A."
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
       propertyPath: nomeIngles
-      value: Card
+      value: Card A.A.
       objectReference: {fileID: 0}
     - target: {fileID: 146985600423668553, guid: 54d92f1bd8ec3214bb433f5e12db03f7,
         type: 3}
