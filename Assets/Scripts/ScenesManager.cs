@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
+    public Dialogue legistaDialogo;
+    public Dialogue TIDialogo;
+    public Dialogue policialDialogo;
+    public Dialogue jornalistaDialogo;
     public Text texto;
     public GameObject botaoSim;
     public GameObject botaoNao;
@@ -57,12 +61,14 @@ public class ScenesManager : MonoBehaviour
     public static string nomeDaPessoaNoFinal;
     public static string nomeDaPessoaTransicao;
     public static bool ComeuAMaeDoPolicial;
-    public static string nomePessoaTransicao;
+    public static bool dialogoInicioParceirobool;
+
     public static bool jornalistaBrigouComALegista;
     public static bool eraHomemUltimoCaso;
     // Start is called before the first frame update
     void Start()
     {
+        dialogoInicioParceirobool = false;
         jornalistaBrigouComALegista = false;
         ComeuAMaeDoPolicial = false;
         entrouTutorial = false;
@@ -96,21 +102,16 @@ public class ScenesManager : MonoBehaviour
         {
             DialogoTransicao = true;
             animator.SetBool("CarroGif", true);
-            if (Random.value >= 0.66f)
+            if (Random.value >= 0.5f)
             {
-                nomePessoaTransicao = "parceiro";
+                nomeDaPessoaTransicao = "parceiro";
                 dialogueControl.StartDialogue(dialogoParceiroDetetiveIndoParaDelegacia);
             }
-            else if (Random.value < 0.66f && Random.value >= 0.33f)
+            else
             {
-                nomePessoaTransicao = "delegado";
+                nomeDaPessoaTransicao = "delegado";
                 dialogoDelegadoNRouba();
-                dialogueControl.StartDialogue(dialogoDelegadoTransicaonRouba);
-            }
-            else if (Random.value < 0.3f)
-            {
-                nomePessoaTransicao = "legista";
-                dialogueControl.StartDialogue(dialogoDelegadoTransicaonRouba);
+                dialogueControl.StartDialogue(dialogoParceiroDetetiveIndoParaDelegacia);
             }
         }
         if (SceneManager.GetActiveScene().buildIndex == 4)
@@ -142,7 +143,7 @@ public class ScenesManager : MonoBehaviour
             }
             else
             {
-                if (Random.value > 0.25f)
+                if (Random.value > 0.3f)
                 {
                     if (Assassino.numeroAssassinoSegundo == 4 || Assassino.numeroAssassino == 4 || IA.taxaDeAcertos < 0.8f)
                     {
@@ -165,25 +166,38 @@ public class ScenesManager : MonoBehaviour
                 {
                     if (Random.value > 0.5f)
                     {
-                        DialogoTransicao = true;
-                        animator.SetBool("CarroGif", true);
-                        PrimeiraVezDialogoTransicao = false;
-                        jornalistaBrigouComALegista = true;
-                        if(eraHomemUltimoCaso){
+                        if (Random.value > 0.5f)
+                        {
+                            DialogoTransicao = true;
+                            animator.SetBool("CarroGif", true);
+                            PrimeiraVezDialogoTransicao = false;
+                            jornalistaBrigouComALegista = true;
+                            if (eraHomemUltimoCaso)
+                            {
                                 ComecoJornalistaBrigaHomemVitima();
                             }
-                            else{
+                            else
+                            {
                                 ComecoJornalistaBrigaMulherVitima();
                             }
-                        dialogoComecoJornalistaBrigaComALegistaControl.StartDialogue(dialogoComecoJornalistaBrigaComALegista);
+                            dialogueControl.StartDialogue(jornalistaDialogo);
+                        }
+                        else
+                        {
+                            DialogoTransicao = true;
+                            animator.SetBool("CarroGif", true);
+                            PrimeiraVezDialogoTransicao = false;
+                            dialogoInicioParceirobool = true;
+                            dialogueControl.StartDialogue(diaologoInicialParceiro);
+                        }
                     }
                     else
                     {
                         DialogoTransicao = true;
                         animator.SetBool("CarroGif", true);
                         PrimeiraVezDialogoTransicao = false;
-                        dialogoPolicialNMataIdosaFunction();
-                        dialogoPolicialNMataIdosaControl.StartDialogue(dialogoPolicialNMataIdosa);
+                        DelegadoNMataIdosos();
+                        dialogueControl.StartDialogue(dialogoDelegadoExplicando);
                     }
                 }
             }
@@ -203,514 +217,515 @@ public class ScenesManager : MonoBehaviour
     }
 
 
-    /*aaaaaa*/
+
     public void dialogoTINMataVingancaFunction()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoTINMataVinganca.sentences[0]  = "Hello, detective.";
-            dialogoTINMataVinganca.sentences[1]  = "Have you watched the new C.O.P. movie?";
-            dialogoTINMataVinganca.sentences[2]  = "troca paisagem";
-            dialogoTINMataVinganca.sentences[3]  = "Haven't seen it yet. I have been busy.";
-            dialogoTINMataVinganca.sentences[4]  = "Steve has been saying good things about it. What do you think?";
-            dialogoTINMataVinganca.sentences[5]  = "troca paisagem";
-            dialogoTINMataVinganca.sentences[6]  = "I really liked it, only got a problem with the protagonist's decisions";
-            dialogoTINMataVinganca.sentences[7]  = "troca pensando";
-            dialogoTINMataVinganca.sentences[8]  = "Why?";
-            dialogoTINMataVinganca.sentences[9]  = "In this movie, he is seeking revenge for his wife's death.";
-            dialogoTINMataVinganca.sentences[10] = "And his children's.";
-            dialogoTINMataVinganca.sentences[11] = "And his dog's.";
-            dialogoTINMataVinganca.sentences[12] = "He ends up dying because of it.";
-            dialogoTINMataVinganca.sentences[13] = "I didn't like his having feelings of revenge, I don't find it heroic.";
-            dialogoTINMataVinganca.sentences[14] = "That I didn't like as much.";
-            dialogoTINMataVinganca.sentences[15] = "Right, detective?";
-            dialogoTINMataVinganca.sentences[16] = "troca desgosto";
-            dialogoTINMataVinganca.sentences[17] = "...";
-            dialogoTINMataVinganca.sentences[18] = "(SPOILEEEEEEEEEEER!!!!)";
-            dialogoTINMataVinganca.sentences[19] = "finalizar";
+            TIDialogo.sentences[0] = "Hello, detective.";
+            TIDialogo.sentences[1] = "Have you watched the new C.O.P. movie?";
+            TIDialogo.sentences[2] = "troca paisagem";
+            TIDialogo.sentences[3] = "Haven't seen it yet. I have been busy.";
+            TIDialogo.sentences[4] = "Steve has been saying good things about it. What do you think?";
+            TIDialogo.sentences[5] = "troca paisagem";
+            TIDialogo.sentences[6] = "I really liked it, only got a problem with the protagonist's decisions";
+            TIDialogo.sentences[7] = "troca pensando";
+            TIDialogo.sentences[8] = "Why?";
+            TIDialogo.sentences[9] = "In this movie, he is seeking revenge for his wife's death.";
+            TIDialogo.sentences[10] = "And his children's.";
+            TIDialogo.sentences[11] = "And his dog's.";
+            TIDialogo.sentences[12] = "He ends up dying because of it.";
+            TIDialogo.sentences[13] = "I didn't like his having feelings of revenge, I don't find it heroic.";
+            TIDialogo.sentences[14] = "That I didn't like as much.";
+            TIDialogo.sentences[15] = "Right, detective?";
+            TIDialogo.sentences[16] = "troca desgosto";
+            TIDialogo.sentences[17] = "...";
+            TIDialogo.sentences[18] = "(SPOILEEEEEEEEEEER!!!!)";
+            TIDialogo.sentences[19] = "finalizar";
         }
         else
         {
-            dialogoTINMataVinganca.sentences[0] = "Olá, detetive.";
-            dialogoTINMataVinganca.sentences[1] = "Viu o novo filme do C.O.P.?";
-            dialogoTINMataVinganca.sentences[2] = "troca paisagem";
-            dialogoTINMataVinganca.sentences[3] = "Ainda não vi, estou sem tempo.";
-            dialogoTINMataVinganca.sentences[4] = "O Steve tem falado bem do filme. O que você achou?";
-            dialogoTINMataVinganca.sentences[5] = "troca paisagem";
-            dialogoTINMataVinganca.sentences[6] = "Eu gostei bastante, só tive um problema com as decisões do protagonista";
-            dialogoTINMataVinganca.sentences[7] = "troca pensando";
-            dialogoTINMataVinganca.sentences[8] = "Por que?";
-            dialogoTINMataVinganca.sentences[9] = "Nesse filme ele está em busca de vingança pela morte de sua esposa.";
-            dialogoTINMataVinganca.sentences[10] = "E filhos.";
-            dialogoTINMataVinganca.sentences[11] = "E cachorro.";
-            dialogoTINMataVinganca.sentences[12] = "E no final ele acaba morrendo por causa disso.";
-            dialogoTINMataVinganca.sentences[13] = "Não gostei dele ter esse sentimento de vingança, não acho muito heroico.";
-            dialogoTINMataVinganca.sentences[14] = "Por isso acabou não me agradando tanto.";
-            dialogoTINMataVinganca.sentences[15] = "Entendeu, detetive?";
-            dialogoTINMataVinganca.sentences[16] = "troca desgosto";
-            dialogoTINMataVinganca.sentences[17] = "...";
-            dialogoTINMataVinganca.sentences[18] = "(SPOILEEEEEEEEEEER!!!!)";
-            dialogoTINMataVinganca.sentences[19] = "finalizar";
+            TIDialogo.sentences[0] = "Olá, detetive.";
+            TIDialogo.sentences[1] = "Viu o novo filme do C.O.P.?";
+            TIDialogo.sentences[2] = "troca paisagem";
+            TIDialogo.sentences[3] = "Ainda não vi, estou sem tempo.";
+            TIDialogo.sentences[4] = "O Steve tem falado bem do filme. O que você achou?";
+            TIDialogo.sentences[5] = "troca paisagem";
+            TIDialogo.sentences[6] = "Eu gostei bastante, só tive um problema com as decisões do protagonista";
+            TIDialogo.sentences[7] = "troca pensando";
+            TIDialogo.sentences[8] = "Por que?";
+            TIDialogo.sentences[9] = "Nesse filme ele está em busca de vingança pela morte de sua esposa.";
+            TIDialogo.sentences[10] = "E filhos.";
+            TIDialogo.sentences[11] = "E cachorro.";
+            TIDialogo.sentences[12] = "E no final ele acaba morrendo por causa disso.";
+            TIDialogo.sentences[13] = "Não gostei dele ter esse sentimento de vingança, não acho muito heroico.";
+            TIDialogo.sentences[14] = "Por isso acabou não me agradando tanto.";
+            TIDialogo.sentences[15] = "Entendeu, detetive?";
+            TIDialogo.sentences[16] = "troca desgosto";
+            TIDialogo.sentences[17] = "...";
+            TIDialogo.sentences[18] = "(SPOILEEEEEEEEEEER!!!!)";
+            TIDialogo.sentences[19] = "finalizar";
         }
-        dialogueControlFinal.StartDialogue(dialogoTINMataVinganca);
+        dialogueControlFinal.StartDialogue(TIDialogo);
     }
 
-    /*aaaaaa*/
+
     public void dialogoTIgostaDeXovensFunction()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoTIgostaDeXovens.sentencesIngles[0] = "Hello detective.";
-            dialogoTIgostaDeXovens.sentencesIngles[1] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentencesIngles[2] = "Hello Kyle.";
-            dialogoTIgostaDeXovens.sentencesIngles[3] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentencesIngles[4] = "I saw that there was a journalist behind you today asking you questions.";
-            dialogoTIgostaDeXovens.sentencesIngles[5] = "troca embara";
-            dialogoTIgostaDeXovens.sentencesIngles[6] = "It was Jessie, she's an investigative journalist for the local paper. She wanted more details about the serial killer.";
-            dialogoTIgostaDeXovens.sentencesIngles[7] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentencesIngles[8] = "She's pretty hot, would you happen to have her number? For a friend of mine, of course.";
-            dialogoTIgostaDeXovens.sentencesIngles[9] = "troca pensando";
-            dialogoTIgostaDeXovens.sentencesIngles[10] = "Are you interested? I know there are some ladies here at the police station who are making a fuss about you. Hahaha.";
-            dialogoTIgostaDeXovens.sentencesIngles[11] = "troca pensando";
-            dialogoTIgostaDeXovens.sentencesIngles[12] = "Unfortunately. Haha.";
-            dialogoTIgostaDeXovens.sentencesIngles[13] = "I don't like old people.";
-            dialogoTIgostaDeXovens.sentencesIngles[14] = "But the journalist seemed pretty cool to me.";
-            dialogoTIgostaDeXovens.sentencesIngles[15] = "My... My friend says she's cool.";
-            dialogoTIgostaDeXovens.sentencesIngles[16] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentencesIngles[17] = "Hahaha. Your friend, right. I see what I can do.";
-            dialogoTIgostaDeXovens.sentencesIngles[18] = "But if I, as a friend, can tell you: she is unbearable.";
-            dialogoTIgostaDeXovens.sentencesIngles[19] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentencesIngles[20] = "Okay, I believe I can handle it, detective. Thanks for your help.";
-            dialogoTIgostaDeXovens.sentencesIngles[21] = "finalizar";
+            TIDialogo.sentencesIngles[0] = "Hello detective.";
+            TIDialogo.sentencesIngles[1] = "troca paisagem";
+            TIDialogo.sentencesIngles[2] = "Hello Kyle.";
+            TIDialogo.sentencesIngles[3] = "troca paisagem";
+            TIDialogo.sentencesIngles[4] = "I saw that there was a journalist behind you today asking you questions.";
+            TIDialogo.sentencesIngles[5] = "troca embara";
+            TIDialogo.sentencesIngles[6] = "It was Jessie, she's an investigative journalist for the local paper. She wanted more details about the serial killer.";
+            TIDialogo.sentencesIngles[7] = "troca paisagem";
+            TIDialogo.sentencesIngles[8] = "She's pretty hot, would you happen to have her number? For a friend of mine, of course.";
+            TIDialogo.sentencesIngles[9] = "troca pensando";
+            TIDialogo.sentencesIngles[10] = "Are you interested? I know there are some ladies here at the police station who are making a fuss about you. Hahaha.";
+            TIDialogo.sentencesIngles[11] = "troca pensando";
+            TIDialogo.sentencesIngles[12] = "Unfortunately. Haha.";
+            TIDialogo.sentencesIngles[13] = "I don't like old people.";
+            TIDialogo.sentencesIngles[14] = "But the journalist seemed pretty cool to me.";
+            TIDialogo.sentencesIngles[15] = "My... My friend says she's cool.";
+            TIDialogo.sentencesIngles[16] = "troca paisagem";
+            TIDialogo.sentencesIngles[17] = "Hahaha. Your friend, right. I see what I can do.";
+            TIDialogo.sentencesIngles[18] = "But if I, as a friend, can tell you: she is unbearable.";
+            TIDialogo.sentencesIngles[19] = "troca paisagem";
+            TIDialogo.sentencesIngles[20] = "Okay, I believe I can handle it, detective. Thanks for your help.";
+            TIDialogo.sentencesIngles[21] = "finalizar";
         }
         else
         {
-            dialogoTIgostaDeXovens.sentences[0] = "Olá, detetive.";
-            dialogoTIgostaDeXovens.sentences[1] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentences[2] = "Olá, Kyle.";
-            dialogoTIgostaDeXovens.sentences[3] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentences[4] = "Eu vi que tinha uma jornalista atrás de você hoje te enchendo de perguntas.";
-            dialogoTIgostaDeXovens.sentences[5] = "troca embara";
-            dialogoTIgostaDeXovens.sentences[6] = "Era a Jessie, ela é jornalista investigativa do jornal local. Ela queria mais detalhes sobre o assassino em série.";
-            dialogoTIgostaDeXovens.sentences[7] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentences[8] = "Ela é bem gata, você por acaso teria o número dela? Para um amigo meu, é claro.";
-            dialogoTIgostaDeXovens.sentences[9] = "troca pensando";
-            dialogoTIgostaDeXovens.sentences[10] = "Está interessado? Eu sei que tem umas senhorinhas aqui na delegacia que ficam dando mole para você. Hahaha.";
-            dialogoTIgostaDeXovens.sentences[11] = "troca pensando";
-            dialogoTIgostaDeXovens.sentences[12] = "Infelizmente. Haha.";
-            dialogoTIgostaDeXovens.sentences[13] = "Não gosto de gente velha.";
-            dialogoTIgostaDeXovens.sentences[14] = "Mas a jornalista me pareceu bem legal.";
-            dialogoTIgostaDeXovens.sentences[15] = "Meu... Meu amigo disse que ela é legal.";
-            dialogoTIgostaDeXovens.sentences[16] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentences[17] = "Hahaha. Seu amigo, né. Eu vejo o que consigo fazer.";
-            dialogoTIgostaDeXovens.sentences[18] = "Mas se eu, como amigo, puder te falar: ela é insuportável.";
-            dialogoTIgostaDeXovens.sentences[19] = "troca paisagem";
-            dialogoTIgostaDeXovens.sentences[20] = "Tudo bem, acredito que eu dou conta, detetive. Obrigado pela ajuda.";
-            dialogoTIgostaDeXovens.sentences[21] = "finalizar";
+            TIDialogo.sentences[0] = "Olá, detetive.";
+            TIDialogo.sentences[1] = "troca paisagem";
+            TIDialogo.sentences[2] = "Olá, Kyle.";
+            TIDialogo.sentences[3] = "troca paisagem";
+            TIDialogo.sentences[4] = "Eu vi que tinha uma jornalista atrás de você hoje te enchendo de perguntas.";
+            TIDialogo.sentences[5] = "troca embara";
+            TIDialogo.sentences[6] = "Era a Jessie, ela é jornalista investigativa do jornal local. Ela queria mais detalhes sobre o assassino em série.";
+            TIDialogo.sentences[7] = "troca paisagem";
+            TIDialogo.sentences[8] = "Ela é bem gata, você por acaso teria o número dela? Para um amigo meu, é claro.";
+            TIDialogo.sentences[9] = "troca pensando";
+            TIDialogo.sentences[10] = "Está interessado? Eu sei que tem umas senhorinhas aqui na delegacia que ficam dando mole para você. Hahaha.";
+            TIDialogo.sentences[11] = "troca pensando";
+            TIDialogo.sentences[12] = "Infelizmente. Haha.";
+            TIDialogo.sentences[13] = "Não gosto de gente velha.";
+            TIDialogo.sentences[14] = "Mas a jornalista me pareceu bem legal.";
+            TIDialogo.sentences[15] = "Meu... Meu amigo disse que ela é legal.";
+            TIDialogo.sentences[16] = "troca paisagem";
+            TIDialogo.sentences[17] = "Hahaha. Seu amigo, né. Eu vejo o que consigo fazer.";
+            TIDialogo.sentences[18] = "Mas se eu, como amigo, puder te falar: ela é insuportável.";
+            TIDialogo.sentences[19] = "troca paisagem";
+            TIDialogo.sentences[20] = "Tudo bem, acredito que eu dou conta, detetive. Obrigado pela ajuda.";
+            TIDialogo.sentences[21] = "finalizar";
         }
-        dialogueControlFinal.StartDialogue(dialogoTIgostaDeXovens);
+        dialogueControlFinal.StartDialogue(TIDialogo);
     }
 
 
-    /*aaaaa*/
+
     public void dialogoPolicialNTortura()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoPolicialFimNTortura.sentencesIngles[0] = "Hard day today, detective?";
-            dialogoPolicialFimNTortura.sentencesIngles[1] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentencesIngles[2] = "Complicated as always.";
-            dialogoPolicialFimNTortura.sentencesIngles[3] = "Tell me Johnny, have you had a really complicated case here in town?";
-            dialogoPolicialFimNTortura.sentencesIngles[4] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentencesIngles[5] = "Since you asked, I'll tell you a story";
-            dialogoPolicialFimNTortura.sentencesIngles[6] = "troca pensando";
-            dialogoPolicialFimNTortura.sentencesIngles[7] = "(I hope I don't regret asking)";
-            dialogoPolicialFimNTortura.sentencesIngles[8] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentencesIngles[9] = "A few years ago, when I joined the police, there was a serial killer.";
-            dialogoPolicialFimNTortura.sentencesIngles[10] = "After much study about his methods of murder and his antics, the police sheriff, former detective and the staff of the police station found their whereabouts.";
-            dialogoPolicialFimNTortura.sentencesIngles[11] = "We closed the place where he was. The policeman and I went in to arrest the murderer, I went from the opposite side of the policeman.";
-            dialogoPolicialFimNTortura.sentencesIngles[12] = "But before we could do anything he shot the sheriff in the leg and ran.";
-            dialogoPolicialFimNTortura.sentencesIngles[13] = "Luckily I was on the other side and managed to catch the criminal without him being able to react";
-            dialogoPolicialFimNTortura.sentencesIngles[14] = "I was very angry with the guy, I wish I could torture him as he did to all his victims.";
-            dialogoPolicialFimNTortura.sentencesIngles[15] = "troca pensando";
-            dialogoPolicialFimNTortura.sentencesIngles[16] = "And did you do it?";
-            dialogoPolicialFimNTortura.sentencesIngles[17] = "troca pensando";
-            dialogoPolicialFimNTortura.sentencesIngles[18] = "No. I didn't go down to his level. I handcuffed him and took him back to the police station.";
-            dialogoPolicialFimNTortura.sentencesIngles[19] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentencesIngles[20] = "And the sheriff? Was he alright?";
-            dialogoPolicialFimNTortura.sentencesIngles[21] = "Did he feel angry at the killer for the things he did and for the shot in his leg?";
-            dialogoPolicialFimNTortura.sentencesIngles[22] = "troca pensando";
-            dialogoPolicialFimNTortura.sentencesIngles[23] = "The sheriff was responsible for the case of the murders, but he is not an emotional or angry man, he has always been calm.";
-            dialogoPolicialFimNTortura.sentencesIngles[24] = "Today the murderer is in a prison outside the city.";
-            dialogoPolicialFimNTortura.sentencesIngles[25] = "troca pensando";
-            dialogoPolicialFimNTortura.sentencesIngles[26] = "Nice to hear these stories. Thanks, Officer.";
-            dialogoPolicialFimNTortura.sentencesIngles[27] = "finalizar";
+            policialDialogo.sentencesIngles[0] = "Hard day today, detective?";
+            policialDialogo.sentencesIngles[1] = "troca paisagem";
+            policialDialogo.sentencesIngles[2] = "Complicated as always.";
+            policialDialogo.sentencesIngles[3] = "Tell me Johnny, have you had a really complicated case here in town?";
+            policialDialogo.sentencesIngles[4] = "troca paisagem";
+            policialDialogo.sentencesIngles[5] = "Since you asked, I'll tell you a story";
+            policialDialogo.sentencesIngles[6] = "troca pensando";
+            policialDialogo.sentencesIngles[7] = "(I hope I don't regret asking)";
+            policialDialogo.sentencesIngles[8] = "troca paisagem";
+            policialDialogo.sentencesIngles[9] = "A few years ago, when I joined the police, there was a serial killer.";
+            policialDialogo.sentencesIngles[10] = "After much study about his methods of murder and his antics, the police sheriff, former detective and the staff of the police station found their whereabouts.";
+            policialDialogo.sentencesIngles[11] = "We closed the place where he was. The policeman and I went in to arrest the murderer, I went from the opposite side of the policeman.";
+            policialDialogo.sentencesIngles[12] = "But before we could do anything he shot the sheriff in the leg and ran.";
+            policialDialogo.sentencesIngles[13] = "Luckily I was on the other side and managed to catch the criminal without him being able to react";
+            policialDialogo.sentencesIngles[14] = "I was very angry with the guy, I wish I could torture him as he did to all his victims.";
+            policialDialogo.sentencesIngles[15] = "troca pensando";
+            policialDialogo.sentencesIngles[16] = "And did you do it?";
+            policialDialogo.sentencesIngles[17] = "troca pensando";
+            policialDialogo.sentencesIngles[18] = "No. I didn't go down to his level. I handcuffed him and took him back to the police station.";
+            policialDialogo.sentencesIngles[19] = "troca paisagem";
+            policialDialogo.sentencesIngles[20] = "And the sheriff? Was he alright?";
+            policialDialogo.sentencesIngles[21] = "Did he feel angry at the killer for the things he did and for the shot in his leg?";
+            policialDialogo.sentencesIngles[22] = "troca pensando";
+            policialDialogo.sentencesIngles[23] = "The sheriff was responsible for the case of the murders, but he is not an emotional or angry man, he has always been calm.";
+            policialDialogo.sentencesIngles[24] = "Today the murderer is in a prison outside the city.";
+            policialDialogo.sentencesIngles[25] = "troca pensando";
+            policialDialogo.sentencesIngles[26] = "Nice to hear these stories. Thanks, Officer.";
+            policialDialogo.sentencesIngles[27] = "finalizar";
         }
         else
         {
-            dialogoPolicialFimNTortura.sentences[0] = "Dia difícil hoje, detetive?";
-            dialogoPolicialFimNTortura.sentences[1] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentences[2] = "Complicado como sempre.";
-            dialogoPolicialFimNTortura.sentences[3] = "Diga-me Johnny, você teve algum caso bem complicado aqui na cidade?";
-            dialogoPolicialFimNTortura.sentences[4] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentences[5] = "Já que perguntou, vou te contar uma história";
-            dialogoPolicialFimNTortura.sentences[6] = "troca pensando";
-            dialogoPolicialFimNTortura.sentences[7] = "(Tomara que não me arrependa da pergunta)";
-            dialogoPolicialFimNTortura.sentences[8] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentences[9] = "Alguns anos atrás, quando entrei na polícia, tinha um assassino em série.";
-            dialogoPolicialFimNTortura.sentences[10] = "Depois de muito estudo sobre seus métodos de assassinato e seus trejeitos, o delegado, ex detetive e o pessoal da delegacia encontraram seu paradeiro.";
-            dialogoPolicialFimNTortura.sentences[11] = "Fechamos o local onde ele estava. Eu e o delegado entramos para prender o assassino, fui pelo lado oposto ao delegado.";
-            dialogoPolicialFimNTortura.sentences[12] = "Mas antes que pudessemos fazer alguma coisa ele atirou na perna do delegado e correu.";
-            dialogoPolicialFimNTortura.sentences[13] = "Para minha sorte eu estava do outro lado e consegui pegar o criminoso sem que ele pudesse reagir";
-            dialogoPolicialFimNTortura.sentences[14] = "Estava com muito ódio do sujeito, queria poder torturá-lo como ele fez com todas as suas vítimas.";
-            dialogoPolicialFimNTortura.sentences[15] = "troca pensando";
-            dialogoPolicialFimNTortura.sentences[16] = "E o fez?";
-            dialogoPolicialFimNTortura.sentences[17] = "troca pensando";
-            dialogoPolicialFimNTortura.sentences[18] = "Não. Não desci ao nível dele. O algemei e levei de volta para a delegacia.";
-            dialogoPolicialFimNTortura.sentences[19] = "troca paisagem";
-            dialogoPolicialFimNTortura.sentences[20] = "E o delegado? Ficou bem?";
-            dialogoPolicialFimNTortura.sentences[21] = "Sentiu raiva do assassino pelas coisas que ele fez e pelo tiro em sua perna?";
-            dialogoPolicialFimNTortura.sentences[22] = "troca pensando";
-            dialogoPolicialFimNTortura.sentences[23] = "O delegado era o responsável pelo caso dos assassinatos, mas ele não é um homem emotivo ou que sente raiva, sempre esteve calmo.";
-            dialogoPolicialFimNTortura.sentences[24] = "Hoje o assassino está em uma prisão fora da cidade.";
-            dialogoPolicialFimNTortura.sentences[25] = "troca pensando";
-            dialogoPolicialFimNTortura.sentences[26] = "Bom saber dessas histórias. Obrigado, policial.";
-            dialogoPolicialFimNTortura.sentences[27] = "finalizar";
+            policialDialogo.sentences[0] = "Dia difícil hoje, detetive?";
+            policialDialogo.sentences[1] = "troca paisagem";
+            policialDialogo.sentences[2] = "Complicado como sempre.";
+            policialDialogo.sentences[3] = "Diga-me Johnny, você teve algum caso bem complicado aqui na cidade?";
+            policialDialogo.sentences[4] = "troca paisagem";
+            policialDialogo.sentences[5] = "Já que perguntou, vou te contar uma história";
+            policialDialogo.sentences[6] = "troca pensando";
+            policialDialogo.sentences[7] = "(Tomara que não me arrependa da pergunta)";
+            policialDialogo.sentences[8] = "troca paisagem";
+            policialDialogo.sentences[9] = "Alguns anos atrás, quando entrei na polícia, tinha um assassino em série.";
+            policialDialogo.sentences[10] = "Depois de muito estudo sobre seus métodos de assassinato e seus trejeitos, o delegado, ex detetive e o pessoal da delegacia encontraram seu paradeiro.";
+            policialDialogo.sentences[11] = "Fechamos o local onde ele estava. Eu e o delegado entramos para prender o assassino, fui pelo lado oposto ao delegado.";
+            policialDialogo.sentences[12] = "Mas antes que pudessemos fazer alguma coisa ele atirou na perna do delegado e correu.";
+            policialDialogo.sentences[13] = "Para minha sorte eu estava do outro lado e consegui pegar o criminoso sem que ele pudesse reagir";
+            policialDialogo.sentences[14] = "Estava com muito ódio do sujeito, queria poder torturá-lo como ele fez com todas as suas vítimas.";
+            policialDialogo.sentences[15] = "troca pensando";
+            policialDialogo.sentences[16] = "E o fez?";
+            policialDialogo.sentences[17] = "troca pensando";
+            policialDialogo.sentences[18] = "Não. Não desci ao nível dele. O algemei e levei de volta para a delegacia.";
+            policialDialogo.sentences[19] = "troca paisagem";
+            policialDialogo.sentences[20] = "E o delegado? Ficou bem?";
+            policialDialogo.sentences[21] = "Sentiu raiva do assassino pelas coisas que ele fez e pelo tiro em sua perna?";
+            policialDialogo.sentences[22] = "troca pensando";
+            policialDialogo.sentences[23] = "O delegado era o responsável pelo caso dos assassinatos, mas ele não é um homem emotivo ou que sente raiva, sempre esteve calmo.";
+            policialDialogo.sentences[24] = "Hoje o assassino está em uma prisão fora da cidade.";
+            policialDialogo.sentences[25] = "troca pensando";
+            policialDialogo.sentences[26] = "Bom saber dessas histórias. Obrigado, policial.";
+            policialDialogo.sentences[27] = "finalizar";
         }
-        dialogueControlFinal.StartDialogue(dialogoPolicialFimNTortura);
+        dialogueControlFinal.StartDialogue(policialDialogo);
     }
 
-    /*aaaaaa*/
+
     public void dialogoDelegadoNRouba()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoDelegadoTransicaonRouba.sentencesIngles[0] = "troca paisagem";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[1] = "Sheriff, did you happen to see Steve's cell phone?";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[2] = "troca paisagem";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[3] = "I found a cell phone in my room earlier today, I was looking for the owner.";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[4] = "troca pensando";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[5] = "Let me see.";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[6] = "detetive paisagem";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[7] = "I believe that it is the same. He lost his cell phone again and asked me to help him find it.";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[8] = "troca paisagem";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[9] = "Relax, everything I find lost I try to return to the owner.";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[10] = "Unless it's cookies, then I'll eat.";
-            dialogoDelegadoTransicaonRouba.sentencesIngles[11] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[0] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[1] = "Sheriff, did you happen to see Steve's cell phone?";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[2] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[3] = "I found a cell phone in my room earlier today, I was looking for the owner.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[4] = "troca pensando";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[5] = "Let me see.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[6] = "detetive paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[7] = "I believe that it is the same. He lost his cell phone again and asked me to help him find it.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[8] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[9] = "Relax, everything I find lost I try to return to the owner.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[10] = "Unless it's cookies, then I'll eat.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[11] = "troca paisagem";
             if (ComeuAMaeDoPolicial)
             {
-                dialogoDelegadoTransicaonRouba.sentencesIngles[12] = "(Johnny's mother too)";
-                dialogoDelegadoTransicaonRouba.sentencesIngles[13] = "finalizar";
+                dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[12] = "(Johnny's mother too)";
+                dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[13] = "finalizar";
             }
             else
             {
-                dialogoDelegadoTransicaonRouba.sentencesIngles[12] = "finalizar";
+                dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[12] = "finalizar";
             }
         }
         else
         {
-            dialogoDelegadoTransicaonRouba.sentences[0] = "troca paisagem";
-            dialogoDelegadoTransicaonRouba.sentences[1] = "Delegado, por acaso o senhor viu o celular do Steve?";
-            dialogoDelegadoTransicaonRouba.sentences[2] = "troca paisagem";
-            dialogoDelegadoTransicaonRouba.sentences[3] = "Eu encontrei um celular na minha sala hoje mais cedo, estava procurando o dono.";
-            dialogoDelegadoTransicaonRouba.sentences[4] = "troca pensando";
-            dialogoDelegadoTransicaonRouba.sentences[5] = "Deixe-me ver.";
-            dialogoDelegadoTransicaonRouba.sentences[6] = "detetive paisagem";
-            dialogoDelegadoTransicaonRouba.sentences[7] = "Acredito que seja esse mesmo. Ele perdeu o celular de novo e me pediu para ajudar a encontrá-lo.";
-            dialogoDelegadoTransicaonRouba.sentences[8] = "troca paisagem";
-            dialogoDelegadoTransicaonRouba.sentences[9] = "Tranquilo, tudo que eu encontro perdido tento devolver para o dono.";
-            dialogoDelegadoTransicaonRouba.sentences[10] = "A menos que sejam biscoitos, aí eu como.";
-            dialogoDelegadoTransicaonRouba.sentences[11] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[0] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[1] = "Delegado, por acaso o senhor viu o celular do Steve?";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[2] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[3] = "Eu encontrei um celular na minha sala hoje mais cedo, estava procurando o dono.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[4] = "troca pensando";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[5] = "Deixe-me ver.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[6] = "detetive paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[7] = "Acredito que seja esse mesmo. Ele perdeu o celular de novo e me pediu para ajudar a encontrá-lo.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[8] = "troca paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[9] = "Tranquilo, tudo que eu encontro perdido tento devolver para o dono.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[10] = "A menos que sejam biscoitos, aí eu como.";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[11] = "troca paisagem";
             if (ComeuAMaeDoPolicial)
             {
-                dialogoDelegadoTransicaonRouba.sentences[12] = "(A mãe do Johnny também)";
-                dialogoDelegadoTransicaonRouba.sentences[13] = "finalizar";
+                dialogoParceiroDetetiveIndoParaDelegacia.sentences[12] = "(A mãe do Johnny também)";
+                dialogoParceiroDetetiveIndoParaDelegacia.sentences[13] = "finalizar";
             }
             else
             {
-                dialogoDelegadoTransicaonRouba.sentences[12] = "finalizar";
+                dialogoParceiroDetetiveIndoParaDelegacia.sentences[12] = "finalizar";
             }
         }
     }
 
-    /*aaaaa*/
+
     public void dialogoPolicialNMataIdosaFunction()
     {
         ComeuAMaeDoPolicial = true;
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoPolicialNMataIdosa.sentencesIngles[0] = "Hello, detective.";
-            dialogoPolicialNMataIdosa.sentencesIngles[1] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[2] = "Hi Johnny. How was your day?";
-            dialogoPolicialNMataIdosa.sentencesIngles[3] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[4] = "You won't believe it, detective. I will tell you everything.";
-            dialogoPolicialNMataIdosa.sentencesIngles[5] = "troca disgust";
-            dialogoPolicialNMataIdosa.sentencesIngles[6] = "(Why did I ask?)";
-            dialogoPolicialNMataIdosa.sentencesIngles[7] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[8] = "I went to take my mother to the Association for the Support of the Elderly.";
-            dialogoPolicialNMataIdosa.sentencesIngles[9] = "troca pensando";
-            dialogoPolicialNMataIdosa.sentencesIngles[10] = "Is everything okay with her?";
-            dialogoPolicialNMataIdosa.sentencesIngles[11] = "troca pensando";
-            dialogoPolicialNMataIdosa.sentencesIngles[12] = "Yes, she is, she works there. She loves helping the elderly, whenever possible I help them too.";
-            dialogoPolicialNMataIdosa.sentencesIngles[13] = "But the important thing was what I saw.";
-            dialogoPolicialNMataIdosa.sentencesIngles[14] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[15] = "What?";
-            dialogoPolicialNMataIdosa.sentencesIngles[16] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[17] = "The sheriff, he was there too.";
-            dialogoPolicialNMataIdosa.sentencesIngles[18] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[19] = "How nice of him.";
-            dialogoPolicialNMataIdosa.sentencesIngles[20] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[21] = "Nice of him my ass. He was hitting on my mom.";
-            dialogoPolicialNMataIdosa.sentencesIngles[22] = "He came by offering cookies and asked if he could wet him later with her.";
-            dialogoPolicialNMataIdosa.sentencesIngles[23] = "troca embara";
-            dialogoPolicialNMataIdosa.sentencesIngles[24] = "Hahaha. I didn't expect this one.";
-            dialogoPolicialNMataIdosa.sentencesIngles[25] = "troca pensando";
-            dialogoPolicialNMataIdosa.sentencesIngles[26] = "Now I only take my mom if I'm sure he won't be there.";
-            dialogoPolicialNMataIdosa.sentencesIngles[27] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[28] = "You don't need to get mad about it. Imagine the sheriff as stepfather. Hahaha.";
-            dialogoPolicialNMataIdosa.sentencesIngles[29] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[30] = "You laugh because it's not you. Haha.";
-            dialogoPolicialNMataIdosa.sentencesIngles[31] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentencesIngles[32] = "I'm glad. Hahaha.";
-            dialogoPolicialNMataIdosa.sentencesIngles[33] = "finalizar";
+            policialDialogo.sentencesIngles[0] = "Hello, detective.";
+            policialDialogo.sentencesIngles[1] = "troca paisagem";
+            policialDialogo.sentencesIngles[2] = "Hi Johnny. How was your day?";
+            policialDialogo.sentencesIngles[3] = "troca paisagem";
+            policialDialogo.sentencesIngles[4] = "You won't believe it, detective. I will tell you everything.";
+            policialDialogo.sentencesIngles[5] = "troca disgust";
+            policialDialogo.sentencesIngles[6] = "(Why did I ask?)";
+            policialDialogo.sentencesIngles[7] = "troca paisagem";
+            policialDialogo.sentencesIngles[8] = "I went to take my mother to the Association for the Support of the Elderly.";
+            policialDialogo.sentencesIngles[9] = "troca pensando";
+            policialDialogo.sentencesIngles[10] = "Is everything okay with her?";
+            policialDialogo.sentencesIngles[11] = "troca pensando";
+            policialDialogo.sentencesIngles[12] = "Yes, she is, she works there. She loves helping the elderly, whenever possible I help them too.";
+            policialDialogo.sentencesIngles[13] = "But the important thing was what I saw.";
+            policialDialogo.sentencesIngles[14] = "troca paisagem";
+            policialDialogo.sentencesIngles[15] = "What?";
+            policialDialogo.sentencesIngles[16] = "troca paisagem";
+            policialDialogo.sentencesIngles[17] = "The sheriff, he was there too.";
+            policialDialogo.sentencesIngles[18] = "troca paisagem";
+            policialDialogo.sentencesIngles[19] = "How nice of him.";
+            policialDialogo.sentencesIngles[20] = "troca paisagem";
+            policialDialogo.sentencesIngles[21] = "Nice of him my ass. He was hitting on my mom.";
+            policialDialogo.sentencesIngles[22] = "He came by offering cookies and asked if he could wet him later with her.";
+            policialDialogo.sentencesIngles[23] = "troca embara";
+            policialDialogo.sentencesIngles[24] = "Hahaha. I didn't expect this one.";
+            policialDialogo.sentencesIngles[25] = "troca pensando";
+            policialDialogo.sentencesIngles[26] = "Now I only take my mom if I'm sure he won't be there.";
+            policialDialogo.sentencesIngles[27] = "troca paisagem";
+            policialDialogo.sentencesIngles[28] = "You don't need to get mad about it. Imagine the sheriff as stepfather. Hahaha.";
+            policialDialogo.sentencesIngles[29] = "troca paisagem";
+            policialDialogo.sentencesIngles[30] = "You laugh because it's not you. Haha.";
+            policialDialogo.sentencesIngles[31] = "troca paisagem";
+            policialDialogo.sentencesIngles[32] = "I'm glad. Hahaha.";
+            policialDialogo.sentencesIngles[33] = "finalizar";
         }
         else
         {
-            dialogoPolicialNMataIdosa.sentences[0] = "Olá, detetive.";
-            dialogoPolicialNMataIdosa.sentences[1] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[2] = "Olá, Johnny. Como foi o seu dia?";
-            dialogoPolicialNMataIdosa.sentences[3] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[4] = "Você nem vai acreditar, detetive. Irei te contar tudo.";
-            dialogoPolicialNMataIdosa.sentences[5] = "troca desgosto";
-            dialogoPolicialNMataIdosa.sentences[6] = "(Por que eu fui perguntar?)";
-            dialogoPolicialNMataIdosa.sentences[7] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[8] = "Eu fui levar minha mãe para a Associação de Amparo aos Idosos.";
-            dialogoPolicialNMataIdosa.sentences[9] = "troca pensando";
-            dialogoPolicialNMataIdosa.sentences[10] = "Está tudo bem com ela?";
-            dialogoPolicialNMataIdosa.sentences[11] = "troca pensando";
-            dialogoPolicialNMataIdosa.sentences[12] = "Está sim, ela trabalha lá. Adora ajudar os idosos, sempre que possível eu ajudo eles também.";
-            dialogoPolicialNMataIdosa.sentences[13] = "Mas o importante foi o que eu vi.";
-            dialogoPolicialNMataIdosa.sentences[14] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[15] = "O que?";
-            dialogoPolicialNMataIdosa.sentences[16] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[17] = "O delegado, ele estava lá também.";
-            dialogoPolicialNMataIdosa.sentences[18] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[19] = "Que legal da parte dele.";
-            dialogoPolicialNMataIdosa.sentences[20] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[21] = "Legal merda nenhuma. Ele estava dando em cima da minha mãe.";
-            dialogoPolicialNMataIdosa.sentences[22] = "Ele veio oferecendo biscoitos e perguntou se podia molhar ele mais tarde com ela.";
-            dialogoPolicialNMataIdosa.sentences[23] = "troca embara";
-            dialogoPolicialNMataIdosa.sentences[24] = "Hahaha. Por essa eu não esperava.";
-            dialogoPolicialNMataIdosa.sentences[25] = "troca pensando";
-            dialogoPolicialNMataIdosa.sentences[26] = "Agora só levo a minha mãe se eu tiver certeza que ele não vai estar lá.";
-            dialogoPolicialNMataIdosa.sentences[27] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[28] = "Não precisa ficar bolado com isso. Imagina o delegado como padrasto. Hahaha.";
-            dialogoPolicialNMataIdosa.sentences[29] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[30] = "Você ri porque não é com você. Haha.";
-            dialogoPolicialNMataIdosa.sentences[31] = "troca paisagem";
-            dialogoPolicialNMataIdosa.sentences[32] = "Ainda bem. Hahaha.";
-            dialogoPolicialNMataIdosa.sentences[33] = "finalizar";
+            policialDialogo.sentences[0] = "Olá, detetive.";
+            policialDialogo.sentences[1] = "troca paisagem";
+            policialDialogo.sentences[2] = "Olá, Johnny. Como foi o seu dia?";
+            policialDialogo.sentences[3] = "troca paisagem";
+            policialDialogo.sentences[4] = "Você nem vai acreditar, detetive. Irei te contar tudo.";
+            policialDialogo.sentences[5] = "troca desgosto";
+            policialDialogo.sentences[6] = "(Por que eu fui perguntar?)";
+            policialDialogo.sentences[7] = "troca paisagem";
+            policialDialogo.sentences[8] = "Eu fui levar minha mãe para a Associação de Amparo aos Idosos.";
+            policialDialogo.sentences[9] = "troca pensando";
+            policialDialogo.sentences[10] = "Está tudo bem com ela?";
+            policialDialogo.sentences[11] = "troca pensando";
+            policialDialogo.sentences[12] = "Está sim, ela trabalha lá. Adora ajudar os idosos, sempre que possível eu ajudo eles também.";
+            policialDialogo.sentences[13] = "Mas o importante foi o que eu vi.";
+            policialDialogo.sentences[14] = "troca paisagem";
+            policialDialogo.sentences[15] = "O que?";
+            policialDialogo.sentences[16] = "troca paisagem";
+            policialDialogo.sentences[17] = "O delegado, ele estava lá também.";
+            policialDialogo.sentences[18] = "troca paisagem";
+            policialDialogo.sentences[19] = "Que legal da parte dele.";
+            policialDialogo.sentences[20] = "troca paisagem";
+            policialDialogo.sentences[21] = "Legal merda nenhuma. Ele estava dando em cima da minha mãe.";
+            policialDialogo.sentences[22] = "Ele veio oferecendo biscoitos e perguntou se podia molhar ele mais tarde com ela.";
+            policialDialogo.sentences[23] = "troca embara";
+            policialDialogo.sentences[24] = "Hahaha. Por essa eu não esperava.";
+            policialDialogo.sentences[25] = "troca pensando";
+            policialDialogo.sentences[26] = "Agora só levo a minha mãe se eu tiver certeza que ele não vai estar lá.";
+            policialDialogo.sentences[27] = "troca paisagem";
+            policialDialogo.sentences[28] = "Não precisa ficar bolado com isso. Imagina o delegado como padrasto. Hahaha.";
+            policialDialogo.sentences[29] = "troca paisagem";
+            policialDialogo.sentences[30] = "Você ri porque não é com você. Haha.";
+            policialDialogo.sentences[31] = "troca paisagem";
+            policialDialogo.sentences[32] = "Ainda bem. Hahaha.";
+            policialDialogo.sentences[33] = "finalizar";
         }
+        dialogueControlFinal.StartDialogue(policialDialogo);
     }
     public void ComecoJornalistaBrigaMulherVitima()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[0] = "It's absurd. A woman can't even get involved in activism in defense of women and she's already dead.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[1] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[2] = "You're talking about the previous case, Jessie.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[3] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[4] = "Yes, she was super important to me, I even went to the morgue to take one last photo.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[5] = "Trying to keep alive the image and the lessons she gave us.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[6] = "But that damn girl had to get in the way.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[7] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[8] = "Who?";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[9] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[10] = "That medical examiner.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[11] = "She stopped me, called security and everything.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[12] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[13] = "It must have been the biggest shack.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[14] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[15] = "It was. Hahaha.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[16] = "finalizar";
+            jornalistaDialogo.sentencesIngles[0] = "It's absurd. A woman can't even get involved in activism in defense of women and she's already dead.";
+            jornalistaDialogo.sentencesIngles[1] = "troca pensando";
+            jornalistaDialogo.sentencesIngles[2] = "You're talking about the previous case, Jessie.";
+            jornalistaDialogo.sentencesIngles[3] = "troca pensando";
+            jornalistaDialogo.sentencesIngles[4] = "Yes, she was super important to me, I even went to the morgue to take one last photo.";
+            jornalistaDialogo.sentencesIngles[5] = "Trying to keep alive the image and the lessons she gave us.";
+            jornalistaDialogo.sentencesIngles[6] = "But that damn girl had to get in the way.";
+            jornalistaDialogo.sentencesIngles[7] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[8] = "Who?";
+            jornalistaDialogo.sentencesIngles[9] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[10] = "That medical examiner.";
+            jornalistaDialogo.sentencesIngles[11] = "She stopped me, called security and everything.";
+            jornalistaDialogo.sentencesIngles[12] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[13] = "It must have been the biggest shack.";
+            jornalistaDialogo.sentencesIngles[14] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[15] = "It was. Hahaha.";
+            jornalistaDialogo.sentencesIngles[16] = "finalizar";
         }
         else
         {
-            dialogoComecoJornalistaBrigaComALegista.sentences[0] = "É um absurdo. Uma mulher não pode nem se meter com ativismo em defesa das mulheres que ela já morre.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[1] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentences[2] = "Está falando do caso anterior, Jessie.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[3] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentences[4] = "Sim, ela era de super importância para mim, até fui ao necrotério tirar uma última foto.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[5] = "Tentar manter viva a imagem e as mensagens que ela passou.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[6] = "Mas aquela maldita tinha que se meter no meio.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[7] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[8] = "Quem?";
-            dialogoComecoJornalistaBrigaComALegista.sentences[9] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[10] = "Aquela legista.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[11] = "Ela me impediu, chamou os seguranças e tudo.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[12] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[13] = "Deve ter sido o maior barraco.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[14] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[15] = "Foi mesmo. Hahaha.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[16] = "finalizar";
+            jornalistaDialogo.sentences[0] = "É um absurdo. Uma mulher não pode nem se meter com ativismo em defesa das mulheres que ela já morre.";
+            jornalistaDialogo.sentences[1] = "troca pensando";
+            jornalistaDialogo.sentences[2] = "Está falando do caso anterior, Jessie.";
+            jornalistaDialogo.sentences[3] = "troca pensando";
+            jornalistaDialogo.sentences[4] = "Sim, ela era de super importância para mim, até fui ao necrotério tirar uma última foto.";
+            jornalistaDialogo.sentences[5] = "Tentar manter viva a imagem e as mensagens que ela passou.";
+            jornalistaDialogo.sentences[6] = "Mas aquela maldita tinha que se meter no meio.";
+            jornalistaDialogo.sentences[7] = "troca paisagem";
+            jornalistaDialogo.sentences[8] = "Quem?";
+            jornalistaDialogo.sentences[9] = "troca paisagem";
+            jornalistaDialogo.sentences[10] = "Aquela legista.";
+            jornalistaDialogo.sentences[11] = "Ela me impediu, chamou os seguranças e tudo.";
+            jornalistaDialogo.sentences[12] = "troca paisagem";
+            jornalistaDialogo.sentences[13] = "Deve ter sido o maior barraco.";
+            jornalistaDialogo.sentences[14] = "troca paisagem";
+            jornalistaDialogo.sentences[15] = "Foi mesmo. Hahaha.";
+            jornalistaDialogo.sentences[16] = "finalizar";
         }
     }
     public void ComecoJornalistaBrigaHomemVitima()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[0] = "It's an absurd. A man like him will die and people will worship him.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[1] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[2] = "You're talking about the previous case, Jessie.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[3] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[4] = "Yes. He was a bastard, a woman abuser, homophobic and sexist.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[5] = "I went to the morgue to take one last photo.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[6] = "Show the world how rotten he really was.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[7] = "But that damn girl had to get in the way.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[8] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[9] = "Who?";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[10] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[11] = "That medical examiner.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[12] = "She stopped me, called security and everything.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[13] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[14] = "It must have been the biggest mess ever.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[15] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[16] = "It was. Hahaha.";
-            dialogoComecoJornalistaBrigaComALegista.sentencesIngles[17] = "finalizar";
+            jornalistaDialogo.sentencesIngles[0] = "It's an absurd. A man like him will die and people will worship him.";
+            jornalistaDialogo.sentencesIngles[1] = "troca pensando";
+            jornalistaDialogo.sentencesIngles[2] = "You're talking about the previous case, Jessie.";
+            jornalistaDialogo.sentencesIngles[3] = "troca pensando";
+            jornalistaDialogo.sentencesIngles[4] = "Yes. He was a bastard, a woman abuser, homophobic and sexist.";
+            jornalistaDialogo.sentencesIngles[5] = "I went to the morgue to take one last photo.";
+            jornalistaDialogo.sentencesIngles[6] = "Show the world how rotten he really was.";
+            jornalistaDialogo.sentencesIngles[7] = "But that damn girl had to get in the way.";
+            jornalistaDialogo.sentencesIngles[8] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[9] = "Who?";
+            jornalistaDialogo.sentencesIngles[10] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[11] = "That medical examiner.";
+            jornalistaDialogo.sentencesIngles[12] = "She stopped me, called security and everything.";
+            jornalistaDialogo.sentencesIngles[13] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[14] = "It must have been the biggest mess ever.";
+            jornalistaDialogo.sentencesIngles[15] = "troca paisagem";
+            jornalistaDialogo.sentencesIngles[16] = "It was. Hahaha.";
+            jornalistaDialogo.sentencesIngles[17] = "finalizar";
         }
         else
         {
-            dialogoComecoJornalistaBrigaComALegista.sentences[0] = "É um absurdo. Um homem como ele morrer e as pessoas o idolatrarem.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[1] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentences[2] = "Está falando do caso anterior, Jessie.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[3] = "troca pensando";
-            dialogoComecoJornalistaBrigaComALegista.sentences[4] = "Sim. Ele era um safado, abusador de mulheres, homofóbico e machista.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[5] = "Eu fui ao necrotério tirar uma última foto.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[6] = "Mostrar para o mundo o quão podre ele realmente era.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[7] = "Mas aquela maldita tinha que se meter no meio.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[8] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[9] = "Quem?";
-            dialogoComecoJornalistaBrigaComALegista.sentences[10] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[11] = "Aquela legista.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[12] = "Ela me impediu, chamou os seguranças e tudo.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[13] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[14] = "Deve ter sido o maior barraco.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[15] = "troca paisagem";
-            dialogoComecoJornalistaBrigaComALegista.sentences[16] = "Foi mesmo. Hahaha.";
-            dialogoComecoJornalistaBrigaComALegista.sentences[17] = "finalizar";
+            jornalistaDialogo.sentences[0] = "É um absurdo. Um homem como ele morrer e as pessoas o idolatrarem.";
+            jornalistaDialogo.sentences[1] = "troca pensando";
+            jornalistaDialogo.sentences[2] = "Está falando do caso anterior, Jessie.";
+            jornalistaDialogo.sentences[3] = "troca pensando";
+            jornalistaDialogo.sentences[4] = "Sim. Ele era um safado, abusador de mulheres, homofóbico e machista.";
+            jornalistaDialogo.sentences[5] = "Eu fui ao necrotério tirar uma última foto.";
+            jornalistaDialogo.sentences[6] = "Mostrar para o mundo o quão podre ele realmente era.";
+            jornalistaDialogo.sentences[7] = "Mas aquela maldita tinha que se meter no meio.";
+            jornalistaDialogo.sentences[8] = "troca paisagem";
+            jornalistaDialogo.sentences[9] = "Quem?";
+            jornalistaDialogo.sentences[10] = "troca paisagem";
+            jornalistaDialogo.sentences[11] = "Aquela legista.";
+            jornalistaDialogo.sentences[12] = "Ela me impediu, chamou os seguranças e tudo.";
+            jornalistaDialogo.sentences[13] = "troca paisagem";
+            jornalistaDialogo.sentences[14] = "Deve ter sido o maior barraco.";
+            jornalistaDialogo.sentences[15] = "troca paisagem";
+            jornalistaDialogo.sentences[16] = "Foi mesmo. Hahaha.";
+            jornalistaDialogo.sentences[17] = "finalizar";
         }
     }
     public void finalLegistaNPunhoRaivas()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "...";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[1] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[2] = "Hi Devi, how are you? Why the ugly face?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[3] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[4] = "No biggie, detective. Only those people from the press who go overboard sometimes.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[5] = "troca pensando";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[6] = "What do you mean? Did something happen recently?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[7] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[8] = "Jessie, the investigative journalist, ended up entering the morgue without permission to see the latest victim of the murders.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[9] = "I'm not one for fighting, I'm very calm. I asked her to leave.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[10] = "But she insisted on staying and seeing the body to take pictures.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[11] = "They have no limits, they don't even respect the dead body";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[12] = "troca pensando";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[13] = "Journalists?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[14] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[15] = "Yes, there are some who go out of their way to get a headline.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[16] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[17] = "How did the situation end?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[18] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[19] = "I tried to stop her, but as I was never good at fighting, I ended up calling the security guards and they took her away.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[20] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[21] = "The situation is difficult, but I'm on the case, it's a little while before the murderer is behind bars.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[22] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[23] = "Hopefully, detective.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[24] = "finalizar";
+            legistaDialogo.sentencesIngles[0] = "...";
+            legistaDialogo.sentencesIngles[1] = "troca paisagem";
+            legistaDialogo.sentencesIngles[2] = "Hi Devi, how are you? Why the ugly face?";
+            legistaDialogo.sentencesIngles[3] = "troca embara";
+            legistaDialogo.sentencesIngles[4] = "No biggie, detective. Only those people from the press who go overboard sometimes.";
+            legistaDialogo.sentencesIngles[5] = "troca pensando";
+            legistaDialogo.sentencesIngles[6] = "What do you mean? Did something happen recently?";
+            legistaDialogo.sentencesIngles[7] = "troca embara";
+            legistaDialogo.sentencesIngles[8] = "Jessie, the investigative journalist, ended up entering the morgue without permission to see the latest victim of the murders.";
+            legistaDialogo.sentencesIngles[9] = "I'm not one for fighting, I'm very calm. I asked her to leave.";
+            legistaDialogo.sentencesIngles[10] = "But she insisted on staying and seeing the body to take pictures.";
+            legistaDialogo.sentencesIngles[11] = "They have no limits, they don't even respect the dead body";
+            legistaDialogo.sentencesIngles[12] = "troca pensando";
+            legistaDialogo.sentencesIngles[13] = "Journalists?";
+            legistaDialogo.sentencesIngles[14] = "troca paisagem";
+            legistaDialogo.sentencesIngles[15] = "Yes, there are some who go out of their way to get a headline.";
+            legistaDialogo.sentencesIngles[16] = "troca paisagem";
+            legistaDialogo.sentencesIngles[17] = "How did the situation end?";
+            legistaDialogo.sentencesIngles[18] = "troca paisagem";
+            legistaDialogo.sentencesIngles[19] = "I tried to stop her, but as I was never good at fighting, I ended up calling the security guards and they took her away.";
+            legistaDialogo.sentencesIngles[20] = "troca paisagem";
+            legistaDialogo.sentencesIngles[21] = "The situation is difficult, but I'm on the case, it's a little while before the murderer is behind bars.";
+            legistaDialogo.sentencesIngles[22] = "troca paisagem";
+            legistaDialogo.sentencesIngles[23] = "Hopefully, detective.";
+            legistaDialogo.sentencesIngles[24] = "finalizar";
         }
         else
         {
-            dialogoFinalLegistaNMataHomens.sentences[0] = "...";
-            dialogoFinalLegistaNMataHomens.sentences[1] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[2] = "Olá Devi, tudo bem? Por que a cara feia?";
-            dialogoFinalLegistaNMataHomens.sentences[3] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[4] = "Nada de mais, detetive. Só esse pessoal da imprensa que passa dos limites às vezes.";
-            dialogoFinalLegistaNMataHomens.sentences[5] = "troca pensando";
-            dialogoFinalLegistaNMataHomens.sentences[6] = "Como assim? Algo aconteceu recentemente?";
-            dialogoFinalLegistaNMataHomens.sentences[7] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[8] = "Jessie, a jornalista investigativa, acabou entrando no necrotério sem permissão para ver a última vítima dos assassinatos.";
-            dialogoFinalLegistaNMataHomens.sentences[9] = "Eu não sou de brigar, sou bem calma. Pedi para que ela se retirasse.";
-            dialogoFinalLegistaNMataHomens.sentences[10] = "Mas ela insistiu em ficar e ver o corpo para tirar fotos.";
-            dialogoFinalLegistaNMataHomens.sentences[11] = "Eles não têm limite, não respeitam nem o corpo morto";
-            dialogoFinalLegistaNMataHomens.sentences[12] = "troca pensando";
-            dialogoFinalLegistaNMataHomens.sentences[13] = "Os jornalistas?";
-            dialogoFinalLegistaNMataHomens.sentences[14] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[15] = "Sim, tem alguns que fazem de tudo para conseguir uma manchete.";
-            dialogoFinalLegistaNMataHomens.sentences[16] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[17] = "Como terminou a situação?";
-            dialogoFinalLegistaNMataHomens.sentences[18] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[19] = "Eu tentei impedi-la, mas como nunca fui boa de briga acabei chamando os seguranças e eles a retiraram do local.";
-            dialogoFinalLegistaNMataHomens.sentences[20] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[21] = "Difícil a situação, mas estou em cima do caso, falta pouco para o assassino estar atrás das grades.";
-            dialogoFinalLegistaNMataHomens.sentences[22] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[23] = "Tomara, detetive.";
-            dialogoFinalLegistaNMataHomens.sentences[24] = "finalizar";
+            legistaDialogo.sentences[0] = "...";
+            legistaDialogo.sentences[1] = "troca paisagem";
+            legistaDialogo.sentences[2] = "Olá Devi, tudo bem? Por que a cara feia?";
+            legistaDialogo.sentences[3] = "troca embara";
+            legistaDialogo.sentences[4] = "Nada de mais, detetive. Só esse pessoal da imprensa que passa dos limites às vezes.";
+            legistaDialogo.sentences[5] = "troca pensando";
+            legistaDialogo.sentences[6] = "Como assim? Algo aconteceu recentemente?";
+            legistaDialogo.sentences[7] = "troca embara";
+            legistaDialogo.sentences[8] = "Jessie, a jornalista investigativa, acabou entrando no necrotério sem permissão para ver a última vítima dos assassinatos.";
+            legistaDialogo.sentences[9] = "Eu não sou de brigar, sou bem calma. Pedi para que ela se retirasse.";
+            legistaDialogo.sentences[10] = "Mas ela insistiu em ficar e ver o corpo para tirar fotos.";
+            legistaDialogo.sentences[11] = "Eles não têm limite, não respeitam nem o corpo morto";
+            legistaDialogo.sentences[12] = "troca pensando";
+            legistaDialogo.sentences[13] = "Os jornalistas?";
+            legistaDialogo.sentences[14] = "troca paisagem";
+            legistaDialogo.sentences[15] = "Sim, tem alguns que fazem de tudo para conseguir uma manchete.";
+            legistaDialogo.sentences[16] = "troca paisagem";
+            legistaDialogo.sentences[17] = "Como terminou a situação?";
+            legistaDialogo.sentences[18] = "troca paisagem";
+            legistaDialogo.sentences[19] = "Eu tentei impedi-la, mas como nunca fui boa de briga acabei chamando os seguranças e eles a retiraram do local.";
+            legistaDialogo.sentences[20] = "troca paisagem";
+            legistaDialogo.sentences[21] = "Difícil a situação, mas estou em cima do caso, falta pouco para o assassino estar atrás das grades.";
+            legistaDialogo.sentences[22] = "troca paisagem";
+            legistaDialogo.sentences[23] = "Tomara, detetive.";
+            legistaDialogo.sentences[24] = "finalizar";
         }
     }
 
-    /*aaaaa*/
+
     public void finalLegistaNMataHomem()
     {
         if (PlayerData.Idioma == "ingles")
         {
-            dialogoFinalLegistaNMataHomens.sentencesIngles[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[1] = "Going home, Devi?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[2] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[3] = "I'm on my way, but since I found you here, would you like to stop by?";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[4] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[5] = "But of course, I would love to.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[6] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[7] = "I don't know if you knew, but I always thought you were so cute and smart, detective.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[8] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[9] = "Wow Devi, I feel the same, is that serious?!";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[10] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[11] = "No, hahaha.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[12] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[13] = "But... But I...";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[14] = "I was playing with you detective, I love playing with men's hearts.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[15] = "I'm going home, see you another day.";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[16] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[17] = "(Only sadness in this life)";
-            dialogoFinalLegistaNMataHomens.sentencesIngles[18] = "finalizar";
+            legistaDialogo.sentencesIngles[0] = "troca paisagem";
+            legistaDialogo.sentencesIngles[1] = "Going home, Devi?";
+            legistaDialogo.sentencesIngles[2] = "troca paisagem";
+            legistaDialogo.sentencesIngles[3] = "I'm on my way, but since I found you here, would you like to stop by?";
+            legistaDialogo.sentencesIngles[4] = "troca embara";
+            legistaDialogo.sentencesIngles[5] = "But of course, I would love to.";
+            legistaDialogo.sentencesIngles[6] = "troca embara";
+            legistaDialogo.sentencesIngles[7] = "I don't know if you knew, but I always thought you were so cute and smart, detective.";
+            legistaDialogo.sentencesIngles[8] = "troca embara";
+            legistaDialogo.sentencesIngles[9] = "Wow Devi, I feel the same, is that serious?!";
+            legistaDialogo.sentencesIngles[10] = "troca paisagem";
+            legistaDialogo.sentencesIngles[11] = "No, hahaha.";
+            legistaDialogo.sentencesIngles[12] = "troca desgosto";
+            legistaDialogo.sentencesIngles[13] = "But... But I...";
+            legistaDialogo.sentencesIngles[14] = "I was playing with you detective, I love playing with men's hearts.";
+            legistaDialogo.sentencesIngles[15] = "I'm going home, see you another day.";
+            legistaDialogo.sentencesIngles[16] = "troca desgosto";
+            legistaDialogo.sentencesIngles[17] = "(Only sadness in this life)";
+            legistaDialogo.sentencesIngles[18] = "finalizar";
         }
         else
         {
-            dialogoFinalLegistaNMataHomens.sentences[0] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[1] = "Indo para casa, Devi?";
-            dialogoFinalLegistaNMataHomens.sentences[2] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[3] = "Estou indo, mas já que te encontrei aqui, gostaria de dar uma passadinha lá?";
-            dialogoFinalLegistaNMataHomens.sentences[4] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[5] = "Mas é claro, eu adoraria.";
-            dialogoFinalLegistaNMataHomens.sentences[6] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[7] = "Eu não sei se você sabia, mas eu sempre te achei tão bonito e esperto, detetive.";
-            dialogoFinalLegistaNMataHomens.sentences[8] = "troca embara";
-            dialogoFinalLegistaNMataHomens.sentences[9] = "Nossa Devi, eu sinto o mesmo, é sério isso?!.";
-            dialogoFinalLegistaNMataHomens.sentences[10] = "troca paisagem";
-            dialogoFinalLegistaNMataHomens.sentences[11] = "Não! Hahaha.";
-            dialogoFinalLegistaNMataHomens.sentences[12] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentences[13] = "Mas... Mas eu...";
-            dialogoFinalLegistaNMataHomens.sentences[14] = "Estava brincado com você detetive, adoro brincar com o coração dos homens.";
-            dialogoFinalLegistaNMataHomens.sentences[15] = "Eu estou indo para casa, te vejo outro dia.";
-            dialogoFinalLegistaNMataHomens.sentences[16] = "troca desgosto";
-            dialogoFinalLegistaNMataHomens.sentences[17] = "(Só tristezas essa vida)";
-            dialogoFinalLegistaNMataHomens.sentences[18] = "finalizar";
+            legistaDialogo.sentences[0] = "troca paisagem";
+            legistaDialogo.sentences[1] = "Indo para casa, Devi?";
+            legistaDialogo.sentences[2] = "troca paisagem";
+            legistaDialogo.sentences[3] = "Estou indo, mas já que te encontrei aqui, gostaria de dar uma passadinha lá?";
+            legistaDialogo.sentences[4] = "troca embara";
+            legistaDialogo.sentences[5] = "Mas é claro, eu adoraria.";
+            legistaDialogo.sentences[6] = "troca embara";
+            legistaDialogo.sentences[7] = "Eu não sei se você sabia, mas eu sempre te achei tão bonito e esperto, detetive.";
+            legistaDialogo.sentences[8] = "troca embara";
+            legistaDialogo.sentences[9] = "Nossa Devi, eu sinto o mesmo, é sério isso?!.";
+            legistaDialogo.sentences[10] = "troca paisagem";
+            legistaDialogo.sentences[11] = "Não! Hahaha.";
+            legistaDialogo.sentences[12] = "troca desgosto";
+            legistaDialogo.sentences[13] = "Mas... Mas eu...";
+            legistaDialogo.sentences[14] = "Estava brincado com você detetive, adoro brincar com o coração dos homens.";
+            legistaDialogo.sentences[15] = "Eu estou indo para casa, te vejo outro dia.";
+            legistaDialogo.sentences[16] = "troca desgosto";
+            legistaDialogo.sentences[17] = "(Só tristezas essa vida)";
+            legistaDialogo.sentences[18] = "finalizar";
         }
-        dialogueControlFinal.StartDialogue(dialogoFinalLegistaNMataHomens);
+        dialogueControlFinal.StartDialogue(legistaDialogo);
     }
 
-    /*aaaaa*/
+
     public void trocaTestemunhoJornalista()
     {
         if (PlayerData.Idioma == "ingles")
@@ -740,7 +755,7 @@ public class ScenesManager : MonoBehaviour
 
     }
 
-    /*aaaaaa*/
+
     public void trocaTestemunhoRicoNMataJovens()
     {
         if (PlayerData.Idioma == "ingles")
@@ -794,7 +809,7 @@ public class ScenesManager : MonoBehaviour
     }
 
 
-    /*aaaa*/
+
     public void trocaTestemunhoRico()
     {
         if (PlayerData.Idioma == "ingles")
@@ -1052,7 +1067,7 @@ public class ScenesManager : MonoBehaviour
         movimento.ParaPersonagem = false;
         DialogoTransicao = false;
     }
-    /*aaaaa*/
+
     public void DelegadoInicialElogio()
     {
         if (PlayerData.Idioma == "ingles")
@@ -1087,7 +1102,7 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    /*aaaa*/
+
     public void DelegadoNMataIdosos()
     {
         if (PlayerData.Idioma == "ingles")
@@ -1138,7 +1153,7 @@ public class ScenesManager : MonoBehaviour
         }
     }
 
-    /*aaaaaa*/
+
     public void DelegadoInicialCritica()
     {
         if (PlayerData.Idioma == "ingles")
@@ -1204,10 +1219,10 @@ public class ScenesManager : MonoBehaviour
                             dialogueControl.DisplayNextSentence(dialogoParceiroDetetiveIndoParaDelegacia);
                             break;
                         case "delegado":
-                            dialogueControl.DisplayNextSentence(dialogoDelegadoTransicaonRouba);
+                            dialogueControl.DisplayNextSentence(dialogoParceiroDetetiveIndoParaDelegacia);
                             break;
                         case "jornalista":
-                            dialogueControl.DisplayNextSentence(dialogoComecoJornalistaBrigaComALegista);
+                            dialogueControl.DisplayNextSentence(dialogoDelegadoExplicando);
                             break;
                     }
                 }
@@ -1216,7 +1231,21 @@ public class ScenesManager : MonoBehaviour
                     eraHomemUltimoCaso = SpawnObjects.SexoMasculino;
                     if (SceneManager.GetActiveScene().buildIndex != 4)
                     {
-                        dialogueControl.DisplayNextSentence(dialogoDelegadoExplicando);
+                        if (jornalistaBrigouComALegista)
+                        {
+                            dialogueControl.DisplayNextSentence(jornalistaDialogo);
+                        }
+                        else
+                        {
+                            if (dialogoInicioParceirobool)
+                            {
+                                dialogueControl.DisplayNextSentence(diaologoInicialParceiro);
+                            }
+                            else
+                            {
+                                dialogueControl.DisplayNextSentence(dialogoDelegadoExplicando);
+                            }
+                        }
                     }
                     else
                     {
@@ -1245,10 +1274,24 @@ public class ScenesManager : MonoBehaviour
                     case "saneguji":
                         break;
                     case "devi":
-                        finalLegistaNMataHomem();
+                        if (Random.value >= 0.5f)
+                        {
+                            finalLegistaNPunhoRaivas();
+                        }
+                        else
+                        {
+                            finalLegistaNMataHomem();
+                        }
                         break;
                     case "policial":
-                        dialogoPolicialNTortura();
+                        if (Random.value >= 0.5f)
+                        {
+                            dialogoPolicialNMataIdosaFunction();
+                        }
+                        else
+                        {
+                            dialogoPolicialNTortura();
+                        }
                         break;
                     case "TI":
                         if (Random.value > 0.5f)
@@ -1272,7 +1315,21 @@ public class ScenesManager : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     MainMenu.PrimeiroCaso = false;
-                    dialogueControlFinal.DisplayNextSentence(diaologoFinalParceiro);
+                    switch (nomeDaPessoaNoFinal)
+                    {
+                        case "parceiro":
+                            dialogueControlFinal.DisplayNextSentence(diaologoFinalParceiro);
+                            break;
+                        case "devi":
+                            dialogueControlFinal.DisplayNextSentence(legistaDialogo);
+                            break;
+                        case "policial":
+                            dialogueControlFinal.DisplayNextSentence(policialDialogo);
+                            break;
+                        case "TI":
+                            dialogueControlFinal.DisplayNextSentence(TIDialogo);
+                            break;
+                    }
                     if (Analise.terminouConversa == true)
                     {
                         TrocaDeAndares.AndarAtual = 0;
@@ -1341,7 +1398,7 @@ public class ScenesManager : MonoBehaviour
     }
 
 
-    /*aaaaa*/
+
     public void diaologoFinalParceiroFuncaoNTortura()
     {
         if (!MainMenu.PrimeiroCaso)
@@ -1392,7 +1449,7 @@ public class ScenesManager : MonoBehaviour
         dialogueControlFinal.StartDialogue(diaologoFinalParceiro);
     }
 
-    /*aaaa*/
+
     public void diaologoFinalParceiroFuncao()
     {
         if (!MainMenu.PrimeiroCaso)

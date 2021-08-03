@@ -23855,7 +23855,7 @@ public static class IA
         DeuRuim = true;
         pontuacaoReal = Relatorio.Pontuacao + PlayerData.PontuacaoDoPlayer;
         taxaDeAcertos = pontuacaoReal / (5 * PauseMenu.NumeroDeCasosJogadoPeloPlayer);
-
+        Debug.Log("taxa de caertos" + taxaDeAcertos);
         if (taxaDeAcertos >= 0.4 && taxaDeAcertos < 0.6)
         {
             if (Relatorio.AcertouArma == 1)

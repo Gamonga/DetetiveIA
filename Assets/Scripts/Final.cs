@@ -45,7 +45,6 @@ public class Final : MonoBehaviour
     public GameObject RaivaFinal;
     public GameObject PrazerFinal;
     public GameObject JusticaFinal;
-    public GameObject SemEvidencia;
     public GameObject Finalizar;
     private Queue<string> sentence;
     public Text texto;
@@ -329,7 +328,6 @@ public class Final : MonoBehaviour
                             Evidencias.SetActive(true);
                             cadernoOriginal.EscreverEvidencias();
                             caderno.SetBool("Rela", true);
-                            SemEvidencia.SetActive(true);
                             perguntando = true;
                         }
                         else if (fraseAtual == "E estes alvos são:" || fraseAtual == "And these targets are:")
@@ -802,7 +800,6 @@ public class Final : MonoBehaviour
         {
             preencherOUaceitarResposta.SetActive(true);
             respostaTexto = resposta.text;
-            SemEvidencia.SetActive(true);
             if (PlayerData.Idioma == "ingles")
             {
                 texto.text = "Could this be it?";
@@ -826,7 +823,6 @@ public class Final : MonoBehaviour
                 Finalizar.SetActive(true);
             }
             numeroDaPergunta++;
-            SemEvidencia.SetActive(false);
             Evidencias.SetActive(false);
             caderno.SetBool("Rela", false);
             perguntando = false;
@@ -936,7 +932,6 @@ public class Final : MonoBehaviour
             preencherOUaceitarResposta.SetActive(false);
             Evidencias.SetActive(false);
             caderno.SetBool("Rela", false);
-            SemEvidencia.SetActive(false);
             numeroDaPergunta++;
             perguntando = false;
             fraseAtual = sentence.Dequeue();

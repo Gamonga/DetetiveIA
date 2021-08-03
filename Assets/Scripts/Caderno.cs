@@ -392,11 +392,9 @@ public class Caderno : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
         CarregaObjetosPassados(data);
         entrou = false;
-        Debug.Log("Final Pagina Atual: " + Final.paginaAtual);
         switch (Final.paginaAtual)
         {
             case 1:
-                Debug.Log("Entrou caso 1" + Final.paginaAtual);
                 for (j = 0; j < evidencias.Length; j++)
                 {
                     evidencias[j] = null;
@@ -405,7 +403,6 @@ public class Caderno : MonoBehaviour
                 posiçãoEvidencias = 0;
                 for (j = 0; j < data.NumeroDeEvidencias; j++)
                 {
-                    Debug.Log("Esta dentro do for");
                     adicionar(GameObject.Find(data.nomeObjetoEvidenciasCaso1[j]).GetComponent<Evidence>());
                     update[j] = data.update[j];
                     if (update[j] == true)
@@ -1614,11 +1611,9 @@ public class Caderno : MonoBehaviour
     {
         if (verificaExistencia(evidence))
         {
-            Debug.Log("ja existe");
         }
         else
         {
-            Debug.Log("Existe adicionar");
             if (SceneManager.GetActiveScene().buildIndex != 4 && SceneManager.GetActiveScene().buildIndex != 1)
             {
                 barulhoAnotando = GameObject.Find("escrita").GetComponent<AudioSource>();
@@ -1626,7 +1621,6 @@ public class Caderno : MonoBehaviour
             }
             if (entrou == false)
             {
-                Debug.Log("evidencia0");
                 evidencias[0] = evidence;
                 posiçãoEvidencias = 1;
                 entrou = true;
@@ -1634,7 +1628,6 @@ public class Caderno : MonoBehaviour
             }
             if (posiçãoEvidencias == 1)
             {
-                Debug.Log("evidencia1");
                 evidencias[1] = evidence;
                 posiçãoEvidencias++;
                 return;
@@ -1762,7 +1755,6 @@ public class Caderno : MonoBehaviour
                 {
                     case 1:
                         nomeObjetoEvidenciasCaso1[i] = data.nomeObjetoEvidenciasCaso1[i];
-                        Debug.Log("Estou no caderno nome objeto evidencias: " + nomeObjetoEvidenciasCaso1[i]);
                         break;
                     case 2:
                         nomeObjetoEvidenciasCaso2[i] = data.nomeObjetoEvidenciasCaso2[i];

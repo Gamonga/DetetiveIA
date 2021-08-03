@@ -14661,6 +14661,26 @@ MonoBehaviour:
   - Entendido?
   - troca paisagem
   - Sim senhor.
+  - finalizar
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
   sentences2: []
   senteceloop: []
   sentencesIngles:
@@ -14686,6 +14706,26 @@ MonoBehaviour:
     complete your report on the case."
   - "\rUnderstood?"
   - troca paisagem
+  - Yes sir.
+  - finalizar
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
   - Yes sir.
   sentences2Ingles: []
   senteceloopIngles: []
@@ -16234,6 +16274,122 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940807458}
   m_CullTransparentMesh: 0
+--- !u!1 &944061098
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 944061100}
+  - component: {fileID: 944061099}
+  m_Layer: 0
+  m_Name: JornalistaDialogo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &944061099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944061098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Jessie
+  nameperson2: Detetive
+  sentences:
+  - troca paisagem
+  - "Ol\xE1, eu sou o novo ..."
+  - troca paisagem
+  - "Voc\xEA \xE9 o novo detetive na cidade."
+  - troca paisagem
+  - Sim, prazer me chamo ...
+  - troca paisagem
+  - "Voc\xEA se chama David Mills."
+  - troca pensando
+  - "(J\xE1 vi que essa vai ser dif\xEDcil de conversar)"
+  - paisagem detetive
+  - "E aposto que voc\xEA \xE9 a jornalista investigativa."
+  - troca pensando
+  - "(Como ser\xE1 que ele descobriu?!)"
+  - troca paisagem
+  - E aposto que se chama Angela.
+  - troca paisagem
+  - "N\xE3o, eu n\xE3o me chamo assim."
+  - troca embara
+  - (tentei pelo menos)
+  - paisagem detetive
+  - "Se voc\xEA n\xE3o se importar, eu irei te fazer algumas perguntas."
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - troca paisagem
+  - Hello, I'm the new ...
+  - troca paisagem
+  - You are the new detective in town.
+  - troca paisagem
+  - Yes, my name is ...
+  - troca paisagem
+  - Your name is David Mills.
+  - troca pensando
+  - "\r(I already saw that she will be difficult to talk)"
+  - paisagem detetive
+  - And i bet you're the investigative journalist.
+  - troca pensando
+  - "\r(how did he find out ?!)"
+  - troca paisagem
+  - "\rAnd I bet it's called Angela."
+  - troca paisagem
+  - "\rNo, that's not my name."
+  - troca embara
+  - "\r(tried at least)"
+  - paisagem detetive
+  - "\rIf you don't mind, I'll ask you a few questions."
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: c2f7e3b67149ff44397a3bf4d28de151,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  random: 1
+--- !u!4 &944061100
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944061098}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 513.5639, y: 287.0769, z: -29.148457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945750102
 GameObject:
   m_ObjectHideFlags: 0
@@ -19845,6 +20001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161c030409121ae4ca8f53e59d7285b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jornalistaDialogo: {fileID: 944061099}
   texto: {fileID: 512707328}
   botaoSim: {fileID: 4114674}
   botaoNao: {fileID: 1857987845}
@@ -19867,7 +20024,7 @@ MonoBehaviour:
   dialogoDelegadoExplicando: {fileID: 858552709}
   diaologoFinalParceiro: {fileID: 0}
   dialogoInicioTestemunhaJornalista: {fileID: 0}
-  dialogoInicioTestemunhaRico: {fileID: 0}
+  dialogoInicioTestemunhaRico: {fileID: 2127412737}
   FinalDoJogoControl: {fileID: 0}
   dialogueControl: {fileID: 858552708}
   dialogueControlFinal: {fileID: 0}
@@ -37005,6 +37162,26 @@ MonoBehaviour:
   - Eu sou o novo detetive da cidade.
   - E tenho algumas perguntas para te fazer.
   - troca paisagem
+  - finalizar
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
   sentences2: []
   senteceloop: []
   sentencesIngles:
@@ -37020,6 +37197,26 @@ MonoBehaviour:
   - troca paisagem
   - "\rI'm the new detective in town."
   - And I have a few questions to ask you.
+  - troca paisagem
+  - finalizar
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
   - troca paisagem
   sentences2Ingles: []
   senteceloopIngles: []

@@ -606,6 +606,11 @@ public class SpawnObjects : MonoBehaviour
         }
         else
         {
+            InstantiateCartaoPolicia();
+            InstantiateCartaoFilme();
+            InstantiateCartaoAlcool();
+            InstantiateRelogio();
+            InstantiatePanoBranco();
             InstantiateBilheteCulposo();
             InstantiateCorpoMorto2();
             InstantiateCorpoMorto1();
