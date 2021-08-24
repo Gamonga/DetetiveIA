@@ -621,7 +621,7 @@ public class ScenesManager : MonoBehaviour
         {
             legistaDialogo.sentencesIngles[0] = "...";
             legistaDialogo.sentencesIngles[1] = "troca paisagem";
-            legistaDialogo.sentencesIngles[2] = "Hi Devi, how are you? Why the ugly face?";
+            legistaDialogo.sentencesIngles[2] = "Hi Devi, how are you? Why the long face?";
             legistaDialogo.sentencesIngles[3] = "troca embara";
             legistaDialogo.sentencesIngles[4] = "No biggie, detective. Only those people from the press who go overboard sometimes.";
             legistaDialogo.sentencesIngles[5] = "troca pensando";

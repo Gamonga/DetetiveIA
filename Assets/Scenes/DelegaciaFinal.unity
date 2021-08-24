@@ -1562,6 +1562,122 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &150646841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150646843}
+  - component: {fileID: 150646842}
+  m_Layer: 0
+  m_Name: Acusacao (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &150646842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150646841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Jessie
+  nameperson2: Detetive
+  sentences:
+  - troca paisagem
+  - "Ol\xE1, eu sou o novo ..."
+  - troca paisagem
+  - "Voc\xEA \xE9 o novo detetive na cidade."
+  - troca paisagem
+  - Sim, prazer me chamo ...
+  - troca paisagem
+  - "Voc\xEA se chama David Mills."
+  - troca pensando
+  - "(J\xE1 vi que essa vai ser dif\xEDcil de conversar)"
+  - paisagem detetive
+  - "E aposto que voc\xEA \xE9 a jornalista investigativa."
+  - troca pensando
+  - "(Como ser\xE1 que ele descobriu?!)"
+  - troca paisagem
+  - E aposto que se chama Angela.
+  - troca paisagem
+  - "N\xE3o, eu n\xE3o me chamo assim."
+  - troca embara
+  - (tentei pelo menos)
+  - paisagem detetive
+  - "Se voc\xEA n\xE3o se importar, eu irei te fazer algumas perguntas."
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - troca paisagem
+  - Hello, I'm the new ...
+  - troca paisagem
+  - You are the new detective in town.
+  - troca paisagem
+  - Yes, my name is ...
+  - troca paisagem
+  - Your name is David Mills.
+  - troca pensando
+  - "\r(I already saw that she will be difficult to talk)"
+  - paisagem detetive
+  - And i bet you're the investigative journalist.
+  - troca pensando
+  - "\r(how did he find out ?!)"
+  - troca paisagem
+  - "\rAnd I bet it's called Angela."
+  - troca paisagem
+  - "\rNo, that's not my name."
+  - troca embara
+  - "\r(tried at least)"
+  - paisagem detetive
+  - "\rIf you don't mind, I'll ask you a few questions."
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: c2f7e3b67149ff44397a3bf4d28de151,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  random: 1
+--- !u!4 &150646843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150646841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &150791428
 GameObject:
   m_ObjectHideFlags: 0
@@ -4693,6 +4809,184 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396295244}
   m_CullTransparentMesh: 0
+--- !u!1 &403870151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403870153}
+  - component: {fileID: 403870152}
+  m_Layer: 0
+  m_Name: Acusacao (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &403870152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403870151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Devi
+  nameperson2: Detetive
+  sentences:
+  - "Ol\xE1 detetive."
+  - troca paisagem
+  - "Ol\xE1."
+  - troca paisagem
+  - Mais um pobre coitado morto.
+  - troca pensando
+  - "Nem todos s\xE3o coitados."
+  - "Mas com certeza n\xE3o merecem morrer assim."
+  - troca paisagem
+  - "Opini\xE3o forte"
+  - "Mas n\xE3o irei dizer que est\xE1 errada."
+  - "Aqui est\xE1 o laudo."
+  - troca paisagem
+  - (Laudo adicionado ao caderno)
+  - Obrigado Devi.
+  - troca paisagem
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  - Tenha um bom trabalho, detetive.
+  sentences2:
+  - troca paisagem
+  - "Ol\xE1 Devi."
+  - troca paisagem
+  - Como vai, detetive?
+  - troca paisagem
+  - Poderia estar melhor.
+  - pensando detetive
+  - O que temos hoje?
+  - troca paisagem
+  - "O sujeito acabou tendo uma morte horr\xEDvel."
+  - "Nada podia ser feito para ajud\xE1-lo."
+  - troca desgosto
+  - "N\xE3o deve ter sido algo bonito de se ver."
+  - troca paisagem
+  - "N\xE3o mesmo."
+  - "Aqui est\xE1 o meu laudo."
+  - troca paisagem
+  - (Laudo adicionado ao caderno)
+  - Obrigado Devi.
+  - troca paisagem
+  - Disponha, detetive.
+  senteceloop:
+  - Precisa de mais alguma coisa, detetive?
+  - troca paisagem
+  - Estou bem obrigado!
+  - pensando detetive
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles:
+  - Hello, detective.
+  - troca paisagem
+  - Hello.
+  - troca paisagem
+  - Another lamentable dead body.
+  - troca pensando
+  - They are not always lamentable.
+  - But surely they don't deserve to die like this.
+  - troca paisagem
+  - 'Strong opinion. '
+  - But I won't say it's wrong.
+  - Here is the medical report.
+  - troca paisagem
+  - (Medical report added to the notebook)
+  - Thank you, Devi.
+  - troca paisagem
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  - Good work, detective.
+  sentences2Ingles:
+  - troca paisagem
+  - Hello Devi.
+  - troca paisagem
+  - How are you, detective?
+  - troca paisagem
+  - Could be much better.
+  - pensando detetive
+  - What do we have today?
+  - troca paisagem
+  - He ended up having a horrible death.
+  - Nothing could be done to help him.
+  - troca desgosto
+  - Must not have been so pretty to look at.
+  - troca paisagem
+  - Not at all.
+  - Here is the medical report.
+  - troca paisagem
+  - (Medical report added to the notebook)
+  - Thank you, Devi
+  - troca paisagem
+  - Don't mention it, detective.
+  senteceloopIngles:
+  - Do you need anything else, detective?
+  - troca paisagem
+  - I'm fine. Thank you!
+  - pensando detetive
+  - (I should investigate the apartment)
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 8380fb1950b3948499d700f750f7d273,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: aa78998ea32c07d428a11c80017b8812,
+    type: 3}
+  random: 1
+--- !u!4 &403870153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403870151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404940086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5504,6 +5798,158 @@ MonoBehaviour:
   dialogueText: {fileID: 607859828}
   animator: {fileID: 364288594}
   SemImagem: 0
+--- !u!1 &479689176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 479689178}
+  - component: {fileID: 479689177}
+  m_Layer: 0
+  m_Name: Acusacao (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &479689177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479689176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Kyle
+  nameperson2: Detetive
+  sentences:
+  - Como vai, detetive?
+  - troca paisagem
+  - "Ol\xE1 Kyle."
+  - troca pensando
+  - Veio me pedir para analisar algo?
+  - troca paisagem
+  - Gostaria que desse uma olhada nisso.
+  - finalizar
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  - Gostaria que desse uma olhada nisso.
+  sentences2:
+  - troca paisagem
+  - "ol\xE1 Devi"
+  - troca
+  - como vai detetive?
+  - troca
+  - podia estar melhor
+  - o que temos hoje?
+  - troca
+  - o sujeito foi esfaqueado nas costas
+  - morte por sangraento
+  - troca
+  - "n\xE3o deve ter sido algo bonito de se ver"
+  - troca
+  - "n\xE3o mesmo"
+  - "aqui est\xE1 o meu laudo"
+  - troca
+  - (Laudo adicionado ao caderno)
+  - obrigado Devi
+  - troca
+  - disponha detetive
+  senteceloop:
+  - Gostaria que eu analisasse algo a mais, detetive?
+  - troca paisagem
+  - "Se for poss\xEDvel."
+  sentencesIngles:
+  - How are you, detective?
+  - troca paisagem
+  - Hello Kyle.
+  - troca pensando
+  - Come to ask me to analyze something?
+  - troca paisagem
+  - I would like you to analyze this.
+  - finalizar
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  - I would like you to analyze this.
+  sentences2Ingles: []
+  senteceloopIngles:
+  - Would you like me to analyze anything else, detective?
+  - troca paisagem
+  - If I may.
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: aa85f7fd4433f864687e7208a3786e20,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: d5faa14e8b5950e4ea56e77276f82b5e,
+    type: 3}
+  random: 0
+--- !u!4 &479689178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479689176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &495365873
 GameObject:
   m_ObjectHideFlags: 0
@@ -7531,6 +7977,207 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &688337140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 688337142}
+  - component: {fileID: 688337141}
+  - component: {fileID: 688337143}
+  m_Layer: 0
+  m_Name: Acusacao (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &688337141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688337140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Steve
+  nameperson2: Detetive
+  sentences:
+  - "Ol\xE1 detetive."
+  - troca desgosto
+  - "O que voc\xEA esta fazendo Steve?"
+  - troca pensando
+  - Estou vendo se encontro alguma pista.
+  - troca desgosto
+  - "No pr\xE9dio da frente?"
+  - troca paisagem
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  - O assassino pode estar em qualquer lugar.
+  sentences2:
+  - troca paisagem
+  - "Steve voc\xEA est\xE1 na varanda?"
+  - troca paisagem
+  - Sim.
+  - troca paisagem
+  - "E a maioria das evid\xEAncias est\xE1 l\xE1 dentro."
+  - troca paisagem
+  - Sim.
+  - troca paisagem
+  - "Ent\xE3o faz sentido voc\xEA entrar agora, certo?"
+  - troca paisagem
+  - Faz sentido para mim.
+  - troca paisagem
+  - "Ent\xE3o vamos entrar, Steve."
+  - trocatroca paisagem
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  - "N\xE3o, pode ter pistas aqui fora."
+  senteceloop:
+  - Precisa de mais alguma coisa, detetive?
+  - troca paisagem
+  - Estou bem, obrigado!
+  - troca pensando
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles:
+  - Hello detective.
+  - troca desgosto
+  - What are you doing, Steve?
+  - troca pensando
+  - Trying to find clues.
+  - troca desgosto
+  - In the other building?
+  - troca paisagem
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  - The murderer could be anywhere.
+  sentences2Ingles:
+  - troca paisagem
+  - Steve, are you on the balcony?
+  - troca paisagem
+  - Yes.
+  - troca paisagem
+  - But the evidence is inside.
+  - troca paisagem
+  - Yes.
+  - troca paisagem
+  - So you should go back in now, right?
+  - troca paisagem
+  - Makes sense to me.
+  - troca paisagem
+  - So let's go back in there, Steve.
+  - troca paisagem
+  - No, there might be more clues here.
+  senteceloopIngles:
+  - Do you need anything else, detective?
+  - troca paisagem
+  - I'm fine. Thank you!
+  - troca pensando
+  - (I should investigate the house)
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: 22cd442a67ec5034480d38eb35066412,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 7aa7b09baf3ac1e42b857877838d8b34,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 03db266f71302ee43a52bf9f52c8ec99,
+    type: 3}
+  random: 1
+--- !u!4 &688337142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688337140}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &688337143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688337140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1687097054}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
 --- !u!1 &691838774
 GameObject:
   m_ObjectHideFlags: 0
@@ -10411,6 +11058,211 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967630817}
   m_CullTransparentMesh: 0
+--- !u!1 &978859398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978859400}
+  - component: {fileID: 978859399}
+  m_Layer: 0
+  m_Name: Acusacao (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &978859399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978859398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Sanefuji
+  nameperson2: Detetive
+  sentences:
+  - "Se voc\xEA veio at\xE9 aqui para me trazer minha \xE1gua, esta muito atrasado."
+  - troca embara
+  - "Oi? eu n\xE3o vim trazer nenhuma \xE1gua."
+  - troca pensando
+  - "Faz sentido, voc\xEA n\xE3o est\xE1 vestido de forma apropriada para ser meu
+    mordomo."
+  - troca embara
+  - "N\xE3o, eu n\xE3o sou nenhum mordomo."
+  - troca paisagem
+  - "Disso eu sei, com essa roupa ridicula, n\xE3o tem como ser mesmo."
+  - troca paisagem
+  - Eu sou o novo detetive da cidade.
+  - E tenho algumas perguntas para te fazer.
+  - troca paisagem
+  - finalizar
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  sentences2:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  senteceloop: []
+  sentencesIngles:
+  - "\rIf you came here to bring me my water, it is long overdue."
+  - troca embara
+  - "\rHey? I didn't come to bring any water."
+  - troca pensando
+  - "\rIt makes sense, you are not dressed properly to be my butler."
+  - troca embara
+  - "\rNo, I am no butler."
+  - troca paisagem
+  - I know that, with this ridiculous outfit, there is no way to be.
+  - troca paisagem
+  - "\rI'm the new detective in town."
+  - And I have a few questions to ask you.
+  - troca paisagem
+  - finalizar
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  - troca paisagem
+  sentences2Ingles:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: f38c8751e26cc3b41b9a8dda96460192,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: 95884be17a8e8c54682900aa2b1dd74d,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: f38c8751e26cc3b41b9a8dda96460192,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: f38c8751e26cc3b41b9a8dda96460192,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: f38c8751e26cc3b41b9a8dda96460192,
+    type: 3}
+  random: 0
+--- !u!4 &978859400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978859398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &988851716
 GameObject:
   m_ObjectHideFlags: 0
@@ -10555,8 +11407,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.4, y: 3.2}
-  m_SizeDelta: {x: 1099.0962, y: 617.2091}
+  m_AnchoredPosition: {x: 0.2, y: 3.2}
+  m_SizeDelta: {x: 1299.9441, y: 617.2091}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004110201
 MonoBehaviour:
@@ -11946,6 +12798,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161c030409121ae4ca8f53e59d7285b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  legistaDialogo: {fileID: 0}
+  TIDialogo: {fileID: 0}
+  policialDialogo: {fileID: 0}
+  jornalistaDialogo: {fileID: 0}
   texto: {fileID: 1327602465}
   botaoSim: {fileID: 0}
   botaoNao: {fileID: 0}
@@ -17520,7 +18376,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 8699.29, y: 1056.3717}
+  m_SizeDelta: {x: 9373.476, y: 4504.1724}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &1740795511
 MonoBehaviour:
@@ -17535,7 +18391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -17549,7 +18405,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -17689,6 +18545,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154e4be23b254f14cb08c0d80f1cfd7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "Acusa\xE7\xE3oBool": 0
+  textoCreditos: {fileID: 1740795511}
+  acusacaoParceiro: {fileID: 688337141}
+  acusacaoPolicial: {fileID: 1963083487}
+  acusacaoLegista: {fileID: 403870152}
+  acusacaoTI: {fileID: 479689177}
+  acusacaoDelegado: {fileID: 2032112728}
+  acusacaoRico: {fileID: 150646842}
+  acusacaoJornalista: {fileID: 978859399}
+  controleAcusacao: {fileID: 688337143}
+  controleAcusacao2: {fileID: 1963083489}
   dialogodelegadodetetive: {fileID: 848513527}
   dialogodelegadodetetivecontrol: {fileID: 848513526}
   textoNumeroCasos: {fileID: 1670137461}
@@ -17728,7 +18595,6 @@ MonoBehaviour:
   RaivaFinal: {fileID: 1344138675}
   PrazerFinal: {fileID: 132871806}
   JusticaFinal: {fileID: 495365873}
-  SemEvidencia: {fileID: 0}
   Finalizar: {fileID: 1624538602}
   texto: {fileID: 1327602465}
   PixelArt: {fileID: 2069617634}
@@ -19417,6 +20283,173 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1920044674}
   m_CullTransparentMesh: 0
+--- !u!1 &1963083486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963083488}
+  - component: {fileID: 1963083487}
+  - component: {fileID: 1963083489}
+  m_Layer: 0
+  m_Name: Acusacao (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1963083487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963083486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Johnny
+  nameperson2: Detetive
+  sentences:
+  - "Ol\xE1 detetive.\n"
+  - troca paisagem
+  - "Ol\xE1 policial."
+  - troca pensando
+  - Sabe uma coisa que me incomoda muito, detetive?
+  - troca paisagem
+  - "(L\xE1 vem)"
+  - O que?
+  - troca paisagem
+  - As pessoas vivem confundindo meu nome.
+  - Me chamam de "Jhony", "Johny", "Joni"...
+  - E isso sempre me incomoda.
+  - troca paisagem
+  - "A vida \xE9 assim, Johnny."
+  - troca pensando
+  - "Detetive, como voc\xEA sabe que meu nome \xE9 Johnny e n\xE3o qualquer varia\xE7\xE3o?"
+  - troca embara
+  - "Est\xE1 no seu cracha."
+  - troca paisagem
+  - ...
+  - "Aqui est\xE3o as informa\xE7\xF5es do caso."
+  - troca paisagem
+  - Obrigado, Jhoni.
+  sentences2:
+  - troca
+  - "ol\xE1 Devi"
+  - troca
+  - como vai detetive?
+  - troca
+  - podia estar melhor
+  - o que temos hoje?
+  - troca
+  - o sujeito foi esfaqueado nas costas
+  - morte por sangraento
+  - troca
+  - "n\xE3o deve ter sido algo bonito de se ver"
+  - troca
+  - "n\xE3o mesmo"
+  - "aqui est\xE1 o meu laudo"
+  - troca
+  - (Laudo adicionado ao caderno)
+  - obrigado Devi
+  - troca
+  - disponha detetive
+  senteceloop:
+  - Precisa de mais alguma coisa detetive?
+  - troca paisagem
+  - Estou bem obrigado!
+  - pensando detetive
+  - (Acho melhor investigar o apartamento)
+  sentencesIngles:
+  - Hello detective.
+  - troca paisagem
+  - Hello officer.
+  - troca pensando
+  - Do you know what grinds my gears, detective?
+  - troca paisagem
+  - (Here we go)
+  - What?
+  - troca paisagem
+  - People are always getting my name wrong.
+  - They call me "Jhony", "Johny", "Joni"...
+  - And it always gets to me.
+  - troca paisagem
+  - That's life, Johnny.
+  - troca pensando
+  - Detective, how do you know my name is Johnny and not anything else?
+  - troca embara
+  - It's in your name tag.
+  - troca paisagem
+  - ...
+  - Here's the data on the case.
+  - troca paisagem
+  - Thank you, Jhoni.
+  sentences2Ingles: []
+  senteceloopIngles:
+  - Do you need anything else, detective?
+  - troca paisagem
+  - I'm fine. Thank you!
+  - pensando detetive
+  - (I should investigate the apartment)
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: cb108a3d317a988419183ebe51a6898c,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 66db8aa40e70324459db66ada9fe08da,
+    type: 3}
+  random: 0
+--- !u!4 &1963083488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963083486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963083489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963083486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1687097054}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
 --- !u!1 &1966885026
 GameObject:
   m_ObjectHideFlags: 0
@@ -20137,6 +21170,144 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031540542}
   m_CullTransparentMesh: 0
+--- !u!1 &2032112727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2032112729}
+  - component: {fileID: 2032112728}
+  m_Layer: 0
+  m_Name: Acusacao (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2032112728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032112727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Nolan
+  nameperson2: Detetive
+  sentences:
+  - "Bom, detetive, como voc\xEA \xE9 novo na cidade eu fa\xE7o quest\xE3o de te
+    acompanhar at\xE9 o seu primeiro caso."
+  - troca paisagem
+  - Obrigado senhor.
+  - troca paisagem
+  - "O que deve ser feito \xE9 simples, acredito que j\xE1 saiba como proceder."
+  - "Dado que j\xE1 tem uma certa experi\xEAncia na sua cidade natal."
+  - 'Mas eu gosto de deixar tudo acertado, detalhe  por detalhe. '
+  - troca paisagem
+  - Compreendo bem.
+  - troca paisagem
+  - "Voc\xEA deve entrar na cena do crime, juntar as evid\xEAncias que achar no local,
+    quando sentir que j\xE1 coletou todas as informa\xE7\xF5es, v\xE1 at\xE9 o carro
+    e volte para a delegacia."
+  - "Geralmente j\xE1 existir\xE1 uma equipe no local, como a nossa legista, algum
+    policial e o seu parceiro \xE9 claro."
+  - "\xC9 importante conversar com todo mundo, pois eles podem ter informa\xE7\xF5es
+    \xFAteis para o seu caso."
+  - "Retornando para a delegacia, v\xE1 at\xE9 a sua sala no segundo andar, e preencha
+    o seu relat\xF3rio sobre o caso."
+  - Entendido?
+  - troca paisagem
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  - Sim senhor.
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - "\rWell, detective, as you're new to the city,\r\nI insist to accompanying you,
+    in your first case."
+  - troca paisagem
+  - Thank you sir.
+  - troca paisagem
+  - What should be done is simple, I believe you already know how to proceed.
+  - Since you already have some experience in your hometown.
+  - "\rBut I like to make everything right, detail by detail."
+  - troca paisagem
+  - "\rI understand well."
+  - troca paisagem
+  - You must enter the crime scene, gather the evidence you find, when you feel you
+    have already collected all the information, go to the car and return to the police
+    station.
+  - "\rThere will usually already be a team on site, like our coroner, a police officer
+    and your partner of course."
+  - "\rIt is important to talk to everyone, as they may have useful information for
+    you."
+  - "\rReturning to the police station, go to your office on the second floor, and
+    complete your report on the case."
+  - "\rUnderstood?"
+  - troca paisagem
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  - Yes sir.
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 69d42c1b5bb2dcd438c83224c20db4ef,
+    type: 3}
+  random: 0
+--- !u!4 &2032112729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032112727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 590.91986, y: 300.90768, z: -90.007195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037583307
 GameObject:
   m_ObjectHideFlags: 0

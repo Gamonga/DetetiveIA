@@ -14,6 +14,10 @@ public class SpawnObjects : MonoBehaviour
     public Caderno caderno;
     public static string[] NomeDosObjetos = new string[40];
     public static int NumeroDeObjetos;
+    public GameObject CercaDentro;
+    public Evidence CercaDentroEvidence;
+    public GameObject CercaFora;
+    public Evidence CercaForaEvidence;
     public GameObject PanoBranco;
     public Evidence PanoBrancoEvidence;
     public GameObject CartaoAlcool;
@@ -2875,6 +2879,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 DestrocosClone.transform.position = new Vector3(-9.9f, -9.13f, -5);
                 break;
+            case 5:
+                DestrocosClone.transform.position = new Vector3(8.76f, -24.51f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Destrocos(Clone)";
         NumeroDeObjetos++;
@@ -2898,6 +2905,9 @@ public class SpawnObjects : MonoBehaviour
                 ManchaSangueClone.transform.position = new Vector3(PosicaoCorpoMorto.x - 1.5f, PosicaoCorpoMorto.y - 0.12f, -4);
                 break;
             case 3:
+                ManchaSangueClone.transform.position = new Vector3(PosicaoCorpoMorto.x - 1.5f, PosicaoCorpoMorto.y - 0.12f, -4);
+                break;
+            case 5:
                 ManchaSangueClone.transform.position = new Vector3(PosicaoCorpoMorto.x - 1.5f, PosicaoCorpoMorto.y - 0.12f, -4);
                 break;
         }
@@ -2941,6 +2951,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 ManchaSangueTortura.transform.position = new Vector3(-4.79f, -2.12f, -4);
+                break;
+            case 5:
+                ManchaSangueTortura.transform.position = new Vector3(29.81f, -10.91f, -4);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "ManchaSangueTortura(Clone)";
@@ -3013,6 +3026,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CelularClone.transform.position = new Vector3(-10f, -17f, -5);
                 break;
+            case 5:
+                CelularClone.transform.position = new Vector3(18.15f, 39.4f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Celular(Clone)";
         NumeroDeObjetos++;
@@ -3032,6 +3048,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 BastaoDeBeisebolSangueClone.transform.position = new Vector3(-16.72f, -4.79f, -5);
+                break;
+            case 5:
+                BastaoDeBeisebolSangueClone.transform.position = new Vector3(30.18f, 36.51f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "BastaoDeBeisebolComSangue(Clone)";
@@ -3053,6 +3072,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 BastaoDeBeisebolClone.transform.position = new Vector3(-16.72f, -4.79f, -5);
                 break;
+            case 5:
+                BastaoDeBeisebolClone.transform.position = new Vector3(33.31f, 20.87f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "BastaoDeBeisebol(Clone)";
         NumeroDeObjetos++;
@@ -3071,6 +3093,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CameraClone.transform.position = new Vector3(-1.47f, -3.51f, -5);
+                break;
+            case 5:
+                CameraClone.transform.position = new Vector3(9.89f, 39.64f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Camera(Clone)";
@@ -3092,6 +3117,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CaixaDeRemedioClone.transform.position = new Vector3(-1.47f, -3.51f, -5);
                 break;
+            case 5:
+                CaixaDeRemedioClone.transform.position = new Vector3(-0.78f, 39.72f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Caixa de remedio(Clone)";
         NumeroDeObjetos++;
@@ -3111,6 +3139,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CofreDinheiroClone.transform.position = new Vector3(-17.98f, 23.95f, -5);
+                break;
+            case 5:
+                CofreDinheiroClone.transform.position = new Vector3(-4.95f, 22.72f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Cofre com dinheiro(Clone)";
@@ -3141,6 +3172,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CofreDinheiroClone.transform.position = new Vector3(-17.98f, 23.95f, -5);
                 break;
+            case 5:
+                CofreDinheiroClone.transform.position = new Vector3(-4.95f, 22.72f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Cofre com dinheiro(Clone)";
         NumeroDeObjetos++;
@@ -3160,6 +3194,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CofreFechadoClone.transform.position = new Vector3(-17.98f, 23.95f, -5);
+                break;
+            case 5:
+                CofreFechadoClone.transform.position = new Vector3(-4.95f, 22.72f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CofreFechado(Clone)";
@@ -3181,6 +3218,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CofreVazioInteriorClone.transform.position = new Vector3(-17.98f, 23.95f, -5);
                 break;
+            case 5:
+                CofreVazioInteriorClone.transform.position = new Vector3(-4.95f, 22.72f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CofreVazio(Clone)";
         NumeroDeObjetos++;
@@ -3201,8 +3241,15 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 JanelaQuebradaPedraInteriorClone.transform.position = new Vector3(6.3f, 6.24f, -5);
                 break;
+            case 5:
+                GameObject CercaDentroClone = Instantiate(CercaDentro) as GameObject;
+                CercaDentroClone.transform.position = new Vector3(0f, 0f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "pedra_dentro(Clone)";
+        if(SceneManager.GetActiveScene().buildIndex == 5){
+            NomeDosObjetos[NumeroDeObjetos] = "cerca_dentro(Clone)";
+        }
         NumeroDeObjetos++;
     }
     public void InstantiateJanelaQuebradaPedraExterior()
@@ -3220,9 +3267,15 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 break;
+            case 5:
+                GameObject CercaForaClone = Instantiate(CercaFora) as GameObject;
+                CercaForaClone.transform.position = new Vector3(0f, 0f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "pedra_fora(Clone)";
-        NumeroDeObjetos++;
+        if(SceneManager.GetActiveScene().buildIndex == 5){
+            NomeDosObjetos[NumeroDeObjetos] = "cerca_fora(Clone)";
+        }
     }
     public void InstantiatePratos()
     {
@@ -3239,6 +3292,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 PratoClone.transform.position = new Vector3(-2.2f, -13.57f, -5);
+                break;
+            case 5:
+                PratoClone.transform.position = new Vector3(-17.38f, 40.2f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Prato(Clone)";
@@ -3314,6 +3370,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 LaudoClone.transform.position = new Vector3(-14.25f, -9.34f, 0);
                 break;
+            case 5:
+                LaudoClone.transform.position = new Vector3(-20.77f, 10.72f, 0);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Laudo(Clone)";
         NumeroDeObjetos++;
@@ -3350,6 +3409,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 TestemunhalClone.transform.position = new Vector3(16.64f, -17.55f, 0);
                 break;
+            case 5:
+                TestemunhalClone.transform.position = new Vector3(21.59f, -13.83f, 0);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Informações da testemunha(Clone)";
         NumeroDeObjetos++;
@@ -3380,6 +3442,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 PolicialClone.transform.position = new Vector3(5.81f, -17.42f, 0);
                 break;
+            case 5:
+                PolicialClone.transform.position = new Vector3(-4.29f, -16.09f, 0);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Informações do policial(Clone)";
         NumeroDeObjetos++;
@@ -3399,6 +3464,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 BilheteCulposoClone.transform.position = new Vector3(-8.39f, 21.73f, -5);
+                break;
+            case 5:
+                BilheteCulposoClone.transform.position = new Vector3(-15.7f, 9.3f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Bilhete(Clone)";
@@ -3420,6 +3488,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 FacaNormalClone.transform.position = new Vector3(-4.64f, -1.99f, -5);
                 break;
+            case 5:
+                FacaNormalClone.transform.position = new Vector3(-22.3f, -10.1f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "FacaNormal(Clone)";
         NumeroDeObjetos++;
@@ -3439,6 +3510,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 RevolverClone.transform.position = new Vector3(0.9f, -2.34f, -5);
+                break;
+            case 5:
+                RevolverClone.transform.position = new Vector3(-18.3f, -21.3f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Revolver(Clone)";
@@ -3460,6 +3534,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 FacaNormalSemSangueClone.transform.position = new Vector3(-1.3f, -3.6f, -5);
                 break;
+            case 5:
+                FacaNormalSemSangueClone.transform.position = new Vector3(-2.14f, -12.51f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "FacaSerradaSemSangue(Clone)";
         NumeroDeObjetos++;
@@ -3479,6 +3556,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 FacaCozinhaClone.transform.position = new Vector3(-24.57f, -18.92f, -5);
+                break;
+            case 5:
+                FacaCozinhaClone.transform.position = new Vector3(8.91f, -15.12f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "FacaCozinha(Clone)";
@@ -3500,6 +3580,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CanoContundenteClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
                 break;
+            case 5:
+                CanoContundenteClone.transform.position = new Vector3(-31.3f, 10.7f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CanoNormalContundente(Clone)";
         NumeroDeObjetos++;
@@ -3519,6 +3602,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CanoContundenteClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+            case 5:
+                CanoContundenteClone.transform.position = new Vector3(-32.79f, 19.16f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CanoNormalPerfurante(Clone)";
@@ -3540,6 +3626,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 PanoBrancoClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
                 break;
+            case 5:
+                PanoBrancoClone.transform.position = new Vector3(-7.24f, 2.65f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "PedacoPanoBranco(Clone)";
         NumeroDeObjetos++;
@@ -3559,6 +3648,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CartaoPoliciaClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+            case 5:
+                CartaoPoliciaClone.transform.position = new Vector3(6.5f, 0.25f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CartaoPolical(Clone)";
@@ -3580,6 +3672,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CartaoAlcoolClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
                 break;
+            case 5:
+                CartaoAlcoolClone.transform.position = new Vector3(13.23f, 0.89f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CartaoAlcool(Clone)";
         NumeroDeObjetos++;
@@ -3599,6 +3694,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CartaoFilmeClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+            case 5:
+                CartaoFilmeClone.transform.position = new Vector3(17.01f, 0.98f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CartaoFilme(Clone)";
@@ -3620,6 +3718,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 RelogioClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
                 break;
+            case 5:
+                RelogioClone.transform.position = new Vector3(20.88f, 0.98f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Relogio(Clone)";
         NumeroDeObjetos++;
@@ -3639,6 +3740,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CanoContundenteSangueClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
+                break;
+            case 5:
+                CanoContundenteSangueClone.transform.position = new Vector3(32.67f, -30.29f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CanoSangueContundente(Clone)";
@@ -3660,6 +3764,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 CanoContundenteSangueClone.transform.position = new Vector3(-13.3f, 17.47f, -5);
                 break;
+            case 5:
+                CanoContundenteSangueClone.transform.position = new Vector3(33.5f, -24.22f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CanoSanguePerfurante(Clone)";
         NumeroDeObjetos++;
@@ -3678,6 +3785,9 @@ public class SpawnObjects : MonoBehaviour
                 SufocamentoClone.transform.position = new Vector3(40f, 40f, -5);
                 break;
             case 3:
+                SufocamentoClone.transform.position = new Vector3(40f, 40f, -5);
+                break;
+            case 5:
                 SufocamentoClone.transform.position = new Vector3(40f, 40f, -5);
                 break;
         }
@@ -3711,6 +3821,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 PanoClone.transform.position = new Vector3(-4.67f, 7.19f, -5);
                 break;
+            case 5:
+                PanoClone.transform.position = new Vector3(19.77f, -31.94f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Pano(Clone)";
         NumeroDeObjetos++;
@@ -3738,6 +3851,9 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 PanoClone.transform.position = new Vector3(-4.67f, 7.19f, -5);
+                break;
+            case 5:
+                PanoClone.transform.position = new Vector3(23.19f, -25.49f, -5);
                 break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Pano(Clone)";
@@ -3778,6 +3894,9 @@ public class SpawnObjects : MonoBehaviour
             case 3:
                 PunhosClone.transform.position = new Vector3(40f, 40f, -5);
                 break;
+            case 5:
+                PunhosClone.transform.position = new Vector3(40f, 40f, -5);
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "Punhos(Clone)";
         NumeroDeObjetos++;
@@ -3796,6 +3915,9 @@ public class SpawnObjects : MonoBehaviour
                 ConviteClone.transform.position = new Vector3(41f, 41f, -5);
                 break;
             case 3:
+                ConviteClone.transform.position = new Vector3(41f, 41f, -5);
+                break;
+            case 5:
                 ConviteClone.transform.position = new Vector3(41f, 41f, -5);
                 break;
         }
@@ -3880,6 +4002,10 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CorpoMorto1Clone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
+                break;
+            case 5:
+                CorpoMorto1Clone.transform.position = new Vector3(-30.71f, -32.09f, -5);
                 PosicaoCorpoMorto = CorpoMorto1Clone.transform.position;
                 break;
         }
@@ -3968,6 +4094,10 @@ public class SpawnObjects : MonoBehaviour
                 CorpoMorto2Clone.transform.position = new Vector3(-3.39f, 18.99f, -5);
                 PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
                 break;
+            case 5:
+                CorpoMorto2Clone.transform.position = new Vector3(-19f, -32.4f, -5);
+                PosicaoCorpoMorto = CorpoMorto2Clone.transform.position;
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto2(Clone)";
         NumeroDeObjetos++;
@@ -4050,6 +4180,10 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CorpoMorto3Clone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
+                break;
+            case 5:
+                CorpoMorto3Clone.transform.position = new Vector3(-30.9f, -10.3f, -5);
                 PosicaoCorpoMorto = CorpoMorto3Clone.transform.position;
                 break;
         }
@@ -4136,6 +4270,10 @@ public class SpawnObjects : MonoBehaviour
                 CorpoMorto4Clone.transform.position = new Vector3(-3.39f, 18.99f, -5);
                 PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
                 break;
+            case 5:
+                CorpoMorto4Clone.transform.position = new Vector3(3f, 17.8f, -5);
+                PosicaoCorpoMorto = CorpoMorto4Clone.transform.position;
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto4(Clone)";
         NumeroDeObjetos++;
@@ -4219,6 +4357,10 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CorpoMorto1FClone.transform.position = new Vector3(3.28f, -30.21f, -5);
+                PosicaoCorpoMorto = CorpoMorto1FClone.transform.position;
+                break;
+            case 5:
+                CorpoMorto1FClone.transform.position = new Vector3(-30.71f, -32.09f, -5);
                 PosicaoCorpoMorto = CorpoMorto1FClone.transform.position;
                 break;
         }
@@ -4308,6 +4450,10 @@ public class SpawnObjects : MonoBehaviour
                 CorpoMorto2FClone.transform.position = new Vector3(-3.39f, 18.99f, -5);
                 PosicaoCorpoMorto = CorpoMorto2FClone.transform.position;
                 break;
+            case 5:
+                CorpoMorto2FClone.transform.position = new Vector3(-19f, -32.4f, -5);
+                PosicaoCorpoMorto = CorpoMorto2FClone.transform.position;
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto2F(Clone)";
         NumeroDeObjetos++;
@@ -4393,6 +4539,10 @@ public class SpawnObjects : MonoBehaviour
                 CorpoMorto3MClone.transform.position = new Vector3(3.28f, -30.21f, -5);
                 PosicaoCorpoMorto = CorpoMorto3MClone.transform.position;
                 break;
+            case 5:
+                CorpoMorto3MClone.transform.position = new Vector3(-30.9f, -10.3f, -5);
+                PosicaoCorpoMorto = CorpoMorto3MClone.transform.position;
+                break;
         }
         NomeDosObjetos[NumeroDeObjetos] = "CorpoMorto3M(Clone)";
         NumeroDeObjetos++;
@@ -4475,6 +4625,10 @@ public class SpawnObjects : MonoBehaviour
                 break;
             case 3:
                 CorpoMorto4FClone.transform.position = new Vector3(-3.39f, 18.99f, -5);
+                PosicaoCorpoMorto = CorpoMorto4FClone.transform.position;
+                break;
+            case 5:
+                CorpoMorto4FClone.transform.position = new Vector3(3f, 17.8f, -5);
                 PosicaoCorpoMorto = CorpoMorto4FClone.transform.position;
                 break;
         }

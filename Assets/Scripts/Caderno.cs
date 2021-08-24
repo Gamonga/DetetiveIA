@@ -28,6 +28,7 @@ public class Caderno : MonoBehaviour
     public static bool Jhony;
     public static bool Sanefuji;
     public static bool Devi;
+    private Pessoa TesteDelegado;
     private Pessoa TesteSanefuji;
     private Pessoa TesteJessie;
     private Pessoa TesteJohny;
@@ -123,6 +124,15 @@ public class Caderno : MonoBehaviour
         entrou = false;
         posiçãoEvidencias = 0;
         posiçãoPessoa = 0;
+    }
+    public void Voltar()
+    {
+        evidenciasTextos.SetActive(false);
+        pessoasTextos.SetActive(false);
+        SelecionarOutraPista.SetActive(false);
+        JuntarPistas.SetActive(false);
+        Pensamentos.SetActive(false);
+        CadernoLimpo.SetActive(true);
     }
     void abrirCaderno()
     {
@@ -1812,40 +1822,137 @@ public class Caderno : MonoBehaviour
             TesteDevi = new Pessoa();
             TesteSanefuji = new Pessoa();
             TesteKyle = new Pessoa();
+            TesteDelegado = new Pessoa();
+
+
+            TesteDelegado.nome = "Nolan";
+            if (PlayerData.Idioma == "ingles")
+            {
+                TesteDelegado.description = "Police station sheriff." + "\n" +
+                    "Age: 49" + "\n" +
+                    "Gender: Male" + "\n" +
+                    "High social class. Immigrant child. Skinny and tall. He has a calm temperament and is very neutral in the matters he discusses, very sure of himself and a very serious man.";
+            }
+            else
+            {
+                TesteDelegado.description = "Delegado da delegacia de polícia." + "\n" +
+                    "Idade: 49" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Classe social alta. Filho de imigrantes. Magro e alto. Tem um temperamento calmo e sendo bem neutro nos assuntos que aborda, bem seguro de sí e um homem bem sério.";
+            }
+            adicionarPessoas(TesteDelegado);
             if (Sanefuji == true)
             {
                 TesteSanefuji.nome = "Sanefuji";
-                TesteSanefuji.description = "Empresário da alta classe, só pensa em business.";
+                if (PlayerData.Idioma == "ingles")
+                {
+                    TesteSanefuji.description = "A high-class businessman." + "\n" +
+                    "Age: 30" + "\n" +
+                    "Gender: Male" + "\n" +
+                    "High social class. Average height and slightly muscular. He has a calm disposition and is very extrovert in the subjects he broaches, very sure of himself and not a serious man, he only thinks about business.";
+                }
+                else
+                {
+                    TesteSanefuji.description = "Empresário da alta classe." + "\n" +
+                    "Idade: 30" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Classe social alta. Altura na média e levemente muscoloso. Tem um temperamento calmo e sendo bem extrovertido nos assuntos que aborda, bem seguro de sí e um homem nada sério, só pensa em business.";
+                }
                 adicionarPessoas(TesteSanefuji);
             }
             if (Jessie == true)
             {
                 TesteJessie.nome = "Jessie";
-                TesteJessie.description = "Jornalista investigativa.";
+                if (PlayerData.Idioma == "ingles")
+                {
+                    TesteJessie.description = "City investigative journalist." + "\n" +
+                    "Age: 23" + "\n" +
+                    "Gender: Female" + "\n" +
+                    "Middle social class. Thin and short. She has a very explosive temperament and is very extrovert in the subjects she addresses, she is not very sure of herself or serious.";
+                }
+                else
+                {
+                    TesteJessie.description = "Jornalista investigativa da cidade." + "\n" +
+                    "Idade: 23" + "\n" +
+                    "Sexo: Feminino" + "\n" +
+                    "Classe social média. Magra e baixinha. Tem um temperamento bem explosivo e sendo bem extrovertida nos assuntos que aborda, não é muito segura de sí e nem séria.";
+                }
                 adicionarPessoas(TesteJessie);
             }
             if (kyle == true)
             {
                 TesteKyle.nome = "kyle";
-                TesteKyle.description = "Perito digital da delegacia.";
+                if (PlayerData.Idioma == "ingles")
+                {
+                    TesteKyle.description = "Digital expert from the police station." + "\n" +
+                    "Idade: 28" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Middle social class. Família veio do interior. Thin and short. He has a very explosive temperament and is very neutral in the subjects he addresses. He looks very serious but it's just an impression";
+                }
+                else
+                {
+                    TesteKyle.description = "Perito digital da delegacia." + "\n" +
+                    "Idade: 28" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Classe social média. Família veio do interior. Magro e baixinho. Tem um temperamento explosivo e sendo bem neutro nos assuntos que aborda. Parece bem sério mas é só impressão.";
+                }
                 adicionarPessoas(TesteKyle);
             }
             if (Steve == true)
             {
                 TesteSteve.nome = "Steve";
-                TesteSteve.description = "Parceiro do detetive.";
+                if (PlayerData.Idioma == "ingles")
+                {
+                    TesteSteve.description = "Detective's partner." + "\n" +
+                    "Idade: 24" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Middle social class. Thin and short. He has a very explosive temperament and is very extrovert in the subjects he addresses, he is very sure of himself but not so serious, like to joke a lot.";
+                }
+                else
+                {
+                    TesteSteve.description = "Parceiro do detetive." + "\n" +
+                    "Idade: 24" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Classe social média. Magro e baixinho. Tem um temperamento explosivo e sendo bem extrovertido nos assuntos que aborda, bem seguro de sí mas não é tão sério, gosta de zoar bastante.";
+                }
                 adicionarPessoas(TesteSteve);
             }
             if (Jhony == true)
             {
                 TesteJohny.nome = "Johnny";
-                TesteJohny.description = "Policial.";
+                if (PlayerData.Idioma == "ingles")
+                {
+                    TesteJohny.description = "Policeman." + "\n" +
+                    "Idade: 24" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Middle social class. Family came from the countryside. Tall and muscular. Has a calm disposition and is quite neutral in the subjects he broaches, a somewhat serious man being quite wordy at times.";
+                }
+                else
+                {
+                    TesteJohny.description = "Policial." + "\n" +
+                    "Idade: 24" + "\n" +
+                    "Sexo: Masculino" + "\n" +
+                    "Classe social média. Família veio do interior. Alto e muscoloso. Tem um temperamento calmo e sendo bem neutro nos assuntos que aborda, homem um pouco sério sendo bem prolixo as vezes.";
+                }
                 adicionarPessoas(TesteJohny);
             }
             if (Devi == true)
             {
                 TesteDevi.nome = "Devi";
-                TesteDevi.description = "Legista.";
+                if (PlayerData.Idioma == "ingles")
+                {
+                    TesteDevi.description = "Legista." + "\n" +
+                    "Idade: 35" + "\n" +
+                    "Sexo: Female" + "\n" +
+                    "High social class. Daughter of immigrants. Thin and of medium height. She has a calm temperament and is very calm in the subjects she discusses, very self-assured and very serious.";
+                }
+                else
+                {
+                    TesteDevi.description = "Legista." + "\n" +
+                    "Idade: 35" + "\n" +
+                    "Sexo: Feminino" + "\n" +
+                    "Classe social alta. Filha de imigrantes. Magro e de estatura média. Tem um temperamento calmo e sendo bem tranquila nos assuntos que aborda, bem segura de sí e bem séria.";
+                }
                 adicionarPessoas(TesteDevi);
             }
         }
