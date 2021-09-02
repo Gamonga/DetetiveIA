@@ -16895,8 +16895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.44}
-  m_SizeDelta: {x: 903.3369, y: 413.72314}
+  m_AnchoredPosition: {x: 4.62, y: 0.44}
+  m_SizeDelta: {x: 771.2302, y: 413.72314}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &940807460
 MonoBehaviour:
@@ -19930,7 +19930,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Steve
-  description: Parceiro do detetive
+  description: "Parceiro do detetive.  \nIdade: 24 \nSexo: Masculino\nClasse social
+    m\xE9dia. Magro e baixinho. Tem um temperamento explosivo e sendo bem extrovertido
+    nos assuntos que aborda, bem seguro de s\xED mas n\xE3o \xE9 t\xE3o s\xE9rio,
+    gosta de zoar bastante."
+  descriptionIngles: 'Detective''s partner.
+
+    Idade: 24
+
+    Sexo: Masculino
+
+    Middle
+    social class. Thin and short. He has a very explosive temperament and is very
+    extrovert in the subjects he addresses, he is very sure of himself but not so
+    serious, like to joke a lot.'
 --- !u!1 &1059771338
 GameObject:
   m_ObjectHideFlags: 0
@@ -20667,6 +20680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161c030409121ae4ca8f53e59d7285b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CorpoJornalista: {fileID: 0}
+  CorpoProprietario: {fileID: 0}
   legistaDialogo: {fileID: 0}
   TIDialogo: {fileID: 0}
   policialDialogo: {fileID: 0}
@@ -22139,7 +22154,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Devi
-  description: Legista
+  description: 'Legista.
+
+    Idade: 35
+
+    Sexo: Female
+
+    High social class.
+    Daughter of immigrants. Thin and of medium height. She has a calm temperament
+    and is very calm in the subjects she discusses, very self-assured and very serious.'
+  descriptionIngles: "Legista.\nIdade: 35\nSexo: Feminino\nClasse social alta. Filha
+    de imigrantes. Magro e de estatura m\xE9dia. Tem um temperamento calmo e sendo
+    bem tranquila nos assuntos que aborda, bem segura de s\xED e bem s\xE9ria."
 --- !u!50 &1163162208
 Rigidbody2D:
   serializedVersion: 4
@@ -26585,7 +26611,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Johnny
-  description: 'Poilical '
+  description: "Policial.\nIdade: 24\nSexo: Masculino\nClasse social m\xE9dia. Fam\xEDlia
+    veio do interior. Alto e muscoloso. Tem um temperamento calmo e sendo bem neutro
+    nos assuntos que aborda, homem um pouco s\xE9rio sendo bem prolixo as vezes."
+  descriptionIngles: "Policeman.\nIdade: 24\nSexo: Masculino\nMiddle social class.
+    Family came from the countryside. Tall and muscular. Has a calm disposition and
+    is quite neutral in the subjects he broaches, a somewhat serious man being quite
+    wordy at times.\r"
 --- !u!50 &1401230336
 Rigidbody2D:
   serializedVersion: 4
@@ -33772,8 +33804,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.9, y: 0.00069314}
-  m_SizeDelta: {x: 2426.6133, y: 815.47046}
+  m_AnchoredPosition: {x: 26.72, y: -0.000002861}
+  m_SizeDelta: {x: 2288.6821, y: 428.57056}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &1867004659
 MonoBehaviour:
@@ -38048,7 +38080,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Sanefuji
-  description: "Empres\xE1rio da alta classe, s\xF3 pensa em business"
+  description: "Empres\xE1rio da alta classe.\nIdade: 30\nSexo: Masculino\nClasse
+    social alta. Altura na m\xE9dia e levemente muscoloso. Tem um temperamento calmo
+    e sendo bem extrovertido nos assuntos que aborda, bem seguro de s\xED e um homem
+    nada s\xE9rio, s\xF3 pensa em business."
+  descriptionIngles: 'A high-class businessman.
+
+    Age: 30
+
+    Gender: Male
+
+    High
+    social class. Average height and slightly muscular. He has a calm disposition
+    and is very extrovert in the subjects he broaches, very sure of himself and not
+    a serious man, he only thinks about business.'
 --- !u!114 &2127412735
 MonoBehaviour:
   m_ObjectHideFlags: 0

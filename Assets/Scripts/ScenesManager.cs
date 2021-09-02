@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ScenesManager : MonoBehaviour
 {
+    public Transform CorpoJornalista;
+    public Transform CorpoProprietario;
     public Dialogue legistaDialogo;
     public Dialogue TIDialogo;
     public Dialogue policialDialogo;
@@ -119,6 +121,14 @@ public class ScenesManager : MonoBehaviour
             DialogoTransicao = true;
             animator.SetBool("CarroGif", true);
             FinalDoJogoControl.StartDialogue(dialogoFinalDoJogo);
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            if (Random.value >= 0.5f)
+            {
+                CorpoProprietario.position = new Vector3(100f, 100f, -15);
+                CorpoJornalista.position = new Vector3(21.59f, -13.83f, -15);
+            }
         }
         if (SceneManager.GetActiveScene().buildIndex != 1 && SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 4)
         {
@@ -1344,11 +1354,36 @@ public class ScenesManager : MonoBehaviour
                             SavePlayer();
                             if (ScenesManager.ActualScene == 3)
                             {
-                                SceneManager.LoadScene(2);
+                                if (Random.value > 0.5f)
+                                {
+                                    SceneManager.LoadScene(5);
+                                }
+                                else
+                                {
+                                    SceneManager.LoadScene(2);
+                                }
                             }
                             else if (ScenesManager.ActualScene == 2)
                             {
-                                SceneManager.LoadScene(3);
+                                if (Random.value > 0.5f)
+                                {
+                                    SceneManager.LoadScene(3);
+                                }
+                                else
+                                {
+                                    SceneManager.LoadScene(5);
+                                }
+                            }
+                            else if (ScenesManager.ActualScene == 5)
+                            {
+                                if (Random.value > 0.5f)
+                                {
+                                    SceneManager.LoadScene(3);
+                                }
+                                else
+                                {
+                                    SceneManager.LoadScene(2);
+                                }
                             }
                         }
 

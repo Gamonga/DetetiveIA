@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Analise : MonoBehaviour
 {
+    public movimento movimento;
     public GameObject trocarCenaSimOriginal;
     public GameObject noOriginal;
     public GameObject CadernoLimpo;
@@ -121,7 +122,8 @@ public class Analise : MonoBehaviour
             case "11":
                 caderno.atualizaDescricao(11);
             break;
-        }           
+        }
+        SaveSystem.SavePlayer(movimento); 
     }
     void AntesAnalise(){
         tiDialogo.senteceloop = new string[3];

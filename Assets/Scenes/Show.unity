@@ -6207,6 +6207,359 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 388473631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &397612731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 397612740}
+  - component: {fileID: 397612739}
+  - component: {fileID: 397612738}
+  - component: {fileID: 397612737}
+  - component: {fileID: 397612736}
+  - component: {fileID: 397612735}
+  - component: {fileID: 397612734}
+  - component: {fileID: 397612733}
+  - component: {fileID: 397612732}
+  m_Layer: 0
+  m_Name: Testemunha jornalista
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &397612732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Jessie
+  nameperson2: Detetive
+  sentences:
+  - troca paisagem
+  - "Ol\xE1, eu sou o novo ..."
+  - troca paisagem
+  - "Voc\xEA \xE9 o novo detetive na cidade."
+  - troca paisagem
+  - Sim, prazer me chamo ...
+  - troca paisagem
+  - "Voc\xEA se chama David Mills."
+  - troca pensando
+  - "(J\xE1 vi que essa vai ser dif\xEDcil de conversar)"
+  - paisagem detetive
+  - "E aposto que voc\xEA \xE9 a jornalista investigativa."
+  - troca pensando
+  - "(Como ser\xE1 que ele descobriu?!)"
+  - troca paisagem
+  - E aposto que se chama Angela.
+  - troca paisagem
+  - "N\xE3o, eu n\xE3o me chamo assim."
+  - troca embara
+  - (tentei pelo menos)
+  - paisagem detetive
+  - "Se voc\xEA n\xE3o se importar, eu irei te fazer algumas perguntas."
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - troca paisagem
+  - Hello, I'm the new ...
+  - troca paisagem
+  - You are the new detective in town.
+  - troca paisagem
+  - Yes, my name is ...
+  - troca paisagem
+  - Your name is David Mills.
+  - troca pensando
+  - "\r(I already saw that she will be difficult to talk)"
+  - paisagem detetive
+  - And i bet you're the investigative journalist.
+  - troca pensando
+  - "\r(how did he find out ?!)"
+  - troca paisagem
+  - "\rAnd I bet it's called Angela."
+  - troca paisagem
+  - "\rNo, that's not my name."
+  - troca embara
+  - "\r(tried at least)"
+  - paisagem detetive
+  - "\rIf you don't mind, I'll ask you a few questions."
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: c2f7e3b67149ff44397a3bf4d28de151,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  random: 1
+--- !u!114 &397612733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07921c7be5ffa42468c19397391f5b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 1573812821}
+  spriteDetetivePaisagem: {fileID: 1161651281}
+  spriteSecundarioPaisagem: {fileID: 1118739515}
+  dialogueText: {fileID: 607859828}
+  animator: {fileID: 364288594}
+  SemImagem: 0
+--- !u!114 &397612734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11478b5b910f1ae4eae1f4f15c37cd58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInRange: 0
+  interactKey: 101
+  interactAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1117420781}
+        m_TargetAssemblyTypeName: Caderno, Assembly-CSharp
+        m_MethodName: adicionarPessoas
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 397612735}
+          m_ObjectArgumentAssemblyTypeName: Pessoa, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 397612733}
+        m_TargetAssemblyTypeName: DialogueControl, Assembly-CSharp
+        m_MethodName: StartDialogue
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 397612732}
+          m_ObjectArgumentAssemblyTypeName: Dialogue, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1106623595}
+        m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
+        m_MethodName: tutorialTestemunha
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  FechaJanela:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 397612733}
+        m_TargetAssemblyTypeName: DialogueControl, Assembly-CSharp
+        m_MethodName: FechaJanela
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &397612735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06f5a17f5eb4e6b45ba7de4cdfe3fb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nome: Devi
+  description: 'Legista.
+
+    Idade: 35
+
+    Sexo: Female
+
+    High social class.
+    Daughter of immigrants. Thin and of medium height. She has a calm temperament
+    and is very calm in the subjects she discusses, very self-assured and very serious.'
+  descriptionIngles: "Legista.\nIdade: 35\nSexo: Feminino\nClasse social alta. Filha
+    de imigrantes. Magro e de estatura m\xE9dia. Tem um temperamento calmo e sendo
+    bem tranquila nos assuntos que aborda, bem segura de s\xED e bem s\xE9ria."
+--- !u!212 &397612736
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: be3f8cc0fc7f69948862efdf75c4e0a2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.12, y: 5.12}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!222 &397612737
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_CullTransparentMesh: 0
+--- !u!114 &397612738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31c28934c0f824542bc4acab0f3ff5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CadernoLimpo: {fileID: 82132082}
+  Evidencias: {fileID: 388473632}
+  ConcordaB: {fileID: 1572241055}
+  DiscordaB: {fileID: 1478841794}
+  DuvidaB: {fileID: 335669467}
+  VistoB: {fileID: 340857434}
+  OuviuB: {fileID: 2048839297}
+  SimEcolheu: {fileID: 432932159}
+  cadernoObjeto: {fileID: 1117420781}
+  NomeDaTestemunha: Jessie
+  "Rela\xE7\xE3oComVitimaB": {fileID: 992947312}
+  texto: {fileID: 607859828}
+  Nome: {fileID: 1573812821}
+  dialogo: {fileID: 364288594}
+  caderno: {fileID: 1117420784}
+  movimento: {fileID: 2097695721}
+--- !u!61 &397612739
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06666231, y: 0.057139397}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3427534, y: 3.552271}
+  m_EdgeRadius: 0
+--- !u!224 &397612740
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397612731}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 802894940}
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 64.8, y: -14.4}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &400041468
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11612,6 +11965,85 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &802894939
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 802894940}
+  - component: {fileID: 802894942}
+  - component: {fileID: 802894941}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &802894940
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802894939}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 397612740}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &802894941
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802894939}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &802894942
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802894939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.028895855, y: 1.5531654}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7224035, y: 0.8699684}
+  m_EdgeRadius: 0
 --- !u!1 &844835692
 GameObject:
   m_ObjectHideFlags: 0
@@ -13763,8 +14195,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.44}
-  m_SizeDelta: {x: 903.3369, y: 413.72314}
+  m_AnchoredPosition: {x: 5.06, y: 0.44}
+  m_SizeDelta: {x: 758.64966, y: 413.72314}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &940807460
 MonoBehaviour:
@@ -16419,7 +16851,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Steve
-  description: Parceiro do detetive
+  description: "Parceiro do detetive.  \nIdade: 24 \nSexo: Masculino\nClasse social
+    m\xE9dia. Magro e baixinho. Tem um temperamento explosivo e sendo bem extrovertido
+    nos assuntos que aborda, bem seguro de s\xED mas n\xE3o \xE9 t\xE3o s\xE9rio,
+    gosta de zoar bastante."
+  descriptionIngles: 'Detective''s partner.
+
+    Idade: 24
+
+    Sexo: Masculino
+
+    Middle
+    social class. Thin and short. He has a very explosive temperament and is very
+    extrovert in the subjects he addresses, he is very sure of himself but not so
+    serious, like to joke a lot.'
 --- !u!1 &1039682596
 GameObject:
   m_ObjectHideFlags: 0
@@ -16735,6 +17180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161c030409121ae4ca8f53e59d7285b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CorpoJornalista: {fileID: 0}
+  CorpoProprietario: {fileID: 0}
   legistaDialogo: {fileID: 0}
   TIDialogo: {fileID: 0}
   policialDialogo: {fileID: 0}
@@ -16760,7 +17207,7 @@ MonoBehaviour:
   dialogoParceiroDetetiveIndoParaDelegacia: {fileID: 0}
   dialogoDelegadoExplicando: {fileID: 858552709}
   diaologoFinalParceiro: {fileID: 0}
-  dialogoInicioTestemunhaJornalista: {fileID: 0}
+  dialogoInicioTestemunhaJornalista: {fileID: 397612732}
   dialogoInicioTestemunhaRico: {fileID: 2127412737}
   FinalDoJogoControl: {fileID: 0}
   dialogueControl: {fileID: 858552708}
@@ -18004,6 +18451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Devi
   description: Legista
+  descriptionIngles: 
 --- !u!50 &1163162208
 Rigidbody2D:
   serializedVersion: 4
@@ -21682,7 +22130,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Johnny
-  description: 'Poilical '
+  description: "Policial.\nIdade: 24\nSexo: Masculino\nClasse social m\xE9dia. Fam\xEDlia
+    veio do interior. Alto e muscoloso. Tem um temperamento calmo e sendo bem neutro
+    nos assuntos que aborda, homem um pouco s\xE9rio sendo bem prolixo as vezes."
+  descriptionIngles: "Policeman.\nIdade: 24\nSexo: Masculino\nMiddle social class.
+    Family came from the countryside. Tall and muscular. Has a calm disposition and
+    is quite neutral in the subjects he broaches, a somewhat serious man being quite
+    wordy at times.\r"
 --- !u!50 &1401230336
 Rigidbody2D:
   serializedVersion: 4
@@ -27726,8 +28180,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21.9, y: 0.00069314}
-  m_SizeDelta: {x: 2426.6133, y: 815.47046}
+  m_AnchoredPosition: {x: 28.77, y: -0.000002861}
+  m_SizeDelta: {x: 2310.8203, y: 428.57056}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &1867004659
 MonoBehaviour:
@@ -31341,7 +31795,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127412728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -18.5}
+  m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 346379011}
@@ -31366,7 +31820,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Sanefuji
-  description: "Empres\xE1rio da alta classe, s\xF3 pensa em business"
+  description: "Empres\xE1rio da alta classe.\nIdade: 30\nSexo: Masculino\nClasse
+    social alta. Altura na m\xE9dia e levemente muscoloso. Tem um temperamento calmo
+    e sendo bem extrovertido nos assuntos que aborda, bem seguro de s\xED e um homem
+    nada s\xE9rio, s\xF3 pensa em business."
+  descriptionIngles: 'A high-class businessman.
+
+    Age: 30
+
+    Gender: Male
+
+    High
+    social class. Average height and slightly muscular. He has a calm disposition
+    and is very extrovert in the subjects he broaches, very sure of himself and not
+    a serious man, he only thinks about business.'
 --- !u!114 &2127412735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32351,6 +32818,12 @@ PrefabInstance:
       objectReference: {fileID: 1914434864}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: CercaFora
+      value: 
+      objectReference: {fileID: 704682357537869982, guid: fd603b4ade76b284da536907b5e510bf,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: Destrocos
       value: 
       objectReference: {fileID: 5712097222430649328, guid: e7c79b56d5fabeb41a5198fa6d3308ab,
@@ -32383,6 +32856,12 @@ PrefabInstance:
       propertyPath: CartaoFilme
       value: 
       objectReference: {fileID: 1551814689919398583, guid: 2561676e64f5aac439b5a7e4df849971,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CercaDentro
+      value: 
+      objectReference: {fileID: 8508719916393039248, guid: fd620bc6df1668540ab22ed2b465b2dd,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
@@ -32559,6 +33038,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}
+      propertyPath: CercaForaEvidence
+      value: 
+      objectReference: {fileID: 704682357537869981, guid: fd603b4ade76b284da536907b5e510bf,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
       propertyPath: DestrocosEvidence
       value: 
       objectReference: {fileID: 7390741866917258075, guid: e7c79b56d5fabeb41a5198fa6d3308ab,
@@ -32586,6 +33071,12 @@ PrefabInstance:
       propertyPath: CartaoFilmeEvidence
       value: 
       objectReference: {fileID: 4349744432865376796, guid: 2561676e64f5aac439b5a7e4df849971,
+        type: 3}
+    - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
+        type: 3}
+      propertyPath: CercaDentroEvidence
+      value: 
+      objectReference: {fileID: 8508719916393039255, guid: fd620bc6df1668540ab22ed2b465b2dd,
         type: 3}
     - target: {fileID: 8556092802916419584, guid: fc46f851b8e997b42ab01651c2c10823,
         type: 3}

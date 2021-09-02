@@ -74,7 +74,6 @@ public class Testemunha : MonoBehaviour
             depoimentoTestemunhaOuviu = data.depoimentoTestemunhaOuviu;
         }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -253,6 +252,7 @@ public class Testemunha : MonoBehaviour
     }
     public void Concorda()
     {
+        SaveSystem.SavePlayer(movimento);
         sentence.Clear();
         switch (PerguntaFeita)
         {
@@ -665,6 +665,7 @@ public class Testemunha : MonoBehaviour
     }
     public void Discorda()
     {
+        SaveSystem.SavePlayer(movimento);
         if (PlayerData.Idioma == "ingles")
         {
             sentence.Enqueue("Do you have any proof that goes against what I said?");
@@ -685,6 +686,7 @@ public class Testemunha : MonoBehaviour
     }
     public void Duvida()
     {
+        SaveSystem.SavePlayer(movimento);
         sentence.Clear();
         switch (PerguntaFeita)
         {

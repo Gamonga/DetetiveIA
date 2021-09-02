@@ -17490,8 +17490,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0043229, y: 0.44}
-  m_SizeDelta: {x: 903.3369, y: 413.72314}
+  m_AnchoredPosition: {x: 5.06, y: 0.44}
+  m_SizeDelta: {x: 758.6499, y: 413.72314}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &940807460
 MonoBehaviour:
@@ -19006,7 +19006,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Steve
-  description: Parceiro do detetive
+  description: "Parceiro do detetive.  \nIdade: 24 \nSexo: Masculino\nClasse social
+    m\xE9dia. Magro e baixinho. Tem um temperamento explosivo e sendo bem extrovertido
+    nos assuntos que aborda, bem seguro de s\xED mas n\xE3o \xE9 t\xE3o s\xE9rio,
+    gosta de zoar bastante."
+  descriptionIngles: 'Detective''s partner.
+
+    Idade: 24
+
+    Sexo: Masculino
+
+    Middle
+    social class. Thin and short. He has a very explosive temperament and is very
+    extrovert in the subjects he addresses, he is very sure of himself but not so
+    serious, like to joke a lot.'
 --- !u!1001 &1061242848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20085,6 +20098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161c030409121ae4ca8f53e59d7285b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CorpoJornalista: {fileID: 0}
+  CorpoProprietario: {fileID: 0}
   legistaDialogo: {fileID: 0}
   TIDialogo: {fileID: 0}
   policialDialogo: {fileID: 0}
@@ -28072,7 +28087,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nome: Johnny
-  description: 'Poilical '
+  description: "Policial.\nIdade: 24\nSexo: Masculino\nClasse social m\xE9dia. Fam\xEDlia
+    veio do interior. Alto e muscoloso. Tem um temperamento calmo e sendo bem neutro
+    nos assuntos que aborda, homem um pouco s\xE9rio sendo bem prolixo as vezes."
+  descriptionIngles: "Policeman.\nIdade: 24\nSexo: Masculino\nMiddle social class.
+    Family came from the countryside. Tall and muscular. Has a calm disposition and
+    is quite neutral in the subjects he broaches, a somewhat serious man being quite
+    wordy at times.\r"
 --- !u!50 &1673566699
 Rigidbody2D:
   serializedVersion: 4
@@ -31702,8 +31723,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.4, y: 0}
-  m_SizeDelta: {x: 2341.771, y: 815.47046}
+  m_AnchoredPosition: {x: 2.4911, y: 0.000026226}
+  m_SizeDelta: {x: 1509.0315, y: 428.56897}
   m_Pivot: {x: 0.50000054, y: 0.50000083}
 --- !u!114 &1867004659
 MonoBehaviour:
@@ -34043,6 +34064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Jessie
   description: 'Jornalista investigativa '
+  descriptionIngles: 
 --- !u!114 &2022772569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36419,6 +36441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Devi
   description: Legista
+  descriptionIngles: 
 --- !u!1 &2140660587
 GameObject:
   m_ObjectHideFlags: 0

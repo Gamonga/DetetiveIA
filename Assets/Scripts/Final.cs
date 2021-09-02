@@ -780,6 +780,7 @@ public class Final : MonoBehaviour
     }
     public void controlCredits()
     {
+        SaveSystem.SavePlayer(movimento);
         switch (creditoInt)
         {
             case 1:
@@ -857,11 +858,13 @@ public class Final : MonoBehaviour
                     "Raphael Marques de Barros" + "\n" +
                     "WesComp" + "\n" +
                     "Satrus" + "\n" +
-                    "Felipe Senpai" + "\n" +
-                    "Rubens Surfista";
+                    "Felipe Senpai";
                 break;
             case 8:
                 textCreditos.text = "And a Special Thanks to You for playing my game";
+                break;
+            case 9:
+                SceneManager.LoadScene(0);
                 break;
         }
     }
