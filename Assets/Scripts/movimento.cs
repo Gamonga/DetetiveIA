@@ -10,7 +10,6 @@ public class movimento : MonoBehaviour
     public Rigidbody2D rbParceiroDetetive;
     public Animator animator;
     public static bool ParaPersonagem;
-    public float limitadorVelocidade = 10;
     public static bool comecaDialogoFinal;
     int contador = 0;
     // Start is called before the first frame update
@@ -34,7 +33,7 @@ public class movimento : MonoBehaviour
         /*Esquerda e Baixo*/
         if (Input.GetAxisRaw("Vertical") == -1 && Input.GetAxisRaw("Horizontal") == -1)
         {
-            rb.velocity = new Vector2(-15.0f, -15.0f);
+            rb.velocity = new Vector2(-10.0f, -10.0f);
             animator.SetBool("Esquerda", true);
             return 0;
         }
@@ -46,7 +45,7 @@ public class movimento : MonoBehaviour
         /*Direita e Cima*/
         if (Input.GetAxisRaw("Vertical") == -1 && Input.GetAxisRaw("Horizontal") == 1)
         {
-            rb.velocity = new Vector2(15.0f, -15.0f);
+            rb.velocity = new Vector2(10.0f, -10.0f);
             animator.SetBool("Direita", true);
             return 0;
         }
@@ -58,7 +57,7 @@ public class movimento : MonoBehaviour
         /*Direita e Cima*/
         if (Input.GetAxisRaw("Vertical") == 1 && Input.GetAxisRaw("Horizontal") == 1)
         {
-            rb.velocity = new Vector2(15.0f, 15.0f);
+            rb.velocity = new Vector2(10.0f, 10.0f);
             animator.SetBool("Direita", true);
             return 0;
         }
@@ -70,7 +69,7 @@ public class movimento : MonoBehaviour
         /*Esquerda e Baixo*/
         if (Input.GetAxisRaw("Vertical") == 1 && Input.GetAxisRaw("Horizontal") == -1)
         {
-            rb.velocity = new Vector2(-15.0f, 15.0f);
+            rb.velocity = new Vector2(-10.0f, 10.0f);
             animator.SetBool("Esquerda", true);
             return 0;
         }
@@ -82,7 +81,7 @@ public class movimento : MonoBehaviour
         /*Direita*/
         if (Input.GetAxisRaw("Horizontal") == 1)
         {
-            rb.velocity = new Vector2(15.0f, 0.0f);
+            rb.velocity = new Vector2(10.0f, 0.0f);
             animator.SetBool("Direita", true);
             return 0;
         }
@@ -94,7 +93,7 @@ public class movimento : MonoBehaviour
         /*Esquerda*/
         if (Input.GetAxisRaw("Horizontal") == -1)
         {
-            rb.velocity = new Vector2(-15.0f, 0.0f);
+            rb.velocity = new Vector2(-10.0f, 0.0f);
             animator.SetBool("Esquerda", true);
             return 0;
         }
@@ -106,7 +105,7 @@ public class movimento : MonoBehaviour
         /*Cima*/
         if (Input.GetAxisRaw("Vertical") == 1)
         {
-            rb.velocity = new Vector2(0.0f, 15.0f);
+            rb.velocity = new Vector2(0.0f, 10.0f);
             animator.SetBool("Sobe", true);
             return 0;
         }
@@ -118,7 +117,7 @@ public class movimento : MonoBehaviour
         /*Baixo*/
         if (Input.GetAxisRaw("Vertical") == -1)
         {
-            rb.velocity = new Vector2(0.0f, -15.0f);
+            rb.velocity = new Vector2(0.0f, -10.0f);
             animator.SetBool("Desce", true);
             return 0;
         }
@@ -158,7 +157,7 @@ public class movimento : MonoBehaviour
                 }
                 else
                 {
-                    rb.velocity = new Vector2(5f, 0.0f);
+                    rb.velocity = new Vector2(10f, 0.0f);
                     animator.SetBool("Direita", true);
                 }
             }
@@ -167,14 +166,14 @@ public class movimento : MonoBehaviour
                 Vector3 position;
                 position.x = 4.84f;
                 position.y = -29.14f;
-                position.z = -50f;
+                position.z = -100f;
                 rb.position = position;
                 Vector3 position2;
                 rbParceiroDetetive.bodyType = RigidbodyType2D.Dynamic;
                 rbParceiroDetetive.gravityScale = 0.0f;
                 position2.x = 20.39f;
                 position2.y = -29.14f;
-                position2.z = -50f;
+                position2.z = -100f;
                 rbParceiroDetetive.position = position2;
             }
         }
@@ -203,6 +202,11 @@ public class movimento : MonoBehaviour
             case 3:
                 position.x = 13.11f;
                 position.y = -19.07f;
+                position.z = -20f;
+                break;
+            case 10:
+                position.x = 2.76f;
+                position.y = -29.19f;
                 position.z = -20f;
                 break;
         }

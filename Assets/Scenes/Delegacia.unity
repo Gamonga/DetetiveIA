@@ -3246,6 +3246,122 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3144293, y: 2.5948377}
   m_EdgeRadius: 0
+--- !u!1 &176241263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176241265}
+  - component: {fileID: 176241264}
+  m_Layer: 0
+  m_Name: JornalistaDialogo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &176241264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176241263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06eecdef0314b0e4ab89dee09022ceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameperson1: Jessie
+  nameperson2: Detetive
+  sentences:
+  - troca paisagem
+  - "Ol\xE1, eu sou o novo ..."
+  - troca paisagem
+  - "Voc\xEA \xE9 o novo detetive na cidade."
+  - troca paisagem
+  - Sim, prazer me chamo ...
+  - troca paisagem
+  - "Voc\xEA se chama David Mills."
+  - troca pensando
+  - "(J\xE1 vi que essa vai ser dif\xEDcil de conversar)"
+  - paisagem detetive
+  - "E aposto que voc\xEA \xE9 a jornalista investigativa."
+  - troca pensando
+  - "(Como ser\xE1 que ele descobriu?!)"
+  - troca paisagem
+  - E aposto que se chama Angela.
+  - troca paisagem
+  - "N\xE3o, eu n\xE3o me chamo assim."
+  - troca embara
+  - (tentei pelo menos)
+  - paisagem detetive
+  - "Se voc\xEA n\xE3o se importar, eu irei te fazer algumas perguntas."
+  sentences2: []
+  senteceloop: []
+  sentencesIngles:
+  - troca paisagem
+  - Hello, I'm the new ...
+  - troca paisagem
+  - You are the new detective in town.
+  - troca paisagem
+  - Yes, my name is ...
+  - troca paisagem
+  - Your name is David Mills.
+  - troca pensando
+  - "\r(I already saw that she will be difficult to talk)"
+  - paisagem detetive
+  - And i bet you're the investigative journalist.
+  - troca pensando
+  - "\r(how did he find out ?!)"
+  - troca paisagem
+  - "\rAnd I bet it's called Angela."
+  - troca paisagem
+  - "\rNo, that's not my name."
+  - troca embara
+  - "\r(tried at least)"
+  - paisagem detetive
+  - "\rIf you don't mind, I'll ask you a few questions."
+  sentences2Ingles: []
+  senteceloopIngles: []
+  spriteDetetivePaisagem: {fileID: 21300000, guid: 76e6b7e0a04387347b92a1bf4f04fa07,
+    type: 3}
+  spriteDetetivePensando: {fileID: 21300000, guid: 29d8c84ea50b02b4890450d27312e695,
+    type: 3}
+  "spriteDetetiveEmbara\xE7ado": {fileID: 21300000, guid: 0407a9687accf0a4ba45df6733ca0f2a,
+    type: 3}
+  spriteDetetiveDesgosto: {fileID: 21300000, guid: 409f4d57c3e26f041a650080a0a74d3d,
+    type: 3}
+  spriteDetetiveCaderno: {fileID: 21300000, guid: fdb07e70d36866842af5969ca8e8d56e,
+    type: 3}
+  spriteSecundarioPaisagem: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioPensando: {fileID: 21300000, guid: c2f7e3b67149ff44397a3bf4d28de151,
+    type: 3}
+  "spriteSecundarioEmbara\xE7ado": {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioDesgosto: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  spriteSecundarioCaderno: {fileID: 21300000, guid: 6c6da4c77a60c1d4fad69b2919dff81d,
+    type: 3}
+  random: 1
+--- !u!4 &176241265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176241263}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 513.5639, y: 287.0769, z: -29.148457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &177295282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26115,10 +26231,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CorpoJornalista: {fileID: 0}
   CorpoProprietario: {fileID: 0}
-  legistaDialogo: {fileID: 0}
-  TIDialogo: {fileID: 0}
-  policialDialogo: {fileID: 0}
-  jornalistaDialogo: {fileID: 0}
+  legistaDialogo: {fileID: 1606070026}
+  TIDialogo: {fileID: 532411027}
+  policialDialogo: {fileID: 1791632037}
+  jornalistaDialogo: {fileID: 176241264}
   texto: {fileID: 1327602465}
   botaoSim: {fileID: 6595550}
   botaoNao: {fileID: 2070321127}
