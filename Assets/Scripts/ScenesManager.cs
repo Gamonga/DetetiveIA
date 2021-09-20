@@ -50,6 +50,7 @@ public class ScenesManager : MonoBehaviour
     public static int CrimeScene = 2;
     public static Text E;
     private float i;
+    private float randomNumber;
     public static bool DialogoTransicao;
     public static bool startaFinal;
     public static bool PrimeiraVezDialogoTransicao;
@@ -415,7 +416,7 @@ public class ScenesManager : MonoBehaviour
             dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[3] = "I found a cell phone in my room earlier today, I was looking for the owner.";
             dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[4] = "troca pensando";
             dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[5] = "Let me see.";
-            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[6] = "detetive paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[6] = "paisagem detetive";
             dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[7] = "I believe that it is the same. He lost his cell phone again and asked me to help him find it.";
             dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[8] = "troca paisagem";
             dialogoParceiroDetetiveIndoParaDelegacia.sentencesIngles[9] = "Relax, everything I find lost I try to return to the owner.";
@@ -439,7 +440,7 @@ public class ScenesManager : MonoBehaviour
             dialogoParceiroDetetiveIndoParaDelegacia.sentences[3] = "Eu encontrei um celular na minha sala hoje mais cedo, estava procurando o dono.";
             dialogoParceiroDetetiveIndoParaDelegacia.sentences[4] = "troca pensando";
             dialogoParceiroDetetiveIndoParaDelegacia.sentences[5] = "Deixe-me ver.";
-            dialogoParceiroDetetiveIndoParaDelegacia.sentences[6] = "detetive paisagem";
+            dialogoParceiroDetetiveIndoParaDelegacia.sentences[6] = "paisagem detetive";
             dialogoParceiroDetetiveIndoParaDelegacia.sentences[7] = "Acredito que seja esse mesmo. Ele perdeu o celular de novo e me pediu para ajudar a encontrá-lo.";
             dialogoParceiroDetetiveIndoParaDelegacia.sentences[8] = "troca paisagem";
             dialogoParceiroDetetiveIndoParaDelegacia.sentences[9] = "Tranquilo, tudo que eu encontro perdido tento devolver para o dono.";
@@ -788,7 +789,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaRico.sentencesIngles[15] = "Wanting to earn more money, live the job and...";
             dialogoInicioTestemunhaRico.sentencesIngles[16] = "troca desgosto";
             dialogoInicioTestemunhaRico.sentencesIngles[17] = "(I'm sure Steve isn't like that)";
-            dialogoInicioTestemunhaRico.sentencesIngles[18] = "detetive pensando";
+            dialogoInicioTestemunhaRico.sentencesIngles[18] = "pensando detetive";
             dialogoInicioTestemunhaRico.sentencesIngles[19] = "(I'm glad he's not like that)";
             dialogoInicioTestemunhaRico.sentencesIngles[20] = "finalizar";
         }
@@ -812,7 +813,7 @@ public class ScenesManager : MonoBehaviour
             dialogoInicioTestemunhaRico.sentences[15] = "Querer ganhar mais dinheiro, viver o trabalho e ...";
             dialogoInicioTestemunhaRico.sentences[16] = "troca desgosto";
             dialogoInicioTestemunhaRico.sentences[17] = "(Tenho certeza que o Steve não é assim)";
-            dialogoInicioTestemunhaRico.sentences[18] = "detetive pensando";
+            dialogoInicioTestemunhaRico.sentences[18] = "pensando detetive";
             dialogoInicioTestemunhaRico.sentences[19] = "(Ainda bem que ele não é assim)";
             dialogoInicioTestemunhaRico.sentences[20] = "finalizar";
         }
@@ -1089,7 +1090,7 @@ public class ScenesManager : MonoBehaviour
             dialogoDelegadoExplicando.sentencesIngles[4] = "You have done a good job, the people at the police station have been appreciating your work.";
             dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
             dialogoDelegadoExplicando.sentencesIngles[6] = "Thank you, i'm only doing my job.";
-            dialogoDelegadoExplicando.sentencesIngles[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "paisagem detetive";
             dialogoDelegadoExplicando.sentencesIngles[8] = "I'm glad that people are enjoying it.";
             dialogoDelegadoExplicando.sentencesIngles[9] = "troca paisagem";
             dialogoDelegadoExplicando.sentencesIngles[10] = "Keep it up.";
@@ -1104,7 +1105,7 @@ public class ScenesManager : MonoBehaviour
             dialogoDelegadoExplicando.sentences[4] = "Você tem feito um bom trabalho, o pessoal na delegacia tem gostado do seu trabalho.";
             dialogoDelegadoExplicando.sentences[5] = "troca embara";
             dialogoDelegadoExplicando.sentences[6] = "Obrigado, só tenho feito o meu trabalho.";
-            dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentences[7] = "paisagem detetive";
             dialogoDelegadoExplicando.sentences[8] = "Fico feliz que o pessoal esteja gostando.";
             dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
             dialogoDelegadoExplicando.sentences[10] = "Continue assim.";
@@ -1175,7 +1176,7 @@ public class ScenesManager : MonoBehaviour
             dialogoDelegadoExplicando.sentencesIngles[4] = "You have not done a good job, the people at the police station have not been very fond of your work.";
             dialogoDelegadoExplicando.sentencesIngles[5] = "troca embara";
             dialogoDelegadoExplicando.sentencesIngles[6] = "I'm sorry, sheriff, I've only been doing my job.";
-            dialogoDelegadoExplicando.sentencesIngles[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentencesIngles[7] = "paisagem detetive";
             dialogoDelegadoExplicando.sentencesIngles[8] = "I will try to improve.";
             dialogoDelegadoExplicando.sentencesIngles[9] = "troca paisagem";
             dialogoDelegadoExplicando.sentencesIngles[10] = "I hope so.";
@@ -1190,7 +1191,7 @@ public class ScenesManager : MonoBehaviour
             dialogoDelegadoExplicando.sentences[4] = "Você não tem feito um bom trabalho, as pessoas na delegacia não têm gostado muito de como você está conduzindo os casos.";
             dialogoDelegadoExplicando.sentences[5] = "troca embara";
             dialogoDelegadoExplicando.sentences[6] = "Me desculpa, delegado, eu só tenho tentado fazer o meu trabalho.";
-            dialogoDelegadoExplicando.sentences[7] = "detetive paisagem";
+            dialogoDelegadoExplicando.sentences[7] = "paisagem detetive";
             dialogoDelegadoExplicando.sentences[8] = "Eu irei melhorar.";
             dialogoDelegadoExplicando.sentences[9] = "troca paisagem";
             dialogoDelegadoExplicando.sentences[10] = "Assim espero.";
@@ -1223,6 +1224,16 @@ public class ScenesManager : MonoBehaviour
             {
                 if (SceneManager.GetActiveScene().buildIndex == 1)
                 {
+                    randomNumber = Random.value;
+                    if(randomNumber >= 0.66f ){
+                        nomeDaPessoaTransicao = "parceiro";
+                    }
+                    if(randomNumber >= 0.33f && randomNumber < 0.66f){
+                        nomeDaPessoaTransicao = "delegado";
+                    }
+                    if(randomNumber < 0.33f){
+                        nomeDaPessoaTransicao = "jornalista";
+                    }
                     switch (nomeDaPessoaTransicao)
                     {
                         case "parceiro":
@@ -1268,7 +1279,23 @@ public class ScenesManager : MonoBehaviour
         {
             if (startaFinal)
             {
-                nomeDaPessoaNoFinal = "parceiro";
+                randomNumber = Random.value;
+                if (randomNumber >= 0.75f)
+                {
+                    nomeDaPessoaNoFinal = "parceiro";
+                }
+                if (randomNumber >= 0.5f && randomNumber < 0.75f)
+                {
+                    nomeDaPessoaNoFinal = "devi";
+                }
+                if (randomNumber >= 0.25f && randomNumber < 0.5f)
+                {
+                    nomeDaPessoaNoFinal = "policial";
+                }
+                if (randomNumber >= 0.0f && randomNumber < 0.25f)
+                {
+                    nomeDaPessoaNoFinal = "TI";
+                }
                 switch (nomeDaPessoaNoFinal)
                 {
                     case "parceiro":
@@ -1281,7 +1308,7 @@ public class ScenesManager : MonoBehaviour
                             diaologoFinalParceiroFuncaoNTortura();
                         }
                         break;
-                    case "saneguji":
+                    case "sanefuji":
                         break;
                     case "devi":
                         if (Random.value >= 0.5f)
@@ -1501,7 +1528,7 @@ public class ScenesManager : MonoBehaviour
                 diaologoFinalParceiro.sentencesIngles[7] = "It is different from what I expected.";
                 diaologoFinalParceiro.sentencesIngles[8] = "troca pensando";
                 diaologoFinalParceiro.sentencesIngles[9] = "(maybe it is an experience unlike anything he has ever seen)";
-                diaologoFinalParceiro.sentencesIngles[10] = "detetive pensando";
+                diaologoFinalParceiro.sentencesIngles[10] = "pensando detetive";
                 diaologoFinalParceiro.sentencesIngles[11] = "It's okay, in my first case as a partner, I pissed myself all over.";
                 diaologoFinalParceiro.sentencesIngles[12] = "troca paisagem";
                 diaologoFinalParceiro.sentencesIngles[13] = "I don't believe it!";
@@ -1529,7 +1556,7 @@ public class ScenesManager : MonoBehaviour
                 diaologoFinalParceiro.sentences[7] = "É diferente do que eu esperava.";
                 diaologoFinalParceiro.sentences[8] = "troca pensando";
                 diaologoFinalParceiro.sentences[9] = "(talvez seja uma experiência diferente de tudo que ele já tenha visto)";
-                diaologoFinalParceiro.sentences[10] = "detetive pensando";
+                diaologoFinalParceiro.sentences[10] = "pensando detetive";
                 diaologoFinalParceiro.sentences[11] = "Esta tudo bem, no meu primeiro caso como parceiro, eu me mijei todo.";
                 diaologoFinalParceiro.sentences[12] = "troca paisagem";
                 diaologoFinalParceiro.sentences[13] = "Não acreito nisso!";

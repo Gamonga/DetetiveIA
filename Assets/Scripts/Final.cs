@@ -600,7 +600,7 @@ public class Final : MonoBehaviour
                         Transition.SetBool("Abrir", true);
                         fraseAtual = sentence.Dequeue();
                         StartCoroutine(typeSentence(fraseAtual));
-                        if (fraseAtual == "E aqui está o item:" || fraseAtual == "E aqui está o item:")
+                        if (fraseAtual == "E aqui está o item:" || fraseAtual == "And here is the item:")
                         {
                             cadernoOriginal.ViraPagina();
                             ClickCaderno = true;
@@ -841,7 +841,7 @@ public class Final : MonoBehaviour
                     "Mafagafo";
                 break;
             case 5:
-                textCreditos.text = "Design/Art            Script/Director"+ "\n" +
+                textCreditos.text = "Design/Art               Script/Director"+ "\n" +
                     "Gamonga Tensou          Gamonga Tensou";
                 break;
             case 6:

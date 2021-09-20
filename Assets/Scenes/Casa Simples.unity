@@ -18876,13 +18876,13 @@ MonoBehaviour:
   - pensando detetive
   - (Acho melhor investigar a casa)
   sentencesIngles:
-  - Hello detective.
+  - I think that I could catch any assassin, even you, detective.
   - troca paisagem
-  - Hello.
-  - troca paisagem
-  - Ready for another workday?
-  - troca paisagem
-  - Always ready.
+  - But I'm not an assassin.
+  - troca pensando
+  - That's what a killer would say.
+  - troca desgosto
+  - ...
   sentences2Ingles:
   - Sup'
   - troca paisagem
